@@ -17,12 +17,21 @@ const caseStudies = [
   },
   {
     id: 2,
-    title: 'Emergency Fan Repair & Replacement',
-    location: 'Hotel Kitchen, Manchester',
+    title: 'Fan Motor Repair',
+    location: 'Commercial Kitchen, London',
     category: 'Fan Repair',
-    before: '/work_images/fanbefore.jpeg',
-    after: '/work_images/fanafter.jpeg',
-    description: 'Failed extraction motor replaced with new unit. Same-day mobilisation and installation with post-repair airflow verification.',
+    before: '/work_images/fanrepair.jpeg',
+    after: '/work_images/fanrepair.jpeg',
+    description: 'Extraction fan motor stripped, inspected, and rebuilt on-site. Bearing and seal replacement with full post-repair performance test.',
+  },
+  {
+    id: 7,
+    title: 'Full Fan Unit Replacement',
+    location: 'Central London Restaurant',
+    category: 'Fan Replacement',
+    before: '/work_images/fanreplacement.jpeg',
+    after: '/work_images/fanreplacement.jpeg',
+    description: 'Failed rooftop extraction unit swapped for a new axial fan. Old unit removed, new unit installed and commissioned same day.',
   },
   {
     id: 3,
@@ -75,39 +84,56 @@ function CaseStudyCard({ study, index }) {
         <div className="flex flex-col h-full bg-brand-black hover:bg-[#0d1a27] transition-colors duration-300 overflow-hidden rounded-sm border border-white/[0.06]">
           {/* Image comparison section */}
           <div className="flex flex-col sm:flex-row flex-1 overflow-hidden gap-3 sm:gap-6 p-4 sm:p-6">
-            {/* Before */}
-            <div className="flex-1 overflow-hidden bg-black rounded-sm border border-white/[0.06]">
-              <div className="relative h-full min-h-64 sm:min-h-96">
-                <img
-                  src={study.before}
-                  alt={`Before: ${study.title}`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                  <span className="font-heading text-3xl sm:text-4xl text-white tracking-widest drop-shadow-lg">BEFORE</span>
-                </div>
-                <div className="absolute top-3 left-3 bg-brand-black/90 px-4 py-2 rounded-sm border border-brand-blue-bright/50">
-                  <span className="font-heading text-brand-blue-bright text-xs uppercase tracking-widest font-bold">Before</span>
-                </div>
-              </div>
-            </div>
-
-            {/* After */}
-            <div className="flex-1 overflow-hidden bg-black rounded-sm border border-white/[0.06]">
-              <div className="relative h-full min-h-64 sm:min-h-96">
-                <img
-                  src={study.after}
-                  alt={`After: ${study.title}`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                  <span className="font-heading text-3xl sm:text-4xl text-brand-blue-bright tracking-widest drop-shadow-lg">AFTER</span>
-                </div>
-                <div className="absolute top-3 left-3 bg-brand-black/90 px-4 py-2 rounded-sm border border-brand-blue-bright/50">
-                  <span className="font-heading text-brand-blue-bright text-xs uppercase tracking-widest font-bold">After</span>
+            {study.before === study.after ? (
+              /* Single image */
+              <div className="flex-1 overflow-hidden bg-black rounded-sm border border-white/[0.06]">
+                <div className="relative h-full min-h-64 sm:min-h-96">
+                  <img
+                    src={study.before}
+                    alt={study.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute top-3 left-3 bg-brand-black/90 px-4 py-2 rounded-sm border border-brand-blue-bright/50">
+                    <span className="font-heading text-brand-blue-bright text-xs uppercase tracking-widest font-bold">{study.category}</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            ) : (
+              <>
+                {/* Before */}
+                <div className="flex-1 overflow-hidden bg-black rounded-sm border border-white/[0.06]">
+                  <div className="relative h-full min-h-64 sm:min-h-96">
+                    <img
+                      src={study.before}
+                      alt={`Before: ${study.title}`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                      <span className="font-heading text-3xl sm:text-4xl text-white tracking-widest drop-shadow-lg">BEFORE</span>
+                    </div>
+                    <div className="absolute top-3 left-3 bg-brand-black/90 px-4 py-2 rounded-sm border border-brand-blue-bright/50">
+                      <span className="font-heading text-brand-blue-bright text-xs uppercase tracking-widest font-bold">Before</span>
+                    </div>
+                  </div>
+                </div>
+                {/* After */}
+                <div className="flex-1 overflow-hidden bg-black rounded-sm border border-white/[0.06]">
+                  <div className="relative h-full min-h-64 sm:min-h-96">
+                    <img
+                      src={study.after}
+                      alt={`After: ${study.title}`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                      <span className="font-heading text-3xl sm:text-4xl text-brand-blue-bright tracking-widest drop-shadow-lg">AFTER</span>
+                    </div>
+                    <div className="absolute top-3 left-3 bg-brand-black/90 px-4 py-2 rounded-sm border border-brand-blue-bright/50">
+                      <span className="font-heading text-brand-blue-bright text-xs uppercase tracking-widest font-bold">After</span>
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
 
           {/* Info section */}
