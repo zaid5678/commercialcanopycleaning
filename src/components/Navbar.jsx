@@ -130,6 +130,15 @@ export default function Navbar() {
             transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
             className="fixed inset-0 z-40 bg-[#0A0A0A] flex flex-col pt-20 px-6 overflow-y-auto"
           >
+            {/* Close button */}
+            <button
+              onClick={() => setMobileOpen(false)}
+              className="absolute top-4 right-6 p-2 text-white/80 hover:text-white transition-colors"
+              aria-label="Close menu"
+            >
+              <X size={24} />
+            </button>
+
             <nav className="flex flex-col gap-1">
               {navLinks.map((link, i) => (
                 <motion.div
