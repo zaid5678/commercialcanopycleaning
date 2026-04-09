@@ -3,7 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import {
-  Phone, MapPin, CheckCircle2, Clock, Send, MessageCircle, RotateCcw
+  Phone, MapPin, CheckCircle2, Clock, Send, MessageCircle, RotateCcw, Upload
 } from 'lucide-react'
 import PageTransition from '../components/PageTransition'
 import ScrollReveal from '../components/ScrollReveal'
@@ -41,7 +41,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '', company: '', email: '', phone: '',
     service: services.includes(serviceParam) ? serviceParam : '',
-    message: '',
+    message: '', files: [],
   })
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
@@ -56,8 +56,12 @@ export default function Contact() {
 
   const resetForm = () => {
     setSubmitted(false)
-    setFormData({ name:'',company:'',email:'',phone:'',service:'',message:'' })
+    setFormData({ name:'',company:'',email:'',phone:'',service:'',message:'',files:[] })
     setErrors({})
+  }
+
+  const handleFileChange = (e) => {
+    setFormData(prev => ({ ...prev, files: Array.from(e.target.files) }))
   }
 
   const validate = () => {
@@ -82,8 +86,14 @@ export default function Contact() {
     if (Object.keys(errs).length > 0) { setErrors(errs); return }
     setSubmitting(true)
     const data = new FormData(e.target)
+    
+    // Add files to FormData
+    formData.files.forEach((file) => {
+      data.append('files', file)
+    })
+    
     try {
-      await fetch('/', { method:'POST', headers:{ 'Content-Type':'application/x-www-form-urlencoded' }, body:new URLSearchParams(data).toString() })
+      await fetch('/', { method:'POST', body: data })
       setSubmitted(true)
     } catch { setSubmitted(true) }
     finally { setSubmitting(false) }
@@ -259,6 +269,41 @@ export default function Contact() {
                         <textarea name="message" value={formData.message} onChange={handleChange} rows={5} placeholder="Tell us about your site, the system you have, and when you need the work done…"
                           className={`input-field resize-none ${errors.message ? 'border-red-500/60':''}`} />
                         {errors.message && <p className="font-body text-red-400/80 text-xs mt-1">{errors.message}</p>}
+                      </div>
+
+                      <div className="mb-8">
+                        <label className="font-body text-white/40 text-xs uppercase tracking-widest block mb-2">Upload Media (Optional)</label>
+                        <div className="relative">
+                          <input 
+                            type="file" 
+                            name="files" 
+                            multiple 
+                            onChange={handleFileChange} 
+                            accept="image/*,video/*,.pdf,.doc,.docx,.xlsx,.xls"
+                            className="hidden" 
+                            id="file-upload"
+                          />
+                          <label htmlFor="file-upload" className="flex items-center justify-center gap-2 border-2 border-dashed border-white/20 hover:border-brand-blue-bright/40 transition-colors rounded-sm p-6 cursor-pointer">
+                            <Upload size={18} className="text-brand-blue-bright" />
+                            <div className="text-center">
+                              <div className="font-body text-white/60 text-sm">Click to upload photos, videos, or files</div>
+                              <div className="font-body text-white/30 text-xs mt-0.5">PNG, JPG, MP4, PDF, DOC, XLS up to 10MB each</div>
+                            </div>
+                          </label>
+                          {formData.files.length > 0 && (
+                            <div className="mt-3">
+                              <p className="font-body text-white/50 text-xs uppercase tracking-widest mb-2">Selected files:</p>
+                              <div className="space-y-1">
+                                {formData.files.map((file, idx) => (
+                                  <div key={idx} className="font-body text-white/40 text-xs flex items-center gap-2">
+                                    <span className="w-2 h-2 bg-brand-blue-bright rounded-full" />
+                                    {file.name} ({(file.size / 1024 / 1024).toFixed(2)} MB)
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </div>
                       </div>
 
                       <button type="submit" disabled={submitting} className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed">

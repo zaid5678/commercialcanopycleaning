@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom'
 import { Phone, MapPin, Instagram, ShieldCheck, Globe, MessageCircle, Star } from 'lucide-react'
 
-const quickLinks = [
+function TikTokIcon({ size = 16 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M19.589 5.861a4.119 4.119 0 0 1-2.834-.974V14a4.117 4.117 0 1 1-4.116-4.116 4.117 4.117 0 0 1 3.213 1.548v-4.41c-.49-.03-.98-.05-1.471-.05-7.025 0-12.727 5.7-12.727 12.727s5.7 12.727 12.727 12.727 12.727-5.7 12.727-12.727V8.928a9.575 9.575 0 0 0 2.813 1.933V6.835a4.117 4.117 0 0 1-2.336-.974Z"/>
+    </svg>
+  )
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/services' },
   { label: 'About Us', href: '/about' },
@@ -77,6 +82,15 @@ export default function Footer() {
                 <Instagram size={16} />
               </a>
               <a
+                href="https://tiktok.com/@commercial.canopy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 border border-white/10 flex items-center justify-center rounded-sm text-white/50 hover:text-white hover:border-brand-blue-bright transition-colors duration-200"
+                aria-label="TikTok"
+              >
+                <TikTokIcon size={16} />
+              </a>
+              <a
                 href="https://wa.me/447517758507"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -113,6 +127,15 @@ export default function Footer() {
               >
                 <Instagram size={13} className="text-brand-blue-bright" />
                 @commercial_canopy_cleaning
+              </a>
+              <a
+                href="https://tiktok.com/@commercial.canopy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 font-body text-white/40 text-xs hover:text-brand-blue-bright transition-colors duration-200"
+              >
+                <TikTokIcon size={13} className="text-brand-blue-bright" />
+                @commercial.canopy
               </a>
               <div className="flex items-center gap-2 font-body text-white/25 text-xs">
                 <Star size={13} className="text-brand-blue-bright/40" />
