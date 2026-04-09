@@ -27,8 +27,8 @@ const services = [
     description: `A failed kitchen extraction fan can shut down your entire operation within minutes. Commercial Canopy Cleaning are fan breakdown specialists — this isn't a side service, it's a core part of what we do. Our engineers carry common spare parts and diagnostic equipment, and we mobilise nationally to get your system back online as fast as possible.
 
 We work on centrifugal, axial, and bifurcated extract fans of all makes. Whether it's a worn belt, seized bearing, failed motor, or a full unit that needs replacing — we diagnose accurately, source correctly, and fix it right first time.`,
-    beforeImage: '/work_images/fanrepair.jpeg',
-    afterImage: '/work_images/fanreplacement.jpeg',
+    beforeImage: '/work_images/fanbefore.jpeg',
+    afterImage: '/work_images/fanafter.jpeg',
     includes: [
       'Same-day emergency callout nationwide',
       'Centrifugal, axial & bifurcated fan specialists',
