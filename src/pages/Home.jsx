@@ -216,6 +216,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── LOGO CONVEYOR BELT ───────────────────────────────────────────── */}
+      <LogoConveyorBelt />
+
       {/* ── SERVICES GRID ─────────────────────────────────────────────────── */}
       <section className="py-16 sm:py-24 lg:py-32 bg-brand-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -255,9 +258,6 @@ export default function Home() {
           </ScrollReveal>
         </div>
       </section>
-
-      {/* ── LOGO CONVEYOR BELT ───────────────────────────────────────────── */}
-      <LogoConveyorBelt />
 
       {/* ── TESTIMONIALS ─────────────────────────────────────────────────── */}
       <section className="py-16 sm:py-24 bg-[#070b11]">

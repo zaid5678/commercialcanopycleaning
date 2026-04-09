@@ -110,6 +110,9 @@ export default function About() {
         <div className="h-px bg-white/[0.06]" />
       </div>
 
+      {/* ── LOGO CONVEYOR BELT ───────────────────────────────────────────── */}
+      <LogoConveyorBelt />
+
       {/* Values */}
       <section className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -193,9 +196,6 @@ export default function About() {
           </ScrollRevealContainer>
         </div>
       </section>
-
-      {/* ── LOGO CONVEYOR BELT ───────────────────────────────────────────── */}
-      <LogoConveyorBelt />
 
       {/* CTA */}
       <section className="py-14 sm:py-20">

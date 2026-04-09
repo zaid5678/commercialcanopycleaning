@@ -49,7 +49,7 @@ export default function LogoConveyorBelt() {
 
           {/* Logos */}
           <motion.div
-            className="flex gap-8 sm:gap-12 px-6"
+            className="flex px-6"
             animate={{ x: '-50%' }}
             transition={{
               duration: 40,
@@ -61,11 +61,12 @@ export default function LogoConveyorBelt() {
               // Scale up Pepes and PFC logos to match other logos
               const isSmallLogo = ['Pepes', 'PFC'].includes(logo.name)
               const scaleClass = isSmallLogo ? 'scale-150' : ''
+              const extraGap = isSmallLogo ? 'mx-6 sm:mx-8' : 'mx-4 sm:mx-6'
               
               return (
                 <div
                   key={`${logo.name}-${index}`}
-                  className="flex-shrink-0 h-24 sm:h-32 w-auto flex items-center justify-center"
+                  className={`flex-shrink-0 h-24 sm:h-32 w-auto flex items-center justify-center ${extraGap}`}
                 >
                   <img
                     src={logo.src}
