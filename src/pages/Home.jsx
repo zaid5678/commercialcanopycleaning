@@ -186,7 +186,7 @@ export default function Home() {
               className="hidden lg:flex items-center justify-center"
             >
               <img
-                src="/logo.PNG"
+                src="/logo.JPG"
                 alt="Commercial Canopy Cleaning Logo"
                 className="w-full max-w-sm h-auto object-contain"
               />

@@ -169,7 +169,7 @@ function ServiceSection({ service, index }) {
                     viewport={{ once: true }}
                     className="overflow-hidden rounded-sm border border-white/[0.06]"
                   >
-                    <img src={service.beforeImage} alt={`Before ${service.title}`} className="w-full h-32 sm:h-40 object-cover" />
+                    <img src={service.beforeImage} alt={`Before ${service.title}`} className="w-full h-56 sm:h-80 object-cover" />
                     <div className="bg-black/50 px-3 py-2 text-center">
                       <span className="font-body text-white/50 text-xs uppercase tracking-widest">Before</span>
                     </div>
@@ -181,7 +181,7 @@ function ServiceSection({ service, index }) {
                     transition={{ delay: 0.1 }}
                     className="overflow-hidden rounded-sm border border-white/[0.06]"
                   >
-                    <img src={service.afterImage} alt={`After ${service.title}`} className="w-full h-32 sm:h-40 object-cover" />
+                    <img src={service.afterImage} alt={`After ${service.title}`} className="w-full h-56 sm:h-80 object-cover" />
                     <div className="bg-black/50 px-3 py-2 text-center">
                       <span className="font-body text-white/50 text-xs uppercase tracking-widest">After</span>
                     </div>
@@ -292,14 +292,14 @@ export default function Services() {
                   <div className="grid grid-cols-2 gap-3">
                     {/* Before */}
                     <div className="overflow-hidden rounded-sm border border-white/[0.06]">
-                      <img src={item.before} alt={`Before: ${item.title}`} className="w-full h-40 sm:h-48 object-cover" />
+                      <img src={item.before} alt={`Before: ${item.title}`} className="w-full h-56 sm:h-72 object-cover" />
                       <div className="bg-black/50 px-3 py-2 text-center">
                         <span className="font-body text-white/50 text-xs uppercase tracking-widest">Before</span>
                       </div>
                     </div>
                     {/* After */}
                     <div className="overflow-hidden rounded-sm border border-white/[0.06]">
-                      <img src={item.after} alt={`After: ${item.title}`} className="w-full h-40 sm:h-48 object-cover" />
+                      <img src={item.after} alt={`After: ${item.title}`} className="w-full h-56 sm:h-72 object-cover" />
                       <div className="bg-black/50 px-3 py-2 text-center">
                         <span className="font-body text-white/50 text-xs uppercase tracking-widest">After</span>
                       </div>

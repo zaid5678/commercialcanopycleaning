@@ -8,6 +8,7 @@ import MobileCallBar from './components/MobileCallBar'
 import EmergencyBanner from './components/EmergencyBanner'
 import Home from './pages/Home'
 import Services from './pages/Services'
+import Work from './pages/Work'
 import About from './pages/About'
 import Compliance from './pages/Compliance'
 import Gallery from './pages/Gallery'
@@ -40,6 +41,7 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/work" element={<Work />} />
         <Route path="/about" element={<About />} />
         <Route path="/compliance" element={<Compliance />} />
         <Route path="/gallery" element={<Gallery />} />
