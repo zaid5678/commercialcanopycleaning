@@ -1,182 +1,175 @@
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { Helmet } from 'react-helmet-async'
 import {
   ArrowRight, Phone, CheckCircle2, Shield, Wind, Wrench,
-  FileCheck, Zap, Clock, ChevronRight
+  FileCheck, Zap, Clock, ChevronRight, Star, AlertTriangle,
+  Utensils, Hotel, HeartPulse, GraduationCap, Building2,
+  HardHat, Beer, ShoppingCart, MapPin
 } from 'lucide-react'
-import PageTransition from '../components/PageTransition'
 import ScrollReveal, { ScrollRevealContainer, ScrollRevealItem } from '../components/ScrollReveal'
+import PageTransition from '../components/PageTransition'
 
-// Animated fan SVG — decorative background element
-function FanSVG() {
+/* ─── Rotating fan SVG ─────────────────────────────────────────────────── */
+function FanBg() {
   return (
     <motion.svg
       viewBox="0 0 200 200"
-      className="absolute right-[-5%] top-1/2 -translate-y-1/2 w-[55vw] max-w-[700px] opacity-[0.04] pointer-events-none select-none"
+      className="absolute bottom-[-8%] right-[-5%] w-[60vw] max-w-[750px] opacity-[0.05] pointer-events-none select-none"
       animate={{ rotate: 360 }}
-      transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
+      transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
     >
-      {/* Fan blade 1 */}
-      <path
-        d="M100 100 C100 60, 130 20, 100 10 C70 0, 60 50, 100 100Z"
-        fill="#2E8DE8"
-      />
-      {/* Fan blade 2 */}
-      <path
-        d="M100 100 C140 100, 180 70, 190 100 C200 130, 150 140, 100 100Z"
-        fill="#2E8DE8"
-      />
-      {/* Fan blade 3 */}
-      <path
-        d="M100 100 C100 140, 70 180, 100 190 C130 200, 140 150, 100 100Z"
-        fill="#1A5FA8"
-      />
-      {/* Fan blade 4 */}
-      <path
-        d="M100 100 C60 100, 20 130, 10 100 C0 70, 50 60, 100 100Z"
-        fill="#1A5FA8"
-      />
-      {/* Centre circle */}
-      <circle cx="100" cy="100" r="12" fill="#2E8DE8" opacity="0.8" />
+      <path d="M100 100 C100 55,135 15,100 8 C65-1,55 55,100 100Z" fill="#2E8DE8" />
+      <path d="M100 100 C145 100,185 65,192 100 C199 135,145 145,100 100Z" fill="#2E8DE8" />
+      <path d="M100 100 C100 145,65 185,100 192 C135 199,145 145,100 100Z" fill="#1A5FA8" />
+      <path d="M100 100 C55 100,15 135,8 100 C1 65,55 55,100 100Z" fill="#1A5FA8" />
+      <circle cx="100" cy="100" r="13" fill="#2E8DE8" opacity="0.9" />
       <circle cx="100" cy="100" r="6" fill="#0A0A0A" />
     </motion.svg>
   )
 }
 
+/* ─── Count-up hook ─────────────────────────────────────────────────────── */
+function useCountUp(target, duration = 1800, startOnView = true) {
+  const [count, setCount] = useState(0)
+  const [started, setStarted] = useState(false)
+  const ref = useRef(null)
+
+  useEffect(() => {
+    if (!startOnView) { setStarted(true); return }
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setStarted(true) }, { threshold: 0.3 })
+    if (ref.current) obs.observe(ref.current)
+    return () => obs.disconnect()
+  }, [startOnView])
+
+  useEffect(() => {
+    if (!started || target === 0) return
+    const step = Math.ceil(duration / target)
+    let current = 0
+    const timer = setInterval(() => {
+      current += 1
+      setCount(current)
+      if (current >= target) clearInterval(timer)
+    }, step)
+    return () => clearInterval(timer)
+  }, [started, target, duration])
+
+  return [count, ref]
+}
+
+/* ─── Data ──────────────────────────────────────────────────────────────── */
 const services = [
-  {
-    icon: Wind,
-    title: 'Canopy Cleaning',
-    desc: 'Full degreasing of canopy systems, filters, and baffles to TR19 specification. Photographic evidence and compliance documentation provided.',
-  },
-  {
-    icon: FileCheck,
-    title: 'Duct Cleaning',
-    desc: 'Complete ductwork inspection and deep clean using professional-grade equipment. Risk assessment and full compliance reporting included.',
-  },
-  {
-    icon: Wrench,
-    title: 'Fan Repair & Breakdown',
-    desc: 'Specialist emergency fan breakdown response. We diagnose, repair, and restore kitchen extract fans with minimal downtime.',
-  },
-  {
-    icon: Shield,
-    title: 'HVAC Servicing',
-    desc: 'Full HVAC system maintenance from filter replacement to motor servicing. Keeping your ventilation running at peak efficiency.',
-  },
-  {
-    icon: FileCheck,
-    title: 'Compliance Certification',
-    desc: 'TR19 documentation, sign-off certificates, and photographic before/after reports — everything your insurer and fire risk assessor needs.',
-  },
-  {
-    icon: Zap,
-    title: 'Emergency Callout',
-    desc: 'Nationwide rapid response for critical breakdowns. We mobilise quickly to keep your kitchen operational and compliant.',
-  },
+  { id: 'fan-repair', icon: Wrench, title: 'Fan Repair & Breakdown', tag: 'SPECIALIST', desc: 'Emergency specialist response for failed kitchen extract fans. We diagnose, source parts, and restore your system fast.', proof: 'Average same-day response nationwide' },
+  { id: 'canopy-cleaning', icon: Wind, title: 'Canopy Cleaning', tag: 'MOST POPULAR', desc: 'Full degreasing of canopy systems, baffles, and filters to TR19 specification. Certificate issued after every clean.', proof: 'Compliant with TR19 grease accumulation standards' },
+  { id: 'duct-cleaning', icon: FileCheck, title: 'Duct Cleaning', tag: null, desc: 'Complete ductwork inspection and deep clean from canopy to discharge. Every metre documented with photographic evidence.', proof: 'Full duct run covered — not just the canopy hood' },
+  { id: 'hvac-servicing', icon: Shield, title: 'HVAC Servicing', tag: null, desc: 'Planned preventative maintenance covering filters, coils, belts, bearings, and airflow balancing.', proof: 'Reduces energy costs and extends system lifespan' },
+  { id: 'compliance', icon: FileCheck, title: 'Compliance Certification', tag: null, desc: 'TR19 documentation, sign-off certificates, and photographic reports — everything your insurer needs.', proof: 'Insurance-ready certificate issued within 24 hours' },
+  { id: 'emergency', icon: Zap, title: 'Emergency Callout', tag: 'NATIONWIDE', desc: 'Rapid response for critical breakdowns and urgent pre-inspection cleans. We mobilise fast, wherever you are.', proof: '24/7 availability — call 07517 758507 directly' },
 ]
 
-const stats = [
-  { value: 'TR19', label: 'Compliant Cleaning' },
-  { value: '24/7', label: 'Emergency Response' },
-  { value: 'UK', label: 'Nationwide Coverage' },
-  { value: '100%', label: 'Certified Engineers' },
+const testimonials = [
+  { name: 'Marco R.', business: 'Head Chef, London Restaurant Group', text: 'Called them at 10pm on a Friday — fan was back running by midnight. Absolute lifesavers. TR19 cert in my inbox by morning.', stars: 5 },
+  { name: 'Sarah T.', business: 'Operations Manager, Hotel Chain', text: 'We use Commercial Canopy Cleaning across 6 sites. Consistent, thorough, and the compliance paperwork is always spotless.', stars: 5 },
+  { name: 'Dev P.', business: 'Owner, Indian Takeaway, Manchester', text: 'Had two other companies quote me. These were cheaper, faster, and actually explained what TR19 means for my insurance. Brilliant.', stars: 5 },
+]
+
+const clientTypes = [
+  { icon: Utensils, label: 'Restaurants & Takeaways' },
+  { icon: Hotel, label: 'Hotels & Hospitality' },
+  { icon: HeartPulse, label: 'Hospitals & Care Homes' },
+  { icon: GraduationCap, label: 'Schools & Universities' },
+  { icon: Building2, label: 'Office & Corporate Kitchens' },
+  { icon: HardHat, label: 'Construction Site Canteens' },
+  { icon: Beer, label: 'Pubs & Bars' },
+  { icon: ShoppingCart, label: 'Supermarkets & Food Retail' },
+]
+
+const cities = [
+  'London','Manchester','Birmingham','Leeds','Sheffield','Liverpool',
+  'Bristol','Edinburgh','Glasgow','Cardiff','Newcastle','Nottingham',
+  'Leicester','Coventry','Brighton','Southampton','Reading','Oxford',
+  'Cambridge','York','Exeter','Plymouth','Derby','Stoke-on-Trent',
+  'Hull','Bradford','Wolverhampton','Sunderland','Milton Keynes','Portsmouth','Norwich',
 ]
 
 const whyUs = [
-  'Full TR19 compliance documentation provided on every job',
-  'Photographic before & after evidence for insurance purposes',
-  'Emergency fan repair — rapid nationwide response',
-  'Certified engineers with extensive commercial experience',
-  'No hidden charges — transparent fixed pricing',
-  'Fully insured with public liability coverage',
+  'TR19 compliant certification issued after every job',
+  'Fan breakdown specialists — not generalists',
+  'Same-day emergency response, nationwide',
+  'Full before & after photographic report',
+  'Insurance-ready documentation for your records',
 ]
 
+/* ─── Sub-components ─────────────────────────────────────────────────────── */
+function StarRow({ n = 5 }) {
+  return (
+    <div className="flex gap-0.5">
+      {Array.from({ length: n }).map((_, i) => (
+        <Star key={i} size={14} className="text-brand-blue-bright fill-brand-blue-bright" />
+      ))}
+    </div>
+  )
+}
+
+function StatBox({ value, suffix = '', label, isNumeric = false }) {
+  const [count, ref] = useCountUp(isNumeric ? parseInt(value) : 0, 1600)
+  return (
+    <div ref={ref} className="flex flex-col items-center text-center px-4 py-2">
+      <span className="font-heading text-4xl sm:text-5xl text-brand-blue-bright tracking-wider leading-none">
+        {isNumeric ? count : value}{suffix}
+      </span>
+      <span className="font-body text-white/40 text-xs uppercase tracking-widest mt-2">{label}</span>
+    </div>
+  )
+}
+
+/* ─── Page ───────────────────────────────────────────────────────────────── */
 export default function Home() {
   return (
     <PageTransition>
-      {/* HERO */}
+      <Helmet>
+        <title>Commercial Canopy Cleaning | TR19 Certified | Fan Repair | Nationwide</title>
+        <meta name="description" content="Emergency fan repair, TR19 canopy & duct cleaning — certified engineers, nationwide, 24/7. Get a free quote today: 07517758507." />
+        <meta property="og:title" content="Commercial Canopy Cleaning | TR19 Certified | Nationwide" />
+        <meta property="og:description" content="Emergency fan repair, TR19 canopy & duct cleaning. Certified engineers, nationwide coverage, 24/7 callout." />
+      </Helmet>
+
+      {/* ── HERO ──────────────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Background radial gradient */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: 'radial-gradient(ellipse 80% 80% at 0% 20%, rgba(26,95,168,0.12) 0%, transparent 60%), #0A0A0A',
-          }}
-        />
-        {/* Grid texture */}
-        <div
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
-          }}
-        />
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 80% 80% at 0% 20%, rgba(26,95,168,0.08) 0%, transparent 60%), #0A0A0A' }} />
+        <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.5) 1px,transparent 1px)', backgroundSize: '60px 60px' }} />
+        <FanBg />
 
-        <FanSVG />
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-36 pb-20 sm:pb-24 w-full">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-36 pb-20 w-full">
           <div className="max-w-3xl">
-            <motion.span
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              className="section-label"
-            >
-              TR19 Certified &bull; Nationwide Coverage
+            <motion.span initial={{ opacity:0,x:-20 }} animate={{ opacity:1,x:0 }} transition={{ delay:0.05,duration:0.45 }} className="section-label">
+              TR19 Certified &bull; Fan Specialists &bull; 24/7 Nationwide
             </motion.span>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="font-heading text-[3.5rem] sm:text-7xl lg:text-[9rem] text-white leading-none mb-5 sm:mb-6"
-            >
-              CLEAN.
-              <br />
-              <span className="text-brand-blue-bright">COMPLIANT.</span>
-              <br />
-              CERTIFIED.
+            <motion.h1 initial={{ opacity:0,y:30 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.15,duration:0.5 }} className="font-heading text-[2.8rem] sm:text-6xl lg:text-8xl text-white leading-none mb-5">
+              WHEN YOUR<br />
+              KITCHEN STOPS,<br />
+              <span className="text-brand-blue-bright">WE DON'T.</span>
             </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.5 }}
-              className="font-body text-white/60 text-base sm:text-lg lg:text-xl leading-relaxed mb-8 sm:mb-10 max-w-xl"
-            >
-              Commercial canopy &amp; duct cleaning to TR19 standards — nationwide coverage. Fan breakdown specialists and HVAC servicing for commercial kitchens.
+            <motion.p initial={{ opacity:0,y:20 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.3,duration:0.45 }} className="font-body text-white/60 text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
+              Emergency fan repair, TR19 canopy &amp; duct cleaning — certified engineers, nationwide, 24/7.
             </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.45, duration: 0.5 }}
-              className="flex flex-wrap gap-3 sm:gap-4 mb-10 sm:mb-14"
-            >
-              <a href="tel:07517758507" className="btn-primary">
-                Get a Free Quote
-                <ArrowRight size={18} />
+            <motion.div initial={{ opacity:0,y:20 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.45,duration:0.45 }} className="flex flex-wrap gap-3 mb-10">
+              <a href="tel:07517758507" className="btn-primary text-base">
+                <Phone size={18} /> Call Now — 07517 758507
               </a>
-              <Link to="/services" className="btn-ghost">
-                Our Services
+              <Link to="/contact" className="btn-ghost">
+                Get a Free Quote <ArrowRight size={16} />
               </Link>
             </motion.div>
 
-            {/* Trust badges */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.55, duration: 0.5 }}
-              className="flex flex-wrap gap-6"
-            >
-              {[
-                { icon: Shield, label: 'TR19 Certified' },
-                { icon: Clock, label: 'Emergency Callout' },
-                { icon: Wrench, label: 'Fan Specialists' },
-              ].map(({ icon: Icon, label }) => (
+            <motion.div initial={{ opacity:0,y:15 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.6,duration:0.45 }} className="flex flex-wrap gap-5">
+              {[{ icon:Shield, label:'TR19 Certified' }, { icon:Clock, label:'24/7 Emergency Response' }, { icon:MapPin, label:'Nationwide Coverage' }].map(({ icon:Icon, label }) => (
                 <div key={label} className="flex items-center gap-2">
-                  <Icon size={16} className="text-brand-blue-bright" />
+                  <Icon size={15} className="text-brand-blue-bright" />
                   <span className="font-body text-white/50 text-sm">{label}</span>
                 </div>
               ))}
@@ -184,151 +177,151 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-px h-10 bg-gradient-to-b from-brand-blue-bright to-transparent"
-          />
+        <motion.div initial={{ opacity:0 }} animate={{ opacity:1 }} transition={{ delay:1.1 }} className="absolute bottom-8 left-1/2 -translate-x-1/2">
+          <motion.div animate={{ y:[0,8,0] }} transition={{ duration:1.5,repeat:Infinity }} className="w-px h-10 bg-gradient-to-b from-brand-blue-bright to-transparent" />
         </motion.div>
       </section>
 
-      {/* STATS STRIP */}
-      <section className="bg-[#0d0d0d] border-y border-white/[0.06] py-8 sm:py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {stats.map((stat, i) => (
-              <ScrollReveal key={stat.label} delay={i * 0.08}>
-                <div className="flex flex-col items-center text-center">
-                  <span className="font-heading text-4xl text-brand-blue-bright tracking-wider mb-1">
-                    {stat.value}
-                  </span>
-                  <span className="font-body text-white/40 text-xs uppercase tracking-widest">
-                    {stat.label}
-                  </span>
-                </div>
-              </ScrollReveal>
-            ))}
+      {/* ── EMERGENCY STRIP ───────────────────────────────────────────────── */}
+      <section className="relative overflow-hidden border-y border-brand-blue-deep/30" style={{ background: '#0d0808' }}>
+        <div className="absolute left-0 top-0 bottom-0 w-1 bg-brand-blue-bright" style={{ animation: 'pulse-glow 2s ease-in-out infinite' }} />
+        <style>{`@keyframes pulse-glow{0%,100%{box-shadow:0 0 8px #2E8DE8,0 0 20px #2E8DE8}50%{box-shadow:0 0 20px #2E8DE8,0 0 45px #2E8DE8}}`}</style>
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <AlertTriangle size={26} className="text-brand-blue-bright flex-shrink-0" />
+            <div>
+              <div className="font-heading text-xl sm:text-2xl text-white tracking-wide leading-none">Fan Breakdown? We Cover Nationwide — Engineers Available Now</div>
+              <div className="font-body text-white/40 text-xs mt-0.5">Don't let a failed extraction fan close your kitchen</div>
+            </div>
+          </div>
+          <div className="flex items-center gap-4 flex-shrink-0">
+            <a href="tel:07517758507" className="font-heading text-2xl text-white tracking-wider hover:text-brand-blue-bright transition-colors">07517 758507</a>
+            <a href="tel:07517758507" className="btn-primary text-sm px-5 py-2.5 whitespace-nowrap">
+              Emergency Callout <ArrowRight size={14} />
+            </a>
           </div>
         </div>
       </section>
 
-      {/* SERVICES PREVIEW */}
+      {/* ── STATS BAR ─────────────────────────────────────────────────────── */}
+      <section className="bg-[#0d0d0d] border-b border-white/[0.06] py-8 sm:py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollRevealContainer className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/[0.06]">
+            <ScrollRevealItem><StatBox value={500} suffix="+" label="Jobs Completed" isNumeric /></ScrollRevealItem>
+            <ScrollRevealItem><StatBox value="24/7" label="Emergency Response" /></ScrollRevealItem>
+            <ScrollRevealItem><StatBox value="TR19" label="Certified Standard" /></ScrollRevealItem>
+            <ScrollRevealItem><StatBox value="100%" label="Nationwide Coverage" /></ScrollRevealItem>
+          </ScrollRevealContainer>
+        </div>
+      </section>
+
+      {/* ── SERVICES GRID ─────────────────────────────────────────────────── */}
       <section className="py-16 sm:py-24 lg:py-32 bg-brand-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal className="mb-16">
+          <ScrollReveal className="mb-12 sm:mb-16">
             <span className="section-label">What We Do</span>
-            <h2 className="font-heading text-5xl lg:text-6xl text-white mb-4">
-              Our Services
-            </h2>
-            <p className="font-body text-white/50 max-w-xl">
-              From routine canopy cleans to emergency fan repairs — we handle every aspect of commercial kitchen ventilation compliance.
-            </p>
+            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white mb-3">Our Services</h2>
+            <p className="font-body text-white/50 max-w-xl text-sm sm:text-base">All services carried out to TR19 standards with full certification and photographic reporting.</p>
           </ScrollReveal>
 
           <ScrollRevealContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.04]">
-            {services.map(({ icon: Icon, title, desc }) => (
-              <ScrollRevealItem key={title}>
-                <div className="group bg-brand-black p-8 h-full transition-all duration-300 hover:bg-[#0e1825] cursor-pointer">
-                  <div className="mb-5 w-12 h-12 flex items-center justify-center border border-white/10 group-hover:border-brand-blue-bright transition-colors duration-300">
-                    <Icon size={22} className="text-white/40 group-hover:text-brand-blue-bright transition-colors duration-300" />
-                  </div>
-                  <h3 className="font-heading text-2xl text-white tracking-wide mb-3">
-                    {title}
-                  </h3>
-                  <p className="font-body text-white/50 text-sm leading-relaxed mb-5">
-                    {desc}
-                  </p>
-                  <Link
-                    to="/services"
-                    className="font-body text-brand-blue-bright text-sm flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  >
-                    Learn more <ChevronRight size={14} />
+            {services.map(({ id, icon: Icon, title, tag, desc, proof }) => (
+              <ScrollRevealItem key={id}>
+                <div className="group bg-brand-black p-7 h-full transition-all duration-300 hover:bg-[#0d1a27] cursor-pointer relative" style={{ borderLeft:'3px solid transparent', transition:'border-color 0.3s, background 0.3s' }}
+                  onMouseEnter={e => e.currentTarget.style.borderLeftColor='#2E8DE8'}
+                  onMouseLeave={e => e.currentTarget.style.borderLeftColor='transparent'}>
+                  {tag && (
+                    <span className="absolute top-4 right-4 font-body text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 bg-brand-blue-deep/20 text-brand-blue-bright border border-brand-blue-bright/20">
+                      {tag}
+                    </span>
+                  )}
+                  <motion.div whileHover={{ y:-4 }} transition={{ duration:0.25 }} className="mb-4 w-11 h-11 flex items-center justify-center border border-white/10 group-hover:border-brand-blue-bright transition-colors duration-300">
+                    <Icon size={20} className="text-white/40 group-hover:text-brand-blue-bright transition-colors duration-300" />
+                  </motion.div>
+                  <h3 className="font-heading text-xl sm:text-2xl text-white tracking-wide mb-2">{title}</h3>
+                  <p className="font-body text-white/50 text-sm leading-relaxed mb-3">{desc}</p>
+                  <p className="font-body text-white/25 text-xs italic mb-4">{proof}</p>
+                  <Link to={`/services#${id}`} className="font-body text-brand-blue-bright text-xs flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Learn more <ChevronRight size={13} />
                   </Link>
                 </div>
               </ScrollRevealItem>
             ))}
           </ScrollRevealContainer>
 
-          <ScrollReveal className="mt-10 text-center">
-            <Link to="/services" className="btn-ghost">
-              View All Services <ArrowRight size={16} />
+          <ScrollReveal className="mt-8 text-center">
+            <Link to="/services" className="btn-ghost text-sm">View All Services <ArrowRight size={15} /></Link>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ── TESTIMONIALS ─────────────────────────────────────────────────── */}
+      <section className="py-16 sm:py-24 bg-[#070b11]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal className="mb-10 sm:mb-14">
+            <span className="section-label">Client Feedback</span>
+            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white">What Our Clients Say</h2>
+          </ScrollReveal>
+
+          <ScrollRevealContainer className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {testimonials.map((t, i) => (
+              <ScrollRevealItem key={i}>
+                <div className="card-surface p-6 sm:p-7 h-full flex flex-col relative overflow-hidden group hover:border-brand-blue-bright/20 transition-colors duration-300">
+                  <div className="absolute top-4 right-4 text-white/[0.04] group-hover:text-white/[0.07] transition-colors">
+                    <svg viewBox="0 0 40 30" width="40" fill="currentColor"><path d="M0 30V18C0 8 6 2 18 0l2 4C12 6 9 10 9 14h6v16H0zm22 0V18c0-10 6-16 18-18l2 4c-8 2-11 6-11 10h6v16H22z"/></svg>
+                  </div>
+                  <StarRow n={t.stars} />
+                  <p className="font-body text-white/60 text-sm leading-relaxed my-4 flex-1">"{t.text}"</p>
+                  <div className="pt-4 border-t border-white/[0.06]">
+                    <div className="font-body font-semibold text-white text-sm">{t.name}</div>
+                    <div className="font-body text-white/35 text-xs mt-0.5">{t.business}</div>
+                  </div>
+                </div>
+              </ScrollRevealItem>
+            ))}
+          </ScrollRevealContainer>
+
+          <ScrollReveal className="mt-8 text-center">
+            <Link to="/reviews" className="font-body text-brand-blue-bright text-sm flex items-center gap-1 justify-center hover:underline">
+              See all reviews <ChevronRight size={14} />
             </Link>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* WHY CHOOSE US */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-[#070b11]">
+      {/* ── WHY US ───────────────────────────────────────────────────────── */}
+      <section className="py-16 sm:py-24 lg:py-32 bg-brand-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            {/* Left — text */}
             <ScrollReveal>
               <span className="section-label">Why Us</span>
-              <h2 className="font-heading text-5xl lg:text-6xl text-white mb-6">
-                The Standard<br />
-                <span className="text-brand-blue-bright">Others Aspire To</span>
+              <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white mb-8">
+                The Commercial Canopy<br />
+                <span className="text-brand-blue-bright">Cleaning Standard</span>
               </h2>
-              <p className="font-body text-white/50 leading-relaxed mb-10">
-                We don't just clean — we certify. Every job we complete meets TR19 standards and comes with full documentation, giving you the compliance evidence your business, insurer, and fire risk assessor needs.
-              </p>
-
               <ul className="space-y-4">
                 {whyUs.map((point, i) => (
-                  <motion.li
-                    key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.07, duration: 0.4 }}
-                    className="flex items-start gap-3"
-                  >
+                  <motion.li key={i} initial={{ opacity:0,x:-20 }} whileInView={{ opacity:1,x:0 }} viewport={{ once:true }} transition={{ delay:i*0.08,duration:0.4 }} className="flex items-start gap-3">
                     <CheckCircle2 size={18} className="text-brand-blue-bright mt-0.5 flex-shrink-0" />
-                    <span className="font-body text-white/70 text-sm">{point}</span>
+                    <span className="font-body text-white/70 text-sm sm:text-base">{point}</span>
                   </motion.li>
                 ))}
               </ul>
             </ScrollReveal>
 
-            {/* Right — dark card */}
             <ScrollReveal delay={0.15}>
-              <div className="card-surface p-10 relative overflow-hidden">
-                {/* Blue accent corner */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-blue-deep opacity-10 blur-3xl rounded-full" />
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-blue-deep to-brand-blue-bright" />
-
+              <div className="card-surface p-8 sm:p-10 relative overflow-hidden border-l-2 border-brand-blue-deep">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-brand-blue-deep opacity-10 blur-3xl rounded-full" />
                 <div className="relative">
-                  <div className="font-heading text-5xl text-white mb-2">TR19</div>
-                  <div className="font-body text-brand-blue-bright text-sm font-semibold uppercase tracking-widest mb-8">
-                    Compliance Standard
-                  </div>
-
-                  <p className="font-body text-white/50 text-sm leading-relaxed mb-8">
-                    TR19 is the definitive UK guide for kitchen extraction system cleaning. Failing to maintain TR19 compliance can invalidate your fire insurance, breach health &amp; safety regulations, and put your staff at risk.
+                  <h3 className="font-heading text-2xl sm:text-3xl text-white mb-4">Don't Risk Your<br />Fire Safety Certificate</h3>
+                  <p className="font-body text-white/55 text-sm leading-relaxed mb-4">
+                    Grease accumulation in commercial kitchen canopies and ductwork is one of the leading causes of commercial kitchen fires in the UK. The fat and oil residue left by daily cooking builds up over time — and without regular TR19 cleaning, it can reach ignition levels within months.
                   </p>
-
-                  <div className="space-y-3 mb-10">
-                    {[
-                      'Fire risk mitigation',
-                      'Insurance compliance',
-                      'Health & Safety law',
-                      'Documented evidence trail',
-                    ].map((item) => (
-                      <div key={item} className="flex items-center gap-3 font-body text-white/60 text-sm">
-                        <div className="w-1.5 h-1.5 rounded-full bg-brand-blue-bright flex-shrink-0" />
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-
-                  <Link to="/compliance" className="btn-primary text-sm px-6 py-3">
-                    Learn About TR19 <ArrowRight size={16} />
+                  <p className="font-body text-white/55 text-sm leading-relaxed mb-7">
+                    Most commercial property insurers explicitly require evidence of TR19-compliant cleaning to validate fire-related claims. If you suffer a kitchen fire and your canopies haven't been cleaned to standard, your insurer may refuse to pay out — leaving you fully exposed.
+                  </p>
+                  <Link to="/compliance" className="btn-primary text-sm px-6 py-3 inline-flex">
+                    Understand TR19 <ArrowRight size={15} />
                   </Link>
                 </div>
               </div>
@@ -337,46 +330,84 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA BANNER */}
-      <section
-        className="py-16 sm:py-20 lg:py-24 relative overflow-hidden"
-        style={{
-          background: 'linear-gradient(135deg, #0d1e35 0%, #1A5FA8 60%, #2E8DE8 100%)',
-        }}
-      >
-        <div className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: 'repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%)',
-            backgroundSize: '20px 20px',
-          }}
-        />
+      {/* ── WHO WE WORK WITH ─────────────────────────────────────────────── */}
+      <section className="py-16 sm:py-24 bg-[#070b11]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal className="mb-10 sm:mb-14">
+            <span className="section-label">Our Clients</span>
+            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white">Who We Work With</h2>
+          </ScrollReveal>
+          <ScrollRevealContainer className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+            {clientTypes.map(({ icon: Icon, label }) => (
+              <ScrollRevealItem key={label}>
+                <div className="card-surface p-5 flex flex-col items-center text-center group hover:border-brand-blue-bright/30 transition-colors duration-300 cursor-default">
+                  <div className="w-10 h-10 flex items-center justify-center border border-white/10 group-hover:border-brand-blue-bright/50 mb-3 transition-colors duration-300">
+                    <Icon size={18} className="text-white/35 group-hover:text-brand-blue-bright transition-colors duration-300" />
+                  </div>
+                  <span className="font-body text-white/55 text-xs leading-snug group-hover:text-white/80 transition-colors duration-300">{label}</span>
+                </div>
+              </ScrollRevealItem>
+            ))}
+          </ScrollRevealContainer>
+        </div>
+      </section>
+
+      {/* ── LOCATION COVERAGE ─────────────────────────────────────────────── */}
+      <section className="py-16 sm:py-24 bg-brand-black border-t border-white/[0.06]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <ScrollReveal>
+              <span className="section-label">Coverage</span>
+              <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white mb-5">
+                We Cover the<br />
+                <span className="text-brand-blue-bright">Entire UK</span>
+              </h2>
+              <p className="font-body text-white/50 text-sm sm:text-base leading-relaxed mb-6">
+                From Cornwall to the Scottish Highlands — one team, one standard, everywhere. We dispatch engineers nationwide for both scheduled cleans and emergency callouts.
+              </p>
+              <p className="font-body text-white/30 text-sm italic mb-8">
+                Don't see your area? We cover everywhere — call us: <a href="tel:07517758507" className="text-brand-blue-bright not-italic hover:underline">07517 758507</a>
+              </p>
+              <a href="tel:07517758507" className="btn-primary text-sm">
+                <Phone size={16} /> Check Availability
+              </a>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.1}>
+              <div className="card-surface p-6 sm:p-7">
+                <div className="font-body text-white/30 text-xs uppercase tracking-widest mb-4">Areas Covered</div>
+                <div className="flex flex-wrap gap-2">
+                  {cities.map(city => (
+                    <a key={city} href="#contact-form" onClick={e => { e.preventDefault(); document.querySelector('#contact-form')?.scrollIntoView({ behavior:'smooth' }) }}
+                      className="font-body text-white/50 text-xs px-3 py-1.5 border border-white/[0.07] hover:border-brand-blue-bright/40 hover:text-brand-blue-bright transition-colors duration-200 cursor-pointer">
+                      {city}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA BANNER ───────────────────────────────────────────────────── */}
+      <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden" style={{ background:'linear-gradient(135deg,#0A0A0A 0%,#0d2a4a 100%)' }}>
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage:'repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%)', backgroundSize:'20px 20px' }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <span className="font-body text-white/60 text-sm uppercase tracking-widest mb-4 block">
-              Ready to Get Compliant?
-            </span>
-            <h2 className="font-heading text-4xl sm:text-5xl lg:text-7xl text-white mb-5 sm:mb-6">
-              Let's Talk
+            <span className="section-label text-center block mx-auto">Compliance Deadline</span>
+            <h2 className="font-heading text-4xl sm:text-5xl lg:text-7xl text-white mb-4 max-w-4xl mx-auto">
+              Your Kitchen Is a Fire Risk<br />Without a TR19 Clean.
             </h2>
-            <p className="font-body text-white/70 text-base sm:text-lg mb-8 sm:mb-10 max-w-xl mx-auto">
-              Get your free no-obligation quote today. We cover the whole of the UK — call, text, or WhatsApp us.
+            <p className="font-body text-white/60 text-base sm:text-lg mb-10 max-w-xl mx-auto">
+              Most insurance policies require annual certification. Don't let it lapse.
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-              <a
-                href="tel:07517758507"
-                className="bg-white text-[#1A5FA8] font-body font-bold px-7 sm:px-8 py-4 rounded-sm flex items-center gap-3 hover:bg-white/90 transition-all duration-200 text-base sm:text-lg w-full sm:w-auto justify-center"
-              >
-                <Phone size={18} />
-                07517 758507
-              </a>
-              <a
-                href="https://wa.me/447517758507"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-ghost border-white/50 text-white hover:border-white hover:text-white w-full sm:w-auto justify-center"
-              >
-                WhatsApp Us <ArrowRight size={16} />
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+              <Link to="/contact" className="btn-primary w-full sm:w-auto justify-center">
+                Book a Clean <ArrowRight size={16} />
+              </Link>
+              <a href="tel:07517758507" className="bg-white text-brand-blue-deep font-body font-bold px-8 py-4 rounded-sm flex items-center gap-3 hover:bg-white/90 transition-all duration-200 w-full sm:w-auto justify-center">
+                <Phone size={18} /> 07517 758507
               </a>
             </div>
           </ScrollReveal>

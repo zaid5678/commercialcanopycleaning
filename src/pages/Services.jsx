@@ -1,219 +1,193 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Helmet } from 'react-helmet-async'
 import {
   Wind, FileCheck, Wrench, Shield, Zap, Clock,
-  ArrowRight, ChevronDown, Phone
+  ArrowRight, ChevronDown, Phone, CheckCircle2,
+  ClipboardList, Scan, Settings, BadgeCheck, FileText
 } from 'lucide-react'
 import PageTransition from '../components/PageTransition'
 import ScrollReveal, { ScrollRevealContainer, ScrollRevealItem } from '../components/ScrollReveal'
+import { useState } from 'react'
+
+const processSteps = [
+  { icon: Scan, label: 'Survey' },
+  { icon: Settings, label: 'Clean' },
+  { icon: ClipboardList, label: 'Test' },
+  { icon: BadgeCheck, label: 'Certify' },
+  { icon: FileText, label: 'Report' },
+]
 
 const services = [
   {
-    id: 'canopy',
-    icon: Wind,
-    title: 'Canopy Cleaning',
-    tagline: 'Grease-free. Fire-safe. Compliant.',
-    description:
-      'Our canopy cleaning service covers everything above your cooking line — hood surfaces, baffles, filter arrays, and plenum chambers. We remove built-up grease deposits using professional-grade degreasers and high-temperature steam, restoring your canopy to a safe, compliant state.',
-    detail:
-      'Every clean is documented with photographic evidence (before and after), grease measurement readings, and a TR19-compliant certificate ready for your records. We work out of hours to minimise disruption to your kitchen operations.',
-    features: [
-      'Baffle and filter deep clean',
-      'Plenum and duct entry cleaning',
-      'Grease trap inspection',
-      'TR19 compliance certificate',
-      'Photographic documentation',
-      'Out-of-hours scheduling available',
-    ],
-  },
-  {
-    id: 'duct',
-    icon: FileCheck,
-    title: 'Duct Cleaning',
-    tagline: 'Full ductwork. Full documentation.',
-    description:
-      'Grease accumulation inside ductwork represents a serious fire risk and a breach of TR19 guidelines. Our duct cleaning service covers the full run from canopy to discharge — every metre cleaned, inspected, and signed off.',
-    detail:
-      'We use specialist duct access equipment and high-powered rotary brushing systems to thoroughly clean all internal surfaces. All work is captured with CCTV inspection footage and photographic evidence where applicable.',
-    features: [
-      'Full ductwork run inspection',
-      'Rotary brush & vacuum clean',
-      'Access panel installation if required',
-      'CCTV footage on request',
-      'Grease depth measurements',
-      'Full TR19 sign-off report',
-    ],
-  },
-  {
-    id: 'fan',
+    id: 'fan-repair',
     icon: Wrench,
     title: 'Fan Repair & Breakdown',
-    tagline: 'Down time costs money. We move fast.',
-    description:
-      'A failed extraction fan can shut down your kitchen. Our fan breakdown service provides rapid nationwide response — we diagnose the fault, source parts where needed, and get your system back online quickly.',
-    detail:
-      'We specialise in commercial kitchen extract fans including centrifugal, axial, and bifurcated units. From belt replacements and motor rewinds to full unit swaps, our engineers carry common parts to minimise return visits.',
-    features: [
-      'Rapid nationwide response',
-      'Centrifugal, axial & bifurcated fans',
+    tagline: 'Specialist emergency response — not generalists.',
+    description: `A failed kitchen extraction fan can shut down your entire operation within minutes. Commercial Canopy Cleaning are fan breakdown specialists — this isn't a side service, it's a core part of what we do. Our engineers carry common spare parts and diagnostic equipment, and we mobilise nationally to get your system back online as fast as possible.
+
+We work on centrifugal, axial, and bifurcated extract fans of all makes. Whether it's a worn belt, seized bearing, failed motor, or a full unit that needs replacing — we diagnose accurately, source correctly, and fix it right first time.`,
+    includes: [
+      'Same-day emergency callout nationwide',
+      'Centrifugal, axial & bifurcated fan specialists',
       'Belt, bearing & motor replacement',
-      'Full unit swap & installation',
-      'Emergency same-day callout',
-      'Post-repair performance check',
+      'Full unit swap and installation',
+      'Post-repair performance and airflow check',
+      'Service report issued after every job',
     ],
+    slug: 'fan-repair',
   },
   {
-    id: 'hvac',
+    id: 'canopy-cleaning',
+    icon: Wind,
+    title: 'Canopy Cleaning',
+    tagline: 'TR19 certified. Documented. Insurance-ready.',
+    description: `Your canopy is the first line of defence against grease accumulation and fire risk. Commercial Canopy Cleaning performs full degreasing of canopy hoods, baffles, filter arrays, and plenum chambers to TR19 specification — using professional-grade degreasers and high-temperature steam equipment.
+
+Every canopy clean we carry out is documented with photographic evidence taken before and during the job, grease thickness measurements at key points, and a signed TR19 compliance certificate issued promptly after completion. We schedule around your operation to minimise disruption, and we're available out of hours.`,
+    includes: [
+      'Hood, baffle & filter deep clean',
+      'Plenum chamber degreasing',
+      'Grease trap inspection',
+      'Photographic before & after evidence',
+      'Grease depth measurement report',
+      'TR19 compliance certificate issued',
+    ],
+    slug: 'canopy-cleaning',
+  },
+  {
+    id: 'duct-cleaning',
+    icon: FileCheck,
+    title: 'Duct Cleaning',
+    tagline: 'Full run cleaned — not just the hood.',
+    description: `Cleaning only the canopy without addressing the ductwork is not TR19 compliant — and most insurers know it. Grease accumulates throughout the full extraction run, from the canopy entry all the way to the external discharge point. Commercial Canopy Cleaning cleans the complete duct run.
+
+We use specialist rotary brush systems, high-powered vacuum extraction, and access panel installation where required to ensure every metre of your ductwork is thoroughly cleaned. CCTV inspection footage is available on request for longer or more complex duct runs.`,
+    includes: [
+      'Full ductwork run — canopy to discharge',
+      'Rotary brush & vacuum extraction',
+      'Access panel installation where required',
+      'CCTV inspection footage (on request)',
+      'Grease depth measurements throughout',
+      'Full TR19 sign-off documentation',
+    ],
+    slug: 'duct-cleaning',
+  },
+  {
+    id: 'hvac-servicing',
     icon: Shield,
     title: 'HVAC Servicing',
-    tagline: 'Maintained systems. Lower energy costs.',
-    description:
-      'Our HVAC servicing keeps your full ventilation system running efficiently and reliably. We cover filter replacements, coil cleaning, belt and bearing checks, motor lubrication, and system performance testing.',
-    detail:
-      'Planned preventative maintenance contracts are available — we schedule regular visits to keep your system in peak condition and catch issues before they become costly breakdowns.',
-    features: [
+    tagline: 'Maintained systems run cooler, cheaper, longer.',
+    description: `A neglected HVAC system doesn't just risk compliance failure — it costs you money every day in reduced efficiency and accelerated wear. Our HVAC servicing programme covers all key components: filter replacement, coil and heat exchanger cleaning, belt and bearing inspections, motor lubrication, and system-wide airflow balancing.
+
+We offer both one-off servicing visits and planned preventative maintenance contracts for businesses that want consistent performance and compliance year-round. All work is documented with a full service report.`,
+    includes: [
       'Filter replacement & coil clean',
-      'Belt, bearing & motor service',
-      'System performance testing',
-      'Air flow balancing',
-      'Planned maintenance contracts',
-      'Full service report provided',
+      'Belt, bearing & motor inspection',
+      'Heat exchanger & evaporator service',
+      'System airflow balancing',
+      'Planned maintenance contracts available',
+      'Full service report after every visit',
     ],
+    slug: 'hvac-servicing',
   },
   {
     id: 'compliance',
-    icon: FileCheck,
+    icon: BadgeCheck,
     title: 'Compliance Certification',
-    tagline: 'The paperwork your insurer demands.',
-    description:
-      'We produce full TR19-standard compliance packs for every job — the documentation your insurer, fire risk assessor, and environmental health officer needs. No cutting corners, no shortcuts.',
-    detail:
-      'Each compliance pack includes a grease thickness assessment, photographic before and after evidence, engineer sign-off certificate, and recommended next cleaning date. We retain copies in our system for easy reissue if required.',
-    features: [
-      'Grease thickness assessment',
-      'Before & after photography',
-      'TR19 engineer sign-off',
-      'Insurance-ready certificate',
-      'Digital and hard copy options',
-      'Records retained for reissue',
+    tagline: 'The paperwork your insurer and assessor requires.',
+    description: `TR19 certification is not just a piece of paper — it's the documented evidence that your kitchen extraction system has been cleaned to the correct standard, by a competent engineer, using the correct methodology. Commercial Canopy Cleaning issues comprehensive compliance packs after every job.
+
+Our documentation is used by some of the UK's largest commercial kitchen operators as the definitive record of their ventilation maintenance. We retain digital copies in our system and can reissue documentation quickly if originals are ever misplaced.`,
+    includes: [
+      'Signed TR19 engineer certificate',
+      'Grease thickness assessment report',
+      'Full photographic evidence pack',
+      'Recommended next clean date',
+      'Digital & hard copy options',
+      'Records retained for rapid reissue',
     ],
+    slug: 'compliance-certification',
   },
   {
     id: 'emergency',
     icon: Zap,
     title: 'Emergency Callout',
-    tagline: 'National reach. Fast response.',
-    description:
-      'When your kitchen extraction system fails or a critical compliance issue arises, you need a team that can respond — fast. We operate a nationwide emergency callout service, mobilising engineers quickly wherever you are.',
-    detail:
-      'Whether it is a fan failure, a fire risk identified during an inspection, or an urgent pre-inspection clean required, we have the resource and reach to help. Call us directly on 07517 758507 to speak with an engineer.',
-    features: [
-      'Nationwide coverage',
-      'Rapid response prioritisation',
-      'Fan failures & breakdowns',
-      'Pre-inspection emergency cleans',
-      'Out-of-hours availability',
-      'Direct line to qualified engineers',
+    tagline: 'Nationwide. Fast. No waiting lists.',
+    description: `When your kitchen extraction system fails — whether it's a fan breakdown, a blocked duct, or an urgent compliance issue before an inspection — you need a team that can respond quickly, anywhere in the UK. Commercial Canopy Cleaning operates a national emergency callout service with no call-out hour restrictions.
+
+Call us directly on 07517 758507 and speak with an engineer. We'll assess the situation over the phone, dispatch to your location, and prioritise getting your operation back to normal. Emergency cleans can be arranged on the same day for compliance-critical situations.`,
+    includes: [
+      '24/7 emergency availability',
+      'Speak directly with an engineer',
+      'Rapid dispatch nationwide',
+      'Fan failures & critical breakdowns',
+      'Same-day pre-inspection cleans',
+      'Full documentation after every emergency job',
     ],
+    slug: 'emergency-callout',
   },
 ]
 
-function ServiceCard({ service, index }) {
-  const [expanded, setExpanded] = useState(false)
+function ServiceSection({ service }) {
   const Icon = service.icon
-
   return (
-    <ScrollRevealItem>
-      <motion.div
-        className={`card-surface overflow-hidden transition-all duration-300 ${
-          expanded ? 'border-brand-blue-bright/40' : 'hover:border-white/12'
-        }`}
-        layout
-      >
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="w-full text-left p-8 group"
-        >
-          <div className="flex items-start justify-between gap-4">
-            <div className="flex items-start gap-5">
-              <div className={`w-12 h-12 flex items-center justify-center border transition-colors duration-300 flex-shrink-0 ${
-                expanded
-                  ? 'border-brand-blue-bright bg-brand-blue-bright/10'
-                  : 'border-white/10 group-hover:border-brand-blue-bright/50'
-              }`}>
-                <Icon size={20} className={`transition-colors duration-300 ${
-                  expanded ? 'text-brand-blue-bright' : 'text-white/40 group-hover:text-brand-blue-bright'
-                }`} />
-              </div>
-              <div>
-                <div className="font-body text-brand-blue-bright text-xs uppercase tracking-widest mb-1">
-                  {service.tagline}
+    <section id={service.id} className="py-16 sm:py-20 border-b border-white/[0.06] scroll-mt-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollReveal>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
+            <div className="lg:col-span-3">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-12 h-12 flex items-center justify-center border border-brand-blue-bright/30 bg-brand-blue-bright/5">
+                  <Icon size={22} className="text-brand-blue-bright" />
                 </div>
-                <h3 className="font-heading text-2xl text-white tracking-wide">
-                  {service.title}
-                </h3>
+                <div>
+                  <div className="font-body text-brand-blue-bright text-xs uppercase tracking-widest">{service.tagline}</div>
+                  <h2 className="font-heading text-3xl sm:text-4xl text-white tracking-wide leading-tight">{service.title}</h2>
+                </div>
+              </div>
+              <div className="space-y-4">
+                {service.description.split('\n\n').map((para, i) => (
+                  <p key={i} className="font-body text-white/55 text-sm sm:text-base leading-relaxed">{para}</p>
+                ))}
               </div>
             </div>
-            <motion.div
-              animate={{ rotate: expanded ? 180 : 0 }}
-              transition={{ duration: 0.25 }}
-              className="flex-shrink-0 mt-1"
-            >
-              <ChevronDown size={20} className="text-white/30" />
-            </motion.div>
-          </div>
-
-          <p className="font-body text-white/50 text-sm leading-relaxed mt-5">
-            {service.description}
-          </p>
-        </button>
-
-        <AnimatePresence>
-          {expanded && (
-            <motion.div
-              key="content"
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
-              className="overflow-hidden"
-            >
-              <div className="px-8 pb-8 border-t border-white/[0.06]">
-                <p className="font-body text-white/40 text-sm leading-relaxed mt-6 mb-6">
-                  {service.detail}
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
-                  {service.features.map((f) => (
-                    <div key={f} className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-brand-blue-bright rounded-full flex-shrink-0" />
-                      <span className="font-body text-white/60 text-sm">{f}</span>
-                    </div>
+            <div className="lg:col-span-2">
+              <div className="card-surface p-6 sm:p-7 sticky top-28">
+                <div className="font-body text-white/30 text-xs uppercase tracking-widest mb-4">What's Included</div>
+                <ul className="space-y-3 mb-7">
+                  {service.includes.map(item => (
+                    <li key={item} className="flex items-start gap-2.5">
+                      <CheckCircle2 size={15} className="text-brand-blue-bright mt-0.5 flex-shrink-0" />
+                      <span className="font-body text-white/60 text-sm">{item}</span>
+                    </li>
                   ))}
-                </div>
-                <Link to="/contact" className="btn-primary text-sm px-6 py-3 inline-flex">
-                  Get a Quote <ArrowRight size={16} />
+                </ul>
+                <Link to={`/contact?service=${encodeURIComponent(service.title)}`} className="btn-primary text-sm w-full justify-center">
+                  Request This Service <ArrowRight size={14} />
                 </Link>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.div>
-    </ScrollRevealItem>
+            </div>
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
   )
 }
 
 export default function Services() {
   return (
     <PageTransition>
-      {/* Page Hero */}
+      <Helmet>
+        <title>Services | TR19 Canopy Cleaning, Fan Repair, HVAC | Commercial Canopy Cleaning</title>
+        <meta name="description" content="TR19 canopy cleaning, duct cleaning, emergency fan repair, HVAC servicing, and compliance certification. Nationwide. Certified engineers." />
+        <meta property="og:title" content="Services | Commercial Canopy Cleaning" />
+        <meta property="og:description" content="Full-spectrum kitchen ventilation services — canopy cleaning, duct cleaning, fan repair, HVAC servicing, TR19 compliance." />
+      </Helmet>
+
+      {/* Hero */}
       <section className="pt-28 sm:pt-36 pb-12 sm:pb-16 relative overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background: 'radial-gradient(ellipse 60% 60% at 80% 50%, rgba(26,95,168,0.1) 0%, transparent 60%), #0A0A0A',
-          }}
-        />
+        <div className="absolute inset-0" style={{ background:'radial-gradient(ellipse 60% 60% at 80% 50%,rgba(26,95,168,0.1) 0%,transparent 60%),#0A0A0A' }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="flex items-center gap-2 font-body text-white/30 text-sm mb-6">
@@ -222,59 +196,57 @@ export default function Services() {
               <span className="text-white/60">Services</span>
             </div>
             <span className="section-label">What We Offer</span>
-            <h1 className="font-heading text-5xl sm:text-6xl lg:text-8xl text-white leading-none mb-6">
-              Our Services
-            </h1>
-            <p className="font-body text-white/50 text-lg max-w-2xl leading-relaxed">
-              Full-spectrum canopy and duct cleaning, fan repair, HVAC servicing, and compliance certification — all to TR19 standards. Every job. No exceptions.
+            <h1 className="font-heading text-5xl sm:text-6xl lg:text-8xl text-white leading-none mb-5">Our Services</h1>
+            <p className="font-body text-white/50 text-base sm:text-lg max-w-2xl leading-relaxed">
+              All services carried out to TR19 standards with full certification and photographic reporting. Every job. No exceptions.
             </p>
+          </ScrollReveal>
+
+          {/* Process strip */}
+          <ScrollReveal delay={0.15} className="mt-10">
+            <div className="flex items-center gap-0 overflow-x-auto pb-2">
+              {processSteps.map((step, i) => {
+                const Icon = step.icon
+                return (
+                  <div key={step.label} className="flex items-center flex-shrink-0">
+                    <div className="flex flex-col items-center gap-2 px-5 py-3 border border-white/[0.06] bg-[#111] min-w-[90px]">
+                      <Icon size={18} className="text-brand-blue-bright" />
+                      <span className="font-body text-white/50 text-xs uppercase tracking-widest">{step.label}</span>
+                    </div>
+                    {i < processSteps.length - 1 && (
+                      <div className="w-6 h-px bg-brand-blue-bright/30 flex-shrink-0" />
+                    )}
+                  </div>
+                )
+              })}
+            </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="h-px bg-white/[0.06]" />
-      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div className="h-px bg-white/[0.06]" /></div>
 
-      {/* Services Grid */}
-      <section className="py-14 sm:py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollRevealContainer className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            {services.map((service, index) => (
-              <ServiceCard key={service.id} service={service} index={index} />
-            ))}
-          </ScrollRevealContainer>
-        </div>
-      </section>
+      {/* Service sections */}
+      {services.map(service => <ServiceSection key={service.id} service={service} />)}
 
       {/* Bottom CTA */}
-      <section className="py-14 sm:py-20 bg-[#070b11] border-t border-white/[0.06]">
+      <section className="py-14 sm:py-20 bg-[#070b11]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             <ScrollReveal>
               <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white mb-4">
-                Not Sure What<br />
-                <span className="text-brand-blue-bright">You Need?</span>
+                Not Sure What<br /><span className="text-brand-blue-bright">You Need?</span>
               </h2>
-              <p className="font-body text-white/50 leading-relaxed">
-                Call us and speak directly with an engineer. We'll assess your requirements and recommend the right service — no pushy sales, just straight advice.
-              </p>
+              <p className="font-body text-white/50 leading-relaxed">Call us and speak directly with an engineer. We'll assess your requirements and recommend the right service — straight advice, no sales pressure.</p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <a href="tel:07517758507" className="btn-primary justify-center sm:justify-start">
-                  <Phone size={18} />
-                  07517 758507
+                  <Phone size={18} /> 07517 758507
                 </a>
-                <a
-                  href="https://wa.me/447517758507"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-ghost justify-center sm:justify-start"
-                >
-                  WhatsApp Us <ArrowRight size={16} />
-                </a>
+                <Link to="/contact" className="btn-ghost justify-center sm:justify-start">
+                  Send an Enquiry <ArrowRight size={16} />
+                </Link>
               </div>
             </ScrollReveal>
           </div>

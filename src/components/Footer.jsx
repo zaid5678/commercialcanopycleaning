@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Phone, MapPin, Instagram, ShieldCheck, Globe, MessageCircle } from 'lucide-react'
+import { Phone, MapPin, Instagram, ShieldCheck, Globe, MessageCircle, Star } from 'lucide-react'
 
 const quickLinks = [
   { label: 'Home', href: '/' },
@@ -7,6 +7,8 @@ const quickLinks = [
   { label: 'About Us', href: '/about' },
   { label: 'TR19 Compliance', href: '/compliance' },
   { label: 'Reviews', href: '/reviews' },
+  { label: 'Gallery', href: '/gallery' },
+  { label: 'Contact Us', href: '/contact' },
 ]
 
 function WhatsAppIcon({ size = 16 }) {
@@ -86,10 +88,10 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2 — Quick Links */}
+          {/* Column 2 — Quick Links + Socials */}
           <div>
             <h4 className="font-heading text-lg text-white tracking-wider mb-6">Quick Links</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3 mb-8">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -102,28 +104,50 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+            <div className="space-y-3">
+              <a
+                href="https://instagram.com/commercial_canopy_cleaning"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 font-body text-white/40 text-xs hover:text-brand-blue-bright transition-colors duration-200"
+              >
+                <Instagram size={13} className="text-brand-blue-bright" />
+                @commercial_canopy_cleaning
+              </a>
+              <div className="flex items-center gap-2 font-body text-white/25 text-xs">
+                <Star size={13} className="text-brand-blue-bright/40" />
+                Google Reviews — coming soon
+              </div>
+            </div>
           </div>
 
-          {/* Column 3 — Contact */}
+          {/* Column 3 — Emergency */}
           <div>
-            <h4 className="font-heading text-lg text-white tracking-wider mb-6">Get In Touch</h4>
-            <ul className="space-y-4">
+            <h4 className="font-heading text-lg text-brand-blue-bright tracking-wider mb-2">Emergency?</h4>
+            <p className="font-body text-white/40 text-xs mb-5">Fan breakdown or urgent clean — we're available 24/7.</p>
+            <a
+              href="tel:07517758507"
+              className="block font-heading text-4xl sm:text-5xl text-white hover:text-brand-blue-bright transition-colors duration-200 leading-none mb-6 tracking-wide"
+            >
+              07517 758507
+            </a>
+            <ul className="space-y-3">
               <li>
                 <a
                   href="tel:07517758507"
-                  className="flex items-start gap-3 text-white/50 hover:text-white font-body text-sm transition-colors duration-200"
+                  className="flex items-center gap-2.5 text-white/50 hover:text-white font-body text-sm transition-colors duration-200"
                 >
-                  <Phone size={15} className="text-brand-blue-bright mt-0.5 flex-shrink-0" />
-                  <span>07517 758507 — Call</span>
+                  <Phone size={14} className="text-brand-blue-bright flex-shrink-0" />
+                  Call us
                 </a>
               </li>
               <li>
                 <a
                   href="sms:07517758507"
-                  className="flex items-start gap-3 text-white/50 hover:text-white font-body text-sm transition-colors duration-200"
+                  className="flex items-center gap-2.5 text-white/50 hover:text-white font-body text-sm transition-colors duration-200"
                 >
-                  <MessageCircle size={15} className="text-brand-blue-bright mt-0.5 flex-shrink-0" />
-                  <span>07517 758507 — Text</span>
+                  <MessageCircle size={14} className="text-brand-blue-bright flex-shrink-0" />
+                  Send a text
                 </a>
               </li>
               <li>
@@ -131,27 +155,13 @@ export default function Footer() {
                   href="https://wa.me/447517758507"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-3 text-white/50 hover:text-white font-body text-sm transition-colors duration-200"
+                  className="flex items-center gap-2.5 text-white/50 hover:text-white font-body text-sm transition-colors duration-200"
                 >
-                  <span className="mt-0.5 flex-shrink-0 text-brand-blue-bright">
-                    <WhatsAppIcon size={15} />
-                  </span>
-                  <span>WhatsApp Us</span>
+                  <span className="text-brand-blue-bright flex-shrink-0"><WhatsAppIcon size={14} /></span>
+                  WhatsApp us
                 </a>
               </li>
-              <li>
-                <div className="flex items-start gap-3 text-white/50 font-body text-sm">
-                  <MapPin size={15} className="text-brand-blue-bright mt-0.5 flex-shrink-0" />
-                  <span>Nationwide Coverage<br />United Kingdom</span>
-                </div>
-              </li>
             </ul>
-
-            <div className="mt-8">
-              <a href="tel:07517758507" className="btn-primary text-sm px-6 py-3">
-                Call Now
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -162,9 +172,13 @@ export default function Footer() {
           <p className="font-body text-white/30 text-xs text-center sm:text-left">
             &copy; 2025 Commercial Canopy Cleaning. All rights reserved.
           </p>
-          <p className="font-body text-white/20 text-xs">
-            TR19 Certified | Nationwide Coverage
-          </p>
+          <div className="flex items-center gap-4">
+            <Link to="/privacy" className="font-body text-white/25 text-xs hover:text-white/50 transition-colors duration-200">Privacy Policy</Link>
+            <span className="text-white/10 text-xs">|</span>
+            <Link to="/cookies" className="font-body text-white/25 text-xs hover:text-white/50 transition-colors duration-200">Cookie Policy</Link>
+            <span className="text-white/10 text-xs">|</span>
+            <Link to="/terms" className="font-body text-white/25 text-xs hover:text-white/50 transition-colors duration-200">Terms &amp; Conditions</Link>
+          </div>
         </div>
       </div>
     </footer>
