@@ -109,9 +109,9 @@ export default function Navbar() {
                 <Phone size={15} className="text-brand-blue-bright" />
                 07517 758507
               </a>
-              <a href="tel:07517758507" className="btn-primary text-sm px-6 py-3">
+              <Link to="/contact" className="btn-primary text-sm px-6 py-3">
                 Get a Quote
-              </a>
+              </Link>
             </div>
 
             {/* Mobile hamburger */}
@@ -192,9 +192,9 @@ export default function Navbar() {
                 </svg>
                 WhatsApp Us
               </a>
-              <a href="tel:07517758507" className="btn-primary justify-center mt-2">
+              <Link to="/contact" className="btn-primary justify-center mt-2">
                 Get a Free Quote
-              </a>
+              </Link>
             </motion.div>
           </motion.div>
         )}
