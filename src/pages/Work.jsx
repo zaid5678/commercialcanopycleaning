@@ -74,31 +74,37 @@ function CaseStudyCard({ study, index }) {
       >
         <div className="flex flex-col h-full bg-brand-black hover:bg-[#0d1a27] transition-colors duration-300 overflow-hidden rounded-sm border border-white/[0.06]">
           {/* Image comparison section */}
-          <div className="flex flex-col sm:flex-row flex-1 overflow-hidden">
+          <div className="flex flex-col sm:flex-row flex-1 overflow-hidden gap-3 sm:gap-6 p-4 sm:p-6">
             {/* Before */}
-            <div className="flex-1 overflow-hidden bg-black">
+            <div className="flex-1 overflow-hidden bg-black rounded-sm border border-white/[0.06]">
               <div className="relative h-full min-h-64 sm:min-h-96">
                 <img
                   src={study.before}
                   alt={`Before: ${study.title}`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute bottom-3 left-3 bg-brand-black/80 px-3 py-1 rounded-sm">
-                  <span className="font-body text-brand-blue-bright text-xs uppercase tracking-widest font-semibold">Before</span>
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <span className="font-heading text-3xl sm:text-4xl text-white tracking-widest drop-shadow-lg">BEFORE</span>
+                </div>
+                <div className="absolute top-3 left-3 bg-brand-black/90 px-4 py-2 rounded-sm border border-brand-blue-bright/50">
+                  <span className="font-heading text-brand-blue-bright text-xs uppercase tracking-widest font-bold">Before</span>
                 </div>
               </div>
             </div>
 
             {/* After */}
-            <div className="flex-1 overflow-hidden bg-black">
+            <div className="flex-1 overflow-hidden bg-black rounded-sm border border-white/[0.06]">
               <div className="relative h-full min-h-64 sm:min-h-96">
                 <img
                   src={study.after}
                   alt={`After: ${study.title}`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute bottom-3 left-3 bg-brand-black/80 px-3 py-1 rounded-sm">
-                  <span className="font-body text-brand-blue-bright text-xs uppercase tracking-widest font-semibold">After</span>
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <span className="font-heading text-3xl sm:text-4xl text-brand-blue-bright tracking-widest drop-shadow-lg">AFTER</span>
+                </div>
+                <div className="absolute top-3 left-3 bg-brand-black/90 px-4 py-2 rounded-sm border border-brand-blue-bright/50">
+                  <span className="font-heading text-brand-blue-bright text-xs uppercase tracking-widest font-bold">After</span>
                 </div>
               </div>
             </div>
@@ -125,9 +131,9 @@ export default function Work() {
   return (
     <PageTransition>
       <Helmet>
-        <title>Work Portfolio | Before & After Case Studies | Commercial Canopy Cleaning</title>
+        <title>Our Work | Before & After Case Studies | Commercial Canopy Cleaning</title>
         <meta name="description" content="See our proven track record with real before and after images from kitchen extraction cleaning and repair projects across the UK." />
-        <meta property="og:title" content="Work Portfolio | Commercial Canopy Cleaning" />
+        <meta property="og:title" content="Our Work | Commercial Canopy Cleaning" />
         <meta property="og:description" content="Real before and after case studies showing our expertise in canopy cleaning, duct cleaning, and emergency fan repair." />
       </Helmet>
 
@@ -139,7 +145,7 @@ export default function Work() {
             <div className="flex items-center gap-2 font-body text-white/30 text-sm mb-6">
               <Link to="/" className="hover:text-white/60 transition-colors">Home</Link>
               <span>/</span>
-              <span className="text-white/60">Work Portfolio</span>
+              <span className="text-white/60">Our Work</span>
             </div>
             <span className="section-label">Case Studies</span>
             <h1 className="font-heading text-5xl sm:text-6xl lg:text-8xl text-white leading-none mb-5">Our Work</h1>
