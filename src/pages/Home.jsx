@@ -147,11 +147,11 @@ export default function Home() {
             <div className="max-w-3xl flex flex-col">
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                 <div className="flex-1">
-                  <motion.span initial={{ opacity:0,x:-20 }} animate={{ opacity:1,x:0 }} transition={{ delay:0.05,duration:0.45 }} className="section-label">
+                  <motion.span className="section-label">
                     TR19 Certified &bull; Fan Specialists &bull; 24/7 Nationwide
                   </motion.span>
 
-                  <motion.h1 initial={{ opacity:0,y:30 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.15,duration:0.5 }} className="font-heading text-[2.8rem] sm:text-5xl lg:text-7xl text-white leading-none mb-5">
+                  <motion.h1 className="font-heading text-[2.8rem] sm:text-5xl lg:text-7xl text-white leading-none mb-5">
                     WHEN YOUR<br />
                     KITCHEN STOPS,<br />
                     <span className="text-brand-blue-bright">WE DON'T.</span>
@@ -159,12 +159,7 @@ export default function Home() {
                 </div>
 
                 {/* Logo - Mobile/Tablet */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.4, duration: 0.6 }}
-                  className="lg:hidden flex items-start justify-end flex-shrink-0"
-                >
+                <motion.div className="lg:hidden flex items-start justify-end flex-shrink-0">
                   <img
                     src="/logo.JPG"
                     alt="Commercial Canopy Cleaning Logo"
@@ -173,11 +168,11 @@ export default function Home() {
                 </motion.div>
               </div>
 
-              <motion.p initial={{ opacity:0,y:20 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.3,duration:0.45 }} className="font-body text-white/60 text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
+              <motion.p className="font-body text-white/60 text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
                 Emergency fan repair, TR19 canopy &amp; duct cleaning — certified engineers, nationwide, 24/7.
               </motion.p>
 
-              <motion.div initial={{ opacity:0,y:20 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.45,duration:0.45 }} className="flex flex-wrap gap-3 mb-10">
+              <motion.div className="flex flex-wrap gap-3 mb-10">
                 <a href="tel:07517758507" className="btn-primary text-base">
                   <Phone size={18} /> Call Now — 07517 758507
                 </a>
@@ -186,7 +181,7 @@ export default function Home() {
                 </Link>
               </motion.div>
 
-              <motion.div initial={{ opacity:0,y:15 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.6,duration:0.45 }} className="flex flex-wrap gap-5">
+              <motion.div className="flex flex-wrap gap-5">
               {[{ icon:Shield, label:'TR19 Certified' }, { icon:Clock, label:'24/7 Emergency Response' }, { icon:MapPin, label:'Nationwide Coverage' }].map(({ icon:Icon, label }) => (
                 <div key={label} className="flex items-center gap-2">
                   <Icon size={15} className="text-brand-blue-bright" />
@@ -197,12 +192,7 @@ export default function Home() {
             </div>
 
             {/* Logo - Desktop */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="hidden lg:flex items-center justify-center"
-            >
+            <motion.div className="hidden lg:flex items-center justify-center">
               <img
                 src="/logo.JPG"
                 alt="Commercial Canopy Cleaning Logo"
@@ -212,8 +202,8 @@ export default function Home() {
           </div>
         </div>
 
-        <motion.div initial={{ opacity:0 }} animate={{ opacity:1 }} transition={{ delay:1.1 }} className="absolute bottom-8 left-1/2 -translate-x-1/2">
-          <motion.div animate={{ y:[0,8,0] }} transition={{ duration:1.5,repeat:Infinity }} className="w-px h-10 bg-gradient-to-b from-brand-blue-bright to-transparent" />
+        <motion.div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+          <motion.div className="w-px h-10 bg-gradient-to-b from-brand-blue-bright to-transparent" />
         </motion.div>
       </section>
 
