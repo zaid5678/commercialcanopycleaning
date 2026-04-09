@@ -367,10 +367,10 @@ export default function Home() {
             <span className="section-label">Our Clients</span>
             <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white">Industries We Serve</h2>
           </ScrollReveal>
-          <ScrollRevealContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+          <ScrollRevealContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 items-stretch">
             {clientTypes.map(({ icon: Icon, label }) => (
-              <ScrollRevealItem key={label}>
-                <div className="card-surface p-5 flex flex-col items-center text-center group hover:border-brand-blue-bright/30 transition-colors duration-300 cursor-default">
+              <ScrollRevealItem key={label} className="h-full">
+                <div className="card-surface p-5 h-full flex flex-col items-center text-center group hover:border-brand-blue-bright/30 transition-colors duration-300 cursor-default">
                   <div className="w-10 h-10 flex items-center justify-center border border-white/10 group-hover:border-brand-blue-bright/50 mb-3 transition-colors duration-300">
                     <Icon size={18} className="text-white/35 group-hover:text-brand-blue-bright transition-colors duration-300" />
                   </div>
