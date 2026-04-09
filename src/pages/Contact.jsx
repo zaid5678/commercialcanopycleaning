@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
-  Phone, MapPin, CheckCircle2, ArrowRight, Clock, Send, MessageCircle
+  Phone, MapPin, CheckCircle2, Clock, Send, MessageCircle, RotateCcw
 } from 'lucide-react'
 import PageTransition from '../components/PageTransition'
 import ScrollReveal from '../components/ScrollReveal'
@@ -51,6 +51,12 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [errors, setErrors] = useState({})
+
+  const resetForm = () => {
+    setSubmitted(false)
+    setFormData({ name: '', company: '', email: '', phone: '', service: '', message: '' })
+    setErrors({})
+  }
 
   const validate = () => {
     const errs = {}
@@ -233,22 +239,6 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* WhatsApp CTA card */}
-                <a
-                  href="https://wa.me/447517758507"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="card-surface p-6 flex items-center gap-4 group hover:border-brand-blue-bright/40 transition-colors duration-200 block"
-                >
-                  <div className="w-11 h-11 flex items-center justify-center bg-[#25D366]/10 border border-[#25D366]/20 group-hover:border-[#25D366]/40 transition-colors duration-200 flex-shrink-0 text-[#25D366]">
-                    <WhatsAppIcon size={20} />
-                  </div>
-                  <div>
-                    <div className="font-body font-semibold text-white text-sm mb-0.5">Message on WhatsApp</div>
-                    <div className="font-body text-white/40 text-xs">Quick replies — tap to open chat</div>
-                  </div>
-                  <ArrowRight size={16} className="text-white/20 group-hover:text-brand-blue-bright ml-auto transition-colors duration-200" />
-                </a>
               </div>
             </ScrollReveal>
 
@@ -301,15 +291,13 @@ export default function Contact() {
                           <Phone size={16} />
                           Call Us Now
                         </a>
-                        <a
-                          href="https://wa.me/447517758507"
-                          target="_blank"
-                          rel="noopener noreferrer"
+                        <button
+                          onClick={resetForm}
                           className="btn-ghost text-sm px-6 py-3 justify-center"
                         >
-                          <WhatsAppIcon size={15} />
-                          WhatsApp
-                        </a>
+                          <RotateCcw size={15} />
+                          Submit Another
+                        </button>
                       </motion.div>
                     </motion.div>
                   ) : (
