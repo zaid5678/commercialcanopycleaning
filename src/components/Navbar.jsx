@@ -133,7 +133,7 @@ export default function Navbar() {
             {/* Close button */}
             <button
               onClick={() => setMobileOpen(false)}
-              className="absolute top-4 right-6 p-2 text-white/80 hover:text-white transition-colors"
+              className="absolute top-20 right-6 p-2 text-white/80 hover:text-white transition-colors"
               aria-label="Close menu"
             >
               <X size={24} />
