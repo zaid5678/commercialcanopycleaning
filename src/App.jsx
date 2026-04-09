@@ -61,9 +61,12 @@ export default function App() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
         />
-        <EmergencyBanner />
-        <div className="min-h-screen bg-brand-black flex flex-col">
+        <div className="fixed top-0 left-0 right-0 z-50 flex flex-col overflow-hidden">
+          <EmergencyBanner />
           <Navbar />
+        </div>
+        <div className="min-h-screen bg-brand-black flex flex-col">
+          <div aria-hidden="true" />
           <main className="flex-1">
             <AnimatedRoutes />
           </main>
