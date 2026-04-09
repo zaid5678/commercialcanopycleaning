@@ -113,6 +113,23 @@ export default function About() {
       {/* ── LOGO CONVEYOR BELT ───────────────────────────────────────────── */}
       <LogoConveyorBelt />
 
+      {/* Brands We Specialise In */}
+      <section className="py-14 sm:py-20 bg-[#070b11] border-t border-white/[0.06]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal className="mb-8 sm:mb-10 text-center">
+            <span className="section-label block mx-auto">Expertise</span>
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-white">Brands We Specialise In</h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <img
+              src="/logos/brands_specialise.jpeg"
+              alt="Brands we specialise in — Ziehl-Abegg, Ruck, Vent-Axia, S&S Northern, Helios, BANiCO, FläktWoods, Roof Units, S&P, Elta Fans, Phantom"
+              className="w-full max-w-sm mx-auto block rounded-sm border border-white/[0.06]"
+            />
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Values */}
       <section className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
