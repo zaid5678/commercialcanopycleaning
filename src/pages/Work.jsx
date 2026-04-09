@@ -118,7 +118,6 @@ function CaseStudyCard({ study, index }) {
               </div>
               <h3 className="font-heading text-lg sm:text-xl text-white mb-2 leading-tight">{study.title}</h3>
               <p className="font-body text-white/50 text-sm mb-3">{study.description}</p>
-              <p className="font-body text-white/40 text-xs uppercase tracking-widest">📍 {study.location}</p>
             </div>
           </div>
         </div>
