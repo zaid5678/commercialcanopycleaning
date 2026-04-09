@@ -173,7 +173,7 @@ export default function Home() {
               </motion.p>
 
               <motion.div className="flex flex-wrap gap-3 mb-10">
-                <a href="tel:07517758507" className="btn-primary text-base">
+                <a href="tel:07517758507" className="btn-primary text-base hidden sm:inline-flex">
                   <Phone size={18} /> Call Now — 07517 758507
                 </a>
                 <Link to="/contact" className="btn-ghost">
