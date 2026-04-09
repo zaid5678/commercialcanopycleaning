@@ -392,7 +392,7 @@ export default function Home() {
                 <span className="text-brand-blue-bright">Entire UK</span>
               </h2>
               <p className="font-body text-white/50 text-sm sm:text-base leading-relaxed mb-6">
-                From Cornwall to the Scottish Highlands — one team, one standard, everywhere. We dispatch engineers nationwide for both scheduled cleans and emergency callouts.
+                One team, one standard, everywhere. We dispatch engineers nationwide for both scheduled cleans and emergency callouts.
               </p>
               <p className="font-body text-white/30 text-sm italic mb-8">
                 Don't see your area? We cover everywhere — call us: <a href="tel:07517758507" className="text-brand-blue-bright not-italic hover:underline">07517 758507</a>
