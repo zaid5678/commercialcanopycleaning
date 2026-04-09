@@ -283,7 +283,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ─────────────────────────────────────────────────── */}
+      {/* ── TESTIMONIALS ────────────────────────────────────────────────────
       <section className="py-16 sm:py-24 bg-[#070b11]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal className="mb-10 sm:mb-14">
@@ -316,6 +316,7 @@ export default function Home() {
           </ScrollReveal>
         </div>
       </section>
+      ────────────────────────────────────────────────────────────────────────── */}
 
       {/* ── WHY US ───────────────────────────────────────────────────────── */}
       <section className="py-16 sm:py-24 lg:py-32 bg-brand-black">
