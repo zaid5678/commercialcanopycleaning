@@ -188,7 +188,7 @@ export default function Home() {
               <img
                 src="/logo.JPG"
                 alt="Commercial Canopy Cleaning Logo"
-                className="w-full max-w-sm h-auto object-contain"
+                className="w-full max-w-2xl h-auto object-contain"
               />
             </motion.div>
           </div>

@@ -61,7 +61,7 @@ export default function Navbar() {
               <img
                 src="/logo.JPG"
                 alt="Commercial Canopy Cleaning"
-                className="h-9 sm:h-10 w-auto object-contain rounded-sm"
+                className="h-12 sm:h-14 w-auto object-contain rounded-sm"
               />
               <div className="hidden xs:block">
                 <div className="font-heading text-base sm:text-lg text-white leading-none tracking-wider">
