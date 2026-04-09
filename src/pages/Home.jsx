@@ -183,12 +183,12 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="hidden lg:flex items-center justify-center"
+              className="flex items-center justify-center mt-8 lg:mt-0"
             >
               <img
                 src="/logo.JPG"
                 alt="Commercial Canopy Cleaning Logo"
-                className="w-full max-w-2xl h-auto object-contain"
+                className="w-full max-w-xs lg:max-w-md h-auto object-contain"
               />
             </motion.div>
           </div>
