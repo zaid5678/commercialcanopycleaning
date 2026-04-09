@@ -29,8 +29,8 @@ const caseStudies = [
     title: 'Complete Ductwork System Clean',
     location: 'Central London Takeaway',
     category: 'Duct Cleaning',
-    before: '/work_images/ductbefore.png',
-    after: '/work_images/ductafter.png',
+    before: '/work_images/ductbefore1.jpeg',
+    after: '/work_images/ductafter1.jpeg',
     description: 'Full extraction run cleaned from canopy entry to discharge point. Rotary brush system with high-powered vacuum extraction.',
   },
   {
