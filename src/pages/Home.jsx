@@ -143,17 +143,35 @@ export default function Home() {
         <FanBg />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-36 pb-20 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="max-w-3xl">
-              <motion.span initial={{ opacity:0,x:-20 }} animate={{ opacity:1,x:0 }} transition={{ delay:0.05,duration:0.45 }} className="section-label">
-                TR19 Certified &bull; Fan Specialists &bull; 24/7 Nationwide
-              </motion.span>
+          <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center gap-6">
+            <div className="max-w-3xl flex flex-col">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                <div className="flex-1">
+                  <motion.span initial={{ opacity:0,x:-20 }} animate={{ opacity:1,x:0 }} transition={{ delay:0.05,duration:0.45 }} className="section-label">
+                    TR19 Certified &bull; Fan Specialists &bull; 24/7 Nationwide
+                  </motion.span>
 
-              <motion.h1 initial={{ opacity:0,y:30 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.15,duration:0.5 }} className="font-heading text-[2.8rem] sm:text-6xl lg:text-7xl text-white leading-none mb-5">
-                WHEN YOUR<br />
-                KITCHEN STOPS,<br />
-                <span className="text-brand-blue-bright">WE DON'T.</span>
-              </motion.h1>
+                  <motion.h1 initial={{ opacity:0,y:30 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.15,duration:0.5 }} className="font-heading text-[2.8rem] sm:text-5xl lg:text-7xl text-white leading-none mb-5">
+                    WHEN YOUR<br />
+                    KITCHEN STOPS,<br />
+                    <span className="text-brand-blue-bright">WE DON'T.</span>
+                  </motion.h1>
+                </div>
+
+                {/* Logo - Mobile/Tablet */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.4, duration: 0.6 }}
+                  className="lg:hidden flex items-start justify-end flex-shrink-0"
+                >
+                  <img
+                    src="/logo.JPG"
+                    alt="Commercial Canopy Cleaning Logo"
+                    className="w-32 sm:w-40 h-auto object-contain"
+                  />
+                </motion.div>
+              </div>
 
               <motion.p initial={{ opacity:0,y:20 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.3,duration:0.45 }} className="font-body text-white/60 text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
                 Emergency fan repair, TR19 canopy &amp; duct cleaning — certified engineers, nationwide, 24/7.
@@ -178,12 +196,12 @@ export default function Home() {
             </motion.div>
             </div>
 
-            {/* Logo */}
+            {/* Logo - Desktop */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="flex items-center justify-center mt-8 lg:mt-0"
+              className="hidden lg:flex items-center justify-center"
             >
               <img
                 src="/logo.JPG"
