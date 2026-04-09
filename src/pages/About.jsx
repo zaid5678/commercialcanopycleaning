@@ -5,6 +5,7 @@ import {
 } from 'lucide-react'
 import PageTransition from '../components/PageTransition'
 import ScrollReveal, { ScrollRevealContainer, ScrollRevealItem } from '../components/ScrollReveal'
+import LogoConveyorBelt from '../components/LogoConveyorBelt'
 
 const values = [
   {
@@ -192,6 +193,9 @@ export default function About() {
           </ScrollRevealContainer>
         </div>
       </section>
+
+      {/* ── LOGO CONVEYOR BELT ───────────────────────────────────────────── */}
+      <LogoConveyorBelt />
 
       {/* CTA */}
       <section className="py-14 sm:py-20">

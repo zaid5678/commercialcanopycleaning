@@ -10,6 +10,7 @@ import {
 } from 'lucide-react'
 import ScrollReveal, { ScrollRevealContainer, ScrollRevealItem } from '../components/ScrollReveal'
 import PageTransition from '../components/PageTransition'
+import LogoConveyorBelt from '../components/LogoConveyorBelt'
 
 /* ─── Rotating fan SVG ─────────────────────────────────────────────────── */
 function FanBg() {
@@ -254,6 +255,9 @@ export default function Home() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* ── LOGO CONVEYOR BELT ───────────────────────────────────────────── */}
+      <LogoConveyorBelt />
 
       {/* ── TESTIMONIALS ─────────────────────────────────────────────────── */}
       <section className="py-16 sm:py-24 bg-[#070b11]">
