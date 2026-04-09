@@ -39,9 +39,6 @@ export default function LogoConveyorBelt() {
 
       {/* Conveyor Belt Container */}
       <div className="relative overflow-hidden">
-        {/* Top shadow gradient */}
-        <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-brand-black to-transparent z-10 pointer-events-none" />
-
         {/* Belt */}
         <div className="bg-white py-8 sm:py-10">
           {/* Left fade mask */}
@@ -60,24 +57,27 @@ export default function LogoConveyorBelt() {
               ease: 'linear',
             }}
           >
-            {displayLogos.map((logo, index) => (
-              <div
-                key={`${logo.name}-${index}`}
-                className="flex-shrink-0 h-24 sm:h-32 w-auto flex items-center justify-center"
-              >
-                <img
-                  src={logo.src}
-                  alt={logo.name}
-                  className="h-full w-auto object-contain filter drop-shadow-sm hover:drop-shadow-md transition-all duration-300"
-                  loading="lazy"
-                />
-              </div>
-            ))}
+            {displayLogos.map((logo, index) => {
+              // Scale up Pepes and PFC logos to match other logos
+              const isSmallLogo = ['Pepes', 'PFC'].includes(logo.name)
+              const scaleClass = isSmallLogo ? 'scale-150' : ''
+              
+              return (
+                <div
+                  key={`${logo.name}-${index}`}
+                  className="flex-shrink-0 h-24 sm:h-32 w-auto flex items-center justify-center"
+                >
+                  <img
+                    src={logo.src}
+                    alt={logo.name}
+                    className={`h-full w-auto object-contain filter drop-shadow-sm hover:drop-shadow-md transition-all duration-300 ${scaleClass}`}
+                    loading="lazy"
+                  />
+                </div>
+              )
+            })}
           </motion.div>
         </div>
-
-        {/* Bottom shadow gradient */}
-        <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[#070b11] to-transparent z-10 pointer-events-none" />
       </div>
     </section>
   )
