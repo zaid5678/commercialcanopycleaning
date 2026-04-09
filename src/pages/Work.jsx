@@ -91,7 +91,7 @@ function CaseStudyCard({ study, index }) {
                   <img
                     src={study.before}
                     alt={study.title}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover object-bottom group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-3 left-3 bg-brand-black/90 px-4 py-2 rounded-sm border border-brand-blue-bright/50">
                     <span className="font-heading text-brand-blue-bright text-xs uppercase tracking-widest font-bold">{study.category}</span>
