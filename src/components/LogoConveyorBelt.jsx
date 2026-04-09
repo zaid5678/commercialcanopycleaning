@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { useState, useEffect, useRef } from 'react'
 import ScrollReveal from './ScrollReveal'
 
 const logos = [
@@ -21,33 +20,6 @@ const logos = [
 
 export default function LogoConveyorBelt() {
   const displayLogos = [...logos, ...logos]
-  const [isScrolling, setIsScrolling] = useState(false)
-  const scrollTimeout = useRef(null)
-  const containerRef = useRef(null)
-
-  useEffect(() => {
-    const container = containerRef.current
-    if (!container) return
-
-    const handleScroll = () => {
-      setIsScrolling(true)
-      
-      // Clear existing timeout
-      if (scrollTimeout.current) clearTimeout(scrollTimeout.current)
-      
-      // Resume animation after 1 second of no scrolling
-      scrollTimeout.current = setTimeout(() => {
-        setIsScrolling(false)
-      }, 1000)
-    }
-
-    container.addEventListener('scroll', handleScroll)
-    
-    return () => {
-      container.removeEventListener('scroll', handleScroll)
-      if (scrollTimeout.current) clearTimeout(scrollTimeout.current)
-    }
-  }, [])
 
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-brand-black to-[#070b11] overflow-hidden">
@@ -65,14 +37,20 @@ export default function LogoConveyorBelt() {
       </div>
 
       {/* Conveyor Belt Container */}
-      <div className="relative overflow-x-auto" ref={containerRef} style={{ scrollBehavior: 'smooth' }}>
+      <div className="relative overflow-hidden">
         {/* Belt */}
-        <div className="bg-white py-8 sm:py-10 inline-flex min-w-full">
+        <div className="bg-white py-8 sm:py-10">
+          {/* Left fade mask */}
+          <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-16 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+
+          {/* Right fade mask */}
+          <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-16 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
           {/* Logos */}
           <motion.div
             className="flex px-6"
-            animate={isScrolling ? {} : { x: '-50%' }}
-            transition={isScrolling ? {} : {
+            animate={{ x: '-50%' }}
+            transition={{
               duration: 30,
               repeat: Infinity,
               ease: 'linear',
