@@ -129,14 +129,16 @@ Call us directly on 07517 758507 and speak with an engineer. We'll assess the si
   },
 ]
 
-function ServiceSection({ service }) {
+function ServiceSection({ service, index }) {
   const Icon = service.icon
+  const isAlternate = index % 2 === 1
+  
   return (
     <section id={service.id} className="py-16 sm:py-20 border-b border-white/[0.06] scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
-            <div className="lg:col-span-3">
+          <div className={`flex flex-col lg:flex-row gap-10 lg:gap-16 ${isAlternate ? 'lg:flex-row-reverse' : ''}`}>
+            <div className="flex-1 lg:basis-3/5">
               <div className="flex items-center gap-4 mb-5">
                 <div className="w-12 h-12 flex items-center justify-center border border-brand-blue-bright/30 bg-brand-blue-bright/5">
                   <Icon size={22} className="text-brand-blue-bright" />
@@ -152,7 +154,7 @@ function ServiceSection({ service }) {
                 ))}
               </div>
             </div>
-            <div className="lg:col-span-2">
+            <div className="flex-1 lg:basis-2/5">
               <div className="card-surface p-6 sm:p-7 sticky top-28">
                 <div className="font-body text-white/30 text-xs uppercase tracking-widest mb-4">What's Included</div>
                 <ul className="space-y-3 mb-7">
@@ -227,7 +229,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div className="h-px bg-white/[0.06]" /></div>
 
       {/* Service sections */}
-      {services.map(service => <ServiceSection key={service.id} service={service} />)}
+      {services.map((service, index) => <ServiceSection key={service.id} service={service} index={index} />)}
 
       {/* Bottom CTA */}
       <section className="py-14 sm:py-20 bg-[#070b11]">
