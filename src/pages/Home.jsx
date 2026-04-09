@@ -143,37 +143,53 @@ export default function Home() {
         <FanBg />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-36 pb-20 w-full">
-          <div className="max-w-3xl">
-            <motion.span initial={{ opacity:0,x:-20 }} animate={{ opacity:1,x:0 }} transition={{ delay:0.05,duration:0.45 }} className="section-label">
-              TR19 Certified &bull; Fan Specialists &bull; 24/7 Nationwide
-            </motion.span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="max-w-3xl">
+              <motion.span initial={{ opacity:0,x:-20 }} animate={{ opacity:1,x:0 }} transition={{ delay:0.05,duration:0.45 }} className="section-label">
+                TR19 Certified &bull; Fan Specialists &bull; 24/7 Nationwide
+              </motion.span>
 
-            <motion.h1 initial={{ opacity:0,y:30 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.15,duration:0.5 }} className="font-heading text-[2.8rem] sm:text-6xl lg:text-8xl text-white leading-none mb-5">
-              WHEN YOUR<br />
-              KITCHEN STOPS,<br />
-              <span className="text-brand-blue-bright">WE DON'T.</span>
-            </motion.h1>
+              <motion.h1 initial={{ opacity:0,y:30 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.15,duration:0.5 }} className="font-heading text-[2.8rem] sm:text-6xl lg:text-7xl text-white leading-none mb-5">
+                WHEN YOUR<br />
+                KITCHEN STOPS,<br />
+                <span className="text-brand-blue-bright">WE DON'T.</span>
+              </motion.h1>
 
-            <motion.p initial={{ opacity:0,y:20 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.3,duration:0.45 }} className="font-body text-white/60 text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
-              Emergency fan repair, TR19 canopy &amp; duct cleaning — certified engineers, nationwide, 24/7.
-            </motion.p>
+              <motion.p initial={{ opacity:0,y:20 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.3,duration:0.45 }} className="font-body text-white/60 text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
+                Emergency fan repair, TR19 canopy &amp; duct cleaning — certified engineers, nationwide, 24/7.
+              </motion.p>
 
-            <motion.div initial={{ opacity:0,y:20 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.45,duration:0.45 }} className="flex flex-wrap gap-3 mb-10">
-              <a href="tel:07517758507" className="btn-primary text-base">
-                <Phone size={18} /> Call Now — 07517 758507
-              </a>
-              <Link to="/contact" className="btn-ghost">
-                Get a Free Quote <ArrowRight size={16} />
-              </Link>
-            </motion.div>
+              <motion.div initial={{ opacity:0,y:20 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.45,duration:0.45 }} className="flex flex-wrap gap-3 mb-10">
+                <a href="tel:07517758507" className="btn-primary text-base">
+                  <Phone size={18} /> Call Now — 07517 758507
+                </a>
+                <Link to="/contact" className="btn-ghost">
+                  Get a Free Quote <ArrowRight size={16} />
+                </Link>
+              </motion.div>
 
-            <motion.div initial={{ opacity:0,y:15 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.6,duration:0.45 }} className="flex flex-wrap gap-5">
+              <motion.div initial={{ opacity:0,y:15 }} animate={{ opacity:1,y:0 }} transition={{ delay:0.6,duration:0.45 }} className="flex flex-wrap gap-5">
               {[{ icon:Shield, label:'TR19 Certified' }, { icon:Clock, label:'24/7 Emergency Response' }, { icon:MapPin, label:'Nationwide Coverage' }].map(({ icon:Icon, label }) => (
                 <div key={label} className="flex items-center gap-2">
                   <Icon size={15} className="text-brand-blue-bright" />
                   <span className="font-body text-white/50 text-sm">{label}</span>
                 </div>
               ))}
+            </motion.div>
+            </div>
+
+            {/* Logo */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="hidden lg:flex items-center justify-center"
+            >
+              <img
+                src="/logo.PNG"
+                alt="Commercial Canopy Cleaning Logo"
+                className="w-full max-w-sm h-auto object-contain"
+              />
             </motion.div>
           </div>
         </div>

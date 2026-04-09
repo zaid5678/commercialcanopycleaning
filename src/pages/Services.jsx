@@ -27,6 +27,8 @@ const services = [
     description: `A failed kitchen extraction fan can shut down your entire operation within minutes. Commercial Canopy Cleaning are fan breakdown specialists — this isn't a side service, it's a core part of what we do. Our engineers carry common spare parts and diagnostic equipment, and we mobilise nationally to get your system back online as fast as possible.
 
 We work on centrifugal, axial, and bifurcated extract fans of all makes. Whether it's a worn belt, seized bearing, failed motor, or a full unit that needs replacing — we diagnose accurately, source correctly, and fix it right first time.`,
+    beforeImage: '/work_images/fanbefore.jpeg',
+    afterImage: '/work_images/fanafter.jpeg',
     includes: [
       'Same-day emergency callout nationwide',
       'Centrifugal, axial & bifurcated fan specialists',
@@ -45,6 +47,8 @@ We work on centrifugal, axial, and bifurcated extract fans of all makes. Whether
     description: `Your canopy is the first line of defence against grease accumulation and fire risk. Commercial Canopy Cleaning performs full degreasing of canopy hoods, baffles, filter arrays, and plenum chambers to TR19 specification — using professional-grade degreasers and high-temperature steam equipment.
 
 Every canopy clean we carry out is documented with photographic evidence taken before and during the job, grease thickness measurements at key points, and a signed TR19 compliance certificate issued promptly after completion. We schedule around your operation to minimise disruption, and we're available out of hours.`,
+    beforeImage: '/work_images/canopybefore.jpeg',
+    afterImage: '/work_images/canopyafter.jpeg',
     includes: [
       'Hood, baffle & filter deep clean',
       'Plenum chamber degreasing',
@@ -63,6 +67,8 @@ Every canopy clean we carry out is documented with photographic evidence taken b
     description: `Cleaning only the canopy without addressing the ductwork is not TR19 compliant — and most insurers know it. Grease accumulates throughout the full extraction run, from the canopy entry all the way to the external discharge point. Commercial Canopy Cleaning cleans the complete duct run.
 
 We use specialist rotary brush systems, high-powered vacuum extraction, and access panel installation where required to ensure every metre of your ductwork is thoroughly cleaned. CCTV inspection footage is available on request for longer or more complex duct runs.`,
+    beforeImage: '/work_images/ductbefore.png',
+    afterImage: '/work_images/ductafter.png',
     includes: [
       'Full ductwork run — canopy to discharge',
       'Rotary brush & vacuum extraction',
@@ -153,6 +159,35 @@ function ServiceSection({ service, index }) {
                   <p key={i} className="font-body text-white/55 text-sm sm:text-base leading-relaxed">{para}</p>
                 ))}
               </div>
+
+              {/* Before/After Images */}
+              {service.beforeImage && service.afterImage && (
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-8">
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="overflow-hidden rounded-sm border border-white/[0.06]"
+                  >
+                    <img src={service.beforeImage} alt={`Before ${service.title}`} className="w-full h-32 sm:h-40 object-cover" />
+                    <div className="bg-black/50 px-3 py-2 text-center">
+                      <span className="font-body text-white/50 text-xs uppercase tracking-widest">Before</span>
+                    </div>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 }}
+                    className="overflow-hidden rounded-sm border border-white/[0.06]"
+                  >
+                    <img src={service.afterImage} alt={`After ${service.title}`} className="w-full h-32 sm:h-40 object-cover" />
+                    <div className="bg-black/50 px-3 py-2 text-center">
+                      <span className="font-body text-white/50 text-xs uppercase tracking-widest">After</span>
+                    </div>
+                  </motion.div>
+                </div>
+              )}
             </div>
             <div className="flex-1 lg:basis-2/5">
               <div className="card-surface p-6 sm:p-7 sticky top-28">
@@ -230,6 +265,55 @@ export default function Services() {
 
       {/* Service sections */}
       {services.map((service, index) => <ServiceSection key={service.id} service={service} index={index} />)}
+
+      {/* Work Showcase Section */}
+      <section className="py-16 sm:py-24 lg:py-32 bg-brand-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal className="mb-12 sm:mb-16">
+            <span className="section-label">Real Results</span>
+            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white mb-3">Our Work in Action</h2>
+            <p className="font-body text-white/50 max-w-2xl text-sm sm:text-base">See the transformations we've made for businesses across the UK. Every before and after shows our commitment to complete, professional restoration.</p>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {[
+              { before: '/work_images/canopybefore2.jpeg', after: '/work_images/canopyafter1.jpeg', title: 'Canopy Restoration' },
+              { before: '/work_images/fanbefore2.jpeg', after: '/work_images/fanafter2.jpeg', title: 'Fan Repair Transformation' },
+              { before: '/work_images/allbefore.jpeg', after: '/work_images/allafter.jpeg', title: 'Complete System Clean' },
+            ].map((item, idx) => (
+              <ScrollRevealItem key={idx}>
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="space-y-3"
+                >
+                  <div className="grid grid-cols-2 gap-3">
+                    {/* Before */}
+                    <div className="overflow-hidden rounded-sm border border-white/[0.06]">
+                      <img src={item.before} alt={`Before: ${item.title}`} className="w-full h-40 sm:h-48 object-cover" />
+                      <div className="bg-black/50 px-3 py-2 text-center">
+                        <span className="font-body text-white/50 text-xs uppercase tracking-widest">Before</span>
+                      </div>
+                    </div>
+                    {/* After */}
+                    <div className="overflow-hidden rounded-sm border border-white/[0.06]">
+                      <img src={item.after} alt={`After: ${item.title}`} className="w-full h-40 sm:h-48 object-cover" />
+                      <div className="bg-black/50 px-3 py-2 text-center">
+                        <span className="font-body text-white/50 text-xs uppercase tracking-widest">After</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-center pt-2">
+                    <h3 className="font-heading text-white text-sm sm:text-base tracking-wide">{item.title}</h3>
+                  </div>
+                </motion.div>
+              </ScrollRevealItem>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Bottom CTA */}
       <section className="py-14 sm:py-20 bg-[#070b11]">

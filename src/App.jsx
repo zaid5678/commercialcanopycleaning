@@ -4,6 +4,7 @@ import { HelmetProvider } from 'react-helmet-async'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import FloatingFAB from './components/FloatingFAB'
+import MobileCallBar from './components/MobileCallBar'
 import EmergencyBanner from './components/EmergencyBanner'
 import Home from './pages/Home'
 import Services from './pages/Services'
@@ -72,6 +73,7 @@ export default function App() {
           </main>
           <Footer />
           <FloatingFAB />
+          <MobileCallBar />
         </div>
       </BrowserRouter>
     </HelmetProvider>
