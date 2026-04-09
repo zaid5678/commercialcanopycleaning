@@ -8,6 +8,7 @@ import About from './pages/About'
 import Compliance from './pages/Compliance'
 import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
+import Reviews from './pages/Reviews'
 
 function AnimatedRoutes() {
   const location = useLocation()
@@ -21,6 +22,7 @@ function AnimatedRoutes() {
         <Route path="/compliance" element={<Compliance />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/reviews" element={<Reviews />} />
       </Routes>
     </AnimatePresence>
   )

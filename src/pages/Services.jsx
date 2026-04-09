@@ -207,14 +207,14 @@ export default function Services() {
   return (
     <PageTransition>
       {/* Page Hero */}
-      <section className="pt-36 pb-16 relative overflow-hidden">
+      <section className="pt-28 sm:pt-36 pb-12 sm:pb-16 relative overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
             background: 'radial-gradient(ellipse 60% 60% at 80% 50%, rgba(26,95,168,0.1) 0%, transparent 60%), #0A0A0A',
           }}
         />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="flex items-center gap-2 font-body text-white/30 text-sm mb-6">
               <Link to="/" className="hover:text-white/60 transition-colors">Home</Link>
@@ -222,7 +222,7 @@ export default function Services() {
               <span className="text-white/60">Services</span>
             </div>
             <span className="section-label">What We Offer</span>
-            <h1 className="font-heading text-6xl lg:text-8xl text-white leading-none mb-6">
+            <h1 className="font-heading text-5xl sm:text-6xl lg:text-8xl text-white leading-none mb-6">
               Our Services
             </h1>
             <p className="font-body text-white/50 text-lg max-w-2xl leading-relaxed">
@@ -233,13 +233,13 @@ export default function Services() {
       </section>
 
       {/* Divider */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="h-px bg-white/[0.06]" />
       </div>
 
       {/* Services Grid */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="py-14 sm:py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollRevealContainer className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             {services.map((service, index) => (
               <ServiceCard key={service.id} service={service} index={index} />
@@ -249,11 +249,11 @@ export default function Services() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-20 bg-[#070b11] border-t border-white/[0.06]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="py-14 sm:py-20 bg-[#070b11] border-t border-white/[0.06]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             <ScrollReveal>
-              <h2 className="font-heading text-5xl lg:text-6xl text-white mb-4">
+              <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white mb-4">
                 Not Sure What<br />
                 <span className="text-brand-blue-bright">You Need?</span>
               </h2>
@@ -262,17 +262,19 @@ export default function Services() {
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="tel:07517758507"
-                  className="btn-primary"
-                >
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <a href="tel:07517758507" className="btn-primary justify-center sm:justify-start">
                   <Phone size={18} />
                   07517 758507
                 </a>
-                <Link to="/contact" className="btn-ghost">
-                  Send an Enquiry <ArrowRight size={16} />
-                </Link>
+                <a
+                  href="https://wa.me/447517758507"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-ghost justify-center sm:justify-start"
+                >
+                  WhatsApp Us <ArrowRight size={16} />
+                </a>
               </div>
             </ScrollReveal>
           </div>

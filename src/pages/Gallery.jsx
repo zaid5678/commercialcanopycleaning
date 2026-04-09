@@ -215,14 +215,14 @@ export default function Gallery() {
   return (
     <PageTransition>
       {/* Page Hero */}
-      <section className="pt-36 pb-16 relative overflow-hidden">
+      <section className="pt-28 sm:pt-36 pb-12 sm:pb-16 relative overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
             background: 'radial-gradient(ellipse 50% 60% at 50% 0%, rgba(26,95,168,0.1) 0%, transparent 60%), #0A0A0A',
           }}
         />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="flex items-center gap-2 font-body text-white/30 text-sm mb-6">
               <Link to="/" className="hover:text-white/60 transition-colors">Home</Link>
@@ -230,7 +230,7 @@ export default function Gallery() {
               <span className="text-white/60">Gallery</span>
             </div>
             <span className="section-label">Our Work</span>
-            <h1 className="font-heading text-6xl lg:text-8xl text-white leading-none mb-6">
+            <h1 className="font-heading text-5xl sm:text-6xl lg:text-8xl text-white leading-none mb-6">
               Before &amp; After
             </h1>
             <p className="font-body text-white/50 text-lg max-w-2xl">
@@ -255,10 +255,10 @@ export default function Gallery() {
       </div>
 
       {/* Gallery Grid */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="py-12 sm:py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollRevealContainer
-            className="grid grid-cols-2 lg:grid-cols-4 gap-3 auto-rows-[170px]"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 auto-rows-[200px] sm:auto-rows-[170px]"
           >
             {galleryItems.map((item, index) => (
               <ScrollRevealItem key={item.id}>

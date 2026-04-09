@@ -115,7 +115,7 @@ export default function Home() {
 
         <FanSVG />
 
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-24 w-full">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-36 pb-20 sm:pb-24 w-full">
           <div className="max-w-3xl">
             <motion.span
               initial={{ opacity: 0, x: -20 }}
@@ -130,7 +130,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="font-heading text-7xl sm:text-8xl lg:text-[9rem] text-white leading-none mb-6"
+              className="font-heading text-[3.5rem] sm:text-7xl lg:text-[9rem] text-white leading-none mb-5 sm:mb-6"
             >
               CLEAN.
               <br />
@@ -143,7 +143,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35, duration: 0.5 }}
-              className="font-body text-white/60 text-lg lg:text-xl leading-relaxed mb-10 max-w-xl"
+              className="font-body text-white/60 text-base sm:text-lg lg:text-xl leading-relaxed mb-8 sm:mb-10 max-w-xl"
             >
               Commercial canopy &amp; duct cleaning to TR19 standards — nationwide coverage. Fan breakdown specialists and HVAC servicing for commercial kitchens.
             </motion.p>
@@ -152,12 +152,12 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45, duration: 0.5 }}
-              className="flex flex-wrap gap-4 mb-14"
+              className="flex flex-wrap gap-3 sm:gap-4 mb-10 sm:mb-14"
             >
-              <Link to="/contact" className="btn-primary">
+              <a href="tel:07517758507" className="btn-primary">
                 Get a Free Quote
                 <ArrowRight size={18} />
-              </Link>
+              </a>
               <Link to="/services" className="btn-ghost">
                 Our Services
               </Link>
@@ -200,9 +200,9 @@ export default function Home() {
       </section>
 
       {/* STATS STRIP */}
-      <section className="bg-[#0d0d0d] border-y border-white/[0.06] py-10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <section className="bg-[#0d0d0d] border-y border-white/[0.06] py-8 sm:py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {stats.map((stat, i) => (
               <ScrollReveal key={stat.label} delay={i * 0.08}>
                 <div className="flex flex-col items-center text-center">
@@ -220,8 +220,8 @@ export default function Home() {
       </section>
 
       {/* SERVICES PREVIEW */}
-      <section className="py-24 lg:py-32 bg-brand-black">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="py-16 sm:py-24 lg:py-32 bg-brand-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal className="mb-16">
             <span className="section-label">What We Do</span>
             <h2 className="font-heading text-5xl lg:text-6xl text-white mb-4">
@@ -265,9 +265,9 @@ export default function Home() {
       </section>
 
       {/* WHY CHOOSE US */}
-      <section className="py-24 lg:py-32 bg-[#070b11]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section className="py-16 sm:py-24 lg:py-32 bg-[#070b11]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             {/* Left — text */}
             <ScrollReveal>
               <span className="section-label">Why Us</span>
@@ -339,7 +339,7 @@ export default function Home() {
 
       {/* CTA BANNER */}
       <section
-        className="py-20 lg:py-24 relative overflow-hidden"
+        className="py-16 sm:py-20 lg:py-24 relative overflow-hidden"
         style={{
           background: 'linear-gradient(135deg, #0d1e35 0%, #1A5FA8 60%, #2E8DE8 100%)',
         }}
@@ -350,29 +350,34 @@ export default function Home() {
             backgroundSize: '20px 20px',
           }}
         />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
             <span className="font-body text-white/60 text-sm uppercase tracking-widest mb-4 block">
               Ready to Get Compliant?
             </span>
-            <h2 className="font-heading text-5xl lg:text-7xl text-white mb-6">
+            <h2 className="font-heading text-4xl sm:text-5xl lg:text-7xl text-white mb-5 sm:mb-6">
               Let's Talk
             </h2>
-            <p className="font-body text-white/70 text-lg mb-10 max-w-xl mx-auto">
-              Get your free no-obligation quote today. We cover the whole of the UK — call us or submit a request online.
+            <p className="font-body text-white/70 text-base sm:text-lg mb-8 sm:mb-10 max-w-xl mx-auto">
+              Get your free no-obligation quote today. We cover the whole of the UK — call, text, or WhatsApp us.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
               <a
                 href="tel:07517758507"
-                className="bg-white text-[#1A5FA8] font-body font-bold px-8 py-4 rounded-sm flex items-center gap-3 hover:bg-white/90 transition-all duration-200 text-lg"
+                className="bg-white text-[#1A5FA8] font-body font-bold px-7 sm:px-8 py-4 rounded-sm flex items-center gap-3 hover:bg-white/90 transition-all duration-200 text-base sm:text-lg w-full sm:w-auto justify-center"
               >
-                <Phone size={20} />
+                <Phone size={18} />
                 07517 758507
               </a>
-              <Link to="/contact" className="btn-ghost border-white/50 text-white hover:border-white hover:text-white">
-                Request Online <ArrowRight size={16} />
-              </Link>
+              <a
+                href="https://wa.me/447517758507"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost border-white/50 text-white hover:border-white hover:text-white w-full sm:w-auto justify-center"
+              >
+                WhatsApp Us <ArrowRight size={16} />
+              </a>
             </div>
           </ScrollReveal>
         </div>

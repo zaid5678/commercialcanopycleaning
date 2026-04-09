@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
-  ArrowRight, ShieldCheck, Target, Users, Award, Wrench, Globe, CheckCircle2
+  ArrowRight, ShieldCheck, Target, Award, Wrench, Globe, CheckCircle2, Phone
 } from 'lucide-react'
 import PageTransition from '../components/PageTransition'
 import ScrollReveal, { ScrollRevealContainer, ScrollRevealItem } from '../components/ScrollReveal'
@@ -49,14 +49,14 @@ export default function About() {
   return (
     <PageTransition>
       {/* Page Hero */}
-      <section className="pt-36 pb-16 relative overflow-hidden">
+      <section className="pt-28 sm:pt-36 pb-12 sm:pb-16 relative overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
             background: 'radial-gradient(ellipse 70% 70% at 15% 80%, rgba(26,95,168,0.09) 0%, transparent 60%), #0A0A0A',
           }}
         />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="flex items-center gap-2 font-body text-white/30 text-sm mb-6">
               <Link to="/" className="hover:text-white/60 transition-colors">Home</Link>
@@ -64,12 +64,12 @@ export default function About() {
               <span className="text-white/60">About</span>
             </div>
             <span className="section-label">Who We Are</span>
-            <h1 className="font-heading text-6xl lg:text-8xl text-white leading-none mb-6">
+            <h1 className="font-heading text-5xl sm:text-6xl lg:text-8xl text-white leading-none mb-6">
               About Us
             </h1>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 mt-10 sm:mt-12">
             <ScrollReveal>
               <p className="font-body text-white/60 text-lg leading-relaxed mb-6">
                 Commercial Canopy Cleaning is a specialist trade services company focused on one thing: keeping commercial kitchen ventilation systems clean, compliant, and operational.
@@ -194,19 +194,20 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      <section className="py-14 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <h2 className="font-heading text-5xl lg:text-6xl text-white mb-6">
+            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white mb-6">
               Work With Us
             </h2>
-            <p className="font-body text-white/50 max-w-xl mx-auto mb-10">
+            <p className="font-body text-white/50 max-w-xl mx-auto mb-8 sm:mb-10">
               Get in touch today for a no-obligation quote. We're ready to assess your requirements and put a cleaning programme in place.
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link to="/contact" className="btn-primary">
-                Request a Quote <ArrowRight size={16} />
-              </Link>
+            <div className="flex flex-wrap gap-3 sm:gap-4 justify-center">
+              <a href="tel:07517758507" className="btn-primary">
+                <Phone size={16} />
+                Call 07517 758507
+              </a>
               <Link to="/compliance" className="btn-ghost">
                 TR19 Information
               </Link>

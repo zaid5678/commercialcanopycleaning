@@ -129,14 +129,14 @@ export default function Compliance() {
   return (
     <PageTransition>
       {/* Page Hero */}
-      <section className="pt-36 pb-20 relative overflow-hidden">
+      <section className="pt-28 sm:pt-36 pb-14 sm:pb-20 relative overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
             background: 'radial-gradient(ellipse 80% 60% at 90% 10%, rgba(46,141,232,0.08) 0%, transparent 50%), #0A0A0A',
           }}
         />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 font-body text-white/30 text-sm mb-6">
             <Link to="/" className="hover:text-white/60 transition-colors">Home</Link>
             <span>/</span>
@@ -146,7 +146,7 @@ export default function Compliance() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-end">
             <ScrollReveal className="lg:col-span-3">
               <span className="section-label">TR19 Explained</span>
-              <h1 className="font-heading text-6xl lg:text-8xl text-white leading-none mb-6">
+              <h1 className="font-heading text-5xl sm:text-6xl lg:text-8xl text-white leading-none mb-6">
                 Why Compliance<br />
                 <span className="text-brand-blue-bright">Matters</span>
               </h1>
@@ -184,13 +184,13 @@ export default function Compliance() {
       </section>
 
       {/* Divider */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="h-px bg-white/[0.06]" />
       </div>
 
       {/* Why It Matters */}
-      <section className="py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="py-16 sm:py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal className="mb-16">
             <span className="section-label">The Risks</span>
             <h2 className="font-heading text-5xl lg:text-6xl text-white">
