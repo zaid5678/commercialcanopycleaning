@@ -76,7 +76,7 @@ We use specialist rotary brush systems, high-powered vacuum extraction, and acce
       'De-grease internal ductwork where accessible',
       'Remove and de-grease baffle filters and internal canopy hood',
       'Excludes filter cleaning (customer responsibility weekly)',
-      'Grills not included',
+      'Please note: Grills not included',
     ],
     slug: 'duct-cleaning',
   },
