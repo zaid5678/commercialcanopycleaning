@@ -73,6 +73,7 @@ export default function App() {
           <main className="flex-1">
             <AnimatedRoutes />
           </main>
+          <div className="lg:hidden h-[60px]" aria-hidden="true" />
           <Footer />
           <FloatingFAB />
           <MobileCallBar />

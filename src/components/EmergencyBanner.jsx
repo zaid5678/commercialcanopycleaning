@@ -13,7 +13,7 @@ export default function EmergencyBanner() {
         <div className="flex items-center gap-3 min-w-0">
           <span className="w-2 h-2 rounded-full bg-brand-blue-bright flex-shrink-0" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
           <style>{`@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}`}</style>
-          <p className="font-body text-white/70 text-xs sm:text-sm truncate">
+          <p className="font-body text-white/70 text-xs sm:text-sm">
             <span className="text-white font-semibold">24/7 Emergency Callout</span>
             <span className="hidden sm:inline"> — Fan breakdown or urgent clean?</span>
             {' '}

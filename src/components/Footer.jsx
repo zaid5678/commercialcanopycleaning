@@ -31,8 +31,8 @@ export default function Footer() {
   return (
     <footer className="bg-[#060606] border-t border-white/[0.06]">
       {/* Badge strip */}
-      <div className="border-b border-white/[0.06] py-4 overflow-x-auto">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-center gap-6 flex-wrap min-w-max mx-auto">
+      <div className="border-b border-white/[0.06] py-4">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-center gap-4 sm:gap-6 flex-wrap">
           <div className="flex items-center gap-2 text-white/50 font-body text-xs uppercase tracking-widest whitespace-nowrap">
             <ShieldCheck size={14} className="text-brand-blue-bright" />
             TR19 Certified

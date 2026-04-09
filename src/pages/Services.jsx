@@ -191,7 +191,7 @@ function ServiceSection({ service, index }) {
               )}
             </div>
             <div className="flex-1 lg:basis-2/5">
-              <div className="card-surface p-6 sm:p-7 sticky top-28">
+              <div className="card-surface p-6 sm:p-7 lg:sticky lg:top-28">
                 <div className="font-body text-white/30 text-xs uppercase tracking-widest mb-4">What's Included</div>
                 <ul className="space-y-3 mb-7">
                   {service.includes.map(item => (
@@ -247,7 +247,7 @@ export default function Services() {
                 const Icon = step.icon
                 return (
                   <div key={step.label} className="flex items-center flex-shrink-0">
-                    <div className="flex flex-col items-center gap-2 px-5 py-3 border border-white/[0.06] bg-[#111] min-w-[90px]">
+                    <div className="flex flex-col items-center gap-2 px-3 sm:px-5 py-3 border border-white/[0.06] bg-[#111] min-w-[70px] sm:min-w-[90px]">
                       <Icon size={18} className="text-brand-blue-bright" />
                       <span className="font-body text-white/50 text-xs uppercase tracking-widest">{step.label}</span>
                     </div>
