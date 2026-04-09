@@ -4,7 +4,8 @@ import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import {
   ArrowRight, Phone, CheckCircle2, Shield, Wind, Wrench,
-  FileCheck, Zap, Clock, ChevronRight, Star, AlertTriangle, MapPin
+  FileCheck, Zap, Clock, ChevronRight, Star, AlertTriangle, MapPin,
+  Utensils, Fish, Beer, Hotel, Coffee, PackageOpen, Globe, GraduationCap, HeartPulse, Factory
 } from 'lucide-react'
 import ScrollReveal, { ScrollRevealContainer, ScrollRevealItem } from '../components/ScrollReveal'
 import PageTransition from '../components/PageTransition'
@@ -73,17 +74,17 @@ const testimonials = [
   { name: 'Dev P.', business: 'Owner, Indian Takeaway, Manchester', text: 'Had two other companies quote me. These were cheaper, faster, and actually explained what TR19 means for my insurance. Brilliant.', stars: 5 },
 ]
 
-const industries = [
-  'Restaurants & Takeaways',
-  'Fish & Chips Shops',
-  'Pubs & Bars',
-  'Hotels & Hospitality Venues',
-  'Cafés & Coffee Shops',
-  'Dark Kitchens / Ghost Kitchens',
-  'Franchise Groups (Nationwide)',
-  'Schools & Colleges',
-  'Care Homes & Nursing Homes',
-  'Food Factories & Production Kitchens',
+const clientTypes = [
+  { icon: Utensils, label: 'Restaurants & Takeaways' },
+  { icon: Fish, label: 'Fish & Chips Shops' },
+  { icon: Beer, label: 'Pubs & Bars' },
+  { icon: Hotel, label: 'Hotels & Hospitality Venues' },
+  { icon: Coffee, label: 'Cafés & Coffee Shops' },
+  { icon: PackageOpen, label: 'Dark Kitchens / Ghost Kitchens' },
+  { icon: Globe, label: 'Franchise Groups (Nationwide)' },
+  { icon: GraduationCap, label: 'Schools & Colleges' },
+  { icon: HeartPulse, label: 'Care Homes & Nursing Homes' },
+  { icon: Factory, label: 'Food Factories & Production Kitchens' },
 ]
 
 const cities = [
@@ -362,25 +363,22 @@ export default function Home() {
       {/* ── INDUSTRIES WE SERVE ───────────────────────────────────────────── */}
       <section className="py-16 sm:py-24 bg-[#070b11]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-            <ScrollReveal>
-              <span className="section-label">Our Clients</span>
-              <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white mb-5">Industries We Serve</h2>
-              <p className="font-body text-white/50 text-base leading-relaxed">
-                We provide compliance services for the entire hospitality sector, including:
-              </p>
-            </ScrollReveal>
-            <ScrollReveal delay={0.1}>
-              <ul className="space-y-3">
-                {industries.map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <CheckCircle2 size={16} className="text-brand-blue-bright flex-shrink-0" />
-                    <span className="font-body text-white/70 text-sm sm:text-base">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </ScrollReveal>
-          </div>
+          <ScrollReveal className="mb-10 sm:mb-14">
+            <span className="section-label">Our Clients</span>
+            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white">Industries We Serve</h2>
+          </ScrollReveal>
+          <ScrollRevealContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+            {clientTypes.map(({ icon: Icon, label }) => (
+              <ScrollRevealItem key={label}>
+                <div className="card-surface p-5 flex flex-col items-center text-center group hover:border-brand-blue-bright/30 transition-colors duration-300 cursor-default">
+                  <div className="w-10 h-10 flex items-center justify-center border border-white/10 group-hover:border-brand-blue-bright/50 mb-3 transition-colors duration-300">
+                    <Icon size={18} className="text-white/35 group-hover:text-brand-blue-bright transition-colors duration-300" />
+                  </div>
+                  <span className="font-body text-white/55 text-xs leading-snug group-hover:text-white/80 transition-colors duration-300">{label}</span>
+                </div>
+              </ScrollRevealItem>
+            ))}
+          </ScrollRevealContainer>
         </div>
       </section>
 
