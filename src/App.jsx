@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { HelmetProvider } from 'react-helmet-async'
 import Navbar from './components/Navbar'
@@ -32,6 +33,12 @@ const JSON_LD = {
     opens: '00:00',
     closes: '23:59',
   },
+}
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  return null
 }
 
 function AnimatedRoutes() {
@@ -68,6 +75,7 @@ export default function App() {
           <EmergencyBanner />
           <Navbar />
         </div>
+        <ScrollToTop />
         <div className="min-h-screen bg-brand-black flex flex-col">
           <div aria-hidden="true" />
           <main className="flex-1">
