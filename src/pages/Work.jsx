@@ -91,7 +91,7 @@ function CaseStudyCard({ study, index }) {
                   <img
                     src={study.before}
                     alt={study.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" style={{ objectPosition: '50% 30%' }}
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" style={{ objectPosition: '50% 30%' }}
                   />
                   <div className="absolute top-3 left-3 bg-brand-black/90 px-4 py-2 rounded-sm border border-brand-blue-bright/50">
                     <span className="font-heading text-brand-blue-bright text-xs uppercase tracking-widest font-bold">{study.category}</span>
@@ -106,7 +106,7 @@ function CaseStudyCard({ study, index }) {
                     <img
                       src={study.before}
                       alt={`Before: ${study.title}`}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300">
                       <span className="font-heading text-3xl sm:text-4xl text-white tracking-widest drop-shadow-lg">BEFORE</span>
@@ -122,7 +122,7 @@ function CaseStudyCard({ study, index }) {
                     <img
                       src={study.after}
                       alt={`After: ${study.title}`}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300">
                       <span className="font-heading text-3xl sm:text-4xl text-brand-blue-bright tracking-widest drop-shadow-lg">AFTER</span>

@@ -44,13 +44,13 @@ We work on centrifugal, axial, and bifurcated extract fans of all makes. Whether
     icon: Wind,
     title: 'Canopy Cleaning',
     tagline: 'TR19 certified. Documented. Insurance-ready.',
-    description: `Your canopy is the first line of defence against grease accumulation and fire risk. Commercial Canopy Cleaning performs full degreasing of canopy hoods, baffles, and plenum chambers to TR19 specification — using professional-grade degreasers and high-temperature steam equipment.
+    description: `Your canopy is the first line of defence against grease accumulation and fire risk. Commercial Canopy Cleaning performs full degreasing of canopy hoods and plenum chambers to TR19 specification — using professional-grade degreasers and high-temperature steam equipment.
 
 Every canopy clean we carry out is documented with photographic evidence taken before and during the job, grease thickness measurements at key points, and a signed TR19 compliance certificate issued promptly after completion. We schedule around your operation to minimise disruption, and we're available out of hours.`,
     beforeImage: '/work_images/canopybefore.jpeg',
     afterImage: '/work_images/canopyafter.jpeg',
     includes: [
-      'Hood & baffle clean',
+      'Internal Canopy Hood (filters not included)',
       'Plenum chamber degreasing',
       'Grease trap inspection',
       'Photographic before & after evidence',
@@ -124,12 +124,12 @@ Our documentation is used by some of the UK's largest commercial kitchen operato
     id: 'emergency',
     icon: Zap,
     title: 'Emergency Callout',
-    tagline: 'Nationwide. Fast. From £150.',
+    tagline: 'Nationwide. Fast. £150.',
     description: `When your kitchen extraction system fails — whether it's a fan breakdown, a blocked duct, or an urgent compliance issue before an inspection — you need a team that can respond quickly, anywhere in the UK. Commercial Canopy Cleaning operates a national emergency callout service with no call-out hour restrictions.
 
 Call us directly on 07517 758507 and speak with an engineer. We'll assess the situation over the phone, dispatch to your location, and prioritise getting your operation back to normal. Emergency cleans can be arranged on the same day for compliance-critical situations.`,
     includes: [
-      'Callouts from £150',
+      'Callouts — £150',
       '24/7 emergency availability',
       'Speak directly with an engineer',
       'Rapid dispatch nationwide',
