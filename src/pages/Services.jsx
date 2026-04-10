@@ -286,7 +286,7 @@ export default function Services() {
               <ul className="space-y-4">
                 {[
                   'We remove the extraction fan motor, degrease internally and service — includes a full bearing check.',
-                  'We take out the baffle filters and degrease the internal canopy hood only. *Baffle grills are not included.',
+                  'We take out the baffle filters and degrease the internal canopy hood only. Please note: Baffle grills are not included.',
                   'Whilst the extraction fan is out, we degrease the internal ductwork where accessible.',
                   'If you have access panels installed, we will clean up to 3 panels as part of the service.',
                 ].map((item, i) => (
