@@ -145,7 +145,7 @@ export default function Home() {
         <FanBg />
 
         {/* Top badge strip */}
-        <div className="relative pt-28 sm:pt-36 pb-0">
+        <div className="relative pt-28 sm:pt-36 lg:pt-44 pb-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: -10 }}
