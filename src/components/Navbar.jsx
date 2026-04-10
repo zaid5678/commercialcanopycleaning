@@ -57,7 +57,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-3 sm:py-4">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+            <Link to="/" className="flex items-center gap-2 sm:gap-3 flex-shrink-0 -mt-2 lg:-mt-3">
               <img
                 src="/logo-updated.jpeg"
                 alt="Commercial Canopy Cleaning"
