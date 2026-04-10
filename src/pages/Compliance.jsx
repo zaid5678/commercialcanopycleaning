@@ -99,11 +99,6 @@ export default function Compliance() {
       <section className="pt-28 sm:pt-36 pb-14 sm:pb-20 relative overflow-hidden">
         <div className="absolute inset-0" style={{ background:'radial-gradient(ellipse 80% 60% at 90% 10%,rgba(46,141,232,0.08) 0%,transparent 50%),#0A0A0A' }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 font-body text-white/30 text-sm mb-6">
-            <Link to="/" className="hover:text-white/60 transition-colors">Home</Link>
-            <span>/</span>
-            <span className="text-white/60">Compliance</span>
-          </div>
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-end">
             <ScrollReveal className="lg:col-span-3">
               <span className="section-label">TR19 Explained</span>

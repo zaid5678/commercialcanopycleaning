@@ -46,7 +46,7 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        animate={{ y: hidden ? -80 : 0 }}
+        animate={{ y: hidden ? '-100%' : 0 }}
         transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
         className={`w-full transition-all duration-300 ${
           scrolled

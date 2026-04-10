@@ -228,11 +228,6 @@ export default function Services() {
         <div className="absolute inset-0" style={{ background:'radial-gradient(ellipse 60% 60% at 80% 50%,rgba(26,95,168,0.1) 0%,transparent 60%),#0A0A0A' }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="flex items-center gap-2 font-body text-white/30 text-sm mb-6">
-              <Link to="/" className="hover:text-white/60 transition-colors">Home</Link>
-              <span>/</span>
-              <span className="text-white/60">Services</span>
-            </div>
             <span className="section-label">What We Offer</span>
             <h1 className="font-heading text-5xl sm:text-6xl lg:text-8xl text-white leading-none mb-5">Our Services</h1>
             <p className="font-body text-white/50 text-base sm:text-lg max-w-2xl leading-relaxed">

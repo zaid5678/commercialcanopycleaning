@@ -59,11 +59,6 @@ export default function About() {
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="flex items-center gap-2 font-body text-white/30 text-sm mb-6">
-              <Link to="/" className="hover:text-white/60 transition-colors">Home</Link>
-              <span>/</span>
-              <span className="text-white/60">About</span>
-            </div>
             <span className="section-label">Who We Are</span>
             <h1 className="font-heading text-5xl sm:text-6xl lg:text-8xl text-white leading-none mb-6">
               About Us
