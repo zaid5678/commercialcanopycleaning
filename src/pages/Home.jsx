@@ -139,10 +139,15 @@ export default function Home() {
   return (
     <PageTransition>
       <Helmet>
-        <title>Commercial Canopy Cleaning | TR19 Certified | Fan Repair | Nationwide</title>
-        <meta name="description" content="Emergency fan repair, TR19 canopy & duct cleaning — certified engineers, nationwide, 24/7. Get a free quote today: 07517758507." />
-        <meta property="og:title" content="Commercial Canopy Cleaning | TR19 Certified | Nationwide" />
-        <meta property="og:description" content="Emergency fan repair, TR19 canopy & duct cleaning. Certified engineers, nationwide coverage, 24/7 callout." />
+        <title>Commercial Canopy Cleaning | TR19 Certified | Fan Repair | Nationwide UK</title>
+        <meta name="description" content="UK's trusted commercial canopy cleaning specialists. TR19 certified canopy & duct cleaning, emergency fan repair, 24/7 nationwide coverage. Serving London, Manchester, Birmingham and all major UK cities. Call 07517 758507." />
+        <meta property="og:title" content="Commercial Canopy Cleaning | TR19 Certified | Nationwide UK" />
+        <meta property="og:description" content="TR19 certified canopy cleaning, duct cleaning and emergency fan repair across the UK. Certified engineers, 24/7 callout. Call 07517 758507." />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_GB" />
+        <meta name="geo.region" content="GB" />
+        <meta name="geo.placename" content="United Kingdom" />
+        <link rel="canonical" href="https://commercialcanopycleaning.co.uk/" />
       </Helmet>
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}

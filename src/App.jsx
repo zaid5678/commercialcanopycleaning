@@ -18,21 +18,43 @@ import Reviews from './pages/Reviews'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 import Cookies from './pages/Cookies'
+import CityLanding from './pages/CityLanding'
 
 const JSON_LD = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
+  '@type': ['LocalBusiness', 'ProfessionalService'],
   name: 'Commercial Canopy Cleaning',
   telephone: '07517758507',
-  url: 'https://commercialcanopycleaning.netlify.app',
-  areaServed: 'United Kingdom',
-  description: 'TR19 certified canopy and duct cleaning, fan breakdown specialists, nationwide coverage.',
+  url: 'https://commercialcanopycleaning.co.uk',
+  logo: 'https://commercialcanopycleaning.co.uk/logo-updated.jpeg',
+  image: 'https://commercialcanopycleaning.co.uk/logo-updated.jpeg',
+  description: 'TR19 certified commercial canopy cleaning, duct cleaning, and emergency fan repair specialists. Nationwide coverage, 24/7 availability.',
+  priceRange: '££',
+  areaServed: [
+    { '@type': 'Country', name: 'United Kingdom' },
+    { '@type': 'AdministrativeArea', name: 'England' },
+    { '@type': 'AdministrativeArea', name: 'Scotland' },
+    { '@type': 'AdministrativeArea', name: 'Wales' },
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Ventilation Cleaning Services',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Canopy Cleaning', description: 'TR19 certified canopy hood and baffle degreasing with compliance certificate.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Duct Cleaning', description: 'Full extraction run cleaning from canopy to discharge point.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Fan Repair & Breakdown', description: 'Emergency fan repair and replacement, same-day nationwide.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Emergency Callout', description: '24/7 emergency callout service from £150.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Access Panel Installation', description: 'TR19-compliant access panel installation and maintenance.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Compliance Certification', description: 'TR19 documentation and compliance certification.' } },
+    ],
+  },
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',
     dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
     opens: '00:00',
     closes: '23:59',
   },
+  sameAs: [],
 }
 
 function ScrollToTop() {
@@ -57,6 +79,7 @@ function AnimatedRoutes() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/cookies" element={<Cookies />} />
+        <Route path="/commercial-canopy-cleaning/:city" element={<CityLanding />} />
       </Routes>
     </AnimatePresence>
   )
@@ -66,7 +89,6 @@ export default function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
-        {/* JSON-LD structured data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
