@@ -124,11 +124,12 @@ Our documentation is used by some of the UK's largest commercial kitchen operato
     id: 'emergency',
     icon: Zap,
     title: 'Emergency Callout',
-    tagline: 'Nationwide. Fast. No waiting lists.',
+    tagline: 'Nationwide. Fast. From £150.',
     description: `When your kitchen extraction system fails — whether it's a fan breakdown, a blocked duct, or an urgent compliance issue before an inspection — you need a team that can respond quickly, anywhere in the UK. Commercial Canopy Cleaning operates a national emergency callout service with no call-out hour restrictions.
 
 Call us directly on 07517 758507 and speak with an engineer. We'll assess the situation over the phone, dispatch to your location, and prioritise getting your operation back to normal. Emergency cleans can be arranged on the same day for compliance-critical situations.`,
     includes: [
+      'Callouts from £150',
       '24/7 emergency availability',
       'Speak directly with an engineer',
       'Rapid dispatch nationwide',
