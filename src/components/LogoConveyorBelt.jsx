@@ -34,11 +34,11 @@ export default function LogoConveyorBelt() {
           <ScrollRevealContainer className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-4 sm:gap-6">
             {logos.map(logo => (
               <ScrollRevealItem key={logo.name}>
-                <div className="flex items-center justify-center h-16 sm:h-20 p-2">
+                <div className="flex items-center justify-center h-16 sm:h-20">
                   <img
                     src={logo.src}
                     alt={logo.name}
-                    className="max-h-full max-w-full object-contain"
+                    className="w-full h-full object-contain"
                     loading="eager"
                   />
                 </div>
