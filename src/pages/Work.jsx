@@ -137,13 +137,10 @@ function CaseStudyCard({ study, index }) {
           </div>
 
           {/* Info section */}
-          <div className="p-6 sm:p-7 flex flex-col justify-between flex-1">
-            <div className="mb-4">
-              <div className="flex items-center justify-between mb-2">
-                <span className="font-body text-brand-blue-bright text-xs uppercase tracking-widest">{study.category}</span>
-              </div>
-              <h3 className="font-heading text-lg sm:text-xl text-white mb-2 leading-tight">{study.title}</h3>
-              <p className="font-body text-white/50 text-sm mb-3">{study.description}</p>
+          <div className="px-4 py-3 sm:px-5 sm:py-4 flex flex-col justify-between">
+            <div>
+              <span className="font-body text-brand-blue-bright text-xs uppercase tracking-widest">{study.category}</span>
+              <h3 className="font-heading text-sm sm:text-base text-white mt-0.5 leading-tight">{study.title}</h3>
             </div>
           </div>
         </div>
