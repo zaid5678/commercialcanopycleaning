@@ -192,7 +192,7 @@ export default function Footer() {
       <div className="border-t border-white/[0.06] py-5">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="font-body text-white/30 text-xs text-center sm:text-left">
-            &copy; 2025 Commercial Canopy Cleaning. All rights reserved.
+            &copy; 2026 Commercial Canopy Cleaning. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <Link to="/privacy" className="font-body text-white/25 text-xs hover:text-white/50 transition-colors duration-200">Privacy Policy</Link>
