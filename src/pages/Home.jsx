@@ -138,7 +138,7 @@ export default function Home() {
       </Helmet>
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex flex-col justify-end overflow-hidden">
+      <section className="relative sm:min-h-screen flex flex-col sm:justify-end overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(26,95,168,0.12) 0%, transparent 60%), #0A0A0A' }} />
         <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.5) 1px,transparent 1px)', backgroundSize: '60px 60px' }} />
@@ -160,20 +160,10 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Main hero content — pushed towards bottom */}
-        <div className="relative flex-1 flex items-end pb-16 sm:pb-20">
+        {/* Main hero content */}
+        <div className="relative sm:flex-1 sm:flex sm:items-end pb-16 sm:pb-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div className="max-w-3xl">
-                {/* Company name */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  className="font-body text-white/35 text-sm sm:text-base uppercase tracking-[0.3em] mb-4"
-                >
-                  Commercial Canopy Cleaning
-                </motion.div>
-
                 <motion.h1
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
