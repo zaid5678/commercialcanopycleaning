@@ -18,8 +18,56 @@ const logos = [
   { name: 'IRO', src: '/logos/IRO.jpg' },
 ]
 
+const smallLogos = ['Pepes', 'PFC']
+
+function LogoItem({ logo, index }) {
+  const isSmall = smallLogos.includes(logo.name)
+  return (
+    <div
+      key={`${logo.name}-${index}`}
+      className={`flex-shrink-0 h-20 sm:h-28 w-auto flex items-center justify-center ${isSmall ? 'mx-6 sm:mx-8' : 'mx-4 sm:mx-6'}`}
+    >
+      <img
+        src={logo.src}
+        alt={logo.name}
+        className={`h-full w-auto object-contain filter drop-shadow-sm ${isSmall ? 'scale-150' : ''}`}
+        loading="lazy"
+      />
+    </div>
+  )
+}
+
+function Belt({ items, direction = 'left', duration = 18 }) {
+  const display = [...items, ...items, ...items, ...items]
+  const startX = direction === 'left' ? 0 : '-50%'
+  const endX = direction === 'left' ? '-50%' : 0
+
+  return (
+    <div className="overflow-hidden bg-white py-6 sm:py-8 relative">
+      <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+      <motion.div
+        className="flex"
+        initial={{ x: startX }}
+        animate={{ x: endX }}
+        transition={{
+          duration,
+          repeat: Infinity,
+          ease: 'linear',
+          repeatType: 'loop',
+        }}
+      >
+        {display.map((logo, index) => (
+          <LogoItem key={`${logo.name}-${index}`} logo={logo} index={index} />
+        ))}
+      </motion.div>
+    </div>
+  )
+}
+
 export default function LogoConveyorBelt() {
-  const displayLogos = [...logos, ...logos]
+  const topRow = logos.slice(0, 7)
+  const bottomRow = logos.slice(7)
 
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-brand-black to-[#070b11] overflow-hidden">
@@ -36,48 +84,9 @@ export default function LogoConveyorBelt() {
         </ScrollReveal>
       </div>
 
-      {/* Conveyor Belt Container */}
-      <div className="relative overflow-hidden">
-        {/* Belt */}
-        <div className="bg-white py-8 sm:py-10">
-          {/* Left fade mask */}
-          <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-16 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-
-          {/* Right fade mask */}
-          <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-16 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-
-          {/* Logos */}
-          <motion.div
-            className="flex px-6"
-            animate={{ x: '-50%' }}
-            transition={{
-              duration: 30,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-          >
-            {displayLogos.map((logo, index) => {
-              // Scale up Pepes and PFC logos to match other logos
-              const isSmallLogo = ['Pepes', 'PFC'].includes(logo.name)
-              const scaleClass = isSmallLogo ? 'scale-150' : ''
-              const extraGap = isSmallLogo ? 'mx-6 sm:mx-8' : 'mx-4 sm:mx-6'
-              
-              return (
-                <div
-                  key={`${logo.name}-${index}`}
-                  className={`flex-shrink-0 h-24 sm:h-32 w-auto flex items-center justify-center ${extraGap}`}
-                >
-                  <img
-                    src={logo.src}
-                    alt={logo.name}
-                    className={`h-full w-auto object-contain filter drop-shadow-sm hover:drop-shadow-md transition-all duration-300 ${scaleClass}`}
-                    loading="lazy"
-                  />
-                </div>
-              )
-            })}
-          </motion.div>
-        </div>
+      <div className="flex flex-col gap-3">
+        <Belt items={topRow} direction="left" duration={16} />
+        <Belt items={bottomRow} direction="right" duration={20} />
       </div>
     </section>
   )
