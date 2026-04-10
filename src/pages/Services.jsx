@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import {
-  Wind, FileCheck, Wrench, DoorOpen, Zap, Clock,
+  Wind, FileCheck, Wrench, DoorOpen, Shield, Zap, Clock,
   ArrowRight, ChevronDown, Phone, CheckCircle2,
   ClipboardList, Scan, Settings, BadgeCheck, FileText
 } from 'lucide-react'
