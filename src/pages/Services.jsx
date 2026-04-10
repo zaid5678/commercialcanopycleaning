@@ -88,6 +88,10 @@ We use specialist rotary brush systems, high-powered vacuum extraction, and acce
     description: `Without proper access points, ductwork cannot be fully cleaned — and an incomplete clean is not TR19 compliant. We supply and install access doors directly into your ductwork to allow safe inspection and thorough cleaning of the entire extraction run.
 
 In line with TR19® Grease guidance, access points should be positioned at regular intervals — typically every two metres — to ensure the complete system can be properly maintained. Whether you're installing access panels ahead of a first clean or retrofitting them into an existing system, our engineers will position and fit them correctly to bring your setup into full compliance.`,
+    beforeImage: '/work_images/panel1.jpeg',
+    afterImage: '/work_images/panel2.jpeg',
+    beforeLabel: 'Access Door',
+    afterLabel: 'Installed System',
     includes: [
       'Supply and installation of access doors',
       'TR19-compliant positioning every ~2 metres',
@@ -172,7 +176,7 @@ function ServiceSection({ service, index }) {
                   >
                     <img src={service.beforeImage} alt={`Before ${service.title}`} className="w-full h-56 sm:h-80 object-cover" />
                     <div className="bg-black/50 px-3 py-2 text-center">
-                      <span className="font-body text-white/50 text-xs uppercase tracking-widest">Before</span>
+                      <span className="font-body text-white/50 text-xs uppercase tracking-widest">{service.beforeLabel || 'Before'}</span>
                     </div>
                   </motion.div>
                   <motion.div
@@ -184,7 +188,7 @@ function ServiceSection({ service, index }) {
                   >
                     <img src={service.afterImage} alt={`After ${service.title}`} className="w-full h-56 sm:h-80 object-cover" />
                     <div className="bg-black/50 px-3 py-2 text-center">
-                      <span className="font-body text-white/50 text-xs uppercase tracking-widest">After</span>
+                      <span className="font-body text-white/50 text-xs uppercase tracking-widest">{service.afterLabel || 'After'}</span>
                     </div>
                   </motion.div>
                 </div>
