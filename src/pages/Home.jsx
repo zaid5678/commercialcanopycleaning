@@ -214,10 +214,10 @@ export default function Home() {
           </ScrollReveal>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
             {[
-              { src: '/work_images/WhatsApp Image 2026-04-10 at 01.15.13.jpeg', label: 'Fan Installation' },
+              { src: '/work_images/newfaninstall.jpeg', label: 'New Fan Installation' },
               { src: '/work_images/WhatsApp Image 2026-04-10 at 01.15.13 (2).jpeg', label: 'Canopy Clean' },
               { src: '/work_images/WhatsApp Image 2026-04-10 at 01.15.13 (3).jpeg', label: 'Canopy Clean' },
-              { src: '/work_images/WhatsApp Image 2026-04-10 at 01.15.13 (1).jpeg', label: 'Duct Installation' },
+              { src: 'public/work_images/newkitchenextractioninstall.jpeg', label: 'Kitchen Canopy Installation' },
             ].map(({ src, label }) => (
               <ScrollRevealItem key={src}>
                 <div className="relative overflow-hidden group" style={{ aspectRatio: '3/4' }}>
