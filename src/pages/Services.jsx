@@ -66,7 +66,7 @@ Every canopy clean we carry out is documented with photographic evidence taken b
     tagline: 'Full run cleaned — not just the hood.',
     description: `Cleaning only the canopy without addressing the ductwork is not TR19 compliant — and most insurers know it. Grease accumulates throughout the full extraction run, from the canopy entry all the way to the external discharge point. Commercial Canopy Cleaning cleans the complete duct run.
 
-We use specialist rotary brush systems, high-powered vacuum extraction, and access panel installation where required to ensure every metre of your ductwork is thoroughly cleaned. CCTV inspection footage is available on request for longer or more complex duct runs.`,
+Access panel installation where required to ensure every metre of your ductwork is thoroughly cleaned.`,
     beforeImage: '/work_images/ductbefore.png',
     afterImage: '/work_images/ductafter.png',
     includes: [
