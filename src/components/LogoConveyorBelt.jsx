@@ -38,7 +38,7 @@ export default function LogoConveyorBelt() {
                   <img
                     src={logo.src}
                     alt={logo.name}
-                    className="w-full h-full object-contain"
+                    className={`w-full h-full object-contain ${['Pepes', 'PFC'].includes(logo.name) ? 'scale-150' : ''}`}
                     loading="eager"
                   />
                 </div>
