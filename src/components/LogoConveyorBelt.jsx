@@ -26,7 +26,7 @@ export default function LogoConveyorBelt() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <ScrollReveal>
           <div className="text-center">
-            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white mb-3">
+            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl mb-3" style={{ color: '#F5A623' }}>
               Trusted By
             </h2>
             <p className="font-body text-white/40 max-w-2xl mx-auto text-sm sm:text-base">
