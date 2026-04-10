@@ -62,8 +62,8 @@ function useCountUp(target, duration = 1800, startOnView = true) {
 const services = [
   { id: 'fan-repair', icon: Wrench, title: 'Fan Repair & Breakdown', tag: 'SPECIALIST', desc: 'Emergency specialist response for failed kitchen extract fans. We diagnose, source parts, and restore your system fast.', proof: 'Average same-day response nationwide' },
   { id: 'canopy-cleaning', icon: Wind, title: 'Canopy Cleaning', tag: 'MOST POPULAR', desc: 'Full degreasing of canopy systems, baffles, and filters to TR19 specification. Certificate issued after every clean.', proof: 'Compliant with TR19 grease accumulation standards' },
-  { id: 'duct-cleaning', icon: FileCheck, title: 'Duct Cleaning', tag: null, desc: 'Complete ductwork inspection and deep clean from canopy to discharge. Every metre documented with photographic evidence.', proof: 'Full duct run covered — not just the canopy hood' },
-  { id: 'fan-cleaning', icon: Wind, title: 'Fan Cleaning', tag: null, desc: 'Deep cleaning and degreasing of extraction fan motors. Improves airflow, reduces fire risk, and extends equipment lifespan.', proof: 'Extends fan motor lifespan and improves performance' },
+  { id: 'duct-cleaning', icon: FileCheck, title: 'Duct Cleaning', tag: null, desc: 'Complete ductwork inspection and clean from canopy to discharge. Every metre documented with photographic evidence.', proof: 'Full duct run covered — not just the canopy hood' },
+  { id: 'fan-cleaning', icon: Wind, title: 'Fan Cleaning', tag: null, desc: 'Cleaning and degreasing of extraction fan motors. Improves airflow, reduces fire risk, and extends equipment lifespan.', proof: 'Extends fan motor lifespan and improves performance' },
   { id: 'compliance', icon: FileCheck, title: 'Compliance Certification', tag: null, desc: 'TR19 documentation, sign-off certificates, and photographic reports — everything your insurer needs.', proof: 'Insurance-ready certificate issued within 24 hours' },
   { id: 'emergency', icon: Zap, title: 'Emergency Callout', tag: 'NATIONWIDE', desc: 'Rapid response for critical breakdowns and urgent pre-inspection cleans. We mobilise fast, wherever you are.', proof: '24/7 availability — call 07517 758507 directly' },
 ]
@@ -216,7 +216,7 @@ export default function Home() {
             {[
               { src: '/work_images/WhatsApp Image 2026-04-10 at 01.15.13.jpeg', label: 'Fan Installation' },
               { src: '/work_images/WhatsApp Image 2026-04-10 at 01.15.13 (2).jpeg', label: 'Canopy Clean' },
-              { src: '/work_images/WhatsApp Image 2026-04-10 at 01.15.13 (3).jpeg', label: 'Canopy Deep Clean' },
+              { src: '/work_images/WhatsApp Image 2026-04-10 at 01.15.13 (3).jpeg', label: 'Canopy Clean' },
               { src: '/work_images/WhatsApp Image 2026-04-10 at 01.15.13 (1).jpeg', label: 'Duct Installation' },
             ].map(({ src, label }) => (
               <ScrollRevealItem key={src}>

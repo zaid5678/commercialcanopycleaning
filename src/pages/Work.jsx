@@ -44,7 +44,7 @@ const caseStudies = [
   },
   {
     id: 4,
-    title: 'Secondary Canopy System Deep Clean',
+    title: 'Secondary Canopy System Clean',
     location: 'Hotel Chain (Multi-site)',
     category: 'Canopy Cleaning',
     before: '/work_images/canopybefore2.jpeg',
