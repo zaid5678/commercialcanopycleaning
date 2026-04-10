@@ -64,12 +64,8 @@ export default function Footer() {
               <img
                 src="/logo-updated.jpeg"
                 alt="Commercial Canopy Cleaning"
-                className="h-10 w-auto object-contain rounded-sm"
+                className="h-20 w-auto object-contain rounded-sm"
               />
-              <div>
-                <div className="font-heading text-base text-white leading-none tracking-wider">Commercial Canopy</div>
-                <div className="font-heading text-sm text-brand-blue-bright leading-none tracking-widest">Cleaning</div>
-              </div>
             </div>
             <p className="font-body text-white/50 text-sm leading-relaxed mb-6 max-w-xs">
               Professional canopy &amp; duct cleaning to TR19 standards. Keeping commercial kitchens clean, compliant, and safe — nationwide.
