@@ -367,7 +367,7 @@ export default function Home() {
               <img
                 src="/logos/qualifications.jpeg"
                 alt="AEME Qualified, TR19 Industry Standards, NAADUK Member"
-                className="w-full max-w-[220px] rounded-sm border border-white/[0.06] opacity-90"
+                className="w-full max-w-[220px] rounded-sm border border-white/[0.06] opacity-90 mx-auto block"
               />
             </ScrollReveal>
 
