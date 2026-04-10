@@ -61,7 +61,7 @@ export default function Navbar() {
               <img
                 src="/logo-updated.jpeg"
                 alt="Commercial Canopy Cleaning"
-                className="h-9 sm:h-11 w-auto object-contain rounded-sm"
+                className="h-12 sm:h-14 w-auto object-contain rounded-sm"
               />
             </Link>
 
