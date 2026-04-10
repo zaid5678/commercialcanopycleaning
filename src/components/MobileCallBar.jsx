@@ -1,4 +1,4 @@
-import { MessageCircle, Phone, MessageSquare, ClipboardList } from 'lucide-react'
+import { MessageCircle, Phone, ClipboardList } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 export default function MobileCallBar() {
@@ -20,14 +20,7 @@ export default function MobileCallBar() {
         <MessageCircle size={17} />
         <span className="text-xs">WhatsApp</span>
       </a>
-      <a
-        href="sms:07517758507"
-        className="flex items-center justify-center gap-1.5 flex-1 hover:bg-brand-blue-deep px-2 py-2 rounded transition-colors duration-200"
-      >
-        <MessageSquare size={17} />
-        <span className="text-xs">Text</span>
-      </a>
-      <Link
+<Link
         to="/contact"
         className="flex items-center justify-center gap-1.5 flex-1 hover:bg-brand-blue-deep px-2 py-2 rounded transition-colors duration-200"
       >
