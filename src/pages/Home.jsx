@@ -217,14 +217,14 @@ export default function Home() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex flex-col items-start lg:items-end gap-5 lg:absolute lg:top-24 lg:right-8 lg:w-1/3"
+                className="flex flex-col items-start lg:items-center gap-5 lg:absolute lg:top-12 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:w-2/5"
               >
                 <img
                   src="/logo-updated.jpeg"
                   alt="Commercial Canopy Cleaning"
-                  className="w-full h-auto object-contain rounded-sm"
+                  className="w-full h-auto object-contain rounded-sm lg:max-w-xl"
                 />
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-row justify-center gap-6 flex-wrap">
                   {[{ icon: Shield, label: 'TR19 Certified', colour: '#F5A623' }, { icon: Clock, label: '24/7 Emergency Response', colour: '#2E8DE8' }, { icon: MapPin, label: 'Nationwide Coverage', colour: '#2E8DE8' }].map(({ icon: Icon, label, colour }) => (
                     <div key={label} className="flex items-center gap-2">
                       <Icon size={14} style={{ color: colour }} />
@@ -311,7 +311,7 @@ export default function Home() {
       <section className="py-16 sm:py-24 lg:py-32 bg-brand-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal className="mb-12 sm:mb-16">
-            <span className="section-label">What We Do</span>
+            <span className="section-label" style={{ color: '#F5A623' }}>What We Do</span>
             <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white mb-3">Our Services</h2>
             <p className="font-body text-white/50 max-w-xl text-sm sm:text-base">All services carried out to TR19 standards with full certification and photographic reporting.</p>
           </ScrollReveal>
@@ -330,7 +330,7 @@ export default function Home() {
                   <motion.div whileHover={{ y:-4 }} transition={{ duration:0.25 }} className="mb-4 w-11 h-11 flex items-center justify-center border border-white/10 group-hover:border-brand-blue-bright transition-colors duration-300">
                     <Icon size={20} className="text-white/40 group-hover:text-brand-blue-bright transition-colors duration-300" />
                   </motion.div>
-                  <h3 className="font-heading text-xl sm:text-2xl text-white tracking-wide mb-2">{title}</h3>
+                  <h3 className="font-heading text-xl sm:text-2xl tracking-wide mb-2" style={{ color: '#F5A623' }}>{title}</h3>
                   <p className="font-body text-white/50 text-sm leading-relaxed mb-3">{desc}</p>
                   <p className="font-body text-white/25 text-xs italic mb-4">{proof}</p>
                   <Link to={`/services#${id}`} className="font-body text-brand-blue-bright text-xs flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
