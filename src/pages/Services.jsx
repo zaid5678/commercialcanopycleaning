@@ -349,7 +349,7 @@ export default function Services() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {[
-              { before: '/work_images/canopybefore2.jpeg', after: '/work_images/canopyafter1.jpeg', title: 'Canopy Restoration' },
+              { before: '/work_images/canopybefore2.jpeg', after: '/work_images/canopyafter1.jpeg', title: 'Canopy Restoration', fit: 'contain' },
               { before: '/work_images/fanbefore2.jpeg', after: '/work_images/fanafter2.jpeg', title: 'Fan Repair Transformation' },
               { before: '/work_images/allbefore.jpeg', after: '/work_images/allafter.jpeg', title: 'Complete System Clean' },
             ].map((item, idx) => (
@@ -364,14 +364,14 @@ export default function Services() {
                   <div className="grid grid-cols-2 gap-3">
                     {/* Before */}
                     <div className="overflow-hidden rounded-sm border border-white/[0.06]">
-                      <img src={item.before} alt={`Before: ${item.title}`} className="w-full h-56 sm:h-72 object-cover" />
+                      <img src={item.before} alt={`Before: ${item.title}`} className={`w-full h-56 sm:h-72 ${item.fit === 'contain' ? 'object-contain' : 'object-cover'}`} />
                       <div className="bg-black/50 px-3 py-2 text-center">
                         <span className="font-body text-white/50 text-xs uppercase tracking-widest">Before</span>
                       </div>
                     </div>
                     {/* After */}
                     <div className="overflow-hidden rounded-sm border border-white/[0.06]">
-                      <img src={item.after} alt={`After: ${item.title}`} className="w-full h-56 sm:h-72 object-cover" />
+                      <img src={item.after} alt={`After: ${item.title}`} className={`w-full h-56 sm:h-72 ${item.fit === 'contain' ? 'object-contain' : 'object-cover'}`} />
                       <div className="bg-black/50 px-3 py-2 text-center">
                         <span className="font-body text-white/50 text-xs uppercase tracking-widest">After</span>
                       </div>
