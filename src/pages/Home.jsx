@@ -156,6 +156,7 @@ export default function Home() {
               <span className="font-body text-xs font-semibold uppercase tracking-widest px-3 py-1 border border-[#F5A623]/40 text-[#F5A623] bg-[#F5A623]/5">TR19 Certified</span>
               <span className="font-body text-xs font-semibold uppercase tracking-widest px-3 py-1 border border-brand-blue-bright/30 text-brand-blue-bright bg-brand-blue-bright/5">Fan Specialists</span>
               <span className="font-body text-xs font-semibold uppercase tracking-widest px-3 py-1 border border-white/10 text-white/50 bg-white/5">24/7 Nationwide</span>
+              <span className="font-body text-xs font-semibold uppercase tracking-widest px-3 py-1 border border-[#F5A623]/40 text-[#F5A623] bg-[#F5A623]/5">AEME Qualified</span>
             </motion.div>
           </div>
         </div>
@@ -355,7 +356,7 @@ export default function Home() {
                 The Commercial Canopy<br />
                 <span className="text-brand-blue-bright">Cleaning Standard</span>
               </h2>
-              <ul className="space-y-4">
+              <ul className="space-y-4 mb-8">
                 {whyUs.map((point, i) => (
                   <motion.li key={i} initial={{ opacity:0,x:-20 }} whileInView={{ opacity:1,x:0 }} viewport={{ once:true }} transition={{ delay:i*0.08,duration:0.4 }} className="flex items-start gap-3">
                     <CheckCircle2 size={18} className="text-brand-blue-bright mt-0.5 flex-shrink-0" />
@@ -363,6 +364,11 @@ export default function Home() {
                   </motion.li>
                 ))}
               </ul>
+              <img
+                src="/logos/qualifications.jpeg"
+                alt="AEME Qualified, TR19 Industry Standards, NAADUK Member"
+                className="w-full max-w-[220px] rounded-sm border border-white/[0.06] opacity-90"
+              />
             </ScrollReveal>
 
             <ScrollReveal delay={0.15}>

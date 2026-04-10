@@ -211,6 +211,13 @@ export default function About() {
               </ScrollRevealItem>
             ))}
           </ScrollRevealContainer>
+          <ScrollReveal delay={0.1} className="mt-10 flex justify-center">
+            <img
+              src="/logos/qualifications.jpeg"
+              alt="AEME Qualified, TR19 Industry Standards, NAADUK Member"
+              className="w-full max-w-[240px] rounded-sm border border-white/[0.06] opacity-90"
+            />
+          </ScrollReveal>
         </div>
       </section>
 
