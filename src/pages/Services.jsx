@@ -264,6 +264,60 @@ export default function Services() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div className="h-px bg-white/[0.06]" /></div>
 
+      {/* Summary of Work Carried Out */}
+      <section className="py-14 sm:py-20 bg-[#070b11]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="card-surface p-8 sm:p-10 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-blue-deep to-brand-blue-bright" />
+
+              {/* SAY LEGAL - STAY SAFE top badge */}
+              <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 border border-[#F5A623]/40 bg-[#F5A623]/5">
+                <Shield size={13} className="text-[#F5A623]" />
+                <span className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-[#F5A623]">Say Legal — Stay Safe</span>
+              </div>
+
+              <span className="section-label">Transparency</span>
+              <h2 className="font-heading text-4xl sm:text-5xl text-white mb-2 leading-none">Summary of Work Carried Out</h2>
+              <p className="font-body text-white/40 text-sm mb-8">Ventilation Cleaning Services</p>
+
+              <div className="h-px bg-white/[0.06] mb-8" />
+
+              <ul className="space-y-4">
+                {[
+                  'We remove the extraction fan motor, degrease internally and service — includes a full bearing check.',
+                  'We take out the baffle filters and degrease the internal canopy hood only. *Baffle grills are not included.',
+                  'Whilst the extraction fan is out, we degrease the internal ductwork where accessible.',
+                  'If you have access panels installed, we will clean up to 3 panels as part of the service.',
+                ].map((item, i) => (
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: 15 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.07, duration: 0.35 }}
+                    className="flex items-start gap-3"
+                  >
+                    <CheckCircle2 size={16} className="text-brand-blue-bright mt-0.5 flex-shrink-0" />
+                    <span className="font-body text-white/65 text-sm sm:text-base leading-relaxed">{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
+
+              <div className="h-px bg-white/[0.06] mt-8 mb-6" />
+
+              {/* SAY LEGAL - STAY SAFE bottom */}
+              <div className="flex items-center gap-2">
+                <Shield size={13} className="text-[#F5A623]" />
+                <span className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-[#F5A623]">Say Legal — Stay Safe</span>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div className="h-px bg-white/[0.06]" /></div>
+
       {/* Service sections */}
       {services.map((service, index) => <ServiceSection key={service.id} service={service} index={index} />)}
 
