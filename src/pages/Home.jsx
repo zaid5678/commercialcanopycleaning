@@ -222,7 +222,7 @@ export default function Home() {
                 <img
                   src="/logo-updated.jpeg"
                   alt="Commercial Canopy Cleaning"
-                  className="w-36 sm:w-48 lg:w-64 h-auto object-contain rounded-sm"
+                  className="w-48 sm:w-64 lg:w-80 h-auto object-contain rounded-sm"
                 />
                 <div className="flex flex-col gap-2">
                   {[{ icon: Shield, label: 'TR19 Certified', colour: '#F5A623' }, { icon: Clock, label: '24/7 Emergency Response', colour: '#2E8DE8' }, { icon: MapPin, label: 'Nationwide Coverage', colour: '#2E8DE8' }].map(({ icon: Icon, label, colour }) => (

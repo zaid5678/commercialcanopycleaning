@@ -63,14 +63,6 @@ export default function Navbar() {
                 alt="Commercial Canopy Cleaning"
                 className="h-9 sm:h-11 w-auto object-contain rounded-sm"
               />
-              <div className="hidden xs:block">
-                <div className="font-heading text-base sm:text-lg text-white leading-none tracking-wider">
-                  Commercial Canopy
-                </div>
-                <div className="font-heading text-xs sm:text-sm text-brand-blue-bright leading-none tracking-widest">
-                  Cleaning
-                </div>
-              </div>
             </Link>
 
             {/* Desktop nav */}
