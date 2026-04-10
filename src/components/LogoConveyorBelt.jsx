@@ -51,9 +51,6 @@ function Belt({ items, direction = 'left', desktopDuration = 16, mobileDuration 
 }
 
 export default function LogoConveyorBelt() {
-  const topRow = logos.slice(0, 7)
-  const bottomRow = logos.slice(7)
-
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-brand-black to-[#070b11] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
@@ -70,8 +67,8 @@ export default function LogoConveyorBelt() {
       </div>
 
       <div className="flex flex-col gap-3">
-        <Belt items={topRow} direction="left" desktopDuration={16} mobileDuration={8} />
-        <Belt items={bottomRow} direction="right" desktopDuration={20} mobileDuration={10} />
+        <Belt items={logos} direction="left" desktopDuration={28} mobileDuration={14} />
+        <Belt items={logos} direction="right" desktopDuration={32} mobileDuration={16} />
       </div>
     </section>
   )
