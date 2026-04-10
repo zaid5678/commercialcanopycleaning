@@ -87,7 +87,7 @@ function CaseStudyCard({ study, index }) {
             {study.before === study.after ? (
               /* Single image */
               <div className="flex-1 overflow-hidden bg-black rounded-sm border border-white/[0.06]">
-                <div className="relative h-full min-h-64 sm:min-h-96">
+                <div className="relative h-full min-h-40 sm:min-h-96">
                   <img
                     src={study.before}
                     alt={study.title}
@@ -102,7 +102,7 @@ function CaseStudyCard({ study, index }) {
               <>
                 {/* Before */}
                 <div className="flex-1 overflow-hidden bg-black rounded-sm border border-white/[0.06]">
-                  <div className="relative h-full min-h-64 sm:min-h-96">
+                  <div className="relative h-full min-h-40 sm:min-h-96">
                     <img
                       src={study.before}
                       alt={`Before: ${study.title}`}
@@ -118,7 +118,7 @@ function CaseStudyCard({ study, index }) {
                 </div>
                 {/* After */}
                 <div className="flex-1 overflow-hidden bg-black rounded-sm border border-white/[0.06]">
-                  <div className="relative h-full min-h-64 sm:min-h-96">
+                  <div className="relative h-full min-h-40 sm:min-h-96">
                     <img
                       src={study.after}
                       alt={`After: ${study.title}`}
