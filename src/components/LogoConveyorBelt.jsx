@@ -1,16 +1,4 @@
-import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
 import ScrollReveal from './ScrollReveal'
-
-function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < 640)
-  useEffect(() => {
-    const handler = () => setIsMobile(window.innerWidth < 640)
-    window.addEventListener('resize', handler)
-    return () => window.removeEventListener('resize', handler)
-  }, [])
-  return isMobile
-}
 
 const logos = [
   { name: 'Dominos', src: '/logos/Dominos.png' },
@@ -29,51 +17,35 @@ const logos = [
   { name: 'IRO', src: '/logos/IRO.jpg' },
 ]
 
-const smallLogos = ['Pepes', 'PFC']
-
-function LogoItem({ logo, index }) {
-  const isSmall = smallLogos.includes(logo.name)
-  return (
-    <div
-      key={`${logo.name}-${index}`}
-      className="flex-shrink-0 w-24 sm:w-36 h-16 sm:h-24 flex items-center justify-center px-2 sm:px-3"
-    >
-      <img
-        src={logo.src}
-        alt={logo.name}
-        className={`max-h-full max-w-full object-contain filter drop-shadow-sm ${isSmall ? 'scale-125' : ''}`}
-        loading="lazy"
-      />
-    </div>
-  )
-}
-
-function Belt({ items, direction = 'left', duration = 18, mobileDuration }) {
-  const isMobile = useIsMobile()
-  const activeDuration = isMobile && mobileDuration ? mobileDuration : duration
+function Belt({ items, direction = 'left', desktopDuration = 16, mobileDuration = 8 }) {
+  // 4x duplication — belt translates -50% (2 copies), seamless loop
   const display = [...items, ...items, ...items, ...items]
-  const startX = direction === 'left' ? 0 : '-50%'
-  const endX = direction === 'left' ? '-50%' : 0
+  const animName = direction === 'left' ? 'marquee-left' : 'marquee-right'
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 640
+  const duration = isMobile ? mobileDuration : desktopDuration
 
   return (
-    <div className="overflow-hidden bg-white py-6 sm:py-8 relative">
-      <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-      <motion.div
+    <div className="overflow-hidden bg-white py-5 sm:py-7 relative">
+      <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+      <div
         className="flex"
-        initial={{ x: startX }}
-        animate={{ x: endX }}
-        transition={{
-          duration: activeDuration,
-          repeat: Infinity,
-          ease: 'linear',
-          repeatType: 'loop',
-        }}
+        style={{ animation: `${animName} ${duration}s linear infinite` }}
       >
-        {display.map((logo, index) => (
-          <LogoItem key={`${logo.name}-${index}`} logo={logo} index={index} />
+        {display.map((logo, i) => (
+          <div
+            key={`${logo.name}-${i}`}
+            className="flex-shrink-0 w-24 sm:w-36 h-14 sm:h-20 flex items-center justify-center px-2 sm:px-3"
+          >
+            <img
+              src={logo.src}
+              alt={logo.name}
+              className="max-h-full max-w-full object-contain"
+              loading="eager"
+            />
+          </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   )
 }
@@ -98,8 +70,8 @@ export default function LogoConveyorBelt() {
       </div>
 
       <div className="flex flex-col gap-3">
-        <Belt items={topRow} direction="left" duration={16} mobileDuration={8} />
-        <Belt items={bottomRow} direction="right" duration={20} mobileDuration={10} />
+        <Belt items={topRow} direction="left" desktopDuration={16} mobileDuration={8} />
+        <Belt items={bottomRow} direction="right" desktopDuration={20} mobileDuration={10} />
       </div>
     </section>
   )
