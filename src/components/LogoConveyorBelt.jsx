@@ -1,5 +1,16 @@
 import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 import ScrollReveal from './ScrollReveal'
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < 640)
+  useEffect(() => {
+    const handler = () => setIsMobile(window.innerWidth < 640)
+    window.addEventListener('resize', handler)
+    return () => window.removeEventListener('resize', handler)
+  }, [])
+  return isMobile
+}
 
 const logos = [
   { name: 'Dominos', src: '/logos/Dominos.png' },
@@ -37,7 +48,9 @@ function LogoItem({ logo, index }) {
   )
 }
 
-function Belt({ items, direction = 'left', duration = 18 }) {
+function Belt({ items, direction = 'left', duration = 18, mobileDuration }) {
+  const isMobile = useIsMobile()
+  const activeDuration = isMobile && mobileDuration ? mobileDuration : duration
   const display = [...items, ...items, ...items, ...items]
   const startX = direction === 'left' ? 0 : '-50%'
   const endX = direction === 'left' ? '-50%' : 0
@@ -51,7 +64,7 @@ function Belt({ items, direction = 'left', duration = 18 }) {
         initial={{ x: startX }}
         animate={{ x: endX }}
         transition={{
-          duration,
+          duration: activeDuration,
           repeat: Infinity,
           ease: 'linear',
           repeatType: 'loop',
@@ -85,8 +98,8 @@ export default function LogoConveyorBelt() {
       </div>
 
       <div className="flex flex-col gap-3">
-        <Belt items={topRow} direction="left" duration={16} />
-        <Belt items={bottomRow} direction="right" duration={20} />
+        <Belt items={topRow} direction="left" duration={16} mobileDuration={8} />
+        <Belt items={bottomRow} direction="right" duration={20} mobileDuration={10} />
       </div>
     </section>
   )
