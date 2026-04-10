@@ -59,7 +59,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
               <img
-                src="/logo.JPG"
+                src="/logo-updated.jpeg"
                 alt="Commercial Canopy Cleaning"
                 className="h-9 sm:h-11 w-auto object-contain rounded-sm"
               />

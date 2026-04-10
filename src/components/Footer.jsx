@@ -62,7 +62,7 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
               <img
-                src="/logo.JPG"
+                src="/logo-updated.jpeg"
                 alt="Commercial Canopy Cleaning"
                 className="h-10 w-auto object-contain rounded-sm"
               />

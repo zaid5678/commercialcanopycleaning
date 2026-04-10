@@ -138,74 +138,137 @@ export default function Home() {
       </Helmet>
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 80% 80% at 0% 20%, rgba(26,95,168,0.08) 0%, transparent 60%), #0A0A0A' }} />
-        <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.5) 1px,transparent 1px)', backgroundSize: '60px 60px' }} />
+      <section className="relative min-h-screen flex flex-col justify-end overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(26,95,168,0.12) 0%, transparent 60%), #0A0A0A' }} />
+        <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.5) 1px,transparent 1px)', backgroundSize: '60px 60px' }} />
         <FanBg />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-36 pb-20 w-full">
-          <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center gap-6">
-            <div className="max-w-3xl flex flex-col">
-              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                <div className="flex-1">
-                  <motion.span className="section-label">
-                    TR19 Certified &bull; Fan Specialists &bull; 24/7 Nationwide
-                  </motion.span>
-
-                  <motion.h1 className="font-heading text-[2.8rem] sm:text-5xl lg:text-7xl text-white leading-none mb-5">
-                    WHEN YOUR<br />
-                    KITCHEN STOPS,<br />
-                    <span className="text-brand-blue-bright">WE DON'T.</span>
-                  </motion.h1>
-                </div>
-
-                {/* Logo - Mobile/Tablet */}
-                <motion.div className="lg:hidden flex items-start justify-end flex-shrink-0">
-                  <img
-                    src="/logo.JPG"
-                    alt="Commercial Canopy Cleaning Logo"
-                    className="w-32 sm:w-40 h-auto object-contain"
-                  />
-                </motion.div>
-              </div>
-
-              <motion.p className="font-body text-white/60 text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
-                Emergency fan repair, TR19 canopy &amp; duct cleaning — certified engineers, nationwide, 24/7.
-              </motion.p>
-
-              <motion.div className="flex flex-wrap gap-3 mb-10">
-                <a href="tel:07517758507" className="btn-primary text-base hidden sm:inline-flex">
-                  <Phone size={18} /> Call Now — 07517 758507
-                </a>
-                <Link to="/contact" className="btn-ghost">
-                  Get a Free Quote <ArrowRight size={16} />
-                </Link>
-              </motion.div>
-
-              <motion.div className="flex flex-wrap gap-5">
-              {[{ icon:Shield, label:'TR19 Certified' }, { icon:Clock, label:'24/7 Emergency Response' }, { icon:MapPin, label:'Nationwide Coverage' }].map(({ icon:Icon, label }) => (
-                <div key={label} className="flex items-center gap-2">
-                  <Icon size={15} className="text-brand-blue-bright" />
-                  <span className="font-body text-white/50 text-sm">{label}</span>
-                </div>
-              ))}
-            </motion.div>
-            </div>
-
-            {/* Logo - Desktop */}
-            <motion.div className="hidden lg:flex items-center justify-center">
-              <img
-                src="/logo.JPG"
-                alt="Commercial Canopy Cleaning Logo"
-                className="w-full max-w-xs lg:max-w-md h-auto object-contain"
-              />
+        {/* Top badge strip */}
+        <div className="relative pt-28 sm:pt-36 pb-0">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="flex flex-wrap items-center gap-2 mb-6"
+            >
+              <span className="font-body text-xs font-semibold uppercase tracking-widest px-3 py-1 border border-[#F5A623]/40 text-[#F5A623] bg-[#F5A623]/5">TR19 Certified</span>
+              <span className="font-body text-xs font-semibold uppercase tracking-widest px-3 py-1 border border-brand-blue-bright/30 text-brand-blue-bright bg-brand-blue-bright/5">Fan Specialists</span>
+              <span className="font-body text-xs font-semibold uppercase tracking-widest px-3 py-1 border border-white/10 text-white/50 bg-white/5">24/7 Nationwide</span>
             </motion.div>
           </div>
         </div>
 
-        <motion.div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-          <motion.div className="w-px h-10 bg-gradient-to-b from-brand-blue-bright to-transparent" />
-        </motion.div>
+        {/* Main hero content — pushed towards bottom */}
+        <div className="relative flex-1 flex items-end pb-16 sm:pb-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+
+              {/* Left — headline */}
+              <div className="max-w-3xl">
+                {/* Company name */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="font-body text-white/35 text-sm sm:text-base uppercase tracking-[0.3em] mb-4"
+                >
+                  Commercial Canopy Cleaning
+                </motion.div>
+
+                <motion.h1
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="font-heading text-[3rem] sm:text-6xl lg:text-8xl text-white leading-none mb-6"
+                >
+                  WHEN YOUR<br />
+                  KITCHEN STOPS,<br />
+                  <span style={{ color: '#F5A623' }}>WE DON'T.</span>
+                </motion.h1>
+
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.35 }}
+                  className="font-body text-white/55 text-base sm:text-lg leading-relaxed mb-8 max-w-xl"
+                >
+                  Emergency fan repair, TR19 canopy &amp; duct cleaning — certified engineers, nationwide, 24/7.
+                </motion.p>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.45 }}
+                  className="flex flex-wrap gap-3"
+                >
+                  <a href="tel:07517758507" className="btn-primary text-base hidden sm:inline-flex">
+                    <Phone size={18} /> Call Now — 07517 758507
+                  </a>
+                  <Link to="/contact" className="btn-ghost">
+                    Get a Free Quote <ArrowRight size={16} />
+                  </Link>
+                </motion.div>
+              </div>
+
+              {/* Right — logo + trust badges */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="flex flex-col items-start lg:items-end gap-5"
+              >
+                <img
+                  src="/logo-updated.jpeg"
+                  alt="Commercial Canopy Cleaning"
+                  className="w-36 sm:w-48 lg:w-64 h-auto object-contain rounded-sm"
+                />
+                <div className="flex flex-col gap-2">
+                  {[{ icon: Shield, label: 'TR19 Certified', colour: '#F5A623' }, { icon: Clock, label: '24/7 Emergency Response', colour: '#2E8DE8' }, { icon: MapPin, label: 'Nationwide Coverage', colour: '#2E8DE8' }].map(({ icon: Icon, label, colour }) => (
+                    <div key={label} className="flex items-center gap-2">
+                      <Icon size={14} style={{ color: colour }} />
+                      <span className="font-body text-white/45 text-sm">{label}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom divider line */}
+        <div className="relative h-px bg-gradient-to-r from-transparent via-brand-blue-bright/30 to-transparent" />
+      </section>
+
+      {/* ── REAL WORK PHOTO STRIP ─────────────────────────────────────────── */}
+      <section className="bg-[#080808] py-8 sm:py-10 border-b border-white/[0.06]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal className="mb-5">
+            <p className="font-body text-white/30 text-xs uppercase tracking-widest">Real jobs. Real results.</p>
+          </ScrollReveal>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
+            {[
+              { src: '/work_images/WhatsApp Image 2026-04-10 at 01.15.13.jpeg', label: 'Fan Installation' },
+              { src: '/work_images/WhatsApp Image 2026-04-10 at 01.15.13 (2).jpeg', label: 'Canopy Clean' },
+              { src: '/work_images/WhatsApp Image 2026-04-10 at 01.15.13 (3).jpeg', label: 'Canopy Deep Clean' },
+              { src: '/work_images/WhatsApp Image 2026-04-10 at 01.15.13 (1).jpeg', label: 'Duct Installation' },
+            ].map(({ src, label }) => (
+              <ScrollRevealItem key={src}>
+                <div className="relative overflow-hidden group" style={{ aspectRatio: '3/4' }}>
+                  <img
+                    src={src}
+                    alt={label}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <span className="absolute bottom-2 left-2 font-body text-white/60 text-[10px] uppercase tracking-widest">{label}</span>
+                </div>
+              </ScrollRevealItem>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ── EMERGENCY STRIP ───────────────────────────────────────────────── */}
