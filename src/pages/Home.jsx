@@ -217,12 +217,12 @@ export default function Home() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex flex-col items-start lg:items-end gap-5"
+                className="flex flex-col items-start lg:items-end gap-5 lg:absolute lg:top-24 lg:right-8 lg:w-1/3"
               >
                 <img
                   src="/logo-updated.jpeg"
                   alt="Commercial Canopy Cleaning"
-                  className="w-80 sm:w-full lg:max-w-3xl h-auto object-contain rounded-sm"
+                  className="w-full h-auto object-contain rounded-sm"
                 />
                 <div className="flex flex-col gap-2">
                   {[{ icon: Shield, label: 'TR19 Certified', colour: '#F5A623' }, { icon: Clock, label: '24/7 Emergency Response', colour: '#2E8DE8' }, { icon: MapPin, label: 'Nationwide Coverage', colour: '#2E8DE8' }].map(({ icon: Icon, label, colour }) => (
