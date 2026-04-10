@@ -36,12 +36,12 @@ function LogoItem({ logo, index }) {
   return (
     <div
       key={`${logo.name}-${index}`}
-      className={`flex-shrink-0 h-20 sm:h-28 w-auto flex items-center justify-center ${isSmall ? 'mx-6 sm:mx-8' : 'mx-4 sm:mx-6'}`}
+      className="flex-shrink-0 w-24 sm:w-36 h-16 sm:h-24 flex items-center justify-center px-2 sm:px-3"
     >
       <img
         src={logo.src}
         alt={logo.name}
-        className={`h-full w-auto object-contain filter drop-shadow-sm ${isSmall ? 'scale-150' : ''}`}
+        className={`max-h-full max-w-full object-contain filter drop-shadow-sm ${isSmall ? 'scale-125' : ''}`}
         loading="lazy"
       />
     </div>
