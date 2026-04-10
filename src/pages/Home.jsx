@@ -216,7 +216,7 @@ export default function Home() {
             {[
               { src: '/work_images/newfaninstall.jpeg', label: 'New Fan Installation' },
               { src: '/work_images/WhatsApp Image 2026-04-10 at 01.15.13 (2).jpeg', label: 'Canopy Clean' },
-              { src: '/work_images/WhatsApp Image 2026-04-10 at 01.15.13 (3).jpeg', label: 'Canopy Clean' },
+              { src: '/work_images/fanrepair1.jpeg', label: 'Fan Repair' },
               { src: '/work_images/newkitchenextractioninstall.jpeg', label: 'Kitchen Canopy Installation' },
             ].map(({ src, label }) => (
               <ScrollRevealItem key={src}>
