@@ -44,13 +44,13 @@ We work on centrifugal, axial, and bifurcated extract fans of all makes. Whether
     icon: Wind,
     title: 'Canopy Cleaning',
     tagline: 'TR19 certified. Documented. Insurance-ready.',
-    description: `Your canopy is the first line of defence against grease accumulation and fire risk. Commercial Canopy Cleaning performs full degreasing of canopy hoods, baffles, filter arrays, and plenum chambers to TR19 specification — using professional-grade degreasers and high-temperature steam equipment.
+    description: `Your canopy is the first line of defence against grease accumulation and fire risk. Commercial Canopy Cleaning performs full degreasing of canopy hoods, baffles, and plenum chambers to TR19 specification — using professional-grade degreasers and high-temperature steam equipment.
 
 Every canopy clean we carry out is documented with photographic evidence taken before and during the job, grease thickness measurements at key points, and a signed TR19 compliance certificate issued promptly after completion. We schedule around your operation to minimise disruption, and we're available out of hours.`,
     beforeImage: '/work_images/canopybefore.jpeg',
     afterImage: '/work_images/canopyafter.jpeg',
     includes: [
-      'Hood, baffle & filter deep clean',
+      'Hood & baffle clean',
       'Plenum chamber degreasing',
       'Grease trap inspection',
       'Photographic before & after evidence',
