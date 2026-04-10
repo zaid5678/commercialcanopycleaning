@@ -151,7 +151,7 @@ function ServiceSection({ service, index }) {
                   <Icon size={22} className="text-brand-blue-bright" />
                 </div>
                 <div>
-                  <div className="font-body text-brand-blue-bright text-xs uppercase tracking-widest">{service.tagline}</div>
+                  <div className="font-body text-xs uppercase tracking-widest" style={{ color: '#F5A623' }}>{service.tagline}</div>
                   <h2 className="font-heading text-3xl sm:text-4xl text-white tracking-wide leading-tight">{service.title}</h2>
                 </div>
               </div>

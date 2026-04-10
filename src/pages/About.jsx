@@ -147,7 +147,7 @@ export default function About() {
                   <div className="w-11 h-11 flex items-center justify-center border border-white/10 group-hover:border-brand-blue-bright/50 mb-5 transition-colors duration-300">
                     <Icon size={20} className="text-white/30 group-hover:text-brand-blue-bright transition-colors duration-300" />
                   </div>
-                  <h3 className="font-heading text-xl text-white tracking-wide mb-3">{title}</h3>
+                  <h3 className="font-heading text-xl tracking-wide mb-3" style={{ color: '#F5A623' }}>{title}</h3>
                   <p className="font-body text-white/40 text-sm leading-relaxed">{desc}</p>
                 </div>
               </ScrollRevealItem>

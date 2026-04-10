@@ -52,7 +52,8 @@
   }
 
   .section-label {
-    @apply text-brand-blue-bright font-body font-semibold text-sm uppercase tracking-[0.2em] mb-4 block;
+    @apply font-body font-semibold text-sm uppercase tracking-[0.2em] mb-4 block;
+    color: #F5A623;
   }
 
   .card-surface {

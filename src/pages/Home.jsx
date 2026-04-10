@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import {
-  ArrowRight, Phone, CheckCircle2, Shield, Wind, Wrench,
-  FileCheck, Zap, Clock, ChevronRight, Star, AlertTriangle, MapPin,
+  ArrowRight, Phone, CheckCircle2, Wind, Wrench,
+  FileCheck, Zap, ChevronRight, Star, AlertTriangle,
   Utensils, Fish, Beer, Hotel, Coffee, PackageOpen, Globe, GraduationCap, HeartPulse, Factory
 } from 'lucide-react'
 import ScrollReveal, { ScrollRevealContainer, ScrollRevealItem } from '../components/ScrollReveal'
@@ -163,10 +163,7 @@ export default function Home() {
         {/* Main hero content — pushed towards bottom */}
         <div className="relative flex-1 flex items-end pb-16 sm:pb-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-
-              {/* Left — headline */}
-              <div className="max-w-3xl">
+            <div className="max-w-3xl">
                 {/* Company name */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -210,30 +207,6 @@ export default function Home() {
                     Get a Free Quote <ArrowRight size={16} />
                   </Link>
                 </motion.div>
-              </div>
-
-              {/* Right — logo + trust badges */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex flex-col items-start lg:items-center gap-5 lg:absolute lg:top-12 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:w-2/5"
-              >
-                <img
-                  src="/logo-updated.jpeg"
-                  alt="Commercial Canopy Cleaning"
-                  className="w-full h-auto object-contain rounded-sm lg:max-w-xl"
-                />
-                <div className="flex flex-row justify-center gap-6 flex-wrap">
-                  {[{ icon: Shield, label: 'TR19 Certified', colour: '#F5A623' }, { icon: Clock, label: '24/7 Emergency Response', colour: '#2E8DE8' }, { icon: MapPin, label: 'Nationwide Coverage', colour: '#2E8DE8' }].map(({ icon: Icon, label, colour }) => (
-                    <div key={label} className="flex items-center gap-2">
-                      <Icon size={14} style={{ color: colour }} />
-                      <span className="font-body text-white/45 text-sm">{label}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-
             </div>
           </div>
         </div>
