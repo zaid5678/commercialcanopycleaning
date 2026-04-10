@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import {
-  Wind, FileCheck, Wrench, Shield, Zap, Clock,
+  Wind, FileCheck, Wrench, DoorOpen, Zap, Clock,
   ArrowRight, ChevronDown, Phone, CheckCircle2,
   ClipboardList, Scan, Settings, BadgeCheck, FileText
 } from 'lucide-react'
@@ -81,22 +81,22 @@ We use specialist rotary brush systems, high-powered vacuum extraction, and acce
     slug: 'duct-cleaning',
   },
   {
-    id: 'hvac-servicing',
-    icon: Shield,
-    title: 'HVAC Servicing',
-    tagline: 'Maintained systems run cooler, cheaper, longer.',
-    description: `A neglected HVAC system doesn't just risk compliance failure — it costs you money every day in reduced efficiency and accelerated wear. Our HVAC servicing programme covers all key components: filter replacement, coil and heat exchanger cleaning, belt and bearing inspections, motor lubrication, and system-wide airflow balancing.
+    id: 'access-panels',
+    icon: DoorOpen,
+    title: 'Access Panel Installation & Maintenance',
+    tagline: 'TR19-compliant access. Every metre accounted for.',
+    description: `Without proper access points, ductwork cannot be fully cleaned — and an incomplete clean is not TR19 compliant. We supply and install access doors directly into your ductwork to allow safe inspection and thorough cleaning of the entire extraction run.
 
-We offer both one-off servicing visits and planned preventative maintenance contracts for businesses that want consistent performance and compliance year-round. All work is documented with a full service report.`,
+In line with TR19® Grease guidance, access points should be positioned at regular intervals — typically every two metres — to ensure the complete system can be properly maintained. Whether you're installing access panels ahead of a first clean or retrofitting them into an existing system, our engineers will position and fit them correctly to bring your setup into full compliance.`,
     includes: [
-      'Filter replacement & coil clean',
-      'Belt, bearing & motor inspection',
-      'Heat exchanger & evaporator service',
-      'System airflow balancing',
-      'Planned maintenance contracts available',
-      'Full service report after every visit',
+      'Supply and installation of access doors',
+      'TR19-compliant positioning every ~2 metres',
+      'Suitable for all duct types and sizes',
+      'Retrofitting into existing ductwork',
+      'Installed to allow full inspection and cleaning access',
+      'Documentation confirming panel locations provided',
     ],
-    slug: 'hvac-servicing',
+    slug: 'access-panels',
   },
   {
     id: 'compliance',
