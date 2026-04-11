@@ -362,9 +362,9 @@ export default function Services() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {[
-              { before: '/work_images/canopybefore2.jpeg', after: '/work_images/canopyafter1.jpeg', title: 'Canopy Restoration', fit: 'contain' },
-              { before: '/work_images/fanbefore2.jpeg', after: '/work_images/fanafter2.jpeg', title: 'Fan Repair Transformation' },
-              { before: '/work_images/allbefore.jpeg', after: '/work_images/allafter.jpeg', title: 'Complete System Clean' },
+              { before: '/work_images/canopybefore3.jpeg', after: '/work_images/canopyafter3.jpeg', title: 'Canopy Restoration' },
+              { before: '/work_images/boxfanbefore.jpeg', after: '/work_images/boxfanafter.jpeg', title: 'Box Fan Clean' },
+              { before: '/work_images/fanbefore3.jpeg', after: '/work_images/fanafter3.jpeg', title: 'Fan Repair Transformation' },
             ].map((item, idx) => (
               <ScrollRevealItem key={idx}>
                 <motion.div
