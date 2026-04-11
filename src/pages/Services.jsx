@@ -79,7 +79,7 @@ Access panel installation where required to ensure every metre of your ductwork 
     icon: Wind,
     title: 'Fan Cleaning',
     tagline: 'Degreased, serviced, and back to full performance.',
-    description: `Your extraction fan motor is one of the hardest-working components in your kitchen ventilation system — and one of the most overlooked. Grease and debris accumulate inside the motor housing, on fan blades, and throughout the unit over time, reducing airflow, increasing fire risk, and accelerating wear on bearings and belts.
+    description: `Your extractor fan motor is one of the hardest-working components in your kitchen ventilation system — and one of the most overlooked. Grease and debris accumulate inside the motor housing, on fan blades, and throughout the unit over time, reducing airflow, increasing fire risk, and accelerating wear on bearings and belts.
 
 Commercial Canopy Cleaning removes the fan motor, degrease internally, services the unit including a full bearing check, and reinstalls it — leaving your system running cleaner, quieter, and more efficiently. All work is documented with a service report.`,
     beforeImage: '/work_images/fancleanbefore.jpeg',
@@ -362,9 +362,9 @@ export default function Services() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {[
-              { before: '/work_images/canopybefore3.jpeg', after: '/work_images/canopyafter3.jpeg', title: 'Canopy Restoration' },
-              { before: '/work_images/boxfanbefore.jpeg', after: '/work_images/boxfanafter.jpeg', title: 'Box Fan Clean' },
-              { before: '/work_images/fanbefore3.jpeg', after: '/work_images/fanafter3.jpeg', title: 'Fan Repair Transformation' },
+              { before: '/work_images/canopybefore3.jpeg', after: '/work_images/canopyafter3.jpeg', title: 'Canopy Restoration', fit: 'contain' },
+              { before: '/work_images/boxfanbefore.jpeg', after: '/work_images/boxfanafter.jpeg', title: 'Box Fan Clean', fit: 'contain' },
+              { before: '/work_images/fanbefore3.jpeg', after: '/work_images/fanafter3.jpeg', title: 'Fan Repair Transformation', fit: 'contain' },
             ].map((item, idx) => (
               <ScrollRevealItem key={idx}>
                 <motion.div
