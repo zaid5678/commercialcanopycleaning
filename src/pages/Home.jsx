@@ -448,12 +448,12 @@ export default function Home() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
-              <div className="card-surface p-6 sm:p-7">
-                <div className="font-body text-white/30 text-xs uppercase tracking-widest mb-4">Areas Covered</div>
+              <div className="p-6 sm:p-7 border border-[#F5A623]/30 bg-[#F5A623]/5">
+                <div className="font-body text-[#F5A623]/60 text-xs uppercase tracking-widest mb-4">Areas Covered</div>
                 <div className="flex flex-wrap gap-2">
                   {cities.map(city => (
                     <a key={city} href="#contact-form" onClick={e => { e.preventDefault(); document.querySelector('#contact-form')?.scrollIntoView({ behavior:'smooth' }) }}
-                      className="font-body text-white/50 text-xs px-3 py-1.5 border border-white/[0.07] hover:border-brand-blue-bright/40 hover:text-brand-blue-bright transition-colors duration-200 cursor-pointer">
+                      className="font-body text-white/60 text-xs px-3 py-1.5 border border-[#F5A623]/20 hover:border-[#F5A623]/60 hover:text-[#F5A623] transition-colors duration-200 cursor-pointer">
                       {city}
                     </a>
                   ))}
