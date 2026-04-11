@@ -63,7 +63,7 @@ function useCountUp(target, duration = 1800, startOnView = true) {
 /* ─── Data ──────────────────────────────────────────────────────────────── */
 const services = [
   { id: 'fan-repair', icon: Wrench, title: 'Fan Repair & Breakdown', tag: 'SPECIALIST', desc: 'Emergency specialist response for failed kitchen extractor fans. We diagnose, source parts, and restore your system fast.', proof: 'Average same-day response nationwide' },
-  { id: 'canopy-cleaning', icon: Wind, title: 'Canopy Cleaning', tag: 'MOST POPULAR', desc: 'Full internaldegreasing of canopy hood to TR19 specification. Certificate issued after every clean.', proof: 'Compliant with TR19 grease accumulation standards' },
+  { id: 'canopy-cleaning', icon: Wind, title: 'Canopy Cleaning', tag: 'MOST POPULAR', desc: 'Full internal degreasing of canopy hood to TR19 specification. Certificate issued after every clean.', proof: 'Compliant with TR19 grease accumulation standards' },
   { id: 'duct-cleaning', icon: FileCheck, title: 'Duct Cleaning', tag: null, desc: 'Complete ductwork inspection and clean from canopy to discharge. Every metre documented with photographic evidence.', proof: 'Full duct run covered — not just the canopy hood' },
   { id: 'fan-cleaning', icon: Wind, title: 'Fan Cleaning', tag: null, desc: 'Cleaning and degreasing of extractor fan motors. Improves airflow, reduces fire risk, and extends equipment lifespan.', proof: 'Extends fan motor lifespan and improves performance' },
   { id: 'compliance', icon: FileCheck, title: 'Compliance Certification', tag: null, desc: 'TR19 compliance certificate issued with before & after photographs - everything your insurer needs.', proof: 'Insurance-ready certificate issued within 24 hours' },
