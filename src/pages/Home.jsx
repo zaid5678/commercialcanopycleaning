@@ -432,16 +432,15 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <ScrollReveal>
-              <span className="section-label">We Serve Customers Nationwide</span>
               <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white mb-5">
-                We Cover the<br />
-                <span className="text-brand-blue-bright">Entire UK</span>
+                We Serve Customers<br />
+                <span className="text-brand-blue-bright">Nationwide</span>
               </h2>
               <p className="font-body text-white/50 text-sm sm:text-base leading-relaxed mb-6">
                 One team, one standard, everywhere. We dispatch engineers nationwide for both scheduled cleans and emergency callouts.
               </p>
               <p className="font-body text-white/30 text-sm italic mb-8">
-                Don't see your area? We cover everywhere — call us: <a href="tel:07517758507" className="text-brand-blue-bright not-italic hover:underline">07517 758507</a>
+                Don't see your area? We cover nationwide — call us: <a href="tel:07517758507" className="text-brand-blue-bright not-italic hover:underline">07517 758507</a>
               </p>
               <a href="tel:07517758507" className="btn-primary text-sm">
                 <Phone size={16} /> Check Availability
