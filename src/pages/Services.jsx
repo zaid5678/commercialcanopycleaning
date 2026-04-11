@@ -26,16 +26,14 @@ const services = [
     tagline: 'Specialist emergency response — not generalists.',
     description: `A failed kitchen extraction fan can shut down your entire operation within minutes. Commercial Canopy Cleaning are fan breakdown specialists — this isn't a side service, it's a core part of what we do. Our engineers carry common spare parts and diagnostic equipment, and we mobilise nationally to get your system back online as fast as possible.
 
-We work on centrifugal, axial, and bifurcated extract fans of all makes. Whether it's a worn belt, seized bearing, failed motor, or a full unit that needs replacing — we diagnose accurately, source correctly, and fix it right first time.`,
+Whether it's a seized bearing, failed motor, or a full unit that needs replacing — we diagnose accurately, source correctly, and fix it right first time.`,
     beforeImage: '/work_images/fanbefore.jpeg',
     afterImage: '/work_images/fanafter.jpeg',
     includes: [
       'Same-day emergency callout nationwide',
-      'Centrifugal, axial & bifurcated fan specialists',
-      'Belt, bearing & motor replacement',
+      'Bearing & motor replacements',
       'Full unit swap and installation',
       'Post-repair performance and airflow check',
-      'Service report issued after every job',
     ],
     slug: 'fan-repair',
   },
@@ -44,17 +42,14 @@ We work on centrifugal, axial, and bifurcated extract fans of all makes. Whether
     icon: Wind,
     title: 'Canopy Cleaning',
     tagline: 'TR19 certified. Documented. Insurance-ready.',
-    description: `Your canopy is the first line of defence against grease accumulation and fire risk. Commercial Canopy Cleaning performs full degreasing of canopy hoods and plenum chambers to TR19 specification — using professional-grade degreasers and high-temperature steam equipment.
+    description: `Your canopy is the first line of defence against grease accumulation and fire risk. Commercial Canopy Cleaning performs full degreasing of canopy hoods and plenum chambers to TR19 specification — using professional-grade degreasers.
 
 Every canopy clean we carry out is documented with photographic evidence taken before and during the job, grease thickness measurements at key points, and a signed TR19 compliance certificate issued promptly after completion. We schedule around your operation to minimise disruption, and we're available out of hours.`,
     beforeImage: '/work_images/canopybefore.jpeg',
     afterImage: '/work_images/canopyafter.jpeg',
     includes: [
       'Internal Canopy Hood (filters not included)',
-      'Plenum chamber degreasing',
-      'Grease trap inspection',
       'Photographic before & after evidence',
-      'Grease depth measurement report',
       'TR19 compliance certificate issued',
     ],
     slug: 'canopy-cleaning',
@@ -70,7 +65,6 @@ Access panel installation where required to ensure every metre of your ductwork 
     beforeImage: '/work_images/ductbefore.png',
     afterImage: '/work_images/ductafter.png',
     includes: [
-      '1 Year Hygiene Certificate provided on completion',
       'Remove extraction fan motor, de-grease internally and service',
       'Bearing check on fan motor included',
       'De-grease internal ductwork where accessible',
@@ -81,13 +75,35 @@ Access panel installation where required to ensure every metre of your ductwork 
     slug: 'duct-cleaning',
   },
   {
+    id: 'fan-cleaning',
+    icon: Wind,
+    title: 'Fan Cleaning',
+    tagline: 'Degreased, serviced, and back to full performance.',
+    description: `Your extraction fan motor is one of the hardest-working components in your kitchen ventilation system — and one of the most overlooked. Grease and debris accumulate inside the motor housing, on fan blades, and throughout the unit over time, reducing airflow, increasing fire risk, and accelerating wear on bearings and belts.
+
+Commercial Canopy Cleaning removes the fan motor, degrease internally, services the unit including a full bearing check, and reinstalls it — leaving your system running cleaner, quieter, and more efficiently. All work is documented with a service report.`,
+    beforeImage: '/work_images/fancleanbefore.jpeg',
+    afterImage: '/work_images/fancleanafter.jpeg',
+    beforeLabel: 'Before',
+    afterLabel: 'After',
+    includes: [
+      'Fan motor removed and degreased internally',
+      'Full bearing check included',
+      'Fan blades cleaned and inspected',
+      'Motor reinstalled and tested',
+      'Improves airflow and reduces fire risk',
+      'Service report issued on completion',
+    ],
+    slug: 'fan-cleaning',
+  },
+  {
     id: 'access-panels',
     icon: DoorOpen,
     title: 'Access Panel Installation & Maintenance',
     tagline: 'TR19-compliant access. Every metre accounted for.',
     description: `Without proper access points, ductwork cannot be fully cleaned — and an incomplete clean is not TR19 compliant. We supply and install access doors directly into your ductwork to allow safe inspection and thorough cleaning of the entire extraction run.
 
-In line with TR19® Grease guidance, access points should be positioned at regular intervals — typically every two metres — to ensure the complete system can be properly maintained. Whether you're installing access panels ahead of a first clean or retrofitting them into an existing system, our engineers will position and fit them correctly to bring your setup into full compliance.`,
+In line with TR19 Grease guidance, access points should be positioned at regular intervals — typically every two metres — to ensure the complete system can be properly maintained. Whether you're installing access panels ahead of a first clean or retrofitting them into an existing system, our engineers will position and fit them correctly to bring your setup into full compliance.`,
     beforeImage: '/work_images/panel1.jpeg',
     afterImage: '/work_images/panel2.jpeg',
     beforeLabel: 'Access Door',
@@ -107,16 +123,13 @@ In line with TR19® Grease guidance, access points should be positioned at regul
     icon: BadgeCheck,
     title: 'Compliance Certification',
     tagline: 'The paperwork your insurer and assessor requires.',
-    description: `TR19 certification is not just a piece of paper — it's the documented evidence that your kitchen extraction system has been cleaned to the correct standard, by a competent engineer, using the correct methodology. Commercial Canopy Cleaning issues comprehensive compliance packs after every job.
+    description: `TR19 certification is not just a piece of paper — it's the documented evidence that your kitchen extraction system has been cleaned to the correct standard, by a competent engineer, using the correct methodology. Commercial Canopy Cleaning issues comprehensive compliance certification after every job.
 
-Our documentation is used by some of the UK's largest commercial kitchen operators as the definitive record of their ventilation maintenance. We retain digital copies in our system and can reissue documentation quickly if originals are ever misplaced.`,
+Our documentation is used by some of the UK's largest commercial kitchen operators as the definitive record of their ventilation maintenance.`,
     includes: [
       'Signed TR19 engineer certificate',
-      'Grease thickness assessment report',
       'Full photographic evidence pack',
       'Recommended next clean date',
-      'Digital & hard copy options',
-      'Records retained for rapid reissue',
     ],
     slug: 'compliance-certification',
   },
