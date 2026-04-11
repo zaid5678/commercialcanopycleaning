@@ -11,7 +11,7 @@ const values = [
   {
     icon: ShieldCheck,
     title: 'Compliance First',
-    desc: 'Every job we do meets TR19 standards. We never cut corners — documentation and certification are core to our offering, not an afterthought.',
+    desc: 'Every job we do meets TR19 standards. We never cut corners.',
   },
   {
     icon: Target,
