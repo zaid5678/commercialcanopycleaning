@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
-  ArrowRight, ShieldCheck, Target, Award, Wrench, Globe, CheckCircle2, Phone
+  ArrowRight, ShieldCheck, Target, Wrench, Globe, CheckCircle2, Phone
 } from 'lucide-react'
 import PageTransition from '../components/PageTransition'
 import ScrollReveal, { ScrollRevealContainer, ScrollRevealItem } from '../components/ScrollReveal'
@@ -30,15 +30,9 @@ const values = [
   },
 ]
 
-const accreditations = [
-  { label: 'TR19 Standard', sub: 'BESA & HVCA Guideline' },
-  { label: 'Public Liability', sub: 'Fully Insured' },
-  { label: 'Fire Risk', sub: 'Mitigation Certified' },
-  { label: 'COSHH Compliant', sub: 'Safe Chemical Use' },
-]
 
 const commitments = [
-  'Full TR19 compliance documentation on every job',
+  'Full TR19 compliance certification on every job',
   'Photographic evidence provided as standard',
   'Engineers who understand systems, not just surfaces',
   'Transparent pricing — no hidden fees',
@@ -190,23 +184,7 @@ export default function About() {
       {/* Accreditations */}
       <section className="py-16 border-y border-white/[0.06]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <ScrollReveal className="text-center mb-10">
-            <span className="section-label text-center block mx-auto">Certifications & Standards</span>
-          </ScrollReveal>
-          <ScrollRevealContainer className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {accreditations.map(({ label, sub }) => (
-              <ScrollRevealItem key={label}>
-                <div className="card-surface p-6 text-center group hover:border-brand-blue-bright/30 transition-colors duration-300">
-                  <div className="w-10 h-10 mx-auto mb-4 flex items-center justify-center border border-white/10 group-hover:border-brand-blue-bright/50 transition-colors duration-300">
-                    <Award size={18} className="text-white/30 group-hover:text-brand-blue-bright transition-colors duration-300" />
-                  </div>
-                  <div className="font-heading text-lg text-white tracking-wide mb-1">{label}</div>
-                  <div className="font-body text-white/30 text-xs">{sub}</div>
-                </div>
-              </ScrollRevealItem>
-            ))}
-          </ScrollRevealContainer>
-          <ScrollReveal delay={0.1} className="mt-10 flex justify-center">
+          <ScrollReveal className="flex justify-center">
             <img
               src="/logos/qualifications.jpeg"
               alt="AEME Qualified, TR19 Industry Standards, NAADUK Member"
