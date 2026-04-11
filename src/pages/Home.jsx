@@ -20,12 +20,14 @@ function FanBg() {
       animate={{ rotate: 360 }}
       transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
     >
-      <path d="M100 100 C100 55,135 15,100 8 C65-1,55 55,100 100Z" fill="#2E8DE8" />
-      <path d="M100 100 C145 100,185 65,192 100 C199 135,145 145,100 100Z" fill="#2E8DE8" />
-      <path d="M100 100 C100 145,65 185,100 192 C135 199,145 145,100 100Z" fill="#1A5FA8" />
-      <path d="M100 100 C55 100,15 135,8 100 C1 65,55 55,100 100Z" fill="#1A5FA8" />
-      <circle cx="100" cy="100" r="13" fill="#2E8DE8" opacity="0.9" />
-      <circle cx="100" cy="100" r="6" fill="#0A0A0A" />
+      {/* 3-blade axial fan, blades swept at 45° */}
+      <path d="M100 100 C108 75,125 45,105 20 C85-5,60 30,100 100Z" fill="#2E8DE8" transform="rotate(0 100 100)" />
+      <path d="M100 100 C108 75,125 45,105 20 C85-5,60 30,100 100Z" fill="#2E8DE8" transform="rotate(120 100 100)" />
+      <path d="M100 100 C108 75,125 45,105 20 C85-5,60 30,100 100Z" fill="#1A5FA8" transform="rotate(240 100 100)" />
+      {/* Hub ring */}
+      <circle cx="100" cy="100" r="15" fill="#2E8DE8" opacity="0.8" />
+      <circle cx="100" cy="100" r="8" fill="#0A0A0A" />
+      <circle cx="100" cy="100" r="4" fill="#2E8DE8" opacity="0.6" />
     </motion.svg>
   )
 }
