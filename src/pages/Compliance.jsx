@@ -21,7 +21,6 @@ const whatYouReceive = [
   { icon: FileText, title: 'Signed TR19 Certificate', desc: 'Engineer-signed certification confirming your system has been cleaned to TR19 standard. Accepted by all major commercial insurers.' },
   { icon: Camera, title: 'Photographic Evidence Pack', desc: 'Before and after photography of every section cleaned. Visual proof of grease levels prior to the clean, and the finished result.' },
   { icon: ShieldCheck, title: 'Grease Depth Assessment', desc: 'Grease thickness measurements taken at multiple points throughout the ductwork, providing a quantified record of system condition.' },
-  { icon: FileText, title: 'Engineer\'s Compliance Report', desc: 'A detailed written report covering scope of work, access points used, findings, and any recommendations for follow-up action.' },
   { icon: CheckCircle2, title: 'Recommended Next Clean Date', desc: 'Written guidance on your next cleaning interval based on TR19 usage categories — low, medium, high, or heavy use.' },
 ]
 
