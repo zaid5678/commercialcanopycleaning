@@ -60,11 +60,11 @@ function useCountUp(target, duration = 1800, startOnView = true) {
 
 /* ─── Data ──────────────────────────────────────────────────────────────── */
 const services = [
-  { id: 'fan-repair', icon: Wrench, title: 'Fan Repair & Breakdown', tag: 'SPECIALIST', desc: 'Emergency specialist response for failed kitchen extract fans. We diagnose, source parts, and restore your system fast.', proof: 'Average same-day response nationwide' },
-  { id: 'canopy-cleaning', icon: Wind, title: 'Canopy Cleaning', tag: 'MOST POPULAR', desc: 'Full degreasing of canopy systems, baffles, and filters to TR19 specification. Certificate issued after every clean.', proof: 'Compliant with TR19 grease accumulation standards' },
+  { id: 'fan-repair', icon: Wrench, title: 'Fan Repair & Breakdown', tag: 'SPECIALIST', desc: 'Emergency specialist response for failed kitchen extractor fans. We diagnose, source parts, and restore your system fast.', proof: 'Average same-day response nationwide' },
+  { id: 'canopy-cleaning', icon: Wind, title: 'Canopy Cleaning', tag: 'MOST POPULAR', desc: 'Full internaldegreasing of canopy hood to TR19 specification. Certificate issued after every clean.', proof: 'Compliant with TR19 grease accumulation standards' },
   { id: 'duct-cleaning', icon: FileCheck, title: 'Duct Cleaning', tag: null, desc: 'Complete ductwork inspection and clean from canopy to discharge. Every metre documented with photographic evidence.', proof: 'Full duct run covered — not just the canopy hood' },
-  { id: 'fan-cleaning', icon: Wind, title: 'Fan Cleaning', tag: null, desc: 'Cleaning and degreasing of extraction fan motors. Improves airflow, reduces fire risk, and extends equipment lifespan.', proof: 'Extends fan motor lifespan and improves performance' },
-  { id: 'compliance', icon: FileCheck, title: 'Compliance Certification', tag: null, desc: 'TR19 documentation, sign-off certificates, and photographic reports — everything your insurer needs.', proof: 'Insurance-ready certificate issued within 24 hours' },
+  { id: 'fan-cleaning', icon: Wind, title: 'Fan Cleaning', tag: null, desc: 'Cleaning and degreasing of extractor fan motors. Improves airflow, reduces fire risk, and extends equipment lifespan.', proof: 'Extends fan motor lifespan and improves performance' },
+  { id: 'compliance', icon: FileCheck, title: 'Compliance Certification', tag: null, desc: 'TR19 compliance certificate issued with before & after photographs - everything your insurer needs.', proof: 'Insurance-ready certificate issued within 24 hours' },
   { id: 'emergency', icon: Zap, title: 'Emergency Callout', tag: 'NATIONWIDE', desc: 'Rapid response for critical breakdowns and urgent pre-inspection cleans. We mobilise fast, wherever you are.', proof: '24/7 availability — call 07517 758507 directly' },
 ]
 
@@ -415,11 +415,11 @@ export default function Home() {
           <ScrollRevealContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 items-stretch">
             {clientTypes.map(({ icon: Icon, label }) => (
               <ScrollRevealItem key={label} className="h-full">
-                <div className="card-surface p-5 h-full flex flex-col items-center text-center group hover:border-brand-blue-bright/30 transition-colors duration-300 cursor-default">
-                  <div className="w-10 h-10 flex items-center justify-center border border-white/10 group-hover:border-brand-blue-bright/50 mb-3 transition-colors duration-300">
-                    <Icon size={18} className="text-white/35 group-hover:text-brand-blue-bright transition-colors duration-300" />
+                <div className="p-5 h-full flex flex-col items-center text-center cursor-default border border-[#F5A623]/30 bg-[#F5A623]/5">
+                  <div className="w-10 h-10 flex items-center justify-center border border-[#F5A623]/40 bg-[#F5A623]/10 mb-3">
+                    <Icon size={18} style={{ color: '#F5A623' }} />
                   </div>
-                  <span className="font-body text-white/55 text-xs leading-snug group-hover:text-white/80 transition-colors duration-300">{label}</span>
+                  <span className="font-body text-white/70 text-xs leading-snug">{label}</span>
                 </div>
               </ScrollRevealItem>
             ))}
