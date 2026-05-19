@@ -5,8 +5,10 @@ import { Helmet } from 'react-helmet-async'
 import {
   ArrowRight, Phone, CheckCircle2, Wind, Wrench,
   FileCheck, Zap, ChevronRight, Star, AlertTriangle,
-  Utensils, Fish, Beer, Hotel, Coffee, PackageOpen, Globe, GraduationCap, HeartPulse, Factory
+  Utensils, Fish, Beer, Hotel, Coffee, PackageOpen, Globe, GraduationCap, HeartPulse, Factory,
+  ChevronDown,
 } from 'lucide-react'
+import { cities } from '../data/cities'
 import ScrollReveal, { ScrollRevealContainer, ScrollRevealItem } from '../components/ScrollReveal'
 import PageTransition from '../components/PageTransition'
 import LogoConveyorBelt from '../components/LogoConveyorBelt'
@@ -89,21 +91,42 @@ const clientTypes = [
   { icon: Factory, label: 'Food Factories & Production Kitchens' },
 ]
 
-const cities = [
-  'London','Manchester','Birmingham','Leeds','Sheffield','Liverpool',
-  'Bristol','Edinburgh','Glasgow','Cardiff','Newcastle','Nottingham',
-  'Leicester','Coventry','Brighton','Southampton','Reading','Oxford',
-  'Cambridge','York','Exeter','Plymouth','Derby','Stoke-on-Trent',
-  'Hull','Bradford','Wolverhampton','Sunderland','Milton Keynes','Portsmouth','Norwich',
-  'Luton','Watford','Slough','High Wycombe','Hemel Hempstead','Stevenage',
-  'St Albans','Welwyn Garden City','Hatfield','Basildon','Southend-on-Sea',
-  'Chelmsford','Colchester','Ipswich','Peterborough','Northampton','Kettering',
-  'Bedford','Swindon','Gloucester','Cheltenham','Worcester','Hereford',
-  'Telford','Shrewsbury','Wrexham','Blackpool','Preston','Blackburn',
-  'Bolton','Warrington','Stockport','Oldham','Rochdale','Huddersfield',
-  'Wakefield','Doncaster','Rotherham','Middlesbrough','Darlington','Hartlepool',
-  'Dundee','Aberdeen','Inverness','Swansea','Newport','Bangor',
+const faqs = [
+  {
+    q: 'What is commercial canopy cleaning?',
+    a: 'Commercial canopy cleaning is the professional deep-cleaning of kitchen extraction canopies, hoods, baffles and ductwork. It removes grease accumulation to TR19 standards, reducing fire risk and keeping your business insurance valid.',
+  },
+  {
+    q: 'How often should commercial canopies be cleaned?',
+    a: 'TR19 specifies frequency based on cooking type: heavy use kitchens (wok, charcoal, solid fuel) every 3 months; moderate use (gas or electric) every 6 months; light use annually. Many insurers require at least annual cleaning — check your policy wording.',
+  },
+  {
+    q: 'What is a TR19 certificate?',
+    a: 'TR19 is the UK industry standard for commercial kitchen ventilation cleaning, published by BESA. A TR19 certificate confirms your extraction system has been cleaned to this standard and includes a grease depth report, photographic evidence, and a signed engineer\'s certificate — required by most commercial property insurers.',
+  },
+  {
+    q: 'Do you cover the whole of the UK?',
+    a: 'Yes. We cover the entire UK including England, Scotland and Wales. We regularly serve London, Manchester, Birmingham, Leeds, Sheffield and hundreds of other cities and towns nationwide. Call 07517 758507 to confirm availability in your area.',
+  },
+  {
+    q: 'What does commercial canopy cleaning cost?',
+    a: 'Emergency callouts start from £150. Scheduled canopy cleaning prices depend on kitchen size, number of canopies and duct run length. We provide free no-obligation quotes — contact us for pricing tailored to your premises.',
+  },
+  {
+    q: 'What happens if I don\'t clean my canopy?',
+    a: 'Grease build-up in canopies and ductwork is one of the leading causes of commercial kitchen fires. Beyond the fire risk, your insurer may reject fire-related claims if you cannot provide valid TR19 documentation. Regular cleaning also improves extraction efficiency and extends fan motor lifespan.',
+  },
 ]
+
+const homeFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+}
 
 const whyUs = [
   'TR19 compliant certification issued after every job',
@@ -136,6 +159,47 @@ function StatBox({ value, suffix = '', label, isNumeric = false }) {
   )
 }
 
+/* ─── FAQ component ──────────────────────────────────────────────────────── */
+function HomeFaq() {
+  const [open, setOpen] = useState(null)
+  return (
+    <section className="py-16 sm:py-24 bg-[#070b11] border-t border-white/[0.06]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollReveal className="mb-10">
+          <span className="section-label">Common Questions</span>
+          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white">
+            Frequently Asked<br />Questions
+          </h2>
+        </ScrollReveal>
+        <div className="max-w-3xl space-y-3">
+          {faqs.map((faq, i) => (
+            <ScrollReveal key={i}>
+              <div className="border border-white/[0.08] bg-white/[0.02]">
+                <button
+                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+                  onClick={() => setOpen(open === i ? null : i)}
+                  aria-expanded={open === i}
+                >
+                  <span className="font-heading text-base sm:text-lg text-white tracking-wide leading-snug">{faq.q}</span>
+                  <ChevronDown
+                    size={18}
+                    className={`text-brand-blue-bright flex-shrink-0 transition-transform duration-300 ${open === i ? 'rotate-180' : ''}`}
+                  />
+                </button>
+                {open === i && (
+                  <div className="px-6 pb-5">
+                    <p className="font-body text-white/55 text-sm leading-relaxed">{faq.a}</p>
+                  </div>
+                )}
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 /* ─── Page ───────────────────────────────────────────────────────────────── */
 export default function Home() {
   return (
@@ -150,6 +214,7 @@ export default function Home() {
         <meta name="geo.region" content="GB" />
         <meta name="geo.placename" content="United Kingdom" />
         <link rel="canonical" href="https://commercialcanopycleaning.co.uk/" />
+        <script type="application/ld+json">{JSON.stringify(homeFaqSchema)}</script>
       </Helmet>
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
@@ -184,11 +249,12 @@ export default function Home() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="font-heading text-[3rem] sm:text-6xl lg:text-8xl text-white leading-none mb-6"
+                  className="font-heading text-[2.6rem] sm:text-6xl lg:text-8xl text-white leading-none mb-6"
                 >
-                  WHEN YOUR<br />
-                  KITCHEN STOPS,<br />
-                  <span style={{ color: '#F5A623' }}>WE DON'T.</span>
+                  COMMERCIAL<br />
+                  CANOPY CLEANING —<br />
+                  WHEN YOUR KITCHEN<br />
+                  <span style={{ color: '#F5A623' }}>STOPS, WE DON'T.</span>
                 </motion.h1>
 
                 <motion.p
@@ -453,11 +519,14 @@ export default function Home() {
               <div className="p-6 sm:p-7 border border-[#F5A623]/30 bg-[#F5A623]/5">
                 <div className="font-body text-[#F5A623]/60 text-xs uppercase tracking-widest mb-4">Areas Covered</div>
                 <div className="flex flex-wrap gap-2">
-                  {cities.map(city => (
-                    <a key={city} href="#contact-form" onClick={e => { e.preventDefault(); document.querySelector('#contact-form')?.scrollIntoView({ behavior:'smooth' }) }}
-                      className="font-body text-white/60 text-xs px-3 py-1.5 border border-[#F5A623]/20 hover:border-[#F5A623]/60 hover:text-[#F5A623] transition-colors duration-200 cursor-pointer">
-                      {city}
-                    </a>
+                  {cities.map(({ name, slug }) => (
+                    <Link
+                      key={slug}
+                      to={`/commercial-canopy-cleaning/${slug}`}
+                      className="font-body text-white/60 text-xs px-3 py-1.5 border border-[#F5A623]/20 hover:border-[#F5A623]/60 hover:text-[#F5A623] transition-colors duration-200"
+                    >
+                      {name}
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -465,6 +534,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── FAQ ─────────────────────────────────────────────────────────── */}
+      <HomeFaq />
 
       {/* ── CTA BANNER ───────────────────────────────────────────────────── */}
       <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden" style={{ background:'linear-gradient(135deg,#0A0A0A 0%,#0d2a4a 100%)' }}>

@@ -1,3 +1,5 @@
+import cityData from './cityData'
+
 const cityNames = [
   'London','Manchester','Birmingham','Leeds','Sheffield','Liverpool',
   'Bristol','Edinburgh','Glasgow','Cardiff','Newcastle','Nottingham',
@@ -14,9 +16,13 @@ const cityNames = [
   'Dundee','Aberdeen','Inverness','Swansea','Newport','Bangor',
 ]
 
-export const cities = cityNames.map(name => ({
-  name,
-  slug: name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
-}))
+export const cities = cityNames.map(name => {
+  const slug = name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
+  return {
+    name,
+    slug,
+    ...(cityData[slug] || {}),
+  }
+})
 
 export const cityMap = Object.fromEntries(cities.map(c => [c.slug, c]))
