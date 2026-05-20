@@ -20,6 +20,7 @@ import Terms from './pages/Terms'
 import Cookies from './pages/Cookies'
 import CityLanding from './pages/CityLanding'
 import CanopyCleaningLanding from './pages/CanopyCleaningLanding'
+import ServiceCityLanding from './pages/ServiceCityLanding'
 
 const JSON_LD = {
   '@context': 'https://schema.org',
@@ -82,6 +83,11 @@ function AnimatedRoutes() {
         <Route path="/cookies" element={<Cookies />} />
         <Route path="/commercial-canopy-cleaning/:city" element={<CityLanding />} />
         <Route path="/canopy-cleaning/:city" element={<CanopyCleaningLanding />} />
+        <Route path="/kitchen-extract-cleaning/:city" element={<ServiceCityLanding serviceSlug="kitchen-extract-cleaning" />} />
+        <Route path="/tr19-cleaning/:city"             element={<ServiceCityLanding serviceSlug="tr19-cleaning" />} />
+        <Route path="/extraction-cleaning/:city"       element={<ServiceCityLanding serviceSlug="extraction-cleaning" />} />
+        <Route path="/fan-repairs/:city"               element={<ServiceCityLanding serviceSlug="fan-repairs" />} />
+        <Route path="/fan-replacements/:city"          element={<ServiceCityLanding serviceSlug="fan-replacements" />} />
       </Routes>
     </AnimatePresence>
   )

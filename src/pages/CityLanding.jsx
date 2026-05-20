@@ -295,6 +295,30 @@ export default function CityLanding() {
         </div>
       </section>
 
+      {/* Related Services */}
+      <section className="py-12 sm:py-16 bg-[#070b11] border-t border-white/[0.06]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <span className="section-label">Also Available in {city.name}</span>
+            <h2 className="font-heading text-3xl sm:text-4xl text-white mb-6">Related Services</h2>
+            <div className="flex flex-wrap gap-3">
+              {[
+                { to: `/canopy-cleaning/${slug}`,              label: `Canopy Cleaning ${city.name}` },
+                { to: `/kitchen-extract-cleaning/${slug}`,     label: `Kitchen Extract Cleaning ${city.name}` },
+                { to: `/tr19-cleaning/${slug}`,                label: `TR19 Cleaning ${city.name}` },
+                { to: `/extraction-cleaning/${slug}`,          label: `Extraction Cleaning ${city.name}` },
+                { to: `/fan-repairs/${slug}`,                  label: `Fan Repairs ${city.name}` },
+                { to: `/fan-replacements/${slug}`,             label: `Fan Replacements ${city.name}` },
+              ].map(({ to, label }) => (
+                <Link key={to} to={to} className="font-body text-white/60 text-xs px-4 py-2 border border-white/10 hover:border-brand-blue-bright/50 hover:text-brand-blue-bright transition-colors duration-200">
+                  {label}
+                </Link>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-16 sm:py-20 bg-brand-black border-t border-white/[0.06]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

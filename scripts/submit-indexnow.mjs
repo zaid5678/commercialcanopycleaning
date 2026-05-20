@@ -1,7 +1,4 @@
-import { createRequire } from 'module'
-const require = createRequire(import.meta.url)
-
-const KEY = 'b5d2f8a4c7e1b9d3f6a2c8e4b7d1f5a3'
+const KEY  = 'b5d2f8a4c7e1b9d3f6a2c8e4b7d1f5a3'
 const HOST = 'commercialcanopycleaning.co.uk'
 
 const cityNames = [
@@ -20,6 +17,16 @@ const cityNames = [
   'Dundee','Aberdeen','Inverness','Swansea','Newport','Bangor',
 ]
 
+const services = [
+  'commercial-canopy-cleaning',
+  'canopy-cleaning',
+  'kitchen-extract-cleaning',
+  'tr19-cleaning',
+  'extraction-cleaning',
+  'fan-repairs',
+  'fan-replacements',
+]
+
 function toSlug(name) {
   return name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
 }
@@ -30,8 +37,9 @@ const urls = [
   `https://${HOST}/about`,
   `https://${HOST}/compliance`,
   `https://${HOST}/contact`,
-  ...cityNames.map(n => `https://${HOST}/commercial-canopy-cleaning/${toSlug(n)}`),
-  ...cityNames.map(n => `https://${HOST}/canopy-cleaning/${toSlug(n)}`),
+  ...services.flatMap(svc =>
+    cityNames.map(n => `https://${HOST}/${svc}/${toSlug(n)}`)
+  ),
 ]
 
 const body = JSON.stringify({

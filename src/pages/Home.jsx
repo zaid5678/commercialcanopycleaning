@@ -573,6 +573,42 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── MORE SERVICES BY LOCATION ────────────────────────────────────── */}
+      <section className="py-16 sm:py-24 bg-brand-black border-t border-white/[0.06]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal className="mb-10">
+            <span className="section-label">All Services</span>
+            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white">
+              More Services<br />
+              <span className="text-brand-blue-bright">by Location</span>
+            </h2>
+            <p className="font-body text-white/50 text-sm mt-3 max-w-2xl">
+              Select a service below to find TR19-certified engineers in your area.
+            </p>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { label: 'Kitchen Extract Cleaning', slug: 'kitchen-extract-cleaning', desc: 'Full extraction system cleaned to TR19 standard.' },
+              { label: 'TR19 Cleaning',            slug: 'tr19-cleaning',            desc: 'TR19-certified cleaning with compliance certificate.' },
+              { label: 'Extraction Cleaning',      slug: 'extraction-cleaning',      desc: 'Canopy, ductwork and fan cleaning — full system.' },
+              { label: 'Fan Repairs',              slug: 'fan-repairs',              desc: 'Emergency same-day extraction fan repair.' },
+              { label: 'Fan Replacements',         slug: 'fan-replacements',         desc: 'Supply and installation of replacement fans.' },
+              { label: 'Canopy Cleaning',          slug: 'canopy-cleaning',          desc: 'TR19 canopy hood and baffle degreasing.' },
+            ].map(({ label, slug, desc }) => (
+              <ScrollReveal key={slug}>
+                <div className="card-surface p-6 h-full flex flex-col gap-3">
+                  <h3 className="font-heading text-xl text-white tracking-wide">{label}</h3>
+                  <p className="font-body text-white/50 text-sm flex-1">{desc}</p>
+                  <Link to={`/${slug}/london`} className="font-body text-brand-blue-bright text-xs flex items-center gap-1 hover:underline">
+                    View locations <ArrowRight size={12} />
+                  </Link>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── FAQ ─────────────────────────────────────────────────────────── */}
       <HomeFaq />
 
