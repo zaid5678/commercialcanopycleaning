@@ -15,6 +15,18 @@ const cityNames = [
   'Bolton','Warrington','Stockport','Oldham','Rochdale','Huddersfield',
   'Wakefield','Doncaster','Rotherham','Middlesbrough','Darlington','Hartlepool',
   'Dundee','Aberdeen','Inverness','Swansea','Newport','Bangor',
+  'Dewsbury','Halifax','Castleford','Wigan','Barnsley','Gateshead',
+  'Basingstoke','Hampshire','Wokingham','Bournemouth','Thurrock','Kent',
+  'Harrogate','Canterbury','Maidstone','Knowsley','Poole','Guildford',
+  'Horsham','Eastleigh','Havant','Ashford','Fareham','Tunbridge Wells',
+  'Chorley','Carlisle','Gillingham','Birkenhead','Worthing','Lichfield',
+  'Lewes','Great Yarmouth','Eastbourne','West Dorset','Dartford','Bromsgrove',
+  'Bath','Hastings','Market Harborough','Selby','Harlow','Tewkesbury',
+  'Gosport','Chester','Loughborough','Boston','Sittingbourne','Bracknell',
+  'Keighley','Batley','Cheshunt','Purbeck','Wallsend','Bexhill-on-Sea',
+  'Hoddesdon','Worksop','Salisbury','Ilkeston','Southall','Accrington',
+  'Harpenden','Ealing','Stalybridge','Workington','Rickmansworth',
+  'Potters Bar','Ripley','Brighton and Hove',
 ]
 
 const services = [

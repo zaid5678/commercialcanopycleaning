@@ -312,6 +312,279 @@ const cityData = {
     region: 'Gwynedd',
     nearby: ['Caernarfon', 'Conwy', 'Llandudno', 'Beaumaris', 'Holyhead', 'Porthmadog'],
   },
+  // ── New cities added May 2026 ──────────────────────────────────────────
+  dewsbury: {
+    region: 'West Yorkshire',
+    nearby: ['Leeds', 'Huddersfield', 'Wakefield', 'Bradford', 'Batley', 'Ossett'],
+  },
+  halifax: {
+    region: 'West Yorkshire',
+    nearby: ['Bradford', 'Huddersfield', 'Leeds', 'Brighouse', 'Hebden Bridge', 'Todmorden'],
+  },
+  castleford: {
+    region: 'West Yorkshire',
+    nearby: ['Wakefield', 'Leeds', 'Pontefract', 'Normanton', 'Featherstone', 'Knottingley'],
+  },
+  wigan: {
+    region: 'Greater Manchester',
+    nearby: ['Bolton', 'Manchester', 'St Helens', 'Leigh', 'Skelmersdale', 'Warrington'],
+  },
+  barnsley: {
+    region: 'South Yorkshire',
+    nearby: ['Sheffield', 'Rotherham', 'Doncaster', 'Wakefield', 'Penistone', 'Hoyland'],
+  },
+  gateshead: {
+    region: 'Tyne and Wear',
+    nearby: ['Newcastle', 'Sunderland', 'Durham', 'Consett', 'Chester-le-Street', 'Blaydon'],
+  },
+  basingstoke: {
+    region: 'Hampshire',
+    nearby: ['Reading', 'Winchester', 'Andover', 'Farnborough', 'Fleet', 'Hook'],
+  },
+  hampshire: {
+    region: 'Hampshire',
+    nearby: ['Southampton', 'Portsmouth', 'Winchester', 'Basingstoke', 'Andover', 'Fareham'],
+  },
+  wokingham: {
+    region: 'Berkshire',
+    nearby: ['Reading', 'Bracknell', 'Camberley', 'Farnborough', 'Sandhurst', 'Crowthorne'],
+  },
+  bournemouth: {
+    region: 'Dorset',
+    nearby: ['Poole', 'Christchurch', 'Weymouth', 'Wareham', 'Ferndown', 'Ringwood'],
+  },
+  thurrock: {
+    region: 'Essex',
+    nearby: ['Basildon', 'Brentwood', 'Dartford', 'Gravesend', 'Grays', 'Tilbury'],
+  },
+  kent: {
+    region: 'Kent',
+    nearby: ['Maidstone', 'Canterbury', 'Ashford', 'Tunbridge Wells', 'Dartford', 'Medway'],
+  },
+  harrogate: {
+    region: 'North Yorkshire',
+    nearby: ['Leeds', 'York', 'Knaresborough', 'Ripon', 'Skipton', 'Wetherby'],
+  },
+  canterbury: {
+    region: 'Kent',
+    nearby: ['Maidstone', 'Ashford', 'Dover', 'Folkestone', 'Whitstable', 'Faversham'],
+  },
+  maidstone: {
+    region: 'Kent',
+    nearby: ['Canterbury', 'Ashford', 'Tunbridge Wells', 'Sittingbourne', 'Medway', 'Tonbridge'],
+  },
+  knowsley: {
+    region: 'Merseyside',
+    nearby: ['Liverpool', 'St Helens', 'Prescot', 'Huyton', 'Kirkby', 'Halewood'],
+  },
+  poole: {
+    region: 'Dorset',
+    nearby: ['Bournemouth', 'Christchurch', 'Wareham', 'Swanage', 'Ferndown', 'Wimborne'],
+  },
+  guildford: {
+    region: 'Surrey',
+    nearby: ['Woking', 'Farnham', 'Godalming', 'Cranleigh', 'Leatherhead', 'Farnborough'],
+  },
+  horsham: {
+    region: 'West Sussex',
+    nearby: ['Crawley', 'Guildford', 'Brighton', 'Worthing', 'East Grinstead', 'Billingshurst'],
+  },
+  eastleigh: {
+    region: 'Hampshire',
+    nearby: ['Southampton', 'Winchester', 'Fareham', "Chandler's Ford", 'Hedge End', 'Bishopstoke'],
+  },
+  havant: {
+    region: 'Hampshire',
+    nearby: ['Portsmouth', 'Fareham', 'Chichester', 'Waterlooville', 'Hayling Island', 'Emsworth'],
+  },
+  ashford: {
+    region: 'Kent',
+    nearby: ['Canterbury', 'Maidstone', 'Folkestone', 'Tenterden', 'Hythe', 'New Romney'],
+  },
+  fareham: {
+    region: 'Hampshire',
+    nearby: ['Portsmouth', 'Southampton', 'Gosport', 'Eastleigh', 'Waterlooville', 'Wickham'],
+  },
+  'tunbridge-wells': {
+    region: 'Kent',
+    nearby: ['Maidstone', 'Tonbridge', 'Crowborough', 'Sevenoaks', 'Paddock Wood', 'Cranbrook'],
+  },
+  chorley: {
+    region: 'Lancashire',
+    nearby: ['Preston', 'Wigan', 'Bolton', 'Burnley', 'Leyland', 'Skelmersdale'],
+  },
+  carlisle: {
+    region: 'Cumbria',
+    nearby: ['Penrith', 'Workington', 'Whitehaven', 'Dumfries', 'Hexham', 'Brampton'],
+  },
+  gillingham: {
+    region: 'Kent',
+    nearby: ['Maidstone', 'Rochester', 'Chatham', 'Sittingbourne', 'Medway', 'Faversham'],
+  },
+  birkenhead: {
+    region: 'Merseyside',
+    nearby: ['Liverpool', 'Wallasey', 'Ellesmere Port', 'Chester', 'Heswall', 'Bebington'],
+  },
+  worthing: {
+    region: 'West Sussex',
+    nearby: ['Brighton', 'Horsham', 'Shoreham-by-Sea', 'Chichester', 'Littlehampton', 'Lancing'],
+  },
+  lichfield: {
+    region: 'Staffordshire',
+    nearby: ['Birmingham', 'Tamworth', 'Burton upon Trent', 'Stafford', 'Sutton Coldfield', 'Rugeley'],
+  },
+  lewes: {
+    region: 'East Sussex',
+    nearby: ['Brighton', 'Eastbourne', 'Haywards Heath', 'Uckfield', 'Newhaven', 'Seaford'],
+  },
+  'great-yarmouth': {
+    region: 'Norfolk',
+    nearby: ['Norwich', 'Lowestoft', 'Beccles', 'Bungay', 'Acle', 'Caister-on-Sea'],
+  },
+  eastbourne: {
+    region: 'East Sussex',
+    nearby: ['Brighton', 'Hastings', 'Lewes', 'Hailsham', 'Bexhill-on-Sea', 'Seaford'],
+  },
+  'west-dorset': {
+    region: 'Dorset',
+    nearby: ['Dorchester', 'Bridport', 'Weymouth', 'Sherborne', 'Yeovil', 'Beaminster'],
+  },
+  dartford: {
+    region: 'Kent',
+    nearby: ['Gravesend', 'Bexleyheath', 'Swanley', 'Sevenoaks', 'Thurrock', 'Erith'],
+  },
+  bromsgrove: {
+    region: 'Worcestershire',
+    nearby: ['Birmingham', 'Redditch', 'Worcester', 'Droitwich', 'Kidderminster', 'Solihull'],
+  },
+  bath: {
+    region: 'Somerset',
+    nearby: ['Bristol', 'Frome', 'Chippenham', 'Trowbridge', 'Radstock', 'Midsomer Norton'],
+  },
+  hastings: {
+    region: 'East Sussex',
+    nearby: ['Eastbourne', 'Bexhill-on-Sea', 'Rye', 'Battle', 'Tunbridge Wells', 'Tenterden'],
+  },
+  'market-harborough': {
+    region: 'Leicestershire',
+    nearby: ['Leicester', 'Kettering', 'Northampton', 'Rugby', 'Lutterworth', 'Corby'],
+  },
+  selby: {
+    region: 'North Yorkshire',
+    nearby: ['York', 'Leeds', 'Wakefield', 'Pontefract', 'Goole', 'Tadcaster'],
+  },
+  harlow: {
+    region: 'Essex',
+    nearby: ["Bishop's Stortford", 'Chelmsford', 'Hertford', 'Epping', 'Stevenage', 'Ware'],
+  },
+  tewkesbury: {
+    region: 'Gloucestershire',
+    nearby: ['Gloucester', 'Cheltenham', 'Worcester', 'Pershore', 'Evesham', 'Winchcombe'],
+  },
+  gosport: {
+    region: 'Hampshire',
+    nearby: ['Portsmouth', 'Fareham', 'Southampton', 'Stubbington', 'Lee-on-the-Solent', 'Alverstoke'],
+  },
+  chester: {
+    region: 'Cheshire',
+    nearby: ['Wrexham', 'Warrington', 'Ellesmere Port', 'Crewe', 'Macclesfield', 'Northwich'],
+  },
+  loughborough: {
+    region: 'Leicestershire',
+    nearby: ['Leicester', 'Nottingham', 'Derby', 'Coalville', 'Shepshed', 'Melton Mowbray'],
+  },
+  boston: {
+    region: 'Lincolnshire',
+    nearby: ['Peterborough', 'Lincoln', 'Spalding', 'Skegness', 'Sleaford', 'Holbeach'],
+  },
+  sittingbourne: {
+    region: 'Kent',
+    nearby: ['Maidstone', 'Canterbury', 'Gillingham', 'Faversham', 'Sheerness', 'Medway'],
+  },
+  bracknell: {
+    region: 'Berkshire',
+    nearby: ['Reading', 'Wokingham', 'Camberley', 'Windsor', 'Farnborough', 'Sandhurst'],
+  },
+  keighley: {
+    region: 'West Yorkshire',
+    nearby: ['Bradford', 'Halifax', 'Skipton', 'Bingley', 'Ilkley', 'Shipley'],
+  },
+  batley: {
+    region: 'West Yorkshire',
+    nearby: ['Leeds', 'Dewsbury', 'Bradford', 'Wakefield', 'Morley', 'Cleckheaton'],
+  },
+  cheshunt: {
+    region: 'Hertfordshire',
+    nearby: ['Waltham Abbey', 'Broxbourne', 'Hertford', 'Enfield', 'Hoddesdon', 'Ware'],
+  },
+  purbeck: {
+    region: 'Dorset',
+    nearby: ['Swanage', 'Wareham', 'Bournemouth', 'Poole', 'Weymouth', 'Corfe Castle'],
+  },
+  wallsend: {
+    region: 'Tyne and Wear',
+    nearby: ['Newcastle', 'Gateshead', 'North Shields', 'Whitley Bay', 'Sunderland', 'Jarrow'],
+  },
+  'bexhill-on-sea': {
+    region: 'East Sussex',
+    nearby: ['Hastings', 'Eastbourne', 'Lewes', 'Battle', 'Rye', 'Hailsham'],
+  },
+  hoddesdon: {
+    region: 'Hertfordshire',
+    nearby: ['Cheshunt', 'Hertford', 'Ware', 'Waltham Cross', 'Broxbourne', 'Harlow'],
+  },
+  worksop: {
+    region: 'Nottinghamshire',
+    nearby: ['Sheffield', 'Rotherham', 'Mansfield', 'Retford', 'Doncaster', 'Chesterfield'],
+  },
+  salisbury: {
+    region: 'Wiltshire',
+    nearby: ['Southampton', 'Bournemouth', 'Winchester', 'Amesbury', 'Andover', 'Shaftesbury'],
+  },
+  ilkeston: {
+    region: 'Derbyshire',
+    nearby: ['Nottingham', 'Derby', 'Long Eaton', 'Heanor', 'Ripley', 'Eastwood'],
+  },
+  southall: {
+    region: 'West London',
+    nearby: ['Ealing', 'Hayes', 'Slough', 'Uxbridge', 'Greenford', 'Hanwell'],
+  },
+  accrington: {
+    region: 'Lancashire',
+    nearby: ['Burnley', 'Blackburn', 'Nelson', 'Rossendale', 'Clitheroe', 'Darwen'],
+  },
+  harpenden: {
+    region: 'Hertfordshire',
+    nearby: ['St Albans', 'Luton', 'Watford', 'Hemel Hempstead', 'Welwyn Garden City', 'Redbourn'],
+  },
+  ealing: {
+    region: 'West London',
+    nearby: ['Acton', 'Southall', 'Hanwell', 'Northolt', 'Greenford', 'Perivale'],
+  },
+  stalybridge: {
+    region: 'Greater Manchester',
+    nearby: ['Ashton-under-Lyne', 'Oldham', 'Manchester', 'Hyde', 'Mossley', 'Dukinfield'],
+  },
+  workington: {
+    region: 'Cumbria',
+    nearby: ['Carlisle', 'Whitehaven', 'Cockermouth', 'Keswick', 'Maryport', 'Wigton'],
+  },
+  rickmansworth: {
+    region: 'Hertfordshire',
+    nearby: ['Watford', 'Harrow', 'Chorleywood', 'Amersham', 'Northwood', 'Croxley Green'],
+  },
+  'potters-bar': {
+    region: 'Hertfordshire',
+    nearby: ['Enfield', 'Barnet', 'Hatfield', 'St Albans', 'Welwyn Garden City', 'Cheshunt'],
+  },
+  ripley: {
+    region: 'Derbyshire',
+    nearby: ['Derby', 'Nottingham', 'Heanor', 'Ilkeston', 'Belper', 'Alfreton'],
+  },
+  'brighton-and-hove': {
+    region: 'East Sussex',
+    nearby: ['Worthing', 'Lewes', 'Eastbourne', 'Horsham', 'Haywards Heath', 'Shoreham-by-Sea'],
+  },
 }
 
 export default cityData
