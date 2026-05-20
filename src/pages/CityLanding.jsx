@@ -170,6 +170,12 @@ export default function CityLanding() {
                 Get a Free Quote <ArrowRight size={16} />
               </Link>
             </div>
+            <p className="font-body text-white/35 text-sm mt-5">
+              Looking for canopy cleaning only?{' '}
+              <Link to={`/canopy-cleaning/${slug}`} className="text-brand-blue-bright hover:underline">
+                See our canopy cleaning service in {city.name} →
+              </Link>
+            </p>
           </ScrollReveal>
         </div>
       </section>

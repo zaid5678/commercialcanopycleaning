@@ -205,10 +205,10 @@ export default function Home() {
   return (
     <PageTransition>
       <Helmet>
-        <title>Commercial Canopy Cleaning | TR19 Certified | Fan Repair | Nationwide UK</title>
-        <meta name="description" content="UK's trusted commercial canopy cleaning specialists. TR19 certified canopy & duct cleaning, emergency fan repair, 24/7 nationwide coverage. Serving London, Manchester, Birmingham and all major UK cities. Call 07517 758507." />
-        <meta property="og:title" content="Commercial Canopy Cleaning | TR19 Certified | Nationwide UK" />
-        <meta property="og:description" content="TR19 certified canopy cleaning, duct cleaning and emergency fan repair across the UK. Certified engineers, 24/7 callout. Call 07517 758507." />
+        <title>Canopy Cleaning & Commercial Canopy Cleaning | TR19 Certified | Nationwide UK</title>
+        <meta name="description" content="UK's trusted canopy cleaning specialists. TR19 certified canopy cleaning, commercial canopy cleaning, duct cleaning and emergency fan repair, 24/7 nationwide coverage. Serving London, Manchester, Birmingham and all major UK cities. Call 07517 758507." />
+        <meta property="og:title" content="Canopy Cleaning | Commercial Canopy Cleaning | TR19 Certified | Nationwide UK" />
+        <meta property="og:description" content="TR19 certified canopy cleaning and commercial canopy cleaning across the UK. Certified engineers, 24/7 callout. Call 07517 758507." />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_GB" />
         <meta name="geo.region" content="GB" />
@@ -524,6 +524,44 @@ export default function Home() {
                       key={slug}
                       to={`/commercial-canopy-cleaning/${slug}`}
                       className="font-body text-white/60 text-xs px-3 py-1.5 border border-[#F5A623]/20 hover:border-[#F5A623]/60 hover:text-[#F5A623] transition-colors duration-200"
+                    >
+                      {name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CANOPY CLEANING BY LOCATION ──────────────────────────────────── */}
+      <section className="py-16 sm:py-24 bg-[#070b11] border-t border-white/[0.06]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <ScrollReveal>
+              <span className="section-label">Canopy Cleaning</span>
+              <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white mb-5">
+                Canopy Cleaning<br />
+                <span className="text-brand-blue-bright">by Location</span>
+              </h2>
+              <p className="font-body text-white/50 text-sm sm:text-base leading-relaxed mb-6">
+                Professional kitchen canopy cleaning across the UK — TR19 certified, full duct run covered, compliance certificate issued after every job.
+              </p>
+              <Link to="/canopy-cleaning/london" className="btn-ghost text-sm">
+                View canopy cleaning services <ArrowRight size={15} />
+              </Link>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.1}>
+              <div className="p-6 sm:p-7 border border-brand-blue-bright/20 bg-brand-blue-bright/5">
+                <div className="font-body text-brand-blue-bright/60 text-xs uppercase tracking-widest mb-4">Canopy Cleaning Locations</div>
+                <div className="flex flex-wrap gap-2">
+                  {cities.map(({ name, slug }) => (
+                    <Link
+                      key={slug}
+                      to={`/canopy-cleaning/${slug}`}
+                      className="font-body text-white/60 text-xs px-3 py-1.5 border border-brand-blue-bright/20 hover:border-brand-blue-bright/60 hover:text-brand-blue-bright transition-colors duration-200"
                     >
                       {name}
                     </Link>
