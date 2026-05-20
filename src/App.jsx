@@ -19,6 +19,7 @@ import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 import Cookies from './pages/Cookies'
 import CityLanding from './pages/CityLanding'
+import CanopyCleaningLanding from './pages/CanopyCleaningLanding'
 
 const JSON_LD = {
   '@context': 'https://schema.org',
@@ -80,6 +81,7 @@ function AnimatedRoutes() {
         <Route path="/terms" element={<Terms />} />
         <Route path="/cookies" element={<Cookies />} />
         <Route path="/commercial-canopy-cleaning/:city" element={<CityLanding />} />
+        <Route path="/canopy-cleaning/:city" element={<CanopyCleaningLanding />} />
       </Routes>
     </AnimatePresence>
   )
