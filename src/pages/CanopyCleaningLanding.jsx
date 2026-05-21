@@ -8,7 +8,7 @@ import { cityMap } from '../data/cities'
 
 const cleaningSteps = [
   { icon: Ruler,         step: '01', title: 'Grease Assessment',       desc: 'We measure grease depth throughout the canopy and duct run using TR19 methodology before any work begins.' },
-  { icon: Wrench,        step: '02', title: 'Canopy Deep Clean',       desc: 'Hood interior, plenum chamber, and all internal surfaces are pressure-cleaned and hand-degreased to bare metal.' },
+  { icon: Wrench,        step: '02', title: 'Canopy Cleaning',          desc: 'The hood interior behind the filters, plenum chamber, and all internal surfaces are manually cleaned using scrapers, specialist chemicals, and hand degreasing methods to restore the system back to bare metal standard. Please note: filters are not included in this clean, as these should be cleaned separately during your regular kitchen cleaning schedule.' },
   { icon: FileCheck,     step: '03', title: 'Full Duct Run Clean',     desc: 'The complete extraction duct from canopy to discharge point is cleaned — not just the visible canopy section.' },
   { icon: Camera,        step: '04', title: 'Photographic Evidence',   desc: 'Before-and-after photographs of every section are taken and compiled into your compliance evidence pack.' },
   { icon: ClipboardCheck,step: '05', title: 'TR19 Certificate',        desc: 'A signed TR19 compliance certificate is issued on completion — accepted by all major commercial property insurers.' },
@@ -17,10 +17,7 @@ const cleaningSteps = [
 const includes = [
   'TR19 compliance certificate issued after every job',
   'Photographic before & after evidence pack',
-  'Grease depth measurement report',
-  'Signed engineer certificate for insurance',
   'Same-day emergency response available',
-  'Full duct run covered — not just the hood',
 ]
 
 function buildFaqs(city) {

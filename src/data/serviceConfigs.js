@@ -11,7 +11,7 @@ export const serviceConfigs = {
     sectionLabel: (city) => `Kitchen Extract Cleaning — ${city}`,
     intro:    (city, region) => `Complete kitchen extract cleaning in ${city}${region ? ` and across ${region}` : ''} — the full extraction system from canopy hood to discharge point, cleaned and certified to TR19 standards.`,
     highlights: [
-      { title: 'Canopy Hood',              desc: 'Full internal degreasing of the canopy hood to TR19 specification.' },
+      { title: 'Canopy Cleaning',          desc: 'The hood interior behind the filters, plenum chamber, and all internal surfaces are manually cleaned using scrapers, specialist chemicals, and hand degreasing methods to restore the system back to bare metal standard. Filters are not included in this clean.' },
       { title: 'Plenum Chamber',           desc: 'Internal plenum chamber cleaned and inspected for grease accumulation.' },
       { title: 'Full Duct Run',            desc: 'Extraction ductwork cleaned from canopy to external discharge point.' },
       { title: 'Extraction Fan',           desc: 'Fan impeller and housing cleaned to improve airflow and reduce fire risk.' },
@@ -20,10 +20,7 @@ export const serviceConfigs = {
     includes: [
       'TR19 compliance certificate issued after every job',
       'Photographic before & after evidence pack',
-      'Grease depth measurement report',
-      'Signed engineer certificate for insurance',
       'Same-day emergency response available',
-      'Full duct run covered — not just the canopy',
     ],
     faqs: (city) => [
       {
@@ -37,10 +34,6 @@ export const serviceConfigs = {
       {
         q: `Is kitchen extract cleaning a legal requirement?`,
         a: `Kitchen extract cleaning is required by most commercial property insurance policies and is expected under fire safety regulations. The TR19 standard defines the cleaning specification. Without a valid TR19 certificate, insurers may reject fire-related claims.`,
-      },
-      {
-        q: `Do you clean the full duct run or just the canopy in ${city}?`,
-        a: `We clean the complete extraction system in ${city} — from the canopy hood all the way to the external discharge point. Cleaning only the visible canopy section is not TR19 compliant. Every metre of ductwork is cleaned and documented.`,
       },
       {
         q: `How quickly can you carry out kitchen extract cleaning in ${city}?`,
@@ -65,7 +58,7 @@ export const serviceConfigs = {
     intro:    (city, region) => `TR19-certified kitchen ventilation cleaning in ${city}${region ? ` and across ${region}` : ''} — canopy, ductwork, and fans cleaned to the BESA TR19 standard with full compliance documentation issued on completion.`,
     highlights: [
       { title: 'TR19 Grease Assessment',   desc: 'Grease depth measured at all key points before and after cleaning to TR19 methodology.' },
-      { title: 'Canopy Cleaning',          desc: 'Hood and plenum chamber degreased to bare metal to TR19 specification.' },
+      { title: 'Canopy Cleaning',          desc: 'The hood interior behind the filters, plenum chamber, and all internal surfaces are manually cleaned using scrapers, specialist chemicals, and hand degreasing methods to restore the system back to bare metal standard. Filters are not included in this clean.' },
       { title: 'Full Duct Run Cleaning',   desc: 'Complete extraction duct cleaned from canopy to discharge — access panels used throughout.' },
       { title: 'Fan Cleaning',             desc: 'Extraction fan cleaned and inspected as part of the TR19 service.' },
       { title: 'Photographic Evidence',    desc: 'Before and after photos of every section compiled into your compliance evidence pack.' },
@@ -74,10 +67,7 @@ export const serviceConfigs = {
     includes: [
       'TR19 compliance certificate issued after every job',
       'Photographic before & after evidence pack',
-      'Grease depth measurement report',
-      'Signed engineer certificate for insurance',
       'Same-day emergency response available',
-      'Full duct run covered — not just the hood',
     ],
     faqs: (city) => [
       {
@@ -94,7 +84,7 @@ export const serviceConfigs = {
       },
       {
         q: `What does your TR19 cleaning service include in ${city}?`,
-        a: `Our TR19 cleaning service in ${city} includes a grease depth assessment, full canopy degreasing (hood and plenum), complete duct run cleaning to the discharge point, fan cleaning, before and after photographs, a grease depth measurement report, and a signed TR19 compliance certificate.`,
+        a: `Every job we complete in ${city} includes before-and-after photographs and a full TR19 hygiene certification — everything required for your insurance records.`,
       },
       {
         q: `How quickly can you carry out TR19 cleaning in ${city}?`,
@@ -118,7 +108,7 @@ export const serviceConfigs = {
     
     intro:    (city, region) => `Kitchen extraction cleaning in ${city}${region ? ` and across ${region}` : ''} — the complete extraction system degreased, cleaned, and certified to TR19 standard. Canopy, duct run, fans, and discharge point all covered.`,
     highlights: [
-      { title: 'Canopy Extraction Hood',   desc: 'Full internal degreasing of the canopy hood to TR19 specification.' },
+      { title: 'Canopy Cleaning',          desc: 'The hood interior behind the filters, plenum chamber, and all internal surfaces are manually cleaned using scrapers, specialist chemicals, and hand degreasing methods to restore the system back to bare metal standard. Filters are not included in this clean.' },
       { title: 'Plenum Chamber',           desc: 'Internal plenum chamber cleaned and inspected for grease accumulation.' },
       { title: 'Extraction Ductwork',      desc: 'Full duct run cleaned from canopy to external discharge point using TR19-compliant access.' },
       { title: 'Extraction Fan Unit',      desc: 'Fan impeller and housing cleaned to remove grease and improve airflow.' },
@@ -127,10 +117,7 @@ export const serviceConfigs = {
     includes: [
       'TR19 compliance certificate issued after every job',
       'Photographic before & after evidence pack',
-      'Grease depth measurement report',
-      'Signed engineer certificate for insurance',
       'Out-of-hours service available',
-      'Full duct run covered — not just the canopy',
     ],
     faqs: (city) => [
       {
@@ -142,12 +129,8 @@ export const serviceConfigs = {
         a: `Extraction cleaning frequency in ${city} follows TR19 guidelines based on cooking type: heavy use (wok, charcoal, solid fuel) every 3 months; moderate use (gas, electric) every 6 months; light use annually. Check your insurance policy as it may specify more frequent cleaning.`,
       },
       {
-        q: `Do you clean the entire extraction system in ${city}?`,
-        a: `Yes. Our extraction cleaning service in ${city} covers the complete system — canopy hood, plenum chamber, the full duct run from canopy to external discharge point, the extraction fan, and the external discharge cowl. Partial cleaning does not meet TR19 requirements.`,
-      },
-      {
         q: `What certification do you provide after extraction cleaning in ${city}?`,
-        a: `After every extraction cleaning job in ${city} we issue a full TR19 compliance certificate, a photographic before-and-after evidence pack, a grease depth measurement report, and a signed engineer certificate — all accepted by major commercial property insurers.`,
+        a: `Every job we complete in ${city} includes before-and-after photographs and a full TR19 hygiene certification — everything required for your insurance records.`,
       },
       {
         q: `Can you carry out extraction cleaning outside business hours in ${city}?`,

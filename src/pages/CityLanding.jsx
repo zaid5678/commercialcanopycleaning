@@ -16,10 +16,7 @@ const services = [
 const includes = [
   'TR19 compliance certificate issued after every job',
   'Photographic before & after evidence pack',
-  'Grease depth measurement report',
-  'Signed engineer certificate for insurance',
   'Same-day emergency response available',
-  'Full duct run covered — not just the hood',
 ]
 
 function buildFaqs(city) {
@@ -41,11 +38,7 @@ function buildFaqs(city) {
     },
     {
       q: `What TR19 documentation do you provide after cleaning in ${city.name}?`,
-      a: `Every job we complete in ${city.name} includes a full TR19 compliance certificate, a photographic before-and-after evidence pack, a grease depth measurement report, and a signed engineer certificate — everything your insurer requires.`,
-    },
-    {
-      q: `Do you clean the full duct run, not just the canopy, in ${city.name}?`,
-      a: `Yes. Our ${city.name} service covers the complete extraction system — canopy hood, baffles, plenum chamber, and the full duct run from canopy to the discharge point on the roof or external wall. Partial cleaning is not TR19 compliant.`,
+      a: `Every job we complete in ${city.name} includes before-and-after photographs and a full TR19 hygiene certification — everything required for your insurance records.`,
     },
   ]
 }
