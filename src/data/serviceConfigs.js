@@ -11,11 +11,10 @@ export const serviceConfigs = {
     sectionLabel: (city) => `Kitchen Extract Cleaning — ${city}`,
     intro:    (city, region) => `Complete kitchen extract cleaning in ${city}${region ? ` and across ${region}` : ''} — the full extraction system from canopy hood to discharge point, cleaned and certified to TR19 standards.`,
     highlights: [
-      { title: 'Canopy Hood & Baffles',    desc: 'Full internal degreasing of canopy hood, baffles, and grease trap to TR19 specification.' },
+      { title: 'Canopy Hood',              desc: 'Full internal degreasing of the canopy hood to TR19 specification.' },
       { title: 'Plenum Chamber',           desc: 'Internal plenum chamber cleaned and inspected for grease accumulation.' },
       { title: 'Full Duct Run',            desc: 'Extraction ductwork cleaned from canopy to external discharge point.' },
       { title: 'Extraction Fan',           desc: 'Fan impeller and housing cleaned to improve airflow and reduce fire risk.' },
-      { title: 'Grease Filters',           desc: 'Baffle filters removed, soaked, and degreased — reinstalled ready for service.' },
       { title: 'External Discharge',       desc: 'Discharge cowl and outlet cleaned and checked for obstruction.' },
     ],
     includes: [
@@ -29,7 +28,7 @@ export const serviceConfigs = {
     faqs: (city) => [
       {
         q: `What does kitchen extract cleaning involve in ${city}?`,
-        a: `Kitchen extract cleaning in ${city} covers the entire extraction system — canopy hood, baffles, plenum chamber, full duct run, extraction fan, and external discharge point. Our engineers clean every component to TR19 standards and issue a compliance certificate with photographic evidence on completion.`,
+        a: `Kitchen extract cleaning in ${city} covers the entire extraction system — canopy hood, plenum chamber, full duct run, extraction fan, and external discharge point. Our engineers clean every component to TR19 standards and issue a compliance certificate with photographic evidence on completion.`,
       },
       {
         q: `How often does a kitchen extraction system need cleaning in ${city}?`,
@@ -66,7 +65,7 @@ export const serviceConfigs = {
     intro:    (city, region) => `TR19-certified kitchen ventilation cleaning in ${city}${region ? ` and across ${region}` : ''} — canopy, ductwork, and fans cleaned to the BESA TR19 standard with full compliance documentation issued on completion.`,
     highlights: [
       { title: 'TR19 Grease Assessment',   desc: 'Grease depth measured at all key points before and after cleaning to TR19 methodology.' },
-      { title: 'Canopy Cleaning',          desc: 'Hood, baffles, and plenum chamber degreased to bare metal to TR19 specification.' },
+      { title: 'Canopy Cleaning',          desc: 'Hood and plenum chamber degreased to bare metal to TR19 specification.' },
       { title: 'Full Duct Run Cleaning',   desc: 'Complete extraction duct cleaned from canopy to discharge — access panels used throughout.' },
       { title: 'Fan Cleaning',             desc: 'Extraction fan cleaned and inspected as part of the TR19 service.' },
       { title: 'Photographic Evidence',    desc: 'Before and after photos of every section compiled into your compliance evidence pack.' },
@@ -95,7 +94,7 @@ export const serviceConfigs = {
       },
       {
         q: `What does your TR19 cleaning service include in ${city}?`,
-        a: `Our TR19 cleaning service in ${city} includes a grease depth assessment, full canopy degreasing (hood, baffles, plenum), complete duct run cleaning to the discharge point, fan cleaning, before and after photographs, a grease depth measurement report, and a signed TR19 compliance certificate.`,
+        a: `Our TR19 cleaning service in ${city} includes a grease depth assessment, full canopy degreasing (hood and plenum), complete duct run cleaning to the discharge point, fan cleaning, before and after photographs, a grease depth measurement report, and a signed TR19 compliance certificate.`,
       },
       {
         q: `How quickly can you carry out TR19 cleaning in ${city}?`,
@@ -119,11 +118,10 @@ export const serviceConfigs = {
     
     intro:    (city, region) => `Kitchen extraction cleaning in ${city}${region ? ` and across ${region}` : ''} — the complete extraction system degreased, cleaned, and certified to TR19 standard. Canopy, duct run, fans, and discharge point all covered.`,
     highlights: [
-      { title: 'Canopy Extraction Hood',   desc: 'Full internal degreasing of the canopy hood, baffles, and grease trap.' },
+      { title: 'Canopy Extraction Hood',   desc: 'Full internal degreasing of the canopy hood to TR19 specification.' },
       { title: 'Plenum Chamber',           desc: 'Internal plenum chamber cleaned and inspected for grease accumulation.' },
       { title: 'Extraction Ductwork',      desc: 'Full duct run cleaned from canopy to external discharge point using TR19-compliant access.' },
       { title: 'Extraction Fan Unit',      desc: 'Fan impeller and housing cleaned to remove grease and improve airflow.' },
-      { title: 'Grease Filters & Baffles', desc: 'All filters removed, degreased in solution, and reinstalled.' },
       { title: 'External Discharge',       desc: 'Outlet cowl and grille cleaned to prevent blockage and reduce fire risk.' },
     ],
     includes: [
@@ -145,7 +143,7 @@ export const serviceConfigs = {
       },
       {
         q: `Do you clean the entire extraction system in ${city}?`,
-        a: `Yes. Our extraction cleaning service in ${city} covers the complete system — canopy hood, baffles, plenum chamber, the full duct run from canopy to external discharge point, the extraction fan, and the external discharge cowl. Partial cleaning does not meet TR19 requirements.`,
+        a: `Yes. Our extraction cleaning service in ${city} covers the complete system — canopy hood, plenum chamber, the full duct run from canopy to external discharge point, the extraction fan, and the external discharge cowl. Partial cleaning does not meet TR19 requirements.`,
       },
       {
         q: `What certification do you provide after extraction cleaning in ${city}?`,
@@ -199,7 +197,7 @@ export const serviceConfigs = {
       },
       {
         q: `How much do fan repairs cost in ${city}?`,
-        a: `Fan repair costs in ${city} depend on the fault type and parts required. Emergency callouts start from £150. Our engineer will diagnose the fault and provide a quote before carrying out any work. In some cases replacement may be more cost-effective — we'll advise honestly.`,
+        a: `The cost of fan repairs varies depending on the fault type and parts required. Every kitchen extraction system is different, so pricing is based on the specific diagnosis and work needed. Our engineer will provide a full quote before any work begins — in some cases replacement may be more cost-effective and we'll advise honestly.`,
       },
       {
         q: `How long do fan repairs take in ${city}?`,
@@ -261,7 +259,7 @@ export const serviceConfigs = {
       },
       {
         q: `How much does a fan replacement cost in ${city}?`,
-        a: `Fan replacement costs in ${city} depend on the fan type, size, and installation complexity. Our engineer will assess the existing unit and provide a full quote for supply and installation before any work begins. Emergency callouts start from £150.`,
+        a: `The cost of fan replacements varies depending on the fan type, size, and installation complexity. Every kitchen extraction system is different, so pricing is based on the specific fan and installation requirements. Our engineer will assess the existing unit and provide a full quote before any work begins.`,
       },
     ],
     relatedLinks: (slug, city) => [

@@ -8,11 +8,10 @@ import { cityMap } from '../data/cities'
 
 const cleaningSteps = [
   { icon: Ruler,         step: '01', title: 'Grease Assessment',       desc: 'We measure grease depth throughout the canopy and duct run using TR19 methodology before any work begins.' },
-  { icon: Wind,          step: '02', title: 'Baffle Removal & Soak',   desc: 'All baffles are removed and placed in a hot degreasing solution to dissolve accumulated cooking grease.' },
-  { icon: Wrench,        step: '03', title: 'Canopy Deep Clean',       desc: 'Hood interior, plenum chamber, and all internal surfaces are pressure-cleaned and hand-degreased to bare metal.' },
-  { icon: FileCheck,     step: '04', title: 'Full Duct Run Clean',     desc: 'The complete extraction duct from canopy to discharge point is cleaned — not just the visible canopy section.' },
-  { icon: Camera,        step: '05', title: 'Photographic Evidence',   desc: 'Before-and-after photographs of every section are taken and compiled into your compliance evidence pack.' },
-  { icon: ClipboardCheck,step: '06', title: 'TR19 Certificate',        desc: 'A signed TR19 compliance certificate is issued on completion — accepted by all major commercial property insurers.' },
+  { icon: Wrench,        step: '02', title: 'Canopy Deep Clean',       desc: 'Hood interior, plenum chamber, and all internal surfaces are pressure-cleaned and hand-degreased to bare metal.' },
+  { icon: FileCheck,     step: '03', title: 'Full Duct Run Clean',     desc: 'The complete extraction duct from canopy to discharge point is cleaned — not just the visible canopy section.' },
+  { icon: Camera,        step: '04', title: 'Photographic Evidence',   desc: 'Before-and-after photographs of every section are taken and compiled into your compliance evidence pack.' },
+  { icon: ClipboardCheck,step: '05', title: 'TR19 Certificate',        desc: 'A signed TR19 compliance certificate is issued on completion — accepted by all major commercial property insurers.' },
 ]
 
 const includes = [
@@ -31,7 +30,7 @@ function buildFaqs(city) {
   return [
     {
       q: `What does canopy cleaning involve in ${city.name}?`,
-      a: `Canopy cleaning in ${city.name} covers the full extraction system — canopy hood, baffles, plenum chamber, and the complete duct run to the discharge point. Our engineers remove and soak all baffles, pressure-clean internal surfaces, and clean every metre of ductwork. A TR19 compliance certificate and photographic evidence pack are issued on completion.`,
+      a: `Canopy cleaning in ${city.name} covers the full extraction system — canopy hood, plenum chamber, and the complete duct run to the discharge point. Our engineers pressure-clean all internal surfaces and clean every metre of ductwork. A TR19 compliance certificate and photographic evidence pack are issued on completion.`,
     },
     {
       q: `Is canopy cleaning a legal requirement for ${city.name} kitchens?`,

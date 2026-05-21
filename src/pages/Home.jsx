@@ -110,7 +110,7 @@ const faqs = [
   },
   {
     q: 'What does commercial canopy cleaning cost?',
-    a: 'Emergency callouts start from £150. Scheduled canopy cleaning prices depend on kitchen size, number of canopies and duct run length. We provide free no-obligation quotes — contact us for pricing tailored to your premises.',
+    a: 'The cost of commercial canopy cleaning varies depending on the number of systems installed, the size of the canopy, and access points. Every kitchen extraction system is different, so pricing is based on the condition and layout of your system. Contact us for a free no-obligation quote tailored to your premises.',
   },
   {
     q: 'What happens if I don\'t clean my canopy?',
