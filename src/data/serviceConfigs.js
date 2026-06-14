@@ -11,7 +11,7 @@ export const serviceConfigs = {
     sectionLabel: (city) => `Kitchen Extract Cleaning — ${city}`,
     intro:    (city, region) => `Complete kitchen extract cleaning in ${city}${region ? ` and across ${region}` : ''} — the full extraction system from canopy hood to discharge point, cleaned and certified to TR19 standards.`,
     highlights: [
-      { title: 'Canopy Cleaning',          desc: 'The hood interior behind the filters, plenum chamber, and all internal surfaces are manually cleaned using scrapers, specialist chemicals, and hand degreasing methods to restore the system back to bare metal standard. Filters are not included in this clean.' },
+      { title: 'Canopy Cleaning',          desc: 'We clean the inside of the canopy, including all accessible internal surfaces where grease and carbon build-up occurs, helping keep your kitchen safe, hygienic, and TR19 compliant.' },
       { title: 'Plenum Chamber',           desc: 'Internal plenum chamber cleaned and inspected for grease accumulation.' },
       { title: 'Full Duct Run',            desc: 'Extraction ductwork cleaned from canopy to external discharge point.' },
       { title: 'Extraction Fan',           desc: 'Fan impeller and housing cleaned to improve airflow and reduce fire risk.' },
@@ -58,7 +58,7 @@ export const serviceConfigs = {
     intro:    (city, region) => `TR19-certified kitchen ventilation cleaning in ${city}${region ? ` and across ${region}` : ''} — canopy, ductwork, and fans cleaned to the BESA TR19 standard with full compliance documentation issued on completion.`,
     highlights: [
       { title: 'TR19 Grease Assessment',   desc: 'Grease depth measured at all key points before and after cleaning to TR19 methodology.' },
-      { title: 'Canopy Cleaning',          desc: 'The hood interior behind the filters, plenum chamber, and all internal surfaces are manually cleaned using scrapers, specialist chemicals, and hand degreasing methods to restore the system back to bare metal standard. Filters are not included in this clean.' },
+      { title: 'Canopy Cleaning',          desc: 'We clean the inside of the canopy, including all accessible internal surfaces where grease and carbon build-up occurs, helping keep your kitchen safe, hygienic, and TR19 compliant.' },
       { title: 'Full Duct Run Cleaning',   desc: 'Complete extraction duct cleaned from canopy to discharge — access panels used throughout.' },
       { title: 'Fan Cleaning',             desc: 'Extraction fan cleaned and inspected as part of the TR19 service.' },
       { title: 'Photographic Evidence',    desc: 'Before and after photos of every section compiled into your compliance evidence pack.' },
@@ -108,7 +108,7 @@ export const serviceConfigs = {
     
     intro:    (city, region) => `Kitchen extraction cleaning in ${city}${region ? ` and across ${region}` : ''} — the complete extraction system degreased, cleaned, and certified to TR19 standard. Canopy, duct run, fans, and discharge point all covered.`,
     highlights: [
-      { title: 'Canopy Cleaning',          desc: 'The hood interior behind the filters, plenum chamber, and all internal surfaces are manually cleaned using scrapers, specialist chemicals, and hand degreasing methods to restore the system back to bare metal standard. Filters are not included in this clean.' },
+      { title: 'Canopy Cleaning',          desc: 'We clean the inside of the canopy, including all accessible internal surfaces where grease and carbon build-up occurs, helping keep your kitchen safe, hygienic, and TR19 compliant.' },
       { title: 'Plenum Chamber',           desc: 'Internal plenum chamber cleaned and inspected for grease accumulation.' },
       { title: 'Extraction Ductwork',      desc: 'Full duct run cleaned from canopy to external discharge point using TR19-compliant access.' },
       { title: 'Extraction Fan Unit',      desc: 'Fan impeller and housing cleaned to remove grease and improve airflow.' },

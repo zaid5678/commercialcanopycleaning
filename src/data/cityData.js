@@ -585,6 +585,389 @@ const cityData = {
     region: 'East Sussex',
     nearby: ['Worthing', 'Lewes', 'Eastbourne', 'Horsham', 'Haywards Heath', 'Shoreham-by-Sea'],
   },
+  // ── London sub-areas added June 2026 ──────────────────────────────────────
+  greenwich: {
+    region: 'Greater London',
+    nearby: ['Lewisham', 'Woolwich', 'Deptford', 'Eltham', 'Blackheath', 'Charlton'],
+  },
+  lambeth: {
+    region: 'Greater London',
+    nearby: ['Brixton', 'Clapham', 'Kennington', 'Stockwell', 'Streatham', 'Waterloo'],
+  },
+  wandsworth: {
+    region: 'Greater London',
+    nearby: ['Clapham', 'Battersea', 'Tooting', 'Balham', 'Putney', 'Earlsfield'],
+  },
+  kensington: {
+    region: 'Greater London',
+    nearby: ['Chelsea', 'Hammersmith', 'Fulham', 'Westminster', 'Notting Hill', 'Earls Court'],
+  },
+  chelsea: {
+    region: 'Greater London',
+    nearby: ['Kensington', 'Fulham', 'Battersea', 'Westminster', 'Belgravia', 'Earls Court'],
+  },
+  hammersmith: {
+    region: 'Greater London',
+    nearby: ['Fulham', 'Chiswick', 'Shepherd\'s Bush', 'Kensington', 'Acton', 'Barnes'],
+  },
+  fulham: {
+    region: 'Greater London',
+    nearby: ['Hammersmith', 'Chelsea', 'Putney', 'Wandsworth', 'Kensington', 'Earls Court'],
+  },
+  hounslow: {
+    region: 'Greater London',
+    nearby: ['Isleworth', 'Brentford', 'Chiswick', 'Feltham', 'Richmond', 'Twickenham'],
+  },
+  brent: {
+    region: 'Greater London',
+    nearby: ['Wembley', 'Harrow', 'Kilburn', 'Willesden', 'Neasden', 'Stonebridge'],
+  },
+  wembley: {
+    region: 'Greater London',
+    nearby: ['Harrow', 'Brent', 'Willesden', 'Greenford', 'Northolt', 'Sudbury'],
+  },
+  harrow: {
+    region: 'Greater London',
+    nearby: ['Wembley', 'Pinner', 'Ruislip', 'Edgware', 'Stanmore', 'Northwood'],
+  },
+  enfield: {
+    region: 'Greater London',
+    nearby: ['Barnet', 'Haringey', 'Cheshunt', 'Waltham Cross', 'Potters Bar', 'Edmonton'],
+  },
+  haringey: {
+    region: 'Greater London',
+    nearby: ['Tottenham', 'Wood Green', 'Hornsey', 'Enfield', 'Islington', 'Hackney'],
+  },
+  islington: {
+    region: 'Greater London',
+    nearby: ['Camden', 'Hackney', 'Haringey', 'Westminster', 'City of London', 'Finsbury Park'],
+  },
+  camden: {
+    region: 'Greater London',
+    nearby: ['Islington', 'Westminster', 'Hampstead', 'Kentish Town', 'Chalk Farm', 'Kilburn'],
+  },
+  'tower-hamlets': {
+    region: 'Greater London',
+    nearby: ['Newham', 'Hackney', 'Canary Wharf', 'Stepney', 'Bow', 'Bethnal Green'],
+  },
+  newham: {
+    region: 'Greater London',
+    nearby: ['Stratford', 'Tower Hamlets', 'Barking', 'West Ham', 'Plaistow', 'Forest Gate'],
+  },
+  'barking-and-dagenham': {
+    region: 'Greater London',
+    nearby: ['Newham', 'Redbridge', 'Havering', 'Ilford', 'Romford', 'East Ham'],
+  },
+  redbridge: {
+    region: 'Greater London',
+    nearby: ['Ilford', 'Barking', 'Havering', 'Waltham Forest', 'Newham', 'Woodford'],
+  },
+  havering: {
+    region: 'Greater London',
+    nearby: ['Romford', 'Hornchurch', 'Upminster', 'Redbridge', 'Barking', 'Brentwood'],
+  },
+  sutton: {
+    region: 'Greater London',
+    nearby: ['Merton', 'Croydon', 'Kingston', 'Carshalton', 'Cheam', 'Epsom'],
+  },
+  merton: {
+    region: 'Greater London',
+    nearby: ['Wimbledon', 'Sutton', 'Wandsworth', 'Croydon', 'Mitcham', 'Tooting'],
+  },
+  'kingston-upon-thames': {
+    region: 'Greater London',
+    nearby: ['Richmond', 'Wimbledon', 'Surbiton', 'New Malden', 'Twickenham', 'Esher'],
+  },
+  'richmond-upon-thames': {
+    region: 'Greater London',
+    nearby: ['Kingston', 'Twickenham', 'Hounslow', 'Barnes', 'Kew', 'Ham'],
+  },
+  bexley: {
+    region: 'Greater London',
+    nearby: ['Dartford', 'Bromley', 'Greenwich', 'Bexleyheath', 'Sidcup', 'Erith'],
+  },
+  ilford: {
+    region: 'Greater London',
+    nearby: ['Barking', 'Redbridge', 'Newham', 'Romford', 'Wanstead', 'Seven Kings'],
+  },
+  stratford: {
+    region: 'Greater London',
+    nearby: ['Newham', 'Tower Hamlets', 'Hackney', 'West Ham', 'Leyton', 'Forest Gate'],
+  },
+  uxbridge: {
+    region: 'Greater London',
+    nearby: ['Hillingdon', 'Hayes', 'Slough', 'Harrow', 'Ruislip', 'Staines'],
+  },
+  hayes: {
+    region: 'Greater London',
+    nearby: ['Uxbridge', 'Southall', 'Hillingdon', 'Slough', 'Ealing', 'Harlington'],
+  },
+  hillingdon: {
+    region: 'Greater London',
+    nearby: ['Uxbridge', 'Hayes', 'Ruislip', 'Harrow', 'Northolt', 'Yiewsley'],
+  },
+  edgware: {
+    region: 'Greater London',
+    nearby: ['Harrow', 'Barnet', 'Mill Hill', 'Stanmore', 'Borehamwood', 'Elstree'],
+  },
+  finchley: {
+    region: 'Greater London',
+    nearby: ['Barnet', 'Edgware', 'Golders Green', 'Muswell Hill', 'East Finchley', 'Whetstone'],
+  },
+  'wood-green': {
+    region: 'Greater London',
+    nearby: ['Tottenham', 'Haringey', 'Muswell Hill', 'Hornsey', 'Palmers Green', 'Bounds Green'],
+  },
+  tottenham: {
+    region: 'Greater London',
+    nearby: ['Wood Green', 'Haringey', 'Enfield', 'Edmonton', 'Walthamstow', 'Stoke Newington'],
+  },
+  acton: {
+    region: 'Greater London',
+    nearby: ['Ealing', 'Hammersmith', 'Chiswick', 'Shepherd\'s Bush', 'Southall', 'Brentford'],
+  },
+  kilburn: {
+    region: 'Greater London',
+    nearby: ['Brent', 'Camden', 'Westminster', 'Willesden', 'Maida Vale', 'Brondesbury'],
+  },
+  willesden: {
+    region: 'Greater London',
+    nearby: ['Brent', 'Kilburn', 'Wembley', 'Neasden', 'Cricklewood', 'Harlesden'],
+  },
+  clapham: {
+    region: 'Greater London',
+    nearby: ['Brixton', 'Wandsworth', 'Battersea', 'Balham', 'Stockwell', 'Streatham'],
+  },
+  brixton: {
+    region: 'Greater London',
+    nearby: ['Clapham', 'Lambeth', 'Streatham', 'Stockwell', 'Herne Hill', 'Tulse Hill'],
+  },
+  peckham: {
+    region: 'Greater London',
+    nearby: ['Camberwell', 'Lewisham', 'Deptford', 'Bermondsey', 'New Cross', 'Dulwich'],
+  },
+  'canary-wharf': {
+    region: 'Greater London',
+    nearby: ['Tower Hamlets', 'Greenwich', 'Docklands', 'Bermondsey', 'Rotherhithe', 'Limehouse'],
+  },
+  // ── Birmingham sub-areas added June 2026 ──────────────────────────────────
+  'birmingham-city-centre': {
+    region: 'West Midlands',
+    nearby: ['Digbeth', 'Edgbaston', 'Aston', 'Nechells', 'Ladywood', 'Jewellery Quarter'],
+  },
+  edgbaston: {
+    region: 'West Midlands',
+    nearby: ['Birmingham City Centre', 'Harborne', 'Selly Oak', 'Bournville', 'Moseley', 'Ladywood'],
+  },
+  harborne: {
+    region: 'West Midlands',
+    nearby: ['Edgbaston', 'Selly Oak', 'Birmingham City Centre', 'Quinton', 'Northfield', 'Bearwood'],
+  },
+  'selly-oak': {
+    region: 'West Midlands',
+    nearby: ['Edgbaston', 'Harborne', 'Bournville', 'Stirchley', 'Moseley', 'Northfield'],
+  },
+  aston: {
+    region: 'West Midlands',
+    nearby: ['Birmingham City Centre', 'Erdington', 'Handsworth', 'Nechells', 'Newtown', 'Perry Barr'],
+  },
+  erdington: {
+    region: 'West Midlands',
+    nearby: ['Aston', 'Great Barr', 'Sutton Coldfield', 'Perry Barr', 'Castle Bromwich', 'Tyburn'],
+  },
+  yardley: {
+    region: 'West Midlands',
+    nearby: ['Sheldon', 'Acocks Green', 'Small Heath', 'Stechford', 'Bordesley Green', 'Hall Green'],
+  },
+  sheldon: {
+    region: 'West Midlands',
+    nearby: ['Yardley', 'Acocks Green', 'Solihull', 'Birmingham Airport', 'Marston Green', 'Elmdon'],
+  },
+  'acocks-green': {
+    region: 'West Midlands',
+    nearby: ['Yardley', 'Moseley', 'Hall Green', 'Sheldon', 'Small Heath', 'Sparkhill'],
+  },
+  moseley: {
+    region: 'West Midlands',
+    nearby: ['Kings Heath', 'Edgbaston', 'Sparkhill', 'Balsall Heath', 'Stirchley', 'Selly Oak'],
+  },
+  'kings-heath': {
+    region: 'West Midlands',
+    nearby: ['Moseley', 'Stirchley', 'Bournville', 'Hall Green', 'Sparkhill', 'Edgbaston'],
+  },
+  stirchley: {
+    region: 'West Midlands',
+    nearby: ['Kings Heath', 'Selly Oak', 'Bournville', 'Cotteridge', 'Northfield', 'Moseley'],
+  },
+  sparkhill: {
+    region: 'West Midlands',
+    nearby: ['Sparkbrook', 'Moseley', 'Small Heath', 'Acocks Green', 'Hall Green', 'Kings Heath'],
+  },
+  'small-heath': {
+    region: 'West Midlands',
+    nearby: ['Sparkhill', 'Bordesley Green', 'Yardley', 'Sparkbrook', 'Hay Mills', 'Bordesley'],
+  },
+  'bordesley-green': {
+    region: 'West Midlands',
+    nearby: ['Small Heath', 'Yardley', 'Stechford', 'Washwood Heath', 'Sparkbrook', 'Hay Mills'],
+  },
+  handsworth: {
+    region: 'West Midlands',
+    nearby: ['Aston', 'Perry Barr', 'Great Barr', 'Lozells', 'West Bromwich', 'Smethwick'],
+  },
+  'perry-barr': {
+    region: 'West Midlands',
+    nearby: ['Handsworth', 'Great Barr', 'Erdington', 'Aston', 'Walsall', 'Sutton Coldfield'],
+  },
+  'great-barr': {
+    region: 'West Midlands',
+    nearby: ['Perry Barr', 'Erdington', 'Walsall', 'Handsworth', 'Sutton Coldfield', 'Brownhills'],
+  },
+  oldbury: {
+    region: 'West Midlands',
+    nearby: ['West Bromwich', 'Smethwick', 'Wolverhampton', 'Dudley', 'Tipton', 'Halesowen'],
+  },
+  halesowen: {
+    region: 'West Midlands',
+    nearby: ['Oldbury', 'Stourbridge', 'Dudley', 'Bromsgrove', 'West Bromwich', 'Kidderminster'],
+  },
+  stourbridge: {
+    region: 'West Midlands',
+    nearby: ['Halesowen', 'Dudley', 'Kidderminster', 'Wolverhampton', 'Bromsgrove', 'Kingswinford'],
+  },
+  tipton: {
+    region: 'West Midlands',
+    nearby: ['Dudley', 'West Bromwich', 'Oldbury', 'Bilston', 'Wednesbury', 'Coseley'],
+  },
+  bilston: {
+    region: 'West Midlands',
+    nearby: ['Wolverhampton', 'Tipton', 'Wednesbury', 'Coseley', 'Sedgley', 'Bradley'],
+  },
+  brownhills: {
+    region: 'West Midlands',
+    nearby: ['Walsall', 'Cannock', 'Lichfield', 'Great Barr', 'Aldridge', 'Burntwood'],
+  },
+  cannock: {
+    region: 'Staffordshire',
+    nearby: ['Walsall', 'Lichfield', 'Stafford', 'Brownhills', 'Rugeley', 'Hednesford'],
+  },
+  tamworth: {
+    region: 'Staffordshire',
+    nearby: ['Lichfield', 'Birmingham', 'Burton upon Trent', 'Sutton Coldfield', 'Atherstone', 'Fazeley'],
+  },
+  redditch: {
+    region: 'Worcestershire',
+    nearby: ['Birmingham', 'Bromsgrove', 'Worcester', 'Stratford-upon-Avon', 'Solihull', 'Droitwich'],
+  },
+  kidderminster: {
+    region: 'Worcestershire',
+    nearby: ['Stourbridge', 'Worcester', 'Halesowen', 'Bromsgrove', 'Bewdley', 'Dudley'],
+  },
+  // ── Manchester sub-areas added June 2026 ──────────────────────────────────
+  'manchester-city-centre': {
+    region: 'Greater Manchester',
+    nearby: ['Salford', 'Ancoats', 'Deansgate', 'Castlefield', 'Northern Quarter', 'Hulme'],
+  },
+  ancoats: {
+    region: 'Greater Manchester',
+    nearby: ['Manchester City Centre', 'Northern Quarter', 'Ardwick', 'Openshaw', 'Miles Platting', 'Beswick'],
+  },
+  'northern-quarter': {
+    region: 'Greater Manchester',
+    nearby: ['Manchester City Centre', 'Ancoats', 'Piccadilly', 'Stevenson Square', 'Shudehill', 'Oldham Street'],
+  },
+  deansgate: {
+    region: 'Greater Manchester',
+    nearby: ['Manchester City Centre', 'Castlefield', 'Spinningfields', 'Hulme', 'Salford', 'Didsbury'],
+  },
+  castlefield: {
+    region: 'Greater Manchester',
+    nearby: ['Deansgate', 'Manchester City Centre', 'Salford', 'Hulme', 'Trafford', 'Cornbrook'],
+  },
+  'salford-quays': {
+    region: 'Greater Manchester',
+    nearby: ['Salford', 'Trafford', 'Manchester City Centre', 'Eccles', 'Stretford', 'Castlefield'],
+  },
+  stretford: {
+    region: 'Greater Manchester',
+    nearby: ['Trafford', 'Sale', 'Salford Quays', 'Old Trafford', 'Urmston', 'Chorlton'],
+  },
+  sale: {
+    region: 'Greater Manchester',
+    nearby: ['Stretford', 'Altrincham', 'Wythenshawe', 'Trafford', 'Urmston', 'Partington'],
+  },
+  wythenshawe: {
+    region: 'Greater Manchester',
+    nearby: ['Sale', 'Chorlton', 'Didsbury', 'Sharston', 'Northenden', 'Benchill'],
+  },
+  chorlton: {
+    region: 'Greater Manchester',
+    nearby: ['Didsbury', 'Hulme', 'Stretford', 'Wythenshawe', 'Fallowfield', 'Withington'],
+  },
+  hulme: {
+    region: 'Greater Manchester',
+    nearby: ['Manchester City Centre', 'Chorlton', 'Moss Side', 'Stretford', 'Rusholme', 'Castlefield'],
+  },
+  rusholme: {
+    region: 'Greater Manchester',
+    nearby: ['Fallowfield', 'Moss Side', 'Hulme', 'Longsight', 'Didsbury', 'Victoria Park'],
+  },
+  fallowfield: {
+    region: 'Greater Manchester',
+    nearby: ['Rusholme', 'Withington', 'Didsbury', 'Chorlton', 'Moss Side', 'Longsight'],
+  },
+  longsight: {
+    region: 'Greater Manchester',
+    nearby: ['Rusholme', 'Ardwick', 'Levenshulme', 'Gorton', 'Openshaw', 'Fallowfield'],
+  },
+  ardwick: {
+    region: 'Greater Manchester',
+    nearby: ['Manchester City Centre', 'Ancoats', 'Openshaw', 'Longsight', 'Gorton', 'Chorlton'],
+  },
+  'moss-side': {
+    region: 'Greater Manchester',
+    nearby: ['Hulme', 'Rusholme', 'Fallowfield', 'Chorlton', 'Longsight', 'Whalley Range'],
+  },
+  'cheetham-hill': {
+    region: 'Greater Manchester',
+    nearby: ['Manchester City Centre', 'Salford', 'Moston', 'Blackley', 'Harpurhey', 'Strangeways'],
+  },
+  moston: {
+    region: 'Greater Manchester',
+    nearby: ['Harpurhey', 'Blackley', 'Cheetham Hill', 'Failsworth', 'Newton Heath', 'Collyhurst'],
+  },
+  blackley: {
+    region: 'Greater Manchester',
+    nearby: ['Moston', 'Harpurhey', 'Cheetham Hill', 'Middleton', 'Newton Heath', 'Crumpsall'],
+  },
+  harpurhey: {
+    region: 'Greater Manchester',
+    nearby: ['Moston', 'Blackley', 'Cheetham Hill', 'Collyhurst', 'Newton Heath', 'Miles Platting'],
+  },
+  gorton: {
+    region: 'Greater Manchester',
+    nearby: ['Ardwick', 'Longsight', 'Levenshulme', 'Openshaw', 'Denton', 'Reddish'],
+  },
+  levenshulme: {
+    region: 'Greater Manchester',
+    nearby: ['Gorton', 'Longsight', 'Didsbury', 'Fallowfield', 'Stockport', 'Heaton Chapel'],
+  },
+  openshaw: {
+    region: 'Greater Manchester',
+    nearby: ['Ardwick', 'Gorton', 'Droylsden', 'Ancoats', 'Newton Heath', 'Clayton'],
+  },
+  denton: {
+    region: 'Greater Manchester',
+    nearby: ['Stockport', 'Droylsden', 'Openshaw', 'Hyde', 'Audenshaw', 'Reddish'],
+  },
+  droylsden: {
+    region: 'Greater Manchester',
+    nearby: ['Openshaw', 'Denton', 'Ashton-under-Lyne', 'Failsworth', 'Stalybridge', 'Audenshaw'],
+  },
+  'ashton-under-lyne': {
+    region: 'Greater Manchester',
+    nearby: ['Oldham', 'Droylsden', 'Stalybridge', 'Hyde', 'Tameside', 'Mossley'],
+  },
 }
 
 export default cityData

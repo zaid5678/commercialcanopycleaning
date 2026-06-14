@@ -27,6 +27,26 @@ const cityNames = [
   'Hoddesdon','Worksop','Salisbury','Ilkeston','Southall','Accrington',
   'Harpenden','Ealing','Stalybridge','Workington','Rickmansworth',
   'Potters Bar','Ripley','Brighton and Hove',
+  // London sub-areas added June 2026
+  'Greenwich','Lambeth','Wandsworth','Kensington','Chelsea','Hammersmith',
+  'Fulham','Hounslow','Brent','Wembley','Harrow','Enfield','Haringey',
+  'Islington','Camden','Tower Hamlets','Newham','Barking and Dagenham',
+  'Redbridge','Havering','Sutton','Merton','Kingston upon Thames',
+  'Richmond upon Thames','Bexley','Ilford','Stratford','Uxbridge','Hayes',
+  'Hillingdon','Edgware','Finchley','Wood Green','Tottenham','Acton',
+  'Kilburn','Willesden','Clapham','Brixton','Peckham','Canary Wharf',
+  // Birmingham sub-areas added June 2026
+  'Birmingham City Centre','Edgbaston','Harborne','Selly Oak','Aston',
+  'Erdington','Yardley','Sheldon','Acocks Green','Moseley','Kings Heath',
+  'Stirchley','Sparkhill','Small Heath','Bordesley Green','Handsworth',
+  'Perry Barr','Great Barr','Oldbury','Halesowen','Stourbridge','Tipton',
+  'Bilston','Brownhills','Cannock','Tamworth','Redditch','Kidderminster',
+  // Manchester sub-areas added June 2026
+  'Manchester City Centre','Ancoats','Northern Quarter','Deansgate',
+  'Castlefield','Salford Quays','Stretford','Sale','Wythenshawe','Chorlton',
+  'Hulme','Rusholme','Fallowfield','Longsight','Ardwick','Moss Side',
+  'Cheetham Hill','Moston','Blackley','Harpurhey','Gorton','Levenshulme',
+  'Openshaw','Denton','Droylsden','Ashton-under-Lyne',
 ]
 
 export const cities = cityNames.map(name => {
