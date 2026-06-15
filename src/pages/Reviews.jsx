@@ -1,4 +1,5 @@
-import { Phone, Quote } from 'lucide-react'
+import { useState, useEffect, useCallback } from 'react'
+import { Phone, Quote, X, ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react'
 import PageTransition from '../components/PageTransition'
 import ScrollReveal from '../components/ScrollReveal'
 
@@ -15,86 +16,199 @@ const reviews = [
     text: 'Our kitchen extractor fan failed on a very busy Friday evening and we were in serious trouble. Commercial Canopy Cleaning arrived quickly, supplied and fitted a new fan, and had everything running again within 2 hours. Exceptional emergency service.',
     name: 'Ahmed Khan',
     role: 'Restaurant Owner',
-    image: '/review_images/review_1.png',
+    images: [{ src: '/review_images/review_1.png', label: null }],
   },
   {
     text: 'Full canopy, duct, and extraction system clean carried out to a very high standard. Everything was left spotless and fully compliant with TR19 requirements. Excellent communication throughout.',
     name: 'James Carter',
     role: 'Head Chef',
-    before: '/review_images/review_2_before.png',
-    after: '/review_images/review_2_after.png',
+    images: [
+      { src: '/review_images/review_2_before.png', label: 'Before' },
+      { src: '/review_images/review_2_after.png', label: 'After' },
+    ],
   },
   {
     text: 'We had serious grease build-up affecting airflow. The team completed a full canopy and duct cleaning service and the difference was immediate. Professional, efficient, and reliable.',
     name: 'Ayesha Malik',
     role: 'Café Manager',
-    before: '/review_images/review_3_before.png',
-    after: '/review_images/review_3_after.png',
+    images: [
+      { src: '/review_images/review_3_before.png', label: 'Before' },
+      { src: '/review_images/review_3_after.png', label: 'After' },
+    ],
   },
   {
     text: 'They installed access panels on our ductwork and carried out a full clean of the extraction system. Everything is now much easier to maintain and fully compliant.',
     name: 'Oliver Bennett',
     role: 'Facilities Manager',
-    image: '/review_images/review_4.png',
+    images: [{ src: '/review_images/review_4.png', label: null }],
   },
   {
     text: 'Very professional service from start to finish. They worked around our opening hours and completed a full kitchen extraction clean with minimal disruption to our business.',
     name: 'Daniel Wright',
     role: 'Operations Manager',
-    before: '/review_images/review_5_before.png',
-    after: '/review_images/review_5_after.png',
+    images: [
+      { src: '/review_images/review_5_before.png', label: 'Before' },
+      { src: '/review_images/review_5_after.png', label: 'After' },
+    ],
   },
   {
     text: 'Excellent service and great attention to detail. Full canopy, fan, and duct cleaning completed with certification and photographic evidence provided straight after.',
     name: 'Bilal Hussain',
     role: 'Takeaway Owner',
-    before: '/review_images/review_6_before.png',
-    after: '/review_images/review_6_after.png',
+    images: [
+      { src: '/review_images/review_6_before.png', label: 'Before' },
+      { src: '/review_images/review_6_after.png', label: 'After' },
+    ],
   },
 ]
 
-function ReviewImages({ review }) {
-  if (review.before && review.after) {
-    return (
-      <div className="flex gap-1 w-full bg-black flex-shrink-0">
-        <div className="relative flex-1">
-          <img
-            src={review.before}
-            alt="Before"
-            className="w-full h-full object-contain"
-          />
-          <span className="absolute bottom-2 left-2 font-body text-xs text-white/80 bg-black/60 px-2 py-0.5 uppercase tracking-widest">
-            Before
+// Flat list of all images for lightbox navigation
+const allImages = reviews.flatMap(r => r.images)
+
+function Lightbox({ img, onClose, onPrev, onNext, hasPrev, hasNext }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose()
+      if (e.key === 'ArrowLeft' && hasPrev) onPrev()
+      if (e.key === 'ArrowRight' && hasNext) onNext()
+    }
+    document.addEventListener('keydown', onKey)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.body.style.overflow = ''
+    }
+  }, [onClose, onPrev, onNext, hasPrev, hasNext])
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/95"
+      onClick={onClose}
+    >
+      {/* Close */}
+      <button
+        className="absolute top-4 right-4 text-white/60 hover:text-white p-2 z-10"
+        onClick={onClose}
+        aria-label="Close"
+      >
+        <X size={28} />
+      </button>
+
+      {/* Prev */}
+      {hasPrev && (
+        <button
+          className="absolute left-2 sm:left-6 text-white/50 hover:text-white p-3 z-10"
+          onClick={(e) => { e.stopPropagation(); onPrev() }}
+          aria-label="Previous image"
+        >
+          <ChevronLeft size={36} />
+        </button>
+      )}
+
+      {/* Image */}
+      <div
+        className="max-w-[95vw] max-h-[90vh] relative"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <img
+          src={img.src}
+          alt={img.label || 'Review image'}
+          className="max-w-[95vw] max-h-[90vh] object-contain select-none"
+        />
+        {img.label && (
+          <span className="absolute bottom-3 left-3 font-body text-xs text-white/80 bg-black/60 px-2 py-0.5 uppercase tracking-widest">
+            {img.label}
           </span>
-        </div>
-        <div className="w-px bg-white/10 flex-shrink-0" />
-        <div className="relative flex-1">
-          <img
-            src={review.after}
-            alt="After"
-            className="w-full h-full object-contain"
-          />
-          <span className="absolute bottom-2 right-2 font-body text-xs text-white/80 bg-black/60 px-2 py-0.5 uppercase tracking-widest">
-            After
-          </span>
-        </div>
+        )}
       </div>
+
+      {/* Next */}
+      {hasNext && (
+        <button
+          className="absolute right-2 sm:right-6 text-white/50 hover:text-white p-3 z-10"
+          onClick={(e) => { e.stopPropagation(); onNext() }}
+          aria-label="Next image"
+        >
+          <ChevronRight size={36} />
+        </button>
+      )}
+    </div>
+  )
+}
+
+function ReviewImages({ images, onOpen }) {
+  const isSingle = images.length === 1
+
+  if (isSingle) {
+    return (
+      <button
+        className="w-full bg-black flex-shrink-0 relative group cursor-zoom-in"
+        onClick={() => onOpen(images[0])}
+        aria-label="Expand image"
+      >
+        <img
+          src={images[0].src}
+          alt="Review"
+          className="w-full object-contain"
+        />
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity bg-black/30">
+          <ZoomIn size={28} className="text-white drop-shadow" />
+        </div>
+      </button>
     )
   }
+
   return (
-    <div className="w-full bg-black flex-shrink-0">
-      <img
-        src={review.image}
-        alt={`Work by Commercial Canopy Cleaning — ${review.role}`}
-        className="w-full h-full object-contain"
-      />
+    <div className="flex gap-0.5 w-full bg-black flex-shrink-0">
+      {images.map((img) => (
+        <button
+          key={img.src}
+          className="relative flex-1 group cursor-zoom-in"
+          onClick={() => onOpen(img)}
+          aria-label={`Expand ${img.label} image`}
+        >
+          <img
+            src={img.src}
+            alt={img.label}
+            className="w-full object-contain"
+          />
+          {img.label && (
+            <span className="absolute bottom-2 left-1/2 -translate-x-1/2 font-body text-xs text-white/80 bg-black/60 px-2 py-0.5 uppercase tracking-widest pointer-events-none">
+              {img.label}
+            </span>
+          )}
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity bg-black/30">
+            <ZoomIn size={22} className="text-white drop-shadow" />
+          </div>
+        </button>
+      ))}
     </div>
   )
 }
 
 export default function Reviews() {
+  const [lightbox, setLightbox] = useState(null) // { src, label }
+
+  const openLightbox = useCallback((img) => setLightbox(img), [])
+  const closeLightbox = useCallback(() => setLightbox(null), [])
+
+  const currentIndex = lightbox ? allImages.findIndex(i => i.src === lightbox.src) : -1
+  const goPrev = useCallback(() => setLightbox(allImages[currentIndex - 1]), [currentIndex])
+  const goNext = useCallback(() => setLightbox(allImages[currentIndex + 1]), [currentIndex])
+
   return (
     <PageTransition>
+      {lightbox && (
+        <Lightbox
+          img={lightbox}
+          onClose={closeLightbox}
+          onPrev={goPrev}
+          onNext={goNext}
+          hasPrev={currentIndex > 0}
+          hasNext={currentIndex < allImages.length - 1}
+        />
+      )}
+
       {/* Hero */}
       <section className="pt-28 sm:pt-36 pb-12 sm:pb-16 relative overflow-hidden">
         <div
@@ -123,12 +237,12 @@ export default function Reviews() {
       {/* Reviews grid */}
       <section className="py-16 sm:py-24 bg-brand-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {reviews.map((review, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <div className="card-surface flex flex-col h-full overflow-hidden">
-                  <ReviewImages review={review} />
-                  <div className="p-6 flex flex-col flex-1">
+                  <ReviewImages images={review.images} onOpen={openLightbox} />
+                  <div className="p-5 sm:p-6 flex flex-col flex-1">
                     <Quote size={20} className="text-brand-blue-bright/30 mb-3 flex-shrink-0" />
                     <p className="font-body text-white/65 text-sm leading-relaxed flex-1 mb-6">
                       {review.text}
