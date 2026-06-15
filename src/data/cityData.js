@@ -2,95 +2,95 @@
 const cityData = {
   london: {
     region: 'Greater London',
-    nearby: ['Westminster', 'Croydon', 'Barnet', 'Hackney', 'Southwark', 'Ealing', 'Bromley', 'Lewisham'],
+    nearby: ["Westminster","Camden","Islington","Hammersmith","Wandsworth","Lambeth","Southwark","Tower Hamlets","Hackney","Newham","Greenwich","Lewisham","Croydon","Bromley","Ealing","Hounslow","Haringey","Enfield","Barnet","Brent","Harrow","Hillingdon","Redbridge","Havering","Bexley","Kingston upon Thames","Richmond upon Thames","Merton","Sutton","City of London","Mayfair","Knightsbridge","Chelsea","Kensington","Soho","Marylebone","Holborn","Covent Garden","Paddington","Notting Hill","Victoria","Waterloo","London Bridge","Canary Wharf","Stratford","Whitechapel","Shoreditch","Ilford","Romford","Dagenham","Woolwich","Eltham","Brixton","Peckham","Clapham","Dulwich","Wimbledon","Uxbridge","Wembley","Acton","Chiswick","Finchley","Hampstead","Muswell Hill","Tottenham","Wood Green"],
   },
   manchester: {
     region: 'Greater Manchester',
-    nearby: ['Salford', 'Trafford', 'Stockport', 'Bury', 'Altrincham', 'Wigan', 'Didsbury'],
+    nearby: ["Manchester City Centre","Salford","Trafford","Stockport","Tameside","Oldham","Rochdale","Bury","Bolton","Wigan","Altrincham","Sale","Stretford","Urmston","Didsbury","Chorlton","Withington","Fallowfield","Hulme","Ancoats","Northern Quarter","Deansgate","Castlefield","Moss Side","Cheetham Hill","Harpurhey","Gorton","Levenshulme","Longsight","Rusholme","Wythenshawe","Eccles","Swinton","Prestwich","Whitefield","Radcliffe","Ashton-under-Lyne","Hyde","Denton","Stalybridge","Droylsden","Leigh","Walkden","Middleton","Heywood","Horwich","Westhoughton","Atherton"],
   },
   birmingham: {
     region: 'West Midlands',
-    nearby: ['Solihull', 'Sutton Coldfield', 'Dudley', 'West Bromwich', 'Walsall', 'Smethwick'],
+    nearby: ["Birmingham City Centre","Edgbaston","Selly Oak","Harborne","Kings Heath","Moseley","Handsworth","Erdington","Sutton Coldfield","Perry Barr","Yardley","Sheldon","Hall Green","Acocks Green","Northfield","Longbridge","Hodge Hill","Small Heath","Sparkhill","Sparkbrook","Aston","Ladywood","Quinton","Great Barr","Castle Vale","Oldbury","Halesowen","Stourbridge","Tipton","Bilston"],
   },
   leeds: {
     region: 'West Yorkshire',
-    nearby: ['Bradford', 'Wakefield', 'Harrogate', 'Dewsbury', 'Halifax', 'Pudsey'],
+    nearby: ["Leeds City Centre","Headingley","Hyde Park","Burley","Kirkstall","Horsforth","Pudsey","Armley","Bramley","Beeston","Hunslet","Holbeck","Middleton","Morley","Rothwell","Garforth","Seacroft","Cross Gates","Halton","Roundhay","Chapel Allerton","Moortown","Alwoodley","Guiseley","Yeadon","Otley","Rawdon","Farsley","Calverley","East Ardsley","West Ardsley","Tingley","Lofthouse"],
   },
   sheffield: {
     region: 'South Yorkshire',
-    nearby: ['Rotherham', 'Barnsley', 'Doncaster', 'Chesterfield', 'Stocksbridge'],
+    nearby: ["Sheffield City Centre","Attercliffe","Darnall","Handsworth","Manor","Gleadless","Heeley","Sharrow","Nether Edge","Meersbrook","Hillsborough","Walkley","Crookes","Broomhill","Ecclesall","Endcliffe","Ranmoor","Fulwood","Lodge Moor","Stannington","Loxley","Stocksbridge","Chapeltown","Ecclesfield","Parson Cross","Firth Park","Shiregreen","Brightside","Tinsley","Woodhouse","Beighton","Mosborough","Intake","Norton","Woodseats","Greenhill"],
   },
   liverpool: {
     region: 'Merseyside',
-    nearby: ['Birkenhead', 'Wallasey', 'St Helens', 'Widnes', 'Southport', 'Bootle'],
+    nearby: ["Liverpool City Centre","Anfield","Everton","Toxteth","Kirkdale","Walton","Bootle","Aintree","Fazakerley","Norris Green","Croxteth","West Derby","Wavertree","Childwall","Woolton","Allerton","Mossley Hill","Garston","Speke","Edge Hill","Dingle","Vauxhall","Old Swan","Tuebrook","Broadgreen","Fairfield","Huyton","Prescot","Kirkby","Maghull","Litherland","Seaforth","Crosby","Waterloo","Formby","Southport","Halewood","Knowsley"],
   },
   bristol: {
     region: 'Bristol',
-    nearby: ['Bath', 'Weston-super-Mare', 'Clevedon', 'Nailsea', 'Portishead', 'Yate'],
+    nearby: ["Bristol City Centre","Clifton","Redland","Cotham","Bishopston","St Andrews","Montpelier","St Pauls","Easton","Lawrence Hill","St George","Fishponds","Kingswood","Hanham","Brislington","Knowle","Filwood","Hartcliffe","Bedminster","Southville","Hotwells","Avonmouth","Shirehampton","Lawrence Weston","Henbury","Westbury-on-Trym","Stoke Bishop","Sea Mills","Patchway","Filton","Bradley Stoke","Emersons Green","Longwell Green","Yate","Nailsea","Portishead","Clevedon"],
   },
   edinburgh: {
     region: 'City of Edinburgh',
-    nearby: ['Livingston', 'Falkirk', 'Dunfermline', 'Kirkcaldy', 'Musselburgh', 'Dalkeith'],
+    nearby: ["Livingston","Falkirk","Dunfermline","Kirkcaldy","Musselburgh","Dalkeith","Leith","Morningside","Portobello","Corstorphine","Stockbridge","Bruntsfield","Craigmillar","Sighthill","Wester Hailes","Pilton","Granton","Newhaven","Inverleith","Newington"],
   },
   glasgow: {
     region: 'Greater Glasgow',
-    nearby: ['Paisley', 'Motherwell', 'Hamilton', 'East Kilbride', 'Clydebank', 'Rutherglen'],
+    nearby: ["Paisley","Motherwell","Hamilton","East Kilbride","Clydebank","Rutherglen","Govanhill","Partick","Shawlands","Dennistoun","Pollokshields","Maryhill","Springburn","Easterhouse","Castlemilk","Govan","Ibrox","Finnieston","Merchant City","Hillhead","Anniesland"],
   },
   cardiff: {
     region: 'Cardiff',
-    nearby: ['Newport', 'Barry', 'Penarth', 'Pontypridd', 'Caerphilly', 'Bridgend'],
+    nearby: ["Cardiff City Centre","Cardiff Bay","Canton","Cathays","Roath","Adamsdown","Splott","Grangetown","Riverside","Butetown","Llanishen","Lisvane","Cyncoed","Whitchurch","Heath","Llandaff","Pontcanna","Ely","Caerau","Fairwater","St Mellons","Rumney","Llanrumney","Pentwyn","Trowbridge","Roath Park","Gabalfa","Birchgrove","Rhiwbina","Penylan","Radyr","Tongwynlais"],
   },
   newcastle: {
     region: 'Tyne and Wear',
-    nearby: ['Gateshead', 'Sunderland', 'Durham', 'Blyth', 'Whitley Bay', 'Cramlington'],
+    nearby: ["Newcastle City Centre","Quayside","Ouseburn","Jesmond","Heaton","Sandyford","Fenham","Elswick","Benwell","Scotswood","Walker","Byker","Gosforth","South Gosforth","High Heaton","Forest Hall","Killingworth","Wallsend","North Shields","Tynemouth","Whitley Bay","Longbenton","Benton","West Denton","Westerhope","Blakelaw","Kenton","Fawdon","Kingston Park","Lemington","Chapel House","Dinnington"],
   },
   nottingham: {
     region: 'Nottinghamshire',
-    nearby: ['Derby', 'Leicester', 'Mansfield', 'Loughborough', 'Arnold', 'Long Eaton'],
+    nearby: ["Nottingham City Centre","The Lace Market","Hockley","Arboretum","St Anns","Hyson Green","Radford","Lenton","Dunkirk","The Meadows","Sneinton","Mapperley","Sherwood","Bestwood","Basford","Bulwell","Aspley","Bilborough","Wollaton","Beeston","Chilwell","Clifton","West Bridgford","Ruddington","Arnold","Carlton","Gedling","Netherfield","Colwick","Hucknall"],
   },
   leicester: {
     region: 'Leicestershire',
-    nearby: ['Coventry', 'Nottingham', 'Derby', 'Hinckley', 'Loughborough', 'Coalville'],
+    nearby: ["Leicester City Centre","Highfields","Belgrave","Spinney Hills","St Matthews","Westcotes","Clarendon Park","Knighton","Oadby","Wigston","Evington","Hamilton","Thurmaston","Birstall","Beaumont Leys","Glenfield","Braunstone Town","Aylestone","New Parks","Rushey Mead","Stoneygate","Eyres Monsell","Syston"],
   },
   coventry: {
     region: 'West Midlands',
-    nearby: ['Birmingham', 'Warwick', 'Leamington Spa', 'Rugby', 'Kenilworth', 'Nuneaton'],
+    nearby: ["Coventry City Centre","Earlsdon","Chapelfields","Coundon","Radford","Hillfields","Stoke","Binley","Wyken","Stoke Heath","Tile Hill","Canley","Whitley","Cheylesmore","Allesley","Keresley","Holbrooks","Longford","Foleshill","Bell Green","Walsgrave","Finham","Styvechale","Mount Nod","Wood End","Willenhall","Exhall"],
   },
   brighton: {
     region: 'East Sussex',
-    nearby: ['Hove', 'Worthing', 'Eastbourne', 'Lewes', 'Burgess Hill', 'Shoreham-by-Sea'],
+    nearby: ["Brighton City Centre","Hove","Kemptown","Hanover","Elm Grove","Queens Park","Round Hill","Preston Park","Fiveways","Patcham","Hollingbury","Moulsecoomb","Bevendean","Whitehawk","Woodingdean","Rottingdean","Saltdean","Withdean","Aldrington","Portslade","Mile Oak","Shoreham-by-Sea","Peacehaven","Newhaven","Lewes"],
   },
   southampton: {
     region: 'Hampshire',
-    nearby: ['Portsmouth', 'Eastleigh', 'Winchester', 'Totton', "Chandler's Ford", 'Romsey'],
+    nearby: ["Southampton City Centre","Portswood","Highfield","Bassett","Swaythling","Shirley","Freemantle","Millbrook","Redbridge","Totton","Nursling","Lordshill","Coxford","Maybush","Woolston","Sholing","Bitterne","Bitterne Park","Thornhill","Itchen","Weston","Peartree Green","Hedge End","Eastleigh","Chandlers Ford","Hythe","Netley","Hamble-le-Rice","Marchwood"],
   },
   reading: {
     region: 'Berkshire',
-    nearby: ['Slough', 'Windsor', 'Maidenhead', 'Wokingham', 'Basingstoke', 'Bracknell'],
+    nearby: ["Reading Town Centre","Caversham","Caversham Heights","Tilehurst","West Reading","East Reading","Whitley","Whitley Wood","Earley","Lower Earley","Woodley","Shinfield","Southcote","Coley","Katesgrove","Newtown","Emmer Green","Pangbourne","Theale","Burghfield","Calcot","Norcot"],
   },
   oxford: {
     region: 'Oxfordshire',
-    nearby: ['Abingdon', 'Witney', 'Bicester', 'Banbury', 'Kidlington', 'Didcot'],
+    nearby: ["Oxford City Centre","Jericho","Summertown","Headington","Cowley","East Oxford","North Oxford","West Oxford","St Clements","Iffley","Littlemore","Blackbird Leys","Rose Hill","Barton","Marston","Wolvercote","Cutteslowe","Botley","North Hinksey","Osney","Kennington","Abingdon","Kidlington","Wheatley","Eynsham","Didcot","Bicester"],
   },
   cambridge: {
     region: 'Cambridgeshire',
-    nearby: ['Ely', 'Huntingdon', 'Peterborough', 'Newmarket', 'Saffron Walden', 'St Ives'],
+    nearby: ["Cambridge City Centre","Chesterton","Newnham","Castle Hill","Arbury","Kings Hedges","Abbey","Romsey Town","Petersfield","Coleridge","Trumpington","Cherry Hinton","Mill Road area","Hills Road area","Grantchester","Girton","Histon","Impington","Milton","Waterbeach","Sawston","Stapleford","Great Shelford","Fulbourn","Ely","St Ives","Huntingdon"],
   },
   york: {
     region: 'North Yorkshire',
-    nearby: ['Leeds', 'Harrogate', 'Selby', 'Malton', 'Thirsk', 'Tadcaster'],
+    nearby: ["York City Centre","Clifton","Rawcliffe","Skelton","Bootham","Heworth","Layerthorpe","Fulford","Heslington","Acomb","Foxwood","Dringhouses","Woodthorpe","Holgate","Tang Hall","South Bank","Fishergate","Micklegate","Clifton Moor","Osbaldwick","Haxby","Wigginton","Strensall","Huntington","Upper Poppleton","Nether Poppleton","Bishopthorpe","Copmanthorpe","Elvington","Wheldrake","Stamford Bridge"],
   },
   exeter: {
     region: 'Devon',
-    nearby: ['Taunton', 'Torquay', 'Plymouth', 'Crediton', 'Newton Abbot', 'Tiverton'],
+    nearby: ["Exeter City Centre","St Thomas","St Davids","Heavitree","Mount Pleasant","Pennsylvania","Polsloe","Pinhoe","Wonford","Alphington","Exwick","Beacon Heath","Whipton","Topsham","Countess Wear","St Leonards","Matford","Marsh Barton","Ide","Clyst St Mary","Clyst Heath","Broadfields","Crediton","Exminster","Ottery St Mary","Dawlish","Teignmouth"],
   },
   plymouth: {
     region: 'Devon',
-    nearby: ['Exeter', 'Torquay', 'Saltash', 'Liskeard', 'Ivybridge', 'Totnes'],
+    nearby: ["Plymouth City Centre","Barbican","Hoe","Mutley","Lipson","St Judes","Stoke","Peverell","Milehouse","Greenbank","Hartley","Mannamead","Crownhill","Eggbuckland","Efford","Honicknowle","Whitleigh","Devonport","Stonehouse","Keyham","Mount Gould","Compton","Plympton","Plymstock","Estover","Roborough","Derriford","Woolwell","Southway","Torpoint","Saltash","Ivybridge"],
   },
   derby: {
     region: 'Derbyshire',
-    nearby: ['Nottingham', 'Burton upon Trent', 'Chesterfield', 'Matlock', 'Ilkeston', 'Belper'],
+    nearby: ["Derby City Centre","Allestree","Darley Abbey","Mickleover","Littleover","Normanton","Arboretum","Litchurch","Peartree","Rose Hill","Spondon","Chaddesden","Oakwood","Alvaston","Chellaston","Sinfin","Sunny Hill","Mackworth","Blagreaves","Wilmorton","Pride Park","Boulton Moor","Borrowash","Ockbrook","Elvaston","Sandiacre","Long Eaton","Ilkeston","Belper","Ripley","Swadlincote"],
   },
   'stoke-on-trent': {
     region: 'Staffordshire',
@@ -98,19 +98,19 @@ const cityData = {
   },
   hull: {
     region: 'East Yorkshire',
-    nearby: ['Beverley', 'Grimsby', 'Scunthorpe', 'Bridlington', 'Driffield', 'Goole'],
+    nearby: ["Hull City Centre","Old Town","Avenues","Newland","Hessle Road","Anlaby Road","Beverley Road","Spring Bank","Holderness Road","Bransholme","Orchard Park","Derringham","Sutton-on-Hull","Bilton","Kingswood","Marfleet","Drypool","Anlaby Common","Willerby","Hessle","Beverley","Hedon","Cottingham"],
   },
   bradford: {
     region: 'West Yorkshire',
-    nearby: ['Leeds', 'Halifax', 'Keighley', 'Shipley', 'Bingley', 'Ilkley'],
+    nearby: ["Bradford City Centre","Manningham","Little Horton","Great Horton","Heaton","Frizinghall","Girlington","Lidget Green","Barkerend","Bradford Moor","Holme Wood","Odsal","Buttershaw","Wibsey","Wyke","Low Moor","Queensbury","Clayton","Thornton","Eccleshill","Idle","Thackley","Greengates","Fagley","Allerton","Sandy Lane","Shipley","Bingley","Baildon","Keighley","Saltaire","Pudsey"],
   },
   wolverhampton: {
     region: 'West Midlands',
-    nearby: ['Birmingham', 'Dudley', 'Walsall', 'Cannock', 'Telford', 'Bridgnorth'],
+    nearby: ["Wolverhampton City Centre","Blakenhall","All Saints","Whitmore Reans","Park Village","Ettingshall","Bilston","Willenhall","Wednesfield","Bushbury","Low Hill","Heath Town","Oxley","Tettenhall","Tettenhall Wood","Compton","Penn","Finchfield","Merry Hill","Fallings Park","Parkfields","Woodcross","Coseley","Sedgley","Tipton","Dudley","Walsall","Stourbridge","Kingswinford","Wednesbury"],
   },
   sunderland: {
     region: 'Tyne and Wear',
-    nearby: ['Newcastle', 'Durham', 'Gateshead', 'Hartlepool', 'Washington', 'Peterlee'],
+    nearby: ["Sunderland City Centre","Ashbrooke","Millfield","Hendon","Pallion","Pennywell","Southwick","Monkwearmouth","Roker","Seaburn","Fulwell","Castletown","Hylton Red House","Springwell","Ryhope","Silksworth","Doxford Park","Grangetown","Thorney Close","Ford Estate","Plains Farm","Barnes","Washington","Concord","Birtley","Chester-le-Street","Seaham","East Boldon","West Boldon"],
   },
   'milton-keynes': {
     region: 'Buckinghamshire',
@@ -118,23 +118,23 @@ const cityData = {
   },
   portsmouth: {
     region: 'Hampshire',
-    nearby: ['Southampton', 'Fareham', 'Gosport', 'Chichester', 'Waterlooville', 'Havant'],
+    nearby: ["Portsmouth City Centre","Southsea","Old Portsmouth","Portsea","Fratton","Milton","Copnor","Baffins","Hilsea","Drayton","Farlington","Cosham","Wymering","North End","Stamshaw","Buckland","Landport","Eastney","Tipner","Paulsgrove","Anchorage Park","Havant","Waterlooville","Gosport","Fareham","Lee-on-the-Solent"],
   },
   norwich: {
     region: 'Norfolk',
-    nearby: ['Ipswich', 'Peterborough', 'Great Yarmouth', 'Lowestoft', "King's Lynn", 'Dereham'],
+    nearby: ["Norwich City Centre","Eaton","Earlham","Bowthorpe","Mile Cross","Thorpe St Andrew","Sprowston","Hellesdon","Old Catton","New Catton","Heartsease","Catton Grove","Lakenham","Tuckswood","Brundall","Thorpe Hamlet","Riverside","Golden Triangle","Heigham Grove","Costessey","Long Stratton","Wymondham","Aylsham","Dereham","Watton","North Walsham","Great Yarmouth"],
   },
   luton: {
     region: 'Bedfordshire',
-    nearby: ['Dunstable', 'St Albans', 'Hemel Hempstead', 'Bedford', 'Hitchin', 'Harpenden'],
+    nearby: ["Luton Town Centre","Bury Park","High Town","Farley Hill","Stopsley","Wigmore","Marsh Farm","Lewsey Farm","Leagrave","Round Green","Bramingham","Sundon Park","Biscot","Park Town","New Town","Dallow","Putteridge","Butterfield Green","Houghton Regis","Dunstable","Harpenden","Wheathampstead","Stevenage"],
   },
   watford: {
     region: 'Hertfordshire',
-    nearby: ['St Albans', 'Hemel Hempstead', 'Harrow', 'Rickmansworth', 'Borehamwood', 'Bushey'],
+    nearby: ["Watford Town Centre","North Watford","West Watford","South Watford","Oxhey","Oxhey Village","Bushey","Bushey Heath","Leavesden","Abbots Langley","Garston","Woodside","Nascot Wood","Cassiobury","Holywell","Croxley Green","Rickmansworth","Stanmore","Radlett","Hemel Hempstead","Kings Langley","Borehamwood","Elstree"],
   },
   slough: {
     region: 'Berkshire',
-    nearby: ['Windsor', 'Maidenhead', 'Reading', 'Staines', 'Uxbridge', 'Burnham'],
+    nearby: ["Slough Town Centre","Chalvey","Cippenham","Britwell","Langley","Farnham Royal","Burnham","Colnbrook","Wexham","Upton","Manor Park","Haymill","Lynch Hill","Windsor","Eton","Datchet","Maidenhead","Iver","West Drayton"],
   },
   'high-wycombe': {
     region: 'Buckinghamshire',
@@ -158,11 +158,11 @@ const cityData = {
   },
   hatfield: {
     region: 'Hertfordshire',
-    nearby: ['Welwyn Garden City', 'St Albans', 'Hertford', 'Luton', 'Potters Bar', 'Stevenage'],
+    nearby: ["Hatfield Town Centre","Old Hatfield","Birchwood","Roe Green","South Hatfield","North Hatfield","Ellenbrook","Stanborough","The Ryde","Oxlease","Roehyde","Welham Green","Brookmans Park","St Albans","Potters Bar","Welwyn Garden City","Sandridge","Colney Heath"],
   },
   basildon: {
     region: 'Essex',
-    nearby: ['Southend-on-Sea', 'Chelmsford', 'Brentwood', 'Thurrock', 'Billericay', 'Rayleigh'],
+    nearby: ["Basildon Town Centre","Pitsea","Laindon","Vange","Fryerns","Lee Chapel North","Lee Chapel South","Netteswell","Ghyllgrove","Felmores","Craylands","Chalvedon","Kingswood","Noak Bridge","Great Berry","Langdon Hills","Dunton","Wickford","Billericay","Rayleigh","Bowers Gifford","South Benfleet","Canvey Island","Stanford-le-Hope","Corringham","Nevendon"],
   },
   'southend-on-sea': {
     region: 'Essex',
@@ -170,240 +170,240 @@ const cityData = {
   },
   chelmsford: {
     region: 'Essex',
-    nearby: ['Basildon', 'Brentwood', 'Colchester', 'Harlow', 'Witham', 'Braintree'],
+    nearby: ["Chelmsford City Centre","Springfield","Moulsham","Moulsham Lodge","Great Baddow","Little Baddow","Galleywood","Chelmer Village","Writtle","Widford","Old Moulsham","Broomfield","Boreham","Roxwell","Danbury","Sandon","South Woodham Ferrers","Billericay","Witham","Maldon","Ingatestone","Hatfield Peverel","Stock"],
   },
   colchester: {
     region: 'Essex',
-    nearby: ['Chelmsford', 'Ipswich', 'Braintree', 'Clacton-on-Sea', 'Manningtree', 'Halstead'],
+    nearby: ["Colchester City Centre","Lexden","Mile End","Highwoods","Greenstead","New Town","Old Heath","Shrub End","St Annes","St Johns","Berechurch","Parsons Heath","Prettygate","Stanway","Copford","Wivenhoe","Rowhedge","Tiptree","Marks Tey","West Bergholt","Ardleigh","Dedham","Layer-de-la-Haye","Elmstead Market","Boxted","Coggeshall","Manningtree","Clacton-on-Sea"],
   },
   ipswich: {
     region: 'Suffolk',
-    nearby: ['Colchester', 'Bury St Edmunds', 'Felixstowe', 'Stowmarket', 'Woodbridge', 'Sudbury'],
+    nearby: ["Ipswich Town Centre","Waterfront","Stoke","Chantry","Gainsborough","Maidenhall","Whitehouse","Whitton","Castle Hill","Sproughton","Pinewood","Ravenswood","Purdis Farm","Rushmere St Andrew","Kesgrave","Martlesham","Martlesham Heath","Woodbridge","East Bergholt","Hadleigh","Felixstowe","Bramford","Claydon","Great Blakenham","Copdock","Washbrook","Capel St Mary","Nacton","Belstead"],
   },
   peterborough: {
     region: 'Cambridgeshire',
-    nearby: ['Cambridge', 'Northampton', 'Leicester', 'Spalding', 'March', 'Wisbech'],
+    nearby: ["Peterborough City Centre","Dogsthorpe","Eastfield","Millfield","Walton","Werrington","Bretton","Westwood","Ravensthorpe","Stanground","Orton Goldhay","Orton Malborne","Orton Longueville","Orton Wistow","Fengate","New England","Woodston","Longthorpe","Paston","Gunthorpe","Eye","Eye Green","Yaxley","Hampton","Hampton Hargate","Hampton Vale","Castor","Wansford","Alwalton","Helpston","Deeping St James","Stamford","Whittlesey","Market Deeping"],
   },
   northampton: {
     region: 'Northamptonshire',
-    nearby: ['Corby', 'Kettering', 'Milton Keynes', 'Coventry', 'Wellingborough', 'Daventry'],
+    nearby: ["Northampton Town Centre","Abington","Abington Vale","Kingsthorpe","Kingsthorpe Hollow","Kingsthorpe Grove","Duston","New Duston","Old Duston","Semilong","St James","Far Cotton","East Hunsbury","West Hunsbury","Upton","Sixfields","St Crispin","Briar Hill","Boothville","Lings","Lumbertubs","Spinney Hill","Thorplands","Rectory Farm","Blackthorn","Southfields","Weston Favell","Billing","Hardingstone","Wootton","Collingtree","Grange Park","Moulton","Overstone","Earls Barton","Wellingborough","Towcester","Daventry"],
   },
   kettering: {
     region: 'Northamptonshire',
-    nearby: ['Corby', 'Northampton', 'Market Harborough', 'Wellingborough', 'Rushden', 'Burton Latimer'],
+    nearby: ["Kettering Town Centre","Barton Seagrave","Wicksteed","Weekley","Pytchley","Brambleside","Ise Lodge","Avondale","Northfield","Headlands","Kingsley","Desborough","Corby","Burton Latimer","Rothwell","Wellingborough","Broughton","Cranford","Geddington","Rushton"],
   },
   bedford: {
     region: 'Bedfordshire',
-    nearby: ['Luton', 'Northampton', 'Milton Keynes', 'St Neots', 'Sandy', 'Biggleswade'],
+    nearby: ["Bedford Town Centre","Castle","De Parys","Goldington","Queens Park","Brickhill","Putnoe","Kempston","Kempston West End","Elstow","Wixams","Shortstown","Clapham","Bromham","Biddenham","Great Denham","Oakley","Renhold","Wilstead","Cople","Cotton End","Sharnbrook","Wootton","Stewartby","Marston Moretaine","Sandy","Biggleswade","Ampthill","Flitwick","St Neots"],
   },
   swindon: {
     region: 'Wiltshire',
-    nearby: ['Chippenham', 'Bath', 'Bristol', 'Oxford', 'Cirencester', 'Devizes'],
+    nearby: ["Swindon Town Centre","Old Town","Eastcott","Rodbourne","Rodbourne Cheney","Pinehurst","Walcot","Park North","Park South","Liden","Eldene","Covingham","Nythe","Greenmeadow","Moredon","Penhill","Haydon Wick","Abbey Meads","St Andrews Ridge","Taw Hill","Westlea","Freshbrook","Grange Park","Toothill","Lydiard Millicent","Wroughton","Stratton","Stratton St Margaret","South Marston","Blunsdon","Highworth","Royal Wootton Bassett","Marlborough","Cricklade","Calne"],
   },
   gloucester: {
     region: 'Gloucestershire',
-    nearby: ['Cheltenham', 'Bristol', 'Stroud', 'Cirencester', 'Tewkesbury', 'Lydney'],
+    nearby: ["Gloucester City Centre","Longlevens","Abbeydale","Hucclecote","Matson","Kingsholm","Podsmead","Barton","Barnwood","Hempsted","Churchdown","Brockworth","Quedgeley","Hardwicke","Cheltenham","Stroud","Cirencester","Tewkesbury","Dursley","Lydney","Cinderford","Coleford","Newent","Stonehouse","Nailsworth"],
   },
   cheltenham: {
     region: 'Gloucestershire',
-    nearby: ['Gloucester', 'Tewkesbury', 'Cirencester', 'Stroud', 'Evesham', 'Winchcombe'],
+    nearby: ["Cheltenham Town Centre","Montpellier","Lansdown","Pittville","St Pauls","St Marks","Leckhampton","Charlton Kings","Prestbury","Up Hatherley","Hatherley","Warden Hill","Rowanfield","Hesters Way","Springbank","Arle","Swindon Village","Benhall","Battledown","Prestbury Hills","Alstone","Oakley","Fairview","Charlton Park","Naunton Park","Churchdown","Bishops Cleeve","Tewkesbury","Gloucester","Winchcombe","Staverton"],
   },
   worcester: {
     region: 'Worcestershire',
-    nearby: ['Hereford', 'Kidderminster', 'Droitwich', 'Malvern', 'Bromsgrove', 'Redditch'],
+    nearby: ["Worcester City Centre","St Johns","St Clements","Arboretum","Barbourne","Diglis","Ronkswood","Warndon","Warndon Villages","St Peters","Battenhall","Red Hill","Rainbow Hill","Lowesmoor","Claines","Northwick","Henwick","Dines Green","Tolladine","Merrimans Hill","Whittington","Powick","Kempsey","Norton","Stoulton","Fernhill Heath","Malvern","Droitwich Spa","Pershore","Evesham","Upton-upon-Severn"],
   },
   hereford: {
     region: 'Herefordshire',
-    nearby: ['Worcester', 'Abergavenny', 'Leominster', 'Ross-on-Wye', 'Brecon', 'Ledbury'],
+    nearby: ["Hereford City Centre","Whitecross","Aylestone Hill","College Estate","Belmont","Newton Farm","Hunderton","Tupsley","Bobblestock","Holmer","Portfields","Widemarsh","Kings Acre","Redhill","Saxon Gate","Grafton","Breinton","Lugwardine","Hampton Bishop","Bartestree","Withington","Clehonger","Madley","Kingstone","Bodenham","Holme Lacy","Rotherwas Industrial Estate","Ross-on-Wye","Leominster","Ledbury","Bromyard"],
   },
   telford: {
     region: 'Shropshire',
-    nearby: ['Shrewsbury', 'Wolverhampton', 'Stafford', 'Bridgnorth', 'Market Drayton', 'Newport'],
+    nearby: ["Telford Town Centre","Wellington","Oakengates","Dawley","Madeley","Ironbridge","Coalbrookdale","Jackfield","Ketley","St Georges","Donnington","Trench","Hadley","Leegomery","Priorslee","Randlay","Hollinswood","Lawley","Lawley Village","Muxton","Lilleshall","Shifnal","Albrighton","Broseley","Newport","Bridgnorth","Aqueduct","Woodside"],
   },
   shrewsbury: {
     region: 'Shropshire',
-    nearby: ['Telford', 'Chester', 'Wolverhampton', 'Oswestry', 'Market Drayton', 'Whitchurch'],
+    nearby: ["Shrewsbury Town Centre","Abbey Foregate","Belle Vue","Castlefields","Coleham","Coton Hill","Harlescott","Sundorne","Monkmoor","Greenfields","Radbrook","Meole Brace","Sutton Farm","Frankwell","Copthorne","Kingsland","Bicton Heath","Bowbrook","Uffington","Bayston Hill","Condover","Dorrington","Pontesbury","Baschurch","Wem","Atcham","Hanwood","Minsterley"],
   },
   wrexham: {
     region: 'North Wales',
-    nearby: ['Chester', 'Shrewsbury', 'Llangollen', 'Rhyl', 'Mold', 'Buckley'],
+    nearby: ["Wrexham Town Centre","Acton","Caia Park","Rhosddu","Maesydre","Rhosnesni","Garden Village","Hightown","Bersham","Coedpoeth","Rhosllanerchrugog","Ruabon","Gwersyllt","Llay","Broughton","Gresford","Rossett","Marchwiel","New Broughton","Brymbo","Minera","Bradley","Cefn Mawr","Chirk","Bangor-on-Dee","Holt","Oswestry","Ellesmere"],
   },
   blackpool: {
     region: 'Lancashire',
-    nearby: ['Preston', 'Lancaster', 'Lytham St Annes', 'Fleetwood', 'Cleveleys', 'Poulton-le-Fylde'],
+    nearby: ["Blackpool Town Centre","North Shore","South Shore","Bispham","Layton","Marton","Marton Moss","Squires Gate","South Beach","Anchorsholme","Cleveleys","Norbreck","Thornton-Cleveleys","Fleetwood","Poulton-le-Fylde","St Annes","Lytham St Annes","Great Marton","Little Marton","Grange Park","Hawes Side"],
   },
   preston: {
     region: 'Lancashire',
-    nearby: ['Blackburn', 'Wigan', 'Lancaster', 'Leyland', 'Chorley', 'Longridge'],
+    nearby: ["Preston City Centre","Ashton-on-Ribble","Fulwood","Fishwick","Ribbleton","Deepdale","Plungington","Ingol","Broadgate","Frenchwood","Avenham","Moor Park","Cadley","Lea","Cottam","Broughton","Ashton","Penwortham","Walton-le-Dale","Higher Walton","Lower Penwortham","Grimsargh","Longton","Lostock Hall","Bamber Bridge","Leyland","Kirkham","Lytham","Chorley","Garstang"],
   },
   blackburn: {
     region: 'Lancashire',
-    nearby: ['Burnley', 'Preston', 'Accrington', 'Darwen', 'Nelson', 'Clitheroe'],
+    nearby: ["Blackburn Town Centre","Ewood","Mill Hill","Audley","Bastwell","Shadsworth","Intack","Little Harwood","Roe Lee","Wensley Fold","Beardwood","Pleasington","Feniscowles","Livesey","Higher Audley","Bank Top","Griffin","Whitebirk","Cherry Tree","Rishton","Darwen","Accrington","Great Harwood","Oswaldtwistle","Clayton-le-Moors"],
   },
   bolton: {
     region: 'Greater Manchester',
-    nearby: ['Wigan', 'Manchester', 'Bury', 'Leigh', 'Horwich', 'Farnworth'],
+    nearby: ["Bolton Town Centre","Great Lever","Little Lever","Farnworth","Kearsley","Halliwell","Heaton","Tonge Moor","Breightmet","Astley Bridge","Sharples","Smithills","Harwood","Bradshaw","Egerton","Bromley Cross","Blackrod","Horwich","Lostock","Westhoughton","Walkden","Little Hulton","Daisy Hill","Wingates","Kearsley Moor","Tonge Fold","Middle Hulton","Burnden","Rumworth"],
   },
   warrington: {
     region: 'Cheshire',
-    nearby: ['Liverpool', 'Manchester', 'Chester', 'Widnes', 'Runcorn', 'Northwich'],
+    nearby: ["Warrington Town Centre","Orford","Padgate","Birchwood","Latchford","Stockton Heath","Great Sankey","Penketh","Westbrook","Callands","Bewsey","Fairfield","Howley","Lymm","Appleton","Grappenhall","Thelwall","Woolston","Bruche","Croft","Culcheth","Glazebury","Winwick","Burtonwood","Rixton","Fearnhead","Dallam","Orford Green","Sankey Bridges","Moore","Stretton","Hatton"],
   },
   stockport: {
     region: 'Greater Manchester',
-    nearby: ['Manchester', 'Macclesfield', 'Altrincham', 'Marple', 'Bramhall', 'Cheadle'],
+    nearby: ["Stockport Town Centre","Heaton Moor","Heaton Chapel","Heaton Mersey","Cheadle","Cheadle Hulme","Gatley","Bramhall","Hazel Grove","Marple","Marple Bridge","Reddish","Edgeley","Davenport","Adswood","Shaw Heath","Offerton","Woodley","Bredbury","Romiley","Compstall","Great Moor","Tiviot Dale","Portwood","Brinnington","High Lane","Norbury","Poynton","Disley"],
   },
   oldham: {
     region: 'Greater Manchester',
-    nearby: ['Manchester', 'Rochdale', 'Ashton-under-Lyne', 'Hyde', 'Saddleworth', 'Middleton'],
+    nearby: ["Oldham Town Centre","Chadderton","Failsworth","Royton","Shaw","Crompton","Saddleworth","Lees","Greenfield","Uppermill","Delph","Fitton Hill","Werneth","Hollinwood","Coldhurst","Waterhead","Derker","Alt","Moorside"],
   },
   rochdale: {
     region: 'Greater Manchester',
-    nearby: ['Oldham', 'Bury', 'Halifax', 'Burnley', 'Heywood', 'Littleborough'],
+    nearby: ["Rochdale Town Centre","Milnrow","Newhey","Littleborough","Heywood","Castleton","Norden","Bamford","Balderstone","Spotland","Deeplish","Wardle","Whitworth","Kingsway","Firgrove"],
   },
   huddersfield: {
     region: 'West Yorkshire',
-    nearby: ['Leeds', 'Halifax', 'Barnsley', 'Wakefield', 'Dewsbury', 'Holmfirth'],
+    nearby: ["Huddersfield Town Centre","Lindley","Marsh","Almondbury","Dalton","Moldgreen","Birkby","Fartown","Newsome","Fixby","Bradley","Lockwood","Waterloo","Paddock","Deighton","Oakes","Lepton","Kirkheaton","Honley","Holmfirth"],
   },
   wakefield: {
     region: 'West Yorkshire',
-    nearby: ['Leeds', 'Huddersfield', 'Doncaster', 'Pontefract', 'Castleford', 'Ossett'],
+    nearby: ["Wakefield City Centre","Ossett","Horbury","Alverthorpe","Lupset","Agbrigg","Flanshaw","Sandal","Outwood","Stanley","Wrenthorpe","Crofton","Normanton","Featherstone","Pontefract","Castleford","Knottingley"],
   },
   doncaster: {
     region: 'South Yorkshire',
-    nearby: ['Sheffield', 'Rotherham', 'Barnsley', 'Scunthorpe', 'Thorne', 'Mexborough'],
+    nearby: ["Doncaster City Centre","Balby","Hexthorpe","Intake","Bentley","Edlington","Armthorpe","Bessacarr","Cantley","Wheatley","Rossington","Sprotbrough","Thorne","Moorends","Adwick-le-Street","Stainforth","Finningley","Askern"],
   },
   rotherham: {
     region: 'South Yorkshire',
-    nearby: ['Sheffield', 'Barnsley', 'Doncaster', 'Maltby', 'Wath-upon-Dearne', 'Rawmarsh'],
+    nearby: ["Rotherham Town Centre","Eastwood","Masbrough","Kimberworth","Wath-upon-Dearne","Swinton","Dinnington","Maltby","Brinsworth","Treeton","Thurcroft","Rawmarsh","Greasbrough","Wickersley","Aston","Canklow","Dalton"],
   },
   middlesbrough: {
     region: 'North Yorkshire',
-    nearby: ['Stockton-on-Tees', 'Darlington', 'Durham', 'Hartlepool', 'Redcar', 'Thornaby'],
+    nearby: ["Middlesbrough Town Centre","Linthorpe","Acklam","North Ormesby","Berwick Hills","Easterside","Marton","Coulby Newham","Hemlington","Grove Hill","Park End","Ormesby","Thornaby","Stockton-on-Tees","Eston","South Bank"],
   },
   darlington: {
     region: 'County Durham',
-    nearby: ['Middlesbrough', 'Durham', 'Stockton-on-Tees', 'Newton Aycliffe', 'Bishop Auckland', 'Barnard Castle'],
+    nearby: ["Darlington Town Centre","Cockerton","Harrowgate Hill","Haughton-le-Skerne","North Road","Eastbourne","Faverdale","Red Hall","Mowden","Middleton St George","Hurworth","Heighington"],
   },
   hartlepool: {
     region: 'County Durham',
-    nearby: ['Sunderland', 'Middlesbrough', 'Stockton-on-Tees', 'Durham', 'Peterlee', 'Billingham'],
+    nearby: ["Hartlepool Town Centre","Headland","Seaton Carew","Owton Manor","Fens","Rossmere","Rift House","Throston","Clavering","Brierton","Greatham"],
   },
   dundee: {
     region: 'Angus',
-    nearby: ['Perth', 'St Andrews', 'Arbroath', 'Forfar', 'Montrose', 'Carnoustie'],
+    nearby: ["Dundee City Centre","Broughty Ferry","West End","Lochee","Stobswell","Coldside","Maryfield","Fintry","Douglas","Hilltown","Whitfield","Charleston","Downfield"],
   },
   aberdeen: {
     region: 'Aberdeenshire',
-    nearby: ['Inverness', 'Perth', 'Elgin', 'Peterhead', 'Fraserburgh', 'Stonehaven'],
+    nearby: ["Aberdeen City Centre","Dyce","Bridge of Don","Torry","Old Aberdeen","Rosemount","Woodside","Mastrick","Tillydrone","Bucksburn","Cults","Cove Bay","Kingswells","Mannofield"],
   },
   inverness: {
     region: 'Highland',
-    nearby: ['Aberdeen', 'Fort William', 'Nairn', 'Dingwall', 'Aviemore', 'Elgin'],
+    nearby: ["Inverness City Centre","Culloden","Smithton","Balloch","Westhill","Crown","Dalneigh","Hilton","Merkinch","Lochardil","Raigmore","Drakies"],
   },
   swansea: {
     region: 'West Glamorgan',
-    nearby: ['Neath', 'Port Talbot', 'Cardiff', 'Llanelli', 'Carmarthen', 'Bridgend'],
+    nearby: ["Swansea City Centre","Uplands","Brynmill","Sketty","Morriston","Gorseinon","Llansamlet","Fforestfach","Cockett","Mayhill","St Thomas","Port Tennant","Killay","Mumbles"],
   },
   newport: {
     region: 'Monmouthshire',
-    nearby: ['Cardiff', 'Cwmbran', 'Bristol', 'Caldicot', 'Chepstow', 'Pontypool'],
+    nearby: ["Newport City Centre","Pill","St Julians","Maindee","Alway","Bettws","Ringland","Rogerstone","Caerleon","Llanwern","Spytty","Stow Hill"],
   },
   bangor: {
     region: 'Gwynedd',
-    nearby: ['Caernarfon', 'Conwy', 'Llandudno', 'Beaumaris', 'Holyhead', 'Porthmadog'],
+    nearby: ["Bangor City Centre","Upper Bangor","Hirael","Garth","Glanadda","Llandegai","Penrhosgarnedd","Treborth","Caernarfon","Conwy","Llandudno","Beaumaris","Holyhead","Porthmadog"],
   },
   // ── New cities added May 2026 ──────────────────────────────────────────
   dewsbury: {
     region: 'West Yorkshire',
-    nearby: ['Leeds', 'Huddersfield', 'Wakefield', 'Bradford', 'Batley', 'Ossett'],
+    nearby: ["Dewsbury Town Centre","Savile Town","Ravensthorpe","Batley Carr","Thornhill","Earlsheaton","Chickenley","Hanging Heaton","Westtown","Leeds","Huddersfield","Wakefield","Bradford","Batley","Ossett"],
   },
   halifax: {
     region: 'West Yorkshire',
-    nearby: ['Bradford', 'Huddersfield', 'Leeds', 'Brighouse', 'Hebden Bridge', 'Todmorden'],
+    nearby: ["Halifax Town Centre","Boothtown","Ovenden","Illingworth","King Cross","Sowerby Bridge","Siddal","Hipperholme","Brighouse","Elland","Bradford","Huddersfield","Leeds"],
   },
   castleford: {
     region: 'West Yorkshire',
-    nearby: ['Wakefield', 'Leeds', 'Pontefract', 'Normanton', 'Featherstone', 'Knottingley'],
+    nearby: ["Castleford Town Centre","Airedale","Ferrybridge","Whitwood","Glasshoughton","Pontefract","Cutsyke","Townville","Wakefield","Leeds"],
   },
   wigan: {
     region: 'Greater Manchester',
-    nearby: ['Bolton', 'Manchester', 'St Helens', 'Leigh', 'Skelmersdale', 'Warrington'],
+    nearby: ["Wigan Town Centre","Worsley Mesnes","Pemberton","Ince-in-Makerfield","Leigh","Ashton-in-Makerfield","Hindley","Orrell","Standish","Tyldesley","Atherton","Bolton","Manchester"],
   },
   barnsley: {
     region: 'South Yorkshire',
-    nearby: ['Sheffield', 'Rotherham', 'Doncaster', 'Wakefield', 'Penistone', 'Hoyland'],
+    nearby: ["Barnsley Town Centre","Kendray","Athersley","Monk Bretton","Dodworth","Worsbrough","Goldthorpe","Thurnscoe","Hoyland","Royston","Cudworth","Darfield","Sheffield","Rotherham","Wakefield"],
   },
   gateshead: {
     region: 'Tyne and Wear',
-    nearby: ['Newcastle', 'Sunderland', 'Durham', 'Consett', 'Chester-le-Street', 'Blaydon'],
+    nearby: ["Gateshead Town Centre","Bensham","Deckham","Felling","Dunston","Low Fell","Team Valley","Pelaw","Ryton","Blaydon","Whickham","Newcastle","Sunderland","Durham"],
   },
   basingstoke: {
     region: 'Hampshire',
-    nearby: ['Reading', 'Winchester', 'Andover', 'Farnborough', 'Fleet', 'Hook'],
+    nearby: ["Basingstoke Town Centre","Brighton Hill","Winklebury","Kempshott","Chineham","Popley","South Ham","Oakridge","Lychpit","Reading","Winchester","Andover","Farnborough","Fleet","Hook"],
   },
   hampshire: {
     region: 'Hampshire',
-    nearby: ['Southampton', 'Portsmouth', 'Winchester', 'Basingstoke', 'Andover', 'Fareham'],
+    nearby: ["Winchester","Southampton","Portsmouth","Basingstoke","Andover","Farnborough","Aldershot","Gosport","Fareham","Havant","Eastleigh","Lymington","New Milton"],
   },
   wokingham: {
     region: 'Berkshire',
-    nearby: ['Reading', 'Bracknell', 'Camberley', 'Farnborough', 'Sandhurst', 'Crowthorne'],
+    nearby: ["Wokingham Town Centre","Woosehill","Emmbrook","Finchampstead","Arborfield","Winnersh","Earley","Bracknell","Woodley","Reading"],
   },
   bournemouth: {
     region: 'Dorset',
-    nearby: ['Poole', 'Christchurch', 'Weymouth', 'Wareham', 'Ferndown', 'Ringwood'],
+    nearby: ["Bournemouth Town Centre","Boscombe","Westbourne","Southbourne","Winton","Charminster","Springbourne","Kinson","Wallisdown","Poole","Christchurch"],
   },
   thurrock: {
     region: 'Essex',
-    nearby: ['Basildon', 'Brentwood', 'Dartford', 'Gravesend', 'Grays', 'Tilbury'],
+    nearby: ["Grays","Tilbury","Stanford-le-Hope","Corringham","Chafford Hundred","Purfleet","South Ockendon","Aveley","West Thurrock","Basildon","Brentwood","Dartford"],
   },
   kent: {
     region: 'Kent',
-    nearby: ['Maidstone', 'Canterbury', 'Ashford', 'Tunbridge Wells', 'Dartford', 'Medway'],
+    nearby: ["Maidstone","Canterbury","Ashford","Dartford","Gravesend","Sevenoaks","Tonbridge","Tunbridge Wells","Sittingbourne","Gillingham","Chatham","Rochester","Faversham","Herne Bay","Margate","Ramsgate"],
   },
   harrogate: {
     region: 'North Yorkshire',
-    nearby: ['Leeds', 'York', 'Knaresborough', 'Ripon', 'Skipton', 'Wetherby'],
+    nearby: ["Harrogate Town Centre","Knaresborough","Starbeck","Bilton","Pannal","Ripon","Boroughbridge","Leeds","York"],
   },
   canterbury: {
     region: 'Kent',
-    nearby: ['Maidstone', 'Ashford', 'Dover', 'Folkestone', 'Whitstable', 'Faversham'],
+    nearby: ["Canterbury City Centre","St Dunstans","Wincheap","Hales Place","Harbledown","Thanington","Sturry","Whitstable","Herne Bay","Ashford","Maidstone","Dover","Folkestone"],
   },
   maidstone: {
     region: 'Kent',
-    nearby: ['Canterbury', 'Ashford', 'Tunbridge Wells', 'Sittingbourne', 'Medway', 'Tonbridge'],
+    nearby: ["Maidstone Town Centre","Allington","Bearsted","Barming","Grove Green","Downswood","Penenden Heath","Aylesford","West Malling","Canterbury","Ashford","Tunbridge Wells","Sittingbourne","Medway","Tonbridge"],
   },
   knowsley: {
     region: 'Merseyside',
-    nearby: ['Liverpool', 'St Helens', 'Prescot', 'Huyton', 'Kirkby', 'Halewood'],
+    nearby: ["Kirkby","Huyton","Prescot","Halewood","Whiston","Roby","Stockbridge Village","Cronton","Liverpool","St Helens"],
   },
   poole: {
     region: 'Dorset',
-    nearby: ['Bournemouth', 'Christchurch', 'Wareham', 'Swanage', 'Ferndown', 'Wimborne'],
+    nearby: ["Poole Town Centre","Parkstone","Ashley Cross","Canford Cliffs","Sandbanks","Branksome","Hamworthy","Broadstone","Upton","Bournemouth","Christchurch","Wareham","Swanage"],
   },
   guildford: {
     region: 'Surrey',
-    nearby: ['Woking', 'Farnham', 'Godalming', 'Cranleigh', 'Leatherhead', 'Farnborough'],
+    nearby: ["Guildford Town Centre","Burpham","Merrow","Stoughton","Onslow Village","Shalford","Godalming","Woking","Farnham","Leatherhead","Farnborough"],
   },
   horsham: {
     region: 'West Sussex',
-    nearby: ['Crawley', 'Guildford', 'Brighton', 'Worthing', 'East Grinstead', 'Billingshurst'],
+    nearby: ["Horsham Town Centre","Broadbridge Heath","Southwater","Roffey","Warnham","Partridge Green","Crawley","Billingshurst","Guildford","Brighton","Worthing"],
   },
   eastleigh: {
     region: 'Hampshire',
-    nearby: ['Southampton', 'Winchester', 'Fareham', "Chandler's Ford", 'Hedge End', 'Bishopstoke'],
+    nearby: ["Eastleigh Town Centre","Boyatt Wood","Chandlers Ford","Bishopstoke","Fair Oak","Hedge End","Southampton","Winchester","Fareham"],
   },
   havant: {
     region: 'Hampshire',
-    nearby: ['Portsmouth', 'Fareham', 'Chichester', 'Waterlooville', 'Hayling Island', 'Emsworth'],
+    nearby: ["Havant Town Centre","Leigh Park","Bedhampton","Emsworth","Waterlooville","Hayling Island","Rowlands Castle","Portsmouth","Fareham","Chichester"],
   },
   ashford: {
     region: 'Kent',
-    nearby: ['Canterbury', 'Maidstone', 'Folkestone', 'Tenterden', 'Hythe', 'New Romney'],
+    nearby: ["Ashford Town Centre","Kennington","Willesborough","Kingsnorth","South Willesborough","Park Farm","Tenterden","New Romney","Canterbury","Maidstone","Folkestone"],
   },
   fareham: {
     region: 'Hampshire',
-    nearby: ['Portsmouth', 'Southampton', 'Gosport', 'Eastleigh', 'Waterlooville', 'Wickham'],
+    nearby: ["Fareham Town Centre","Portchester","Stubbington","Hill Head","Lee-on-the-Solent","Gosport","Whiteley","Locks Heath","Portsmouth","Southampton"],
   },
   'tunbridge-wells': {
     region: 'Kent',
@@ -411,31 +411,31 @@ const cityData = {
   },
   chorley: {
     region: 'Lancashire',
-    nearby: ['Preston', 'Wigan', 'Bolton', 'Burnley', 'Leyland', 'Skelmersdale'],
+    nearby: ["Chorley Town Centre","Adlington","Coppull","Euxton","Clayton-le-Woods","Whittle-le-Woods","Buckshaw Village","Leyland","Preston","Wigan","Bolton"],
   },
   carlisle: {
     region: 'Cumbria',
-    nearby: ['Penrith', 'Workington', 'Whitehaven', 'Dumfries', 'Hexham', 'Brampton'],
+    nearby: ["Carlisle City Centre","Denton Holme","Morton","Harraby","Stanwix","Botcherby","Currock","Brampton","Penrith","Workington","Whitehaven","Dumfries","Hexham"],
   },
   gillingham: {
     region: 'Kent',
-    nearby: ['Maidstone', 'Rochester', 'Chatham', 'Sittingbourne', 'Medway', 'Faversham'],
+    nearby: ["Gillingham Town Centre","Rainham","Twydall","Hempstead","Parkwood","Wigmore","Chatham","Rochester","Maidstone","Sittingbourne","Medway","Faversham"],
   },
   birkenhead: {
     region: 'Merseyside',
-    nearby: ['Liverpool', 'Wallasey', 'Ellesmere Port', 'Chester', 'Heswall', 'Bebington'],
+    nearby: ["Birkenhead Town Centre","Tranmere","Oxton","Claughton","Rock Ferry","Prenton","New Ferry","Wallasey","Liscard","Bebington","Liverpool","Ellesmere Port","Chester","Heswall"],
   },
   worthing: {
     region: 'West Sussex',
-    nearby: ['Brighton', 'Horsham', 'Shoreham-by-Sea', 'Chichester', 'Littlehampton', 'Lancing'],
+    nearby: ["Worthing Town Centre","Goring-by-Sea","Durrington","Broadwater","West Worthing","East Worthing","Lancing","Shoreham-by-Sea","Brighton","Horsham","Chichester"],
   },
   lichfield: {
     region: 'Staffordshire',
-    nearby: ['Birmingham', 'Tamworth', 'Burton upon Trent', 'Stafford', 'Sutton Coldfield', 'Rugeley'],
+    nearby: ["Lichfield City Centre","Boley Park","Darwin Park","Burntwood","Streethay","Fradley","Whittington","Birmingham","Tamworth","Burton upon Trent","Stafford","Sutton Coldfield","Rugeley"],
   },
   lewes: {
     region: 'East Sussex',
-    nearby: ['Brighton', 'Eastbourne', 'Haywards Heath', 'Uckfield', 'Newhaven', 'Seaford'],
+    nearby: ["Lewes Town Centre","Malling","Southover","Cliffe","Ringmer","Kingston","Newhaven","Seaford","Brighton","Eastbourne","Haywards Heath"],
   },
   'great-yarmouth': {
     region: 'Norfolk',
@@ -443,7 +443,7 @@ const cityData = {
   },
   eastbourne: {
     region: 'East Sussex',
-    nearby: ['Brighton', 'Hastings', 'Lewes', 'Hailsham', 'Bexhill-on-Sea', 'Seaford'],
+    nearby: ["Eastbourne Town Centre","Meads","Old Town","Hampden Park","Roselands","Langney","Sovereign Harbour","Polegate","Pevensey","Brighton","Hastings","Lewes","Hailsham","Bexhill-on-Sea","Seaford"],
   },
   'west-dorset': {
     region: 'Dorset',
@@ -451,19 +451,19 @@ const cityData = {
   },
   dartford: {
     region: 'Kent',
-    nearby: ['Gravesend', 'Bexleyheath', 'Swanley', 'Sevenoaks', 'Thurrock', 'Erith'],
+    nearby: ["Dartford Town Centre","Gravesend","Bexleyheath","Swanley","Sevenoaks","Thurrock","Erith","Bluewater","Bean","Crayford","Wilmington","Hawley"],
   },
   bromsgrove: {
     region: 'Worcestershire',
-    nearby: ['Birmingham', 'Redditch', 'Worcester', 'Droitwich', 'Kidderminster', 'Solihull'],
+    nearby: ["Bromsgrove Town Centre","Catshill","Rubery","Sidemoor","Charford","Aston Fields","Alvechurch","Redditch","Birmingham","Worcester","Droitwich","Kidderminster","Solihull"],
   },
   bath: {
     region: 'Somerset',
-    nearby: ['Bristol', 'Frome', 'Chippenham', 'Trowbridge', 'Radstock', 'Midsomer Norton'],
+    nearby: ["Bath City Centre","Oldfield Park","Bear Flat","Bathwick","Combe Down","Weston","Twerton","Larkhall","Keynsham","Midsomer Norton","Bristol","Frome","Chippenham","Trowbridge","Radstock"],
   },
   hastings: {
     region: 'East Sussex',
-    nearby: ['Eastbourne', 'Bexhill-on-Sea', 'Rye', 'Battle', 'Tunbridge Wells', 'Tenterden'],
+    nearby: ["Hastings Town Centre","St Leonards-on-Sea","Silverhill","Ore","Hollington","Old Town","Bexhill","Battle","Eastbourne","Rye","Tunbridge Wells","Tenterden"],
   },
   'market-harborough': {
     region: 'Leicestershire',
@@ -471,59 +471,59 @@ const cityData = {
   },
   selby: {
     region: 'North Yorkshire',
-    nearby: ['York', 'Leeds', 'Wakefield', 'Pontefract', 'Goole', 'Tadcaster'],
+    nearby: ["Selby Town Centre","Brayton","Thorpe Willoughby","Barlby","Sherburn-in-Elmet","Riccall","Tadcaster","York","Leeds","Wakefield","Pontefract","Goole"],
   },
   harlow: {
     region: 'Essex',
-    nearby: ["Bishop's Stortford", 'Chelmsford', 'Hertford', 'Epping', 'Stevenage', 'Ware'],
+    nearby: ["Harlow Town Centre","Great Parndon","Bush Fair","Netteswell","Old Harlow","Church Langley","Sawbridgeworth","Epping","Bishops Stortford","Chelmsford","Hertford"],
   },
   tewkesbury: {
     region: 'Gloucestershire',
-    nearby: ['Gloucester', 'Cheltenham', 'Worcester', 'Pershore', 'Evesham', 'Winchcombe'],
+    nearby: ["Tewkesbury Town Centre","Ashchurch","Northway","Mitton","Twyning","Bishops Cleeve","Cheltenham","Gloucester","Worcester","Pershore","Evesham","Winchcombe"],
   },
   gosport: {
     region: 'Hampshire',
-    nearby: ['Portsmouth', 'Fareham', 'Southampton', 'Stubbington', 'Lee-on-the-Solent', 'Alverstoke'],
+    nearby: ["Gosport Town Centre","Alverstoke","Lee-on-the-Solent","Elson","Forton","Hardway","Bridgemary","Fareham","Portsmouth","Stubbington"],
   },
   chester: {
     region: 'Cheshire',
-    nearby: ['Wrexham', 'Warrington', 'Ellesmere Port', 'Crewe', 'Macclesfield', 'Northwich'],
+    nearby: ["Chester City Centre","Hoole","Handbridge","Upton","Blacon","Saltney","Boughton","Christleton","Waverton","Ellesmere Port","Wrexham","Warrington","Macclesfield","Northwich"],
   },
   loughborough: {
     region: 'Leicestershire',
-    nearby: ['Leicester', 'Nottingham', 'Derby', 'Coalville', 'Shepshed', 'Melton Mowbray'],
+    nearby: ["Loughborough Town Centre","Shelthorpe","Thorpe Acre","Quorn","Mountsorrel","Barrow upon Soar","Shepshed","Leicester","Nottingham","Derby","Coalville","Melton Mowbray"],
   },
   boston: {
     region: 'Lincolnshire',
-    nearby: ['Peterborough', 'Lincoln', 'Spalding', 'Skegness', 'Sleaford', 'Holbeach'],
+    nearby: ["Boston Town Centre","Fishtoft","Wyberton","Kirton","Skirbeck","Old Leake","Frampton","Sutterton","Spalding","Peterborough","Lincoln","Skegness","Sleaford"],
   },
   sittingbourne: {
     region: 'Kent',
-    nearby: ['Maidstone', 'Canterbury', 'Gillingham', 'Faversham', 'Sheerness', 'Medway'],
+    nearby: ["Sittingbourne Town Centre","Milton Regis","Kemsley","Murston","Borden","Iwade","Rainham","Faversham","Maidstone","Canterbury","Gillingham"],
   },
   bracknell: {
     region: 'Berkshire',
-    nearby: ['Reading', 'Wokingham', 'Camberley', 'Windsor', 'Farnborough', 'Sandhurst'],
+    nearby: ["Bracknell Town Centre","Easthampstead","Warfield","Binfield","Harmans Water","Great Hollands","Crown Wood","Crowthorne","Wokingham","Reading","Windsor","Farnborough","Camberley"],
   },
   keighley: {
     region: 'West Yorkshire',
-    nearby: ['Bradford', 'Halifax', 'Skipton', 'Bingley', 'Ilkley', 'Shipley'],
+    nearby: ["Keighley Town Centre","Ingrow","Silsden","Steeton","East Morton","West Morton","Utley","Haworth","Bingley","Bradford","Halifax","Skipton","Ilkley","Shipley"],
   },
   batley: {
     region: 'West Yorkshire',
-    nearby: ['Leeds', 'Dewsbury', 'Bradford', 'Wakefield', 'Morley', 'Cleckheaton'],
+    nearby: ["Batley Town Centre","Birstall","Hanging Heaton","Soothill","Staincliffe","Dewsbury","Morley","Heckmondwike","Leeds","Bradford","Wakefield"],
   },
   cheshunt: {
     region: 'Hertfordshire',
-    nearby: ['Waltham Abbey', 'Broxbourne', 'Hertford', 'Enfield', 'Hoddesdon', 'Ware'],
+    nearby: ["Cheshunt Town Centre","Waltham Cross","Goffs Oak","Turnford","Flamstead End","Broxbourne","Hoddesdon","Enfield","Hertford","Ware"],
   },
   purbeck: {
     region: 'Dorset',
-    nearby: ['Swanage', 'Wareham', 'Bournemouth', 'Poole', 'Weymouth', 'Corfe Castle'],
+    nearby: ["Wareham","Swanage","Corfe Castle","Studland","Wool","Bere Regis","Sandford","Lytchett Matravers","Lytchett Minster","Upton","Langton Matravers","Kimmeridge","Bournemouth","Poole"],
   },
   wallsend: {
     region: 'Tyne and Wear',
-    nearby: ['Newcastle', 'Gateshead', 'North Shields', 'Whitley Bay', 'Sunderland', 'Jarrow'],
+    nearby: ["Wallsend Town Centre","Howdon","Willington Quay","Rosehill","Battle Hill","Hadrian Park","Walkergate","North Shields","Whitley Bay","Newcastle","Gateshead","Sunderland","Jarrow"],
   },
   'bexhill-on-sea': {
     region: 'East Sussex',
@@ -531,47 +531,47 @@ const cityData = {
   },
   hoddesdon: {
     region: 'Hertfordshire',
-    nearby: ['Cheshunt', 'Hertford', 'Ware', 'Waltham Cross', 'Broxbourne', 'Harlow'],
+    nearby: ["Hoddesdon Town Centre","Rye Park","Broxbourne","Wormley","Turnford","Cheshunt","Dobbs Weir","Nazeing","Roydon","Hertford","Ware","Harlow"],
   },
   worksop: {
     region: 'Nottinghamshire',
-    nearby: ['Sheffield', 'Rotherham', 'Mansfield', 'Retford', 'Doncaster', 'Chesterfield'],
+    nearby: ["Worksop Town Centre","Gateford","Kilton","Manton","Shireoaks","Carlton-in-Lindrick","Langold","Whitwell","Retford","Sheffield","Rotherham","Mansfield","Chesterfield"],
   },
   salisbury: {
     region: 'Wiltshire',
-    nearby: ['Southampton', 'Bournemouth', 'Winchester', 'Amesbury', 'Andover', 'Shaftesbury'],
+    nearby: ["Salisbury City Centre","Bemerton","Harnham","Laverstock","Milford","Bishopdown","Amesbury","Wilton","Downton","Southampton","Bournemouth","Winchester","Andover"],
   },
   ilkeston: {
     region: 'Derbyshire',
-    nearby: ['Nottingham', 'Derby', 'Long Eaton', 'Heanor', 'Ripley', 'Eastwood'],
+    nearby: ["Ilkeston Town Centre","Cotmanhay","Kirk Hallam","Hallam Fields","Little Hallam","West Hallam","Heanor","Long Eaton","Derby","Nottingham","Eastwood"],
   },
   southall: {
     region: 'West London',
-    nearby: ['Ealing', 'Hayes', 'Slough', 'Uxbridge', 'Greenford', 'Hanwell'],
+    nearby: ["Southall Broadway","Norwood Green","Dormers Wells","Hanwell","Hayes","Ealing","Northolt","Greenford","Uxbridge","Slough","Perivale"],
   },
   accrington: {
     region: 'Lancashire',
-    nearby: ['Burnley', 'Blackburn', 'Nelson', 'Rossendale', 'Clitheroe', 'Darwen'],
+    nearby: ["Accrington Town Centre","Church","Clayton-le-Moors","Oswaldtwistle","Baxenden","Huncoat","Altham","Rishton","Blackburn","Burnley","Nelson","Rossendale","Darwen"],
   },
   harpenden: {
     region: 'Hertfordshire',
-    nearby: ['St Albans', 'Luton', 'Watford', 'Hemel Hempstead', 'Welwyn Garden City', 'Redbourn'],
+    nearby: ["Harpenden Town Centre","Southdown","Batford","Roundwood","Kinsbourne Green","Wheathampstead","St Albans","Luton","Watford","Hemel Hempstead","Welwyn Garden City","Redbourn"],
   },
   ealing: {
     region: 'West London',
-    nearby: ['Acton', 'Southall', 'Hanwell', 'Northolt', 'Greenford', 'Perivale'],
+    nearby: ["Ealing Broadway","South Ealing","North Ealing","West Ealing","Acton","Hanwell","Greenford","Perivale","Brentford","Southall","Hayes","Northolt","Chiswick"],
   },
   stalybridge: {
     region: 'Greater Manchester',
-    nearby: ['Ashton-under-Lyne', 'Oldham', 'Manchester', 'Hyde', 'Mossley', 'Dukinfield'],
+    nearby: ["Stalybridge Town Centre","Millbrook","Carrbrook","Copley","Dukinfield","Ashton-under-Lyne","Mossley","Hyde","Oldham","Manchester","Stockport"],
   },
   workington: {
     region: 'Cumbria',
-    nearby: ['Carlisle', 'Whitehaven', 'Cockermouth', 'Keswick', 'Maryport', 'Wigton'],
+    nearby: ["Workington Town Centre","Northside","Southfield","Harrington","Seaton","Distington","Great Clifton","Maryport","Whitehaven","Carlisle","Cockermouth","Keswick","Wigton"],
   },
   rickmansworth: {
     region: 'Hertfordshire',
-    nearby: ['Watford', 'Harrow', 'Chorleywood', 'Amersham', 'Northwood', 'Croxley Green'],
+    nearby: ["Rickmansworth Town Centre","Croxley Green","Chorleywood","Mill End","Maple Cross","Watford","Northwood","Amersham","Harrow","Uxbridge"],
   },
   'potters-bar': {
     region: 'Hertfordshire',
@@ -579,7 +579,7 @@ const cityData = {
   },
   ripley: {
     region: 'Derbyshire',
-    nearby: ['Derby', 'Nottingham', 'Heanor', 'Ilkeston', 'Belper', 'Alfreton'],
+    nearby: ["Ripley Town Centre","Codnor","Heage","Marehay","Butterley","Denby","Heanor","Alfreton","Belper","Derby","Nottingham","Ilkeston"],
   },
   'brighton-and-hove': {
     region: 'East Sussex',
