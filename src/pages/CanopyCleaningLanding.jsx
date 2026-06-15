@@ -27,7 +27,7 @@ function buildFaqs(city) {
   return [
     {
       q: `What does canopy cleaning involve in ${city.name}?`,
-      a: `Canopy cleaning in ${city.name} covers the full extraction system — canopy hood, plenum chamber, and the complete duct run to the discharge point. Our engineers pressure-clean all internal surfaces and clean every metre of ductwork. A TR19 compliance certificate and photographic evidence pack are issued on completion.`,
+      a: `Canopy cleaning in ${city.name} covers the full extraction system — canopy hood, plenum chamber, and the complete duct run to the discharge point. Our engineers manually degrease all internal surfaces and clean every metre of ductwork. A TR19 compliance certificate and photographic evidence pack are issued on completion.`,
     },
     {
       q: `Is canopy cleaning a legal requirement for ${city.name} kitchens?`,
