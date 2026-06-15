@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
 import { Phone, Quote } from 'lucide-react'
 import PageTransition from '../components/PageTransition'
 import ScrollReveal from '../components/ScrollReveal'
@@ -17,40 +15,82 @@ const reviews = [
     text: 'Our kitchen extractor fan failed on a very busy Friday evening and we were in serious trouble. Commercial Canopy Cleaning arrived quickly, supplied and fitted a new fan, and had everything running again within 2 hours. Exceptional emergency service.',
     name: 'Ahmed Khan',
     role: 'Restaurant Owner',
-    image: '/work_images/fanafter.jpeg',
+    image: '/review_images/review_1.png',
   },
   {
     text: 'Full canopy, duct, and extraction system clean carried out to a very high standard. Everything was left spotless and fully compliant with TR19 requirements. Excellent communication throughout.',
     name: 'James Carter',
     role: 'Head Chef',
-    image: '/work_images/canopyafter1.jpeg',
+    before: '/review_images/review_2_before.png',
+    after: '/review_images/review_2_after.png',
   },
   {
     text: 'We had serious grease build-up affecting airflow. The team completed a full canopy and duct cleaning service and the difference was immediate. Professional, efficient, and reliable.',
     name: 'Ayesha Malik',
     role: 'Café Manager',
-    image: '/work_images/ductafter1.jpeg',
+    before: '/review_images/review_3_before.png',
+    after: '/review_images/review_3_after.png',
   },
   {
     text: 'They installed access panels on our ductwork and carried out a full clean of the extraction system. Everything is now much easier to maintain and fully compliant.',
     name: 'Oliver Bennett',
     role: 'Facilities Manager',
-    image: '/work_images/panel1.jpeg',
+    image: '/review_images/review_4.png',
   },
   {
     text: 'Very professional service from start to finish. They worked around our opening hours and completed a full kitchen extraction clean with minimal disruption to our business.',
     name: 'Daniel Wright',
     role: 'Operations Manager',
-    image: '/work_images/canopyafter.jpeg',
+    before: '/review_images/review_5_before.png',
+    after: '/review_images/review_5_after.png',
   },
   {
     text: 'Excellent service and great attention to detail. Full canopy, fan, and duct cleaning completed with certification and photographic evidence provided straight after.',
     name: 'Bilal Hussain',
     role: 'Takeaway Owner',
-    image: '/work_images/boxfanafter.jpeg',
+    before: '/review_images/review_6_before.png',
+    after: '/review_images/review_6_after.png',
   },
 ]
 
+function ReviewImages({ review }) {
+  if (review.before && review.after) {
+    return (
+      <div className="flex gap-1 w-full bg-black flex-shrink-0">
+        <div className="relative flex-1">
+          <img
+            src={review.before}
+            alt="Before"
+            className="w-full h-full object-contain"
+          />
+          <span className="absolute bottom-2 left-2 font-body text-xs text-white/80 bg-black/60 px-2 py-0.5 uppercase tracking-widest">
+            Before
+          </span>
+        </div>
+        <div className="w-px bg-white/10 flex-shrink-0" />
+        <div className="relative flex-1">
+          <img
+            src={review.after}
+            alt="After"
+            className="w-full h-full object-contain"
+          />
+          <span className="absolute bottom-2 right-2 font-body text-xs text-white/80 bg-black/60 px-2 py-0.5 uppercase tracking-widest">
+            After
+          </span>
+        </div>
+      </div>
+    )
+  }
+  return (
+    <div className="w-full bg-black flex-shrink-0">
+      <img
+        src={review.image}
+        alt={`Work by Commercial Canopy Cleaning — ${review.role}`}
+        className="w-full h-full object-contain"
+      />
+    </div>
+  )
+}
 
 export default function Reviews() {
   return (
@@ -87,15 +127,7 @@ export default function Reviews() {
             {reviews.map((review, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <div className="card-surface flex flex-col h-full overflow-hidden">
-                  {/* Image */}
-                  <div className="w-full h-44 overflow-hidden flex-shrink-0">
-                    <img
-                      src={review.image}
-                      alt={`Work by Commercial Canopy Cleaning — ${review.role}`}
-                      className="w-full h-full object-cover opacity-70"
-                    />
-                  </div>
-                  {/* Content */}
+                  <ReviewImages review={review} />
                   <div className="p-6 flex flex-col flex-1">
                     <Quote size={20} className="text-brand-blue-bright/30 mb-3 flex-shrink-0" />
                     <p className="font-body text-white/65 text-sm leading-relaxed flex-1 mb-6">
