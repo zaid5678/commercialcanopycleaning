@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Star, Phone } from 'lucide-react'
+import { Star, Phone, Quote } from 'lucide-react'
 import PageTransition from '../components/PageTransition'
 import ScrollReveal from '../components/ScrollReveal'
 
@@ -12,10 +12,59 @@ function WhatsAppIcon({ size = 16 }) {
   )
 }
 
+const reviews = [
+  {
+    text: 'Our kitchen extractor fan failed on a very busy Friday evening and we were in serious trouble. Commercial Canopy Cleaning arrived quickly, supplied and fitted a new fan, and had everything running again within 2 hours. Exceptional emergency service.',
+    name: 'Ahmed Khan',
+    role: 'Restaurant Owner',
+    image: '/work_images/fanafter.jpeg',
+  },
+  {
+    text: 'Full canopy, duct, and extraction system clean carried out to a very high standard. Everything was left spotless and fully compliant with TR19 requirements. Excellent communication throughout.',
+    name: 'James Carter',
+    role: 'Head Chef',
+    image: '/work_images/canopyafter1.jpeg',
+  },
+  {
+    text: 'We had serious grease build-up affecting airflow. The team completed a full canopy and duct cleaning service and the difference was immediate. Professional, efficient, and reliable.',
+    name: 'Ayesha Malik',
+    role: 'Café Manager',
+    image: '/work_images/ductafter1.jpeg',
+  },
+  {
+    text: 'They installed access panels on our ductwork and carried out a full clean of the extraction system. Everything is now much easier to maintain and fully compliant.',
+    name: 'Oliver Bennett',
+    role: 'Facilities Manager',
+    image: '/work_images/panel1.jpeg',
+  },
+  {
+    text: 'Very professional service from start to finish. They worked around our opening hours and completed a full kitchen extraction clean with minimal disruption to our business.',
+    name: 'Daniel Wright',
+    role: 'Operations Manager',
+    image: '/work_images/canopyafter.jpeg',
+  },
+  {
+    text: 'Excellent service and great attention to detail. Full canopy, fan, and duct cleaning completed with certification and photographic evidence provided straight after.',
+    name: 'Bilal Hussain',
+    role: 'Takeaway Owner',
+    image: '/work_images/boxfanafter.jpeg',
+  },
+]
+
+function Stars() {
+  return (
+    <div className="flex items-center gap-1 mb-4">
+      {Array.from({ length: 5 }).map((_, i) => (
+        <Star key={i} size={14} className="text-brand-blue-bright fill-brand-blue-bright" />
+      ))}
+    </div>
+  )
+}
+
 export default function Reviews() {
   return (
     <PageTransition>
-      {/* Page Hero */}
+      {/* Hero */}
       <section className="pt-28 sm:pt-36 pb-12 sm:pb-16 relative overflow-hidden">
         <div
           className="absolute inset-0"
@@ -29,6 +78,9 @@ export default function Reviews() {
             <h1 className="font-heading text-5xl sm:text-6xl lg:text-8xl text-white leading-none mb-4">
               Client Reviews
             </h1>
+            <p className="font-body text-white/50 text-base sm:text-lg max-w-xl leading-relaxed">
+              Genuine feedback from restaurant owners, chefs, and facilities managers across the UK.
+            </p>
           </ScrollReveal>
         </div>
       </section>
@@ -37,36 +89,89 @@ export default function Reviews() {
         <div className="h-px bg-white/[0.06]" />
       </div>
 
-      {/* Coming Soon */}
-      <section className="py-24 sm:py-36">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+      {/* Star summary bar */}
+      <section className="py-10 bg-brand-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            {/* Animated stars */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-              className="flex items-center gap-2 mb-10"
-            >
-              {Array.from({ length: 5 }).map((_, i) => (
+            <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-12">
+              <div className="flex items-center gap-3">
                 <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.08 + 0.2, duration: 0.4 }}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                  className="flex items-center gap-1.5"
                 >
-                  <Star size={28} className="text-brand-blue-bright/40" />
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: i * 0.07 + 0.2, duration: 0.35 }}
+                    >
+                      <Star size={24} className="text-brand-blue-bright fill-brand-blue-bright" />
+                    </motion.div>
+                  ))}
                 </motion.div>
-              ))}
-            </motion.div>
+                <span className="font-heading text-4xl text-white">5.0</span>
+              </div>
+              <div className="h-px w-16 sm:h-12 sm:w-px bg-white/10" />
+              <p className="font-body text-white/45 text-sm text-center sm:text-left max-w-sm">
+                Every review is from a genuine client — restaurant owners, head chefs, and facilities managers who use our canopy and extraction cleaning services.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
 
-            <h2 className="font-heading text-5xl sm:text-6xl lg:text-7xl text-white mb-5">
-              Coming Soon
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="h-px bg-white/[0.06]" />
+      </div>
+
+      {/* Reviews grid */}
+      <section className="py-16 sm:py-24 bg-brand-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {reviews.map((review, i) => (
+              <ScrollReveal key={i} delay={i * 0.05}>
+                <div className="card-surface flex flex-col h-full overflow-hidden">
+                  {/* Image */}
+                  <div className="w-full h-44 overflow-hidden flex-shrink-0">
+                    <img
+                      src={review.image}
+                      alt={`Work by Commercial Canopy Cleaning — ${review.role}`}
+                      className="w-full h-full object-cover opacity-70"
+                    />
+                  </div>
+                  {/* Content */}
+                  <div className="p-6 flex flex-col flex-1">
+                    <Stars />
+                    <Quote size={20} className="text-brand-blue-bright/30 mb-3 flex-shrink-0" />
+                    <p className="font-body text-white/65 text-sm leading-relaxed flex-1 mb-6">
+                      {review.text}
+                    </p>
+                    <div className="border-t border-white/[0.06] pt-4 mt-auto">
+                      <p className="font-heading text-white text-sm tracking-wide">{review.name}</p>
+                      <p className="font-body text-white/35 text-xs mt-0.5">{review.role}</p>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 sm:py-20 bg-[#070b11] border-t border-white/[0.06]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <ScrollReveal>
+            <span className="section-label">Get in Touch</span>
+            <h2 className="font-heading text-4xl sm:text-5xl text-white mb-4">
+              Book Your Clean Today
             </h2>
-            <p className="font-body text-white/50 text-base sm:text-lg max-w-md leading-relaxed mb-12">
-              We're gathering reviews from our clients across the UK. Check back soon.
+            <p className="font-body text-white/50 text-sm sm:text-base max-w-md mx-auto mb-8 leading-relaxed">
+              Join our clients across the UK. Call us or send a WhatsApp message to get a no-obligation quote.
             </p>
-
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a href="tel:07517758507" className="btn-primary justify-center">
                 <Phone size={17} />
