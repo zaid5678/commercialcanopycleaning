@@ -115,7 +115,7 @@ export default function Contact() {
       setSubmitted(true)
       setSubmitError('')
     } catch (err) {
-      setSubmitError('Submission failed — please call us directly on 07517 758507.')
+      setSubmitError(`Error: ${err?.text || err?.message || JSON.stringify(err)}`)
     } finally {
       setSubmitting(false)
     }
