@@ -9,4 +9,5 @@
   functions = "netlify/functions"
 
 [functions]
-  node_bundler = "nft"
+  node_bundler = "esbuild"
+  external_node_modules = ["nodemailer", "busboy"]

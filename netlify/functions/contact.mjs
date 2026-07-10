@@ -1,5 +1,5 @@
-const nodemailer = require('nodemailer')
-const busboy = require('busboy')
+import nodemailer from 'nodemailer'
+import busboy from 'busboy'
 
 function parseMultipart(event) {
   return new Promise((resolve, reject) => {
@@ -33,7 +33,7 @@ function parseMultipart(event) {
   })
 }
 
-exports.handler = async (event) => {
+export const handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' }
   }
