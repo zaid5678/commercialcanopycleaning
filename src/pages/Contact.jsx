@@ -87,7 +87,7 @@ export default function Contact() {
     setSubmitting(true)
 
     const data = new FormData()
-    data.append('access_key', import.meta.env.VITE_WEB3FORMS_KEY || '')
+    data.append('access_key', 'fa615d0c-ced3-4792-b9e9-67df6cff9bb1')
     data.append('subject', `New Enquiry from ${formData.name} — ${formData.service}`)
     data.append('name', formData.name)
     data.append('company', formData.company || 'Not provided')
