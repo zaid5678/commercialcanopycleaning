@@ -104,7 +104,9 @@ export default function Contact() {
       phone:      formData.phone || 'Not provided',
       service:    formData.service,
       message:    formData.message,
-      files:      fileNames,
+      files:      fileNames !== 'None'
+        ? `${fileNames} — customer has been asked to reply to their confirmation email with attachments`
+        : 'None',
     }
 
     try {
@@ -115,7 +117,7 @@ export default function Contact() {
       setSubmitted(true)
       setSubmitError('')
     } catch (err) {
-      setSubmitError(`Error: ${err?.text || err?.message || JSON.stringify(err)}`)
+      setSubmitError('Submission failed — please call us directly on 07517 758507.')
     } finally {
       setSubmitting(false)
     }
