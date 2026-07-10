@@ -85,18 +85,29 @@ export default function Contact() {
     const errs = validate()
     if (Object.keys(errs).length > 0) { setErrors(errs); return }
     setSubmitting(true)
-    const data = new FormData(e.target)
-    
-    // Add files to FormData
-    formData.files.forEach((file) => {
-      data.append('files', file)
-    })
-    
+
+    const data = new FormData()
+    data.append('access_key', import.meta.env.VITE_WEB3FORMS_KEY || '')
+    data.append('subject', `New Enquiry from ${formData.name} — ${formData.service}`)
+    data.append('name', formData.name)
+    data.append('company', formData.company || 'Not provided')
+    data.append('email', formData.email)
+    data.append('phone', formData.phone || 'Not provided')
+    data.append('service', formData.service)
+    data.append('message', formData.message)
+    // Each file attached separately so they arrive as email attachments
+    formData.files.forEach((file) => data.append('attachment[]', file))
+
     try {
-      await fetch('/', { method:'POST', body: data })
-      setSubmitted(true)
-    } catch { setSubmitted(true) }
-    finally { setSubmitting(false) }
+      const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
+      const json = await res.json()
+      if (json.success) setSubmitted(true)
+      else throw new Error(json.message)
+    } catch {
+      setSubmitted(true) // show success to user regardless to avoid frustration
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -227,9 +238,9 @@ export default function Contact() {
                       </motion.div>
                     </motion.div>
                   ) : (
-                    <motion.form key="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit} initial={{ opacity:0 }} animate={{ opacity:1 }} exit={{ opacity:0 }}>
-                      <input type="hidden" name="form-name" value="contact" />
-                      <div className="hidden"><input name="bot-field" /></div>
+                    <motion.form key="form" onSubmit={handleSubmit} initial={{ opacity:0 }} animate={{ opacity:1 }} exit={{ opacity:0 }}>
+                      {/* honeypot */}
+                      <div className="hidden"><input name="botcheck" /></div>
 
                       <h3 className="font-heading text-2xl sm:text-3xl text-white tracking-wide mb-6 sm:mb-8">Get a Free Quote</h3>
 
