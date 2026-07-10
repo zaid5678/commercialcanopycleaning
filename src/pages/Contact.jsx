@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import emailjs from '@emailjs/browser'
 import { Link, useSearchParams } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
@@ -87,32 +88,34 @@ export default function Contact() {
     if (Object.keys(errs).length > 0) { setErrors(errs); return }
     setSubmitting(true)
 
-    const data = new FormData()
-    data.append('access_key', 'fa615d0c-ced3-4792-b9e9-67df6cff9bb1')
-    data.append('subject', `New Enquiry from ${formData.name} — ${formData.service}`)
-    data.append('name', formData.name)
-    data.append('company', formData.company || 'Not provided')
-    data.append('email', formData.email)
-    data.append('phone', formData.phone || 'Not provided')
-    data.append('service', formData.service)
-    data.append('message', formData.message)
-    // File names listed in message (attachment sending requires EmailJS setup)
-    if (formData.files.length > 0) {
-      const fileList = formData.files.map(f => f.name).join(', ')
-      data.append('attachments', `Files uploaded: ${fileList}`)
+    const SERVICE_ID  = 'service_gos2gmi'
+    const PUBLIC_KEY  = '94VVKzOToWkcErm2u'
+    const NOTIFY_TPL  = 'template_yzr5h08' // email you receive
+    const CONFIRM_TPL = 'template_jxousk7' // auto-reply to customer
+
+    const fileNames = formData.files.length > 0
+      ? formData.files.map(f => f.name).join(', ')
+      : 'None'
+
+    const params = {
+      name:       formData.name,
+      company:    formData.company || 'Not provided',
+      from_email: formData.email,
+      phone:      formData.phone || 'Not provided',
+      service:    formData.service,
+      message:    formData.message,
+      files:      fileNames,
     }
 
     try {
-      const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
-      const json = await res.json()
-      if (json.success) {
-        setSubmitted(true)
-        setSubmitError('')
-      } else {
-        setSubmitError(json.message || 'Submission failed. Please try calling us directly.')
-      }
+      // Send notification to you
+      await emailjs.send(SERVICE_ID, NOTIFY_TPL, params, PUBLIC_KEY)
+      // Send auto-reply to customer
+      await emailjs.send(SERVICE_ID, CONFIRM_TPL, params, PUBLIC_KEY)
+      setSubmitted(true)
+      setSubmitError('')
     } catch (err) {
-      setSubmitError('Network error — please check your connection or call us directly on 07517 758507.')
+      setSubmitError('Submission failed — please call us directly on 07517 758507.')
     } finally {
       setSubmitting(false)
     }
