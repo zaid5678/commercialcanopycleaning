@@ -45,6 +45,7 @@ export default function Contact() {
   })
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
   const [errors, setErrors] = useState({})
 
   // Update service dropdown if URL param changes
@@ -101,10 +102,14 @@ export default function Contact() {
     try {
       const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
       const json = await res.json()
-      if (json.success) setSubmitted(true)
-      else throw new Error(json.message)
-    } catch {
-      setSubmitted(true) // show success to user regardless to avoid frustration
+      if (json.success) {
+        setSubmitted(true)
+        setSubmitError('')
+      } else {
+        setSubmitError(json.message || 'Submission failed. Please try calling us directly.')
+      }
+    } catch (err) {
+      setSubmitError('Network error — please check your connection or call us directly on 07517 758507.')
     } finally {
       setSubmitting(false)
     }
@@ -312,6 +317,12 @@ export default function Contact() {
                           )}
                         </div>
                       </div>
+
+                      {submitError && (
+                        <div className="mb-4 p-4 border border-red-500/40 bg-red-500/10">
+                          <p className="font-body text-red-400 text-sm">{submitError}</p>
+                        </div>
+                      )}
 
                       <button type="submit" disabled={submitting} className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed">
                         {submitting ? (
