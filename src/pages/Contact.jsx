@@ -98,9 +98,11 @@ export default function Contact() {
       formData.files.forEach(f => body.append('files', f))
 
       const res = await fetch('/.netlify/functions/contact', { method: 'POST', body })
-      const json = await res.json()
+      const text = await res.text()
+      let json
+      try { json = JSON.parse(text) } catch { throw new Error(`HTTP ${res.status}: ${text.slice(0, 200)}`) }
 
-      if (!res.ok || !json.success) throw new Error(json.error || 'Unknown error')
+      if (!res.ok || !json.success) throw new Error(json.error || `HTTP ${res.status}`)
 
       setSubmitted(true)
       setSubmitError('')
