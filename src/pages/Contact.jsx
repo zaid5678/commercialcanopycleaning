@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
-import emailjs from '@emailjs/browser'
-import { Link, useSearchParams } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import {
@@ -88,32 +87,21 @@ export default function Contact() {
     if (Object.keys(errs).length > 0) { setErrors(errs); return }
     setSubmitting(true)
 
-    const SERVICE_ID  = 'service_gos2gmi'
-    const PUBLIC_KEY  = '94VVKzOToWkcErm2u'
-    const NOTIFY_TPL  = 'template_yzr5h08' // email you receive
-    const CONFIRM_TPL = 'template_jxousk7' // auto-reply to customer
-
-    const fileNames = formData.files.length > 0
-      ? formData.files.map(f => f.name).join(', ')
-      : 'None'
-
-    const params = {
-      name:       formData.name,
-      company:    formData.company || 'Not provided',
-      from_email: formData.email,
-      phone:      formData.phone || 'Not provided',
-      service:    formData.service,
-      message:    formData.message,
-      files:      fileNames !== 'None'
-        ? `${fileNames} — customer has been asked to reply to their confirmation email with attachments`
-        : 'None',
-    }
-
     try {
-      // Send notification to you
-      await emailjs.send(SERVICE_ID, NOTIFY_TPL, params, PUBLIC_KEY)
-      // Send auto-reply to customer
-      await emailjs.send(SERVICE_ID, CONFIRM_TPL, params, PUBLIC_KEY)
+      const body = new FormData()
+      body.append('name', formData.name)
+      body.append('company', formData.company || '')
+      body.append('email', formData.email)
+      body.append('phone', formData.phone || '')
+      body.append('service', formData.service)
+      body.append('message', formData.message)
+      formData.files.forEach(f => body.append('files', f))
+
+      const res = await fetch('/.netlify/functions/contact', { method: 'POST', body })
+      const json = await res.json()
+
+      if (!res.ok || !json.success) throw new Error(json.error || 'Unknown error')
+
       setSubmitted(true)
       setSubmitError('')
     } catch (err) {
