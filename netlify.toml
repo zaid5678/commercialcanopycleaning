@@ -4,7 +4,7 @@
   status = 200
 
 [build]
-  command = "npm run build && node scripts/submit-indexnow.mjs"
+  command = "cd netlify/functions/contact && npm install && cd ../../.. && npm run build && node scripts/submit-indexnow.mjs"
   publish = "dist"
   functions = "netlify/functions"
 

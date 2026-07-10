@@ -27,30 +27,29 @@ function WhatsAppIcon({ size = 16 }) {
 }
 
 function UKOutline() {
+  // Simplified but accurate Great Britain silhouette (England, Scotland, Wales — no NI)
   return (
-    <svg viewBox="0 0 200 340" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-20 sm:w-24 opacity-25">
-      {/* Great Britain — simplified but recognisable outline */}
+    <svg viewBox="0 0 220 400" xmlns="http://www.w3.org/2000/svg" className="w-16 sm:w-20 opacity-30">
       <path
-        d="M112,8 L118,14 L122,22 L116,28 L120,36 L114,42 L118,50 L112,58 L106,52 L100,58 L94,54 L88,60 L80,56 L74,62 L68,58 L62,64 L56,72 L52,80 L48,90 L44,100 L42,112 L44,122 L48,132 L52,140 L58,148 L64,154 L62,162 L66,170 L72,176 L78,182 L82,190 L86,198 L88,208 L84,216 L88,224 L94,228 L100,232 L104,226 L110,230 L116,234 L120,228 L114,222 L118,214 L122,206 L126,198 L130,190 L134,180 L136,170 L132,160 L128,152 L132,142 L136,132 L138,120 L136,108 L132,98 L128,88 L124,80 L120,70 L116,60 L118,50 L122,42 L118,34 L116,24 L112,16 Z"
         fill="#2E8DE8"
         stroke="#1A5FA8"
         strokeWidth="1.5"
         strokeLinejoin="round"
-      />
-      {/* Northern Ireland */}
-      <path
-        d="M54,142 L60,138 L68,140 L74,146 L70,154 L62,156 L54,152 Z"
-        fill="#2E8DE8"
-        stroke="#1A5FA8"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      {/* Scotland highlands bump */}
-      <path
-        d="M90,58 L86,52 L80,48 L76,54 L82,60 Z"
-        fill="#2E8DE8"
-        stroke="#1A5FA8"
-        strokeWidth="1"
+        d="
+          M130,6 L138,10 L144,18 L148,28 L142,36 L136,30 L128,36
+          L120,32 L112,38 L104,34 L96,40 L88,48 L82,56 L76,66
+          L70,78 L66,90 L62,104 L60,118 L58,132 L56,146 L54,160
+          L52,172 L54,184 L58,194 L64,202 L68,212 L64,224 L60,236
+          L58,248 L60,260 L66,270 L72,278 L78,288 L82,298 L84,310
+          L82,322 L78,334 L76,346 L78,356 L84,364 L92,370 L100,374
+          L108,372 L114,366 L120,372 L126,376 L130,370 L124,362
+          L128,352 L134,342 L138,330 L140,318 L138,306 L134,294
+          L130,282 L128,270 L132,260 L138,252 L144,244 L148,234
+          L150,222 L148,210 L144,200 L140,190 L138,178 L140,166
+          L144,154 L148,142 L150,130 L148,118 L144,106 L140,96
+          L136,86 L132,76 L130,66 L132,56 L136,46 L138,36 L136,24
+          L130,14 Z
+        "
       />
     </svg>
   )
