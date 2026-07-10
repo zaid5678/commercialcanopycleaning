@@ -28,8 +28,30 @@ function WhatsAppIcon({ size = 16 }) {
 
 function UKOutline() {
   return (
-    <svg viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-24 sm:w-28 opacity-20">
-      <path d="M100 10 C95 12,88 18,85 25 C82 32,80 40,78 48 C74 52,68 54,65 60 C62 66,63 74,60 80 C56 88,48 92,44 100 C40 108,40 118,42 126 C44 134,50 140,52 148 C54 156,52 165,55 172 C58 180,66 185,70 192 C74 200,74 210,78 218 C82 226,90 230,95 236 C100 242,102 250,100 258 C102 268,106 260,108 252 C110 244,108 234,112 226 C116 218,124 214,128 206 C132 198,132 188,130 180 C128 172,122 166,122 158 C122 150,128 144,132 136 C136 128,138 118,136 110 C134 102,128 96,124 88 C120 80,118 70,114 62 C110 54,104 48,100 42 C97 36,97 26,100 20 Z" fill="#2E8DE8" stroke="#1A5FA8" strokeWidth="2"/>
+    <svg viewBox="0 0 200 340" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-20 sm:w-24 opacity-25">
+      {/* Great Britain — simplified but recognisable outline */}
+      <path
+        d="M112,8 L118,14 L122,22 L116,28 L120,36 L114,42 L118,50 L112,58 L106,52 L100,58 L94,54 L88,60 L80,56 L74,62 L68,58 L62,64 L56,72 L52,80 L48,90 L44,100 L42,112 L44,122 L48,132 L52,140 L58,148 L64,154 L62,162 L66,170 L72,176 L78,182 L82,190 L86,198 L88,208 L84,216 L88,224 L94,228 L100,232 L104,226 L110,230 L116,234 L120,228 L114,222 L118,214 L122,206 L126,198 L130,190 L134,180 L136,170 L132,160 L128,152 L132,142 L136,132 L138,120 L136,108 L132,98 L128,88 L124,80 L120,70 L116,60 L118,50 L122,42 L118,34 L116,24 L112,16 Z"
+        fill="#2E8DE8"
+        stroke="#1A5FA8"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      {/* Northern Ireland */}
+      <path
+        d="M54,142 L60,138 L68,140 L74,146 L70,154 L62,156 L54,152 Z"
+        fill="#2E8DE8"
+        stroke="#1A5FA8"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      {/* Scotland highlands bump */}
+      <path
+        d="M90,58 L86,52 L80,48 L76,54 L82,60 Z"
+        fill="#2E8DE8"
+        stroke="#1A5FA8"
+        strokeWidth="1"
+      />
     </svg>
   )
 }
