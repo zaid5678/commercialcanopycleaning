@@ -96,8 +96,11 @@ export default function Contact() {
     data.append('phone', formData.phone || 'Not provided')
     data.append('service', formData.service)
     data.append('message', formData.message)
-    // Each file attached separately so they arrive as email attachments
-    formData.files.forEach((file) => data.append('attachment[]', file))
+    // File names listed in message (attachment sending requires EmailJS setup)
+    if (formData.files.length > 0) {
+      const fileList = formData.files.map(f => f.name).join(', ')
+      data.append('attachments', `Files uploaded: ${fileList}`)
+    }
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
